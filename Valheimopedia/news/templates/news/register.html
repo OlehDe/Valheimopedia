@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реєстрація</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --text-color: #1f2937;
+      --text-light: #6b7280;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .auth-buttons a {
+      background-color: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #f0f4ff;
+      transform: translateY(-1px);
+    }
+
+    main {
+      max-width: 500px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.75rem 1rem; /* верх/низ 12px, ліво/право 16px */
+      border: 1px solid #d1d5db;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      box-sizing: border-box; /* Додає padding всередину width */
+      transition: border-color 0.2s ease;
+    }
+
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 1rem;
+      }
+
+      .auth-buttons {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      main {
+        margin: 1.5rem 1rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Сайт Новин</h1>
+  <div class="auth-buttons">
+    <a href="/">Головна</a>
+    <a href="/login">Увійти</a>
+    <a href="/register">Реєстрація</a>
+  </div>
+</header>
+
+<main>
+  <h2>Реєстрація</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Зареєструватися</button>
+  </form>
+</main>
+
+</body>
+</html>

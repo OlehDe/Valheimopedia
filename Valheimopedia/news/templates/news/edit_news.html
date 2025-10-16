@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редагувати новину - {{ news.title }}</title>
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --secondary-color: #3b82f6;
+      --accent-color: #10b981;
+      --accent-hover: #0d9f6e;
+      --danger-color: #ef4444;
+      --danger-hover: #dc2626;
+      --text-color: #1f2937;
+      --text-light: #6b7280;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .auth-buttons a {
+      background-color: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #f0f4ff;
+      transform: translateY(-1px);
+    }
+
+    nav {
+      background-color: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    nav a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .edit-form {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary-color);
+      border-radius: 3px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #e5e7eb;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    textarea {
+      min-height: 200px;
+      resize: vertical;
+    }
+
+    .file-input {
+      margin-top: 1rem;
+    }
+
+    .file-input label {
+      display: inline-block;
+      background-color: #e0f2fe;
+      color: #0369a1;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .file-input label:hover {
+      background-color: #bae6fd;
+    }
+
+    .file-input input[type="file"] {
+      display: none;
+    }
+
+    .file-name {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .image-preview {
+      margin-top: 1rem;
+    }
+
+    .image-preview img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid #e5e7eb;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: #e5e7eb;
+      color: var(--text-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: #d1d5db;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+
+      .auth-buttons {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+        margin: 1rem auto;
+      }
+
+      .edit-form {
+        padding: 1.5rem;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>Редагувати новину</h1>
+  <div class="auth-buttons">
+    <a href="/">На головну</a>
+  </div>
+</header>
+
+<nav>
+  <a href="/">Головна</a>
+  <a href="/add_news/">Додати новину</a>
+</nav>
+
+<div class="container">
+  <form class="edit-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="title">Заголовок</label>
+      <input type="text" id="title" name="title" value="{{ news.title }}" required>
+    </div>
+
+    <div class="form-group">
+      <label for="content">Текст новини</label>
+      <textarea id="content" name="content" required>{{ news.content }}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Зображення</label>
+      <div class="file-input">
+        <label for="image">Вибрати нове зображення</label>
+        <input type="file" id="image" name="image" accept="image/*">
+        <span class="file-name" id="file-name">Файл не вибрано</span>
+      </div>
+
+      {% if news.image %}
+        <div class="image-preview">
+          <p>Поточне зображення:</p>
+          <img src="{{ news.image.url }}" alt="Поточне зображення">
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="button-group">
+      <button type="submit" class="btn btn-primary">Зберегти зміни</button>
+      <a href="/" class="btn btn-secondary">Скасувати</a>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('image').addEventListener('change', function(e) {
+    const fileName = e.target.files[0] ? e.target.files[0].name : 'Файл не вибрано';
+    document.getElementById('file-name').textContent = fileName;
+  });
+</script>
+
+</body>
+</html>

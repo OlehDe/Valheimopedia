@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Авторизація - Сайт Новин</title>
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --secondary-color: #3b82f6;
+      --accent-color: #10b981;
+      --accent-hover: #0d9f6e;
+      --text-color: #1f2937;
+      --text-light: #6b7280;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .auth-buttons a {
+      background-color: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #f0f4ff;
+      transform: translateY(-1px);
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+
+    .login-form {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--primary-color);
+      border-radius: 3px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem 1rem; /* верх/низ 12px, ліво/право 16px */
+      border: 1px solid #d1d5db;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      box-sizing: border-box; /* Додає padding всередину width */
+      transition: border-color 0.2s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    button[type="submit"] {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    button[type="submit"]:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .form-footer {
+      margin-top: 1.5rem;
+      text-align: center;
+      color: var(--text-light);
+    }
+
+    .form-footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+
+      .auth-buttons {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      main {
+        padding: 1rem;
+        margin: 1rem auto;
+      }
+
+      .login-form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>Сайт Новин</h1>
+  <div class="auth-buttons">
+    <a href="/">Головна</a>
+    <a href="/login">Увійти</a>
+    <a href="/register">Реєстрація</a>
+  </div>
+</header>
+
+<main>
+  <div class="login-form">
+    <h2>Вхід в систему</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="username">Ім'я користувача</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Увійти</button>
+      <div class="form-footer">
+        Ще не зареєстровані? <a href="/register">Створити акаунт</a>
+      </div>
+    </form>
+  </div>
+</main>
+
+</body>
+</html>

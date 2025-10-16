@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Додати новину - Сайт Новин</title>
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --secondary-color: #3b82f6;
+      --accent-color: #10b981;
+      --accent-hover: #0d9f6e;
+      --text-color: #1f2937;
+      --text-light: #6b7280;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .auth-buttons a {
+      background-color: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #f0f4ff;
+      transform: translateY(-1px);
+    }
+
+    nav {
+      background-color: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    nav a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    input[type="text"],
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #e5e7eb;
+      border-radius: var(--radius-sm);
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    textarea {
+      min-height: 200px;
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    button[type="submit"]:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    button[type="submit"]::before {
+      content: "✏️";
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .file-input-wrapper input[type="file"] {
+      position: absolute;
+      font-size: 100px;
+      opacity: 0;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+    }
+
+    .file-input-label {
+      display: block;
+      padding: 0.75rem;
+      background-color: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .file-input-label:hover {
+      background-color: #f0f4ff;
+      border-color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+
+      .auth-buttons {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+      }
+
+      main {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>Додати новину</h1>
+  <div class="auth-buttons">
+    <a href="/">На головну</a>
+  </div>
+</header>
+
+<nav>
+  <a href="/">Головна</a>
+  <a href="/add_news/">Додати новину</a>
+</nav>
+
+<main>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="title">Заголовок новини</label>
+      <input type="text" id="title" name="title" required placeholder="Введіть заголовок новини">
+    </div>
+    <div class="form-group">
+      <label for="content">Текст новини</label>
+      <textarea id="content" name="content" required placeholder="Напишіть текст вашої новини..."></textarea>
+    </div>
+    <div class="form-group">
+      <label for="image">Зображення</label>
+      <div class="file-input-wrapper">
+        <input type="file" id="image" name="image" accept="image/*">
+        <label for="image" class="file-input-label">Оберіть файл або перетягніть його сюди</label>
+      </div>
+    </div>
+    <button type="submit">Опублікувати новину</button>
+  </form>
+</main>
+
+</body>
+</html>

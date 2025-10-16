@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Коментарі до новини "{{ news.title }}"</title>
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --secondary-color: #3b82f6;
+      --accent-color: #10b981;
+      --accent-hover: #0d9f6e;
+      --text-color: #1f2937;
+      --text-light: #6b7280;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .auth-buttons a {
+      background-color: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #f0f4ff;
+      transform: translateY(-1px);
+    }
+
+    nav {
+      background-color: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    nav a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary-color);
+      border-radius: 3px;
+    }
+
+    .comment {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+
+    .comment:hover {
+      transform: translateY(-2px);
+    }
+
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .comment-author {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .comment-date {
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    .comment-content {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .comment-actions a {
+      color: #ef4444;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s ease;
+    }
+
+    .comment-actions a:hover {
+      color: #dc2626;
+      text-decoration: underline;
+    }
+
+    .comment-form {
+      margin: 3rem 0;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .comment-form h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #e5e7eb;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 1rem;
+      min-height: 120px;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s ease;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .submit-btn {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .login-prompt {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .login-prompt a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-prompt a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 1rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    .back-link::before {
+      content: "←";
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+
+      .auth-buttons {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+      }
+
+      main {
+        padding: 0 1rem;
+        margin: 1rem auto;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>Коментарі до новини</h1>
+  <div class="auth-buttons">
+    <a href="/">На головну</a>
+  </div>
+</header>
+
+<nav>
+  <a href="/">Головна</a>
+  <a href="/add_news/">Додати новину</a>
+</nav>
+
+<main>
+  <h1>{{ news.title }}</h1>
+
+  <div class="comments-list">
+    {% for comment in comments %}
+      <div class="comment">
+        <div class="comment-header">
+          <span class="comment-author">{{ comment.author.username }}</span>
+          <span class="comment-date">{{ comment.created_at|date:"d.m.Y H:i" }}</span>
+        </div>
+        <p class="comment-content">{{ comment.content }}</p>
+        {% if user == comment.author or user.is_staff %}
+          <div class="comment-actions">
+            <a href="{% url 'news:comment_delete' comment.id %}">Видалити коментар</a>
+          </div>
+        {% endif %}
+      </div>
+    {% empty %}
+      <div class="comment">
+        <p>Поки що немає коментарів. Будьте першим!</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if user.is_authenticated %}
+    <div class="comment-form">
+      <h3>Додати коментар</h3>
+      <form method="post" action="{% url 'news:add_comment' news.id %}">
+        {% csrf_token %}
+        <textarea name="content" required placeholder="Напишіть ваш коментар..."></textarea>
+        <button type="submit" class="submit-btn">Надіслати коментар</button>
+      </form>
+    </div>
+  {% else %}
+    <div class="login-prompt">
+      <p>Щоб залишити коментар, будь ласка, <a href="/login/">увійдіть</a> або <a href="/register/">зареєструйтесь</a>.</p>
+    </div>
+  {% endif %}
+
+  <a href="/" class="back-link">Повернутися на головну</a>
+</main>
+
+</body>
+</html>
