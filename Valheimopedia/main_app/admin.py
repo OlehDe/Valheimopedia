@@ -1,7 +1,8 @@
+# Valheimopedia/Valheimopedia/admin.py
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from .models import News, Comment
+from .models import Comment  # Змінено імпорт
 
 class CustomUserAdmin(UserAdmin):
     list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'date_joined')
@@ -18,35 +19,12 @@ class CustomUserAdmin(UserAdmin):
         queryset.update(is_active=False)
     deactivate_users.short_description = "Деактивувати обрані облікові записи"
 
-@admin.register(News)
-class NewsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'created_at', 'comment_count')
-    list_filter = ('created_at', 'author')
-    search_fields = ('title', 'content', 'author__username')
-    raw_id_fields = ('author',)
-    date_hierarchy = 'created_at'
-    ordering = ('-created_at',)
-    readonly_fields = ('created_at',)
-    fieldsets = (
-        (None, {
-            'fields': ('title', 'content', 'author')
-        }),
-        ('Додатково', {
-            'fields': ('image', 'created_at'),
-            'classes': ('collapse',)
-        }),
-    )
-
-    def comment_count(self, obj):
-        return obj.comments.count()
-    comment_count.short_description = 'Коментарі'
-
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('content', 'author', 'news', 'created_at')
-    list_filter = ('created_at', 'author', 'news')
-    search_fields = ('content', 'author__username', 'news__title')
-    raw_id_fields = ('author', 'news')
+    list_display = ('content', 'author', 'created_at')
+    list_filter = ('created_at', 'author')
+    search_fields = ('content', 'author__username')
+    raw_id_fields = ('author',)
     date_hierarchy = 'created_at'
     ordering = ('-created_at',)
     readonly_fields = ('created_at',)
