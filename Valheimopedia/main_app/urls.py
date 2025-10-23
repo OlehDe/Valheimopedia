@@ -1,7 +1,7 @@
 # main_app/urls.py
 from django.urls import path
 from . import views  # Використовуйте відносний імпорт
-from .views import register_view, login_view  # Використовуйте відносний імпорт
+from .views import register_view, login_view  # Використовуйте відносний імпортw
 
 app_name = "main_app"
 
