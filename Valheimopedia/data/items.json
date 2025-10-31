@@ -1,0 +1,1740 @@
+{
+  "items": {
+    "OneHandedWeapon": [
+      {
+        "name": "Abomination_attack1",
+        "assetId": "af1b6acaf8dc9c44990139ac4da5d579",
+        "token": "Swing attack",
+        "englishName": "Swing attack",
+        "type": "OneHandedWeapon",
+        "description": "NULL"
+      },
+      {
+        "name": "Abomination_attack2",
+        "assetId": "260873455cf3ad34b8e3e80394ad42d5",
+        "token": "Slam attack",
+        "englishName": "Slam attack",
+        "type": "OneHandedWeapon",
+        "description": "NULL"
+      },
+      {
+        "name": "Abomination_attack3",
+        "assetId": "00ede6082b8f6244c88ff154a267cdd7",
+        "token": "Stub to the ground",
+        "englishName": "Stub to the ground",
+        "type": "OneHandedWeapon",
+        "description": "NULL"
+      },
+      {
+        "name": "AxeBlackMetal",
+        "assetId": "4a4b72e3bfc3c40b08d3ae37d7140468",
+        "token": "$item_axe_blackmetal",
+        "englishName": "Black Metal Axe",
+        "type": "OneHandedWeapon",
+        "description": "A perfectly-balanced axe forged from dark metal with an emerald sheen."
+      },
+      {
+        "name": "AxeBronze",
+        "assetId": "56812f11a8e904356a535bf3253afbbb",
+        "token": "$item_axe_bronze",
+        "englishName": "Bronze Axe",
+        "type": "OneHandedWeapon",
+        "description": "A bright and burnished blade, curved like a smile."
+      },
+      {
+        "name": "AxeFlint",
+        "assetId": "1c81915f9409743c2bfa81cc81337495",
+        "token": "$item_axe_flint",
+        "englishName": "Flint Axe",
+        "type": "OneHandedWeapon",
+        "description": "Sharper than stone."
+      },
+      {
+        "name": "AxeIron",
+        "assetId": "7b2067435f94d4aae9a5f01f78f2742a",
+        "token": "$item_axe_iron",
+        "englishName": "Iron Axe",
+        "type": "OneHandedWeapon",
+        "description": "Sharp and strong, a woodcutter's friend."
+      },
+      {
+        "name": "AxeJotunBane",
+        "assetId": "6bbecce943fd39f47a985a4a7cfbe186",
+        "token": "$item_axe_jotunbane",
+        "englishName": "Jotun Bane",
+        "type": "OneHandedWeapon",
+        "description": "Not even the giants of old could weather the poisonous bite of this weapon."
+      },
+      {
+        "name": "AxeStone",
+        "assetId": "2c7e1807d4065470aa59a90cb64eddff",
+        "token": "$item_axe_stone",
+        "englishName": "Stone Axe",
+        "type": "OneHandedWeapon",
+        "description": "A crude axe for tree-felling."
+      },
+      {
+        "name": "AxeWood",
+        "assetId": "85d92cca1bf2f954db1af646618d90a6",
+        "token": "$item_axe_wood",
+        "englishName": "Wooden Axe",
+        "type": "OneHandedWeapon",
+        "description": "If this axe could chop wood, wouldn't that be strange?"
+      },
+      {
+        "name": "Club",
+        "assetId": "0942d0a620b2b4ba6b359495181c1f50",
+        "token": "$item_club",
+        "englishName": "Club",
+        "type": "OneHandedWeapon",
+        "description": "A crude but useful weapon."
+      },
+      {
+        "name": "SwordBlackmetal",
+        "assetId": "9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f",
+        "token": "$item_sword_blackmetal",
+        "englishName": "Black Metal Sword",
+        "type": "OneHandedWeapon",
+        "description": "A sharp sword made from black metal."
+      },
+      {
+        "name": "SwordBronze",
+        "assetId": "8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a",
+        "token": "$item_sword_bronze",
+        "englishName": "Bronze Sword",
+        "type": "OneHandedWeapon",
+        "description": "A sturdy bronze sword."
+      },
+      {
+        "name": "SwordIron",
+        "assetId": "7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b",
+        "token": "$item_sword_iron",
+        "englishName": "Iron Sword",
+        "type": "OneHandedWeapon",
+        "description": "A reliable iron sword."
+      },
+      {
+        "name": "SwordSilver",
+        "assetId": "6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c",
+        "token": "$item_sword_silver",
+        "englishName": "Silver Sword",
+        "type": "OneHandedWeapon",
+        "description": "A gleaming silver sword."
+      }
+    ],
+    "TwoHandedWeapon": [
+      {
+        "name": "AtgeirBlackmetal",
+        "assetId": "cadb835c9eea4fc4590601cfc7177b38",
+        "token": "$item_atgeir_blackmetal",
+        "englishName": "Black Metal Atgeir",
+        "type": "TwoHandedWeapon",
+        "description": "A vicious hewing-axe of almost unbreakable black metal."
+      },
+      {
+        "name": "AtgeirBronze",
+        "assetId": "da4341e5dd54346eb930a52286fab683",
+        "token": "$item_atgeir_bronze",
+        "englishName": "Bronze Atgeir",
+        "type": "TwoHandedWeapon",
+        "description": "A true warrior's tool."
+      },
+      {
+        "name": "AtgeirHimminAfl",
+        "assetId": "7c7e3b180b070eb4c8547c0fce72fbd8",
+        "token": "$item_atgeir_himminafl",
+        "englishName": "Himminafl",
+        "type": "TwoHandedWeapon",
+        "description": "It might not be a hammer, but Thor himself would still approve of this weapon."
+      },
+      {
+        "name": "AtgeirIron",
+        "assetId": "eab62f3879789485283981a9ca1e7b3c",
+        "token": "$item_atgeir_iron",
+        "englishName": "Iron Atgeir",
+        "type": "TwoHandedWeapon",
+        "description": "Blood-drinker, skull-cracker, death-bringer."
+      },
+      {
+        "name": "AtgeirWood",
+        "assetId": "699027b6a79064f4bb965fd7de5102d6",
+        "token": "$item_atgeir_wood",
+        "englishName": "Wooden Atgeir",
+        "type": "TwoHandedWeapon",
+        "description": "It might not hurt a skeleton, but it looks dangerous."
+      },
+      {
+        "name": "Battleaxe",
+        "assetId": "55bcbb51967006f469e6c53149d951fa",
+        "token": "$item_battleaxe",
+        "englishName": "Battleaxe",
+        "type": "TwoHandedWeapon",
+        "description": "Skull-splitter, a warrior's joy."
+      },
+      {
+        "name": "BattleaxeBlackmetal",
+        "assetId": "1cfe9a1491bc846428ecb634ed49c93c",
+        "token": "$item_battleaxe_blackmetal",
+        "englishName": "Black Metal Battleaxe",
+        "type": "TwoHandedWeapon",
+        "description": "Green shall be the last thing your foes see before you cleave them in half."
+      },
+      {
+        "name": "BattleaxeCrystal",
+        "assetId": "635eb2beadfc0be408d2f797fde7f1f2",
+        "token": "$item_battleaxe_crystal",
+        "englishName": "Crystal Battleaxe",
+        "type": "TwoHandedWeapon",
+        "description": "It's see-through and tears through."
+      },
+      {
+        "name": "BattleaxeSkullSplittur",
+        "assetId": "131b6e64eaee51547a0b76f472190581",
+        "token": "$item_battleaxe_skullsplittur",
+        "englishName": "Skull Splittur",
+        "type": "TwoHandedWeapon",
+        "description": "Will find skulls to split even in the thickest of mists."
+      },
+      {
+        "name": "BattleaxeWood",
+        "assetId": "0563f9e625bbec944b636a042ccbd60c",
+        "token": "$item_battleaxe_wood",
+        "englishName": "Wooden Battleaxe",
+        "type": "TwoHandedWeapon",
+        "description": "Intimidating, but not as intimidating as the real thing."
+      },
+      {
+        "name": "SledgeStagbreaker",
+        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d",
+        "token": "$item_sledge_stagbreaker",
+        "englishName": "Stagbreaker",
+        "type": "TwoHandedWeapon",
+        "description": "A mighty war hammer."
+      },
+      {
+        "name": "SledgeIron",
+        "assetId": "2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e",
+        "token": "$item_sledge_iron",
+        "englishName": "Iron Sledge",
+        "type": "TwoHandedWeapon",
+        "description": "A heavy iron sledgehammer."
+      },
+      {
+        "name": "SledgeDemolisher",
+        "assetId": "1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f",
+        "token": "$item_sledge_demolisher",
+        "englishName": "Demolisher",
+        "type": "TwoHandedWeapon",
+        "description": "It breaks things. Really well."
+      }
+    ],
+    "Bow": [
+      {
+        "name": "Bow",
+        "assetId": "10ef404d2efa74906adeafe7d433b347",
+        "token": "$item_bow",
+        "englishName": "Crude Bow",
+        "type": "Bow",
+        "description": "A crude but functional bow."
+      },
+      {
+        "name": "BowAshlands",
+        "assetId": "811f697b71a83ab4483c449e33f65516",
+        "token": "$item_bow_ashlands",
+        "englishName": "Ash Fang",
+        "type": "Bow",
+        "description": "Risen again from the ashes, this bow holds unyielding strength."
+      },
+      {
+        "name": "BowDraugrFang",
+        "assetId": "f11393c8936ff3343a7057e99eca3a20",
+        "token": "$item_bow_draugrfang",
+        "englishName": "Draugr Fang",
+        "type": "Bow",
+        "description": "Dark wood strung with glistening sinew. A vicious thing."
+      },
+      {
+        "name": "BowFineWood",
+        "assetId": "64404a9b9aeb8495da8f72ba8ce744aa",
+        "token": "$item_bow_finewood",
+        "englishName": "Finewood Bow",
+        "type": "Bow",
+        "description": "A simple bow of strong and supple wood."
+      },
+      {
+        "name": "BowHuntsman",
+        "assetId": "970acb6ea7b4b154287b57b80c1dea44",
+        "token": "$item_bow_huntsman",
+        "englishName": "Huntsman Bow",
+        "type": "Bow",
+        "description": "Finely worked and strung. A huntsman's joy."
+      },
+      {
+        "name": "BowSpineSnap",
+        "assetId": "a5ab64bc00ff578458957e0ef037d244",
+        "token": "$item_bow_snipesnap",
+        "englishName": "Spinesnap",
+        "type": "Bow",
+        "description": "Using this bow is backbreaking work but so worth it."
+      },
+      {
+        "name": "CrossbowArbalest",
+        "assetId": "f094bf961f9064e6daaaf4008ff69639",
+        "token": "$item_crossbow_arbalest",
+        "englishName": "Arbalest",
+        "type": "Bow",
+        "description": "A slow but powerful weapon."
+      },
+      {
+        "name": "CrossbowRipper",
+        "assetId": "4e37868b1c496a04f93c1ee12282e3a5",
+        "token": "$item_crossbow_ripper",
+        "englishName": "Ripper",
+        "type": "Bow",
+        "description": "Rips your foes apart, simple as that."
+      }
+    ],
+    "Ammo": [
+      {
+        "name": "ArrowBronze",
+        "assetId": "8beb57971df834c7caabf0be6c847bb8",
+        "token": "$item_arrow_bronze",
+        "englishName": "Bronzehead Arrow",
+        "type": "Ammo",
+        "description": "Sharper than flint. A sleek messenger of death."
+      },
+      {
+        "name": "ArrowCarapace",
+        "assetId": "a64dfa84487f9f84fb07cd1ea8c6ee90",
+        "token": "$item_arrow_carapace",
+        "englishName": "Carapace Arrow",
+        "type": "Ammo",
+        "description": "Heavy and pointy, this one's gonna hurt."
+      },
+      {
+        "name": "ArrowCharred",
+        "assetId": "b169a52c199167b428c5608a687514f4",
+        "token": "$item_arrow_charred",
+        "englishName": "Charred Arrow",
+        "type": "Ammo",
+        "description": "This arrow has been whittled into shape from a charred femur, and it's as hard as any metal."
+      },
+      {
+        "name": "ArrowFire",
+        "assetId": "6e0b443c9754043b193065c60a3a4d2f",
+        "token": "$item_arrow_fire",
+        "englishName": "Fire Arrow",
+        "type": "Ammo",
+        "description": "This arrow burns whatever it pierces."
+      },
+      {
+        "name": "ArrowFlint",
+        "assetId": "069f2df2bd02d42a5a81997c5c8e0c46",
+        "token": "$item_arrow_flint",
+        "englishName": "Flinthead Arrow",
+        "type": "Ammo",
+        "description": "A hide-breaker with a head of flint."
+      },
+      {
+        "name": "ArrowFrost",
+        "assetId": "8b1055a6e2e46234dabdbf32c6d4b78b",
+        "token": "$item_arrow_frost",
+        "englishName": "Frost Arrow",
+        "type": "Ammo",
+        "description": "A shard of piercing ice."
+      },
+      {
+        "name": "ArrowIron",
+        "assetId": "0f77c8bd38729482c8e915807fb94891",
+        "token": "$item_arrow_iron",
+        "englishName": "Ironhead Arrow",
+        "type": "Ammo",
+        "description": "Capped with iron and flighted with dark feathers."
+      },
+      {
+        "name": "ArrowNeedle",
+        "assetId": "d40a210614586407989421b0e1d49dd6",
+        "token": "$item_arrow_needle",
+        "englishName": "Needle Arrow",
+        "type": "Ammo",
+        "description": "The final stitch."
+      },
+      {
+        "name": "ArrowObsidian",
+        "assetId": "23db0c1d3c953da4f865af7f9fca8ed5",
+        "token": "$item_arrow_obsidian",
+        "englishName": "Obsidian Arrow",
+        "type": "Ammo",
+        "description": "A sliver of darkness."
+      },
+      {
+        "name": "ArrowPoison",
+        "assetId": "500ef375ad2694c77ac18b27565a63eb",
+        "token": "$item_arrow_poison",
+        "englishName": "Poison Arrow",
+        "type": "Ammo",
+        "description": "A bitter sting from afar."
+      },
+      {
+        "name": "ArrowSilver",
+        "assetId": "82916d01f3d67374eb95ae6ab022065e",
+        "token": "$item_arrow_silver",
+        "englishName": "Silver Arrow",
+        "type": "Ammo",
+        "description": "A needle to calm restless spirits."
+      },
+      {
+        "name": "ArrowWood",
+        "assetId": "bf013984a97904e9b90ae0df1deba39b",
+        "token": "$item_arrow_wood",
+        "englishName": "Wood Arrow",
+        "type": "Ammo",
+        "description": "An arrow of sharpened wood."
+      },
+      {
+        "name": "BoltBlackmetal",
+        "assetId": "ba50ac49b67505b4e823c7628b9866e6",
+        "token": "$item_bolt_blackmetal",
+        "englishName": "Black Metal Bolt",
+        "type": "Ammo",
+        "description": "A sleek bolt of dark metal."
+      },
+      {
+        "name": "BoltBone",
+        "assetId": "992daff46ffea2046b811a9683a3dcde",
+        "token": "$item_bolt_bone",
+        "englishName": "Bone Bolt",
+        "type": "Ammo",
+        "description": "A crude bolt of yellowed bone."
+      },
+      {
+        "name": "BoltCarapace",
+        "assetId": "2f32cf8f5b65863489192cd0b143c651",
+        "token": "$item_bolt_carapace",
+        "englishName": "Carapace Bolt",
+        "type": "Ammo",
+        "description": "A heavy and solid bolt."
+      },
+      {
+        "name": "BoltCharred",
+        "assetId": "559edadb35a74d04394d8c9b6259ad0e",
+        "token": "$item_bolt_charred",
+        "englishName": "Charred Bolt",
+        "type": "Ammo",
+        "description": "A sturdy bone from a forearm, shaped into a deadly bolt."
+      },
+      {
+        "name": "BoltIron",
+        "assetId": "69e017212c834360f8f60a46f35a895e",
+        "token": "$item_bolt_iron",
+        "englishName": "Iron Bolt",
+        "type": "Ammo",
+        "description": "A sturdy iron missile."
+      }
+    ],
+    "Armor": {
+      "Helmet": [
+        {
+          "name": "HelmetAshlandsMediumHood",
+          "assetId": "b629c3b0aac7ea848b0932c731c8ea72",
+          "token": "$item_helmet_medium_ashlands",
+          "englishName": "Hood of Ask",
+          "type": "Helmet",
+          "description": "As the first man of Midgard, Ask knew it was important to not draw too much attention to himself."
+        },
+        {
+          "name": "HelmetBerserkerHood",
+          "assetId": "40efa98b412a32c40bba51a2f071e7c8",
+          "token": "$item_helmet_berserker",
+          "englishName": "Headdress of the Bear",
+          "type": "Helmet",
+          "description": "Let the primal rage of a mighty bear consume you."
+        },
+        {
+          "name": "HelmetBronze",
+          "assetId": "28ef13913d6c74a7a9ebbc7c1f896498",
+          "token": "$item_helmet_bronze",
+          "englishName": "Bronze Helmet",
+          "type": "Helmet",
+          "description": "This will help to keep your brains inside your skull."
+        },
+        {
+          "name": "HelmetCarapace",
+          "assetId": "b6ca4af0912227b4f8eb8570f7e2c808",
+          "token": "$item_helmet_carapace",
+          "englishName": "Carapace Helmet",
+          "type": "Helmet",
+          "description": "People might say you look like a giant ant. But they will only say it once."
+        },
+        {
+          "name": "HelmetDrake",
+          "assetId": "0f660ef0d8f7a4aca8f0d258929f21c3",
+          "token": "$item_helmet_drake",
+          "englishName": "Drake Helmet",
+          "type": "Helmet",
+          "description": "An elaborate and finely-crafted helm."
+        },
+        {
+          "name": "HelmetDverger",
+          "assetId": "51cad84c5c6dcb743a28061412c85669",
+          "token": "$item_helmet_dverger",
+          "englishName": "Dverger Circlet",
+          "type": "Helmet",
+          "description": "A portable perpetual lightsource for the dungeon explorer."
+        },
+        {
+          "name": "HelmetFenring",
+          "assetId": "a9869bc727d96cc4e9fceb2c097bdf21",
+          "token": "$item_helmet_fenris",
+          "englishName": "Fenris Hood",
+          "type": "Helmet",
+          "description": "The eyes of the beast were wise and knowing, so that it could measure the strength of a warrior in one glance."
+        },
+        {
+          "name": "HelmetIron",
+          "assetId": "79a671c21965643a38e2bc4e4d00b485",
+          "token": "$item_helmet_iron",
+          "englishName": "Iron Helmet",
+          "type": "Helmet",
+          "description": "A helm of polished iron, fit for a hero."
+        },
+        {
+          "name": "HelmetLeather",
+          "assetId": "657cf832e4b2346518de430288729d0d",
+          "token": "$item_helmet_leather",
+          "englishName": "Leather Helmet",
+          "type": "Helmet",
+          "description": "A hood of toughened leather."
+        },
+        {
+          "name": "HelmetPadded",
+          "assetId": "d8a26e1f0602f4543837d15111877dc1",
+          "token": "$item_helmet_padded",
+          "englishName": "Padded Helmet",
+          "type": "Helmet",
+          "description": "A snug fit, finely made."
+        },
+        {
+          "name": "HelmetTrollLeather",
+          "assetId": "ec299b452222da34499118074b13df7d",
+          "token": "$item_helmet_trollleather",
+          "englishName": "Troll Leather Hood",
+          "type": "Helmet",
+          "description": "Trollskin is hard to work but makes exceptional armour."
+        }
+      ],
+      "Chest": [
+        {
+          "name": "ArmorAshlandsMediumChest",
+          "assetId": "a989eeea9eadaa943bca7a89b6913c10",
+          "token": "$item_chest_medium_ashlands",
+          "englishName": "Breastplate of Ask",
+          "type": "Chest",
+          "description": "The first man in Midgard knew how to guard his most vital organs, perhaps with a breastplate just like this one."
+        },
+        {
+          "name": "ArmorBerserkerChest",
+          "assetId": "33a8bf087bdecef459c2749e6f57ca01",
+          "token": "$item_chest_berserker",
+          "englishName": "Patterns of the Bear",
+          "type": "Chest",
+          "description": "If these intricate designs can protect warriors from distant lands, they can surely protect you too."
+        },
+        {
+          "name": "ArmorBronzeChest",
+          "assetId": "7115ea97fbd2d4cc686f26e4f9b13d7d",
+          "token": "$item_chest_bronze",
+          "englishName": "Bronze Plate Tunic",
+          "type": "Chest",
+          "description": "A breastplate of hammered bronze."
+        },
+        {
+          "name": "ArmorCarapaceChest",
+          "assetId": "fc3146dae7922f749a7fd0c5e6301e3e",
+          "token": "$item_chest_carapace",
+          "englishName": "Carapace Breastplate",
+          "type": "Chest",
+          "description": "A breastplate crafted from the burnished carapace of a giant insect."
+        },
+        {
+          "name": "ArmorIronChest",
+          "assetId": "a6abefa79fd5f4d18ac0123c58f9f42a",
+          "token": "$item_chest_iron",
+          "englishName": "Iron Scale Mail",
+          "type": "Chest",
+          "description": "An iron scale mail, this will turn all but the strongest of blows."
+        },
+        {
+          "name": "ArmorLeatherChest",
+          "assetId": "c560c07cd710649d0ba2473bec5dd389",
+          "token": "$item_chest_leather",
+          "englishName": "Leather Tunic",
+          "type": "Chest",
+          "description": "A tunic made from animal hide."
+        },
+        {
+          "name": "ArmorPaddedCuirass",
+          "assetId": "e4154881a4bef442fa2498df23668a40",
+          "token": "$item_chest_pcuirass",
+          "englishName": "Padded Cuirass",
+          "type": "Chest",
+          "description": "Finely wrought and strong enough to turn even the sharpest blades."
+        },
+        {
+          "name": "ArmorRagsChest",
+          "assetId": "20aac000994044116956b2a111cc4311",
+          "token": "$item_chest_rags",
+          "englishName": "Rag Tunic",
+          "type": "Chest",
+          "description": "Better than nothing."
+        },
+        {
+          "name": "ArmorRootChest",
+          "assetId": "36b9c8cb3d69b1d4092efe5455f00648",
+          "token": "$item_chest_root",
+          "englishName": "Root Harnesk",
+          "type": "Chest",
+          "description": "Finely wrought and strong enough to turn even the sharpest blades."
+        },
+        {
+          "name": "ArmorTrollLeatherChest",
+          "assetId": "36b8b5f1b73f64451b674edfc0e0395b",
+          "token": "$item_chest_trollleather",
+          "englishName": "Troll Leather Tunic",
+          "type": "Chest",
+          "description": "Trolls are hard to skin but their leather is tough and warm."
+        },
+        {
+          "name": "ArmorWolfChest",
+          "assetId": "06a9f43e2319d4ff2a68a085a338f636",
+          "token": "$item_chest_wolf",
+          "englishName": "Wolf Hide Chestpiece",
+          "type": "Chest",
+          "description": "A wolfskin jerkin, warm and wild-looking. It protects against the cold."
+        }
+      ],
+      "Legs": [
+        {
+          "name": "ArmorAshlandsMediumlegs",
+          "assetId": "547ac0e99cef41f448c93129bdbd2196",
+          "token": "$item_legs_medium_ashlands",
+          "englishName": "Trousers of Ask",
+          "type": "Legs",
+          "description": "The first man to roam Midgard preferred to tread lightly. Wearers of these trousers could learn a thing or two from him."
+        },
+        {
+          "name": "ArmorBerserkerLegs",
+          "assetId": "565dd6b2a59a0ad4782c98a18c5578c9",
+          "token": "$item_legs_berserker",
+          "englishName": "Loincloth of the Bear",
+          "type": "Legs",
+          "description": "It covers all the important bits, but not much else."
+        },
+        {
+          "name": "ArmorBronzeLegs",
+          "assetId": "3aa67ee8462d949478689f66652b5659",
+          "token": "$item_legs_bronze",
+          "englishName": "Bronze Plate Leggings",
+          "type": "Legs",
+          "description": "Bronze greaves to shield your legs."
+        },
+        {
+          "name": "ArmorCarapaceLegs",
+          "assetId": "62a2c4b1f8e559d4296200a69af62acb",
+          "token": "$item_legs_carapace",
+          "englishName": "Carapace Greaves",
+          "type": "Legs",
+          "description": "Leg guards of a rigid carapace."
+        },
+        {
+          "name": "ArmorIronLegs",
+          "assetId": "340aa8477da1f4277a48346379dd6dd2",
+          "token": "$item_legs_iron",
+          "englishName": "Iron Greaves",
+          "type": "Legs",
+          "description": "Iron greaves to protect your legs."
+        },
+        {
+          "name": "ArmorLeatherLegs",
+          "assetId": "3a4d67590eba143f1940afa963b69f7f",
+          "token": "$item_legs_leather",
+          "englishName": "Leather Trousers",
+          "type": "Legs",
+          "description": "They squeak a little when you walk."
+        },
+        {
+          "name": "ArmorPaddedGreaves",
+          "assetId": "3026a1d4f080c4693a15c16426d6a70e",
+          "token": "$item_legs_pgreaves",
+          "englishName": "Padded Greaves",
+          "type": "Legs",
+          "description": "Expertly crafted leg protection."
+        },
+        {
+          "name": "ArmorRagsLegs",
+          "assetId": "668335ca58aaf49079ea9561535e8bed",
+          "token": "$item_legs_rags",
+          "englishName": "Rag Trousers",
+          "type": "Legs",
+          "description": "A simple remedy for nudity."
+        },
+        {
+          "name": "ArmorRootLegs",
+          "assetId": "d972417c1ae71974095085f2ee994efc",
+          "token": "$item_legs_root",
+          "englishName": "Root Leggings",
+          "type": "Legs",
+          "description": "A light armour oddly woven together by ancient roots and bark."
+        },
+        {
+          "name": "ArmorTrollLeatherLegs",
+          "assetId": "0c826230f0bae4c80a534fc497aebac4",
+          "token": "$item_legs_trollleather",
+          "englishName": "Troll Leather Trousers",
+          "type": "Legs",
+          "description": "Leggings of tough troll hide."
+        },
+        {
+          "name": "ArmorWolfLegs",
+          "assetId": "8b0685cca4c214bbbb81c26a4ec46cb9",
+          "token": "$item_legs_wolf",
+          "englishName": "Wolf Hide Trousers",
+          "type": "Legs",
+          "description": "Shaggy breeches of wolfskin."
+        }
+      ],
+      "Shoulder": [
+        {
+          "name": "CapeAsh",
+          "assetId": "ebfbafddb61bf9444bbec87bca920f4e",
+          "token": "$item_cape_ash",
+          "englishName": "Ashen Cape",
+          "type": "Shoulder",
+          "description": "Thin metal threads are woven into this cape to create an intricate pattern, like a destiny woven by the Norns themselves."
+        },
+        {
+          "name": "CapeDeerHide",
+          "assetId": "39677b7a4296f4510ba3d42e9e6e69a1",
+          "token": "$item_cape_deerhide",
+          "englishName": "Deer Hide Cape",
+          "type": "Shoulder",
+          "description": "Rustic chic."
+        },
+        {
+          "name": "CapeFeather",
+          "assetId": "b0b5882b91c57294bb05b50f3ecd6d81",
+          "token": "$item_cape_feather",
+          "englishName": "Feather Cape",
+          "type": "Shoulder",
+          "description": "Donning this cape makes you feel lighter, almost as if you could fly!"
+        },
+        {
+          "name": "CapeLinen",
+          "assetId": "34cc1b4dfde224cc88a1610d22f68212",
+          "token": "$item_cape_linen",
+          "englishName": "Linen Cape",
+          "type": "Shoulder",
+          "description": "A simple traveler's cape."
+        },
+        {
+          "name": "CapeLox",
+          "assetId": "14a4713ba74d84687948f933010e0805",
+          "token": "$item_cape_lox",
+          "englishName": "Lox Cape",
+          "type": "Shoulder",
+          "description": "A pelt from one of the great beasts, thick and warm."
+        },
+        {
+          "name": "CapeOdin",
+          "assetId": "a8650cb3f36c2f61e9bd01533123cfc2",
+          "token": "$item_cape_odin",
+          "englishName": "Cape of Odin",
+          "type": "Shoulder",
+          "description": "Odin's finest warriors deserve the finest cloth."
+        },
+        {
+          "name": "CapeTrollHide",
+          "assetId": "c140f11f24500f84d8c97166a571bfcf",
+          "token": "$item_cape_trollhide",
+          "englishName": "Troll Hide Cape",
+          "type": "Shoulder",
+          "description": "Trollskin is tough and supple."
+        },
+        {
+          "name": "CapeWolf",
+          "assetId": "0d266be25589049dbb9c0f88c66f9a35",
+          "token": "$item_cape_wolf",
+          "englishName": "Wolf Fur Cape",
+          "type": "Shoulder",
+          "description": "Wolves are natural survivors. This one was just unlucky. Now its pelt will warm you in the snow."
+        }
+      ]
+    },
+    "Tool": [
+      {
+        "name": "Cultivator",
+        "assetId": "b1dab29aa3c2544eeaa48e64ca4db4dc",
+        "token": "$item_cultivator",
+        "englishName": "Cultivator",
+        "type": "Tool",
+        "description": "A farming tool for tilling soil."
+      },
+      {
+        "name": "Hammer",
+        "assetId": "461103794f2a242d2bbc1802f8deae58",
+        "token": "$item_hammer",
+        "englishName": "Hammer",
+        "type": "Tool",
+        "description": "With this to your hand, you can raise high halls and mighty fortifications."
+      },
+      {
+        "name": "FishingRod",
+        "assetId": "6a649b24a1e974b119f9c0c21e5e7d7f",
+        "token": "$item_fishingrod",
+        "englishName": "Fishing Rod",
+        "type": "Tool",
+        "description": "Standard issue dvergr fishing rod."
+      },
+      {
+        "name": "PickaxeAntler",
+        "assetId": "6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e",
+        "token": "$item_pickaxe_antler",
+        "englishName": "Antler Pickaxe",
+        "type": "Tool",
+        "description": "A pickaxe made from a hard antler."
+      },
+      {
+        "name": "PickaxeBronze",
+        "assetId": "5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f",
+        "token": "$item_pickaxe_bronze",
+        "englishName": "Bronze Pickaxe",
+        "type": "Tool",
+        "description": "A durable bronze pickaxe."
+      },
+      {
+        "name": "PickaxeIron",
+        "assetId": "4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a",
+        "token": "$item_pickaxe_iron",
+        "englishName": "Iron Pickaxe",
+        "type": "Tool",
+        "description": "A sturdy iron pickaxe."
+      }
+    ],
+    "Utility": [
+      {
+        "name": "BeltStrength",
+        "assetId": "7690b97064b61444e80b63815cfae915",
+        "token": "$item_beltstrength",
+        "englishName": "Megingjord",
+        "type": "Utility",
+        "description": "Gives the wearer superhuman strength."
+      },
+      {
+        "name": "Demister",
+        "assetId": "aa3ae149fbf3709dfb2fefa4b11ecdf5",
+        "token": "$item_demister",
+        "englishName": "Wisplight",
+        "type": "Utility",
+        "description": "A bound wisp to guide you through the thickest of mists."
+      }
+    ],
+    "Consumable": [
+      {
+        "name": "BarleyWine",
+        "assetId": "eaef91dd432704e439143fae9f798069",
+        "token": "$item_barleywine",
+        "englishName": "Fire Resistance Barley Wine",
+        "type": "Consumable",
+        "description": "Fortifies you against fire."
+      },
+      {
+        "name": "BlackSoup",
+        "assetId": "ed5ebb1d6549d0846a49f710bdac90e1",
+        "token": "$item_blacksoup",
+        "englishName": "Black Soup",
+        "type": "Consumable",
+        "description": "A perfect balance of sweetness and acidity."
+      },
+      {
+        "name": "BloodPudding",
+        "assetId": "7ab61fd34cba3429083bb343cbaa9cd0",
+        "token": "$item_bloodpudding",
+        "englishName": "Blood Pudding",
+        "type": "Consumable",
+        "description": "It's bloody tasty."
+      },
+      {
+        "name": "Blueberries",
+        "assetId": "329ca5791daef48e08f8dc65a15c737a",
+        "token": "$item_blueberries",
+        "englishName": "Blueberries",
+        "type": "Consumable",
+        "description": "Tiny but tasty."
+      },
+      {
+        "name": "Bread",
+        "assetId": "2fee923e08bd4408b81e6a502d2cad16",
+        "token": "$item_bread",
+        "englishName": "Bread",
+        "type": "Consumable",
+        "description": "A tasty loaf of bread."
+      },
+      {
+        "name": "Carrot",
+        "assetId": "f0d153fe9fad5419c8e5171d9e866947",
+        "token": "$item_carrot",
+        "englishName": "Carrot",
+        "type": "Consumable",
+        "description": "An orange treat."
+      },
+      {
+        "name": "CarrotSoup",
+        "assetId": "70c6897b051694e299261a1bf2b79bf6",
+        "token": "$item_carrotsoup",
+        "englishName": "Carrot Soup",
+        "type": "Consumable",
+        "description": "A warm tasty soup made of mostly carrots."
+      },
+      {
+        "name": "Cloudberry",
+        "assetId": "e5976e7a821df4b60ae18f2609a42ba3",
+        "token": "$item_cloudberries",
+        "englishName": "Cloudberries",
+        "type": "Consumable",
+        "description": "The gold of the forest."
+      },
+      {
+        "name": "CookedBjornMeat",
+        "assetId": "7c20744dc11660245b6eef46f60d9363",
+        "token": "$item_bjorn_meat_cooked",
+        "englishName": "Cooked Bear Meat",
+        "type": "Consumable",
+        "description": "Tastes like victory."
+      },
+      {
+        "name": "CookedDeerMeat",
+        "assetId": "ac9b056b94d63ae41b4c50e49ba9d676",
+        "token": "$item_deer_meat_cooked",
+        "englishName": "Cooked Deer Meat",
+        "type": "Consumable",
+        "description": "All that running paid off."
+      },
+      {
+        "name": "CookedLoxMeat",
+        "assetId": "d884967160e5046df8721d20c4456c81",
+        "token": "$item_loxmeat_cooked",
+        "englishName": "Cooked Lox Meat",
+        "type": "Consumable",
+        "description": "A great hunk of tender meat, food fit for Valhalla!"
+      },
+      {
+        "name": "CookedMeat",
+        "assetId": "36aa14c035121460384c93ff52b04f01",
+        "token": "$item_boar_meat_cooked",
+        "englishName": "Cooked Boar Meat",
+        "type": "Consumable",
+        "description": "An earthly taste."
+      },
+      {
+        "name": "CookedWolfMeat",
+        "assetId": "899ba48391c77a140b1db11142d19593",
+        "token": "$item_wolf_meat_cooked",
+        "englishName": "Cooked Wolf Meat",
+        "type": "Consumable",
+        "description": "A wild taste."
+      },
+      {
+        "name": "DeerStew",
+        "assetId": "dcfe096cbabc3c54589b7b1cee57d67a",
+        "token": "$item_deerstew",
+        "englishName": "Deer Stew",
+        "type": "Consumable",
+        "description": "Fall-apart tender."
+      },
+      {
+        "name": "Eyescream",
+        "assetId": "56e913dddff620242a75fd1f9d0305f6",
+        "token": "$item_eyescream",
+        "englishName": "Eyescream",
+        "type": "Consumable",
+        "description": "Crispy cool and creamy."
+      },
+      {
+        "name": "FishAndBread",
+        "assetId": "1ca0dc7c08027624cba437830b37dd2c",
+        "token": "$item_fishandbread",
+        "englishName": "Fish 'n' Bread",
+        "type": "Consumable",
+        "description": "Bounty from both land and sea."
+      },
+      {
+        "name": "FishCooked",
+        "assetId": "db3e079e90c464ee697420d194ce86e1",
+        "token": "$item_fish_cooked",
+        "englishName": "Cooked Fish",
+        "type": "Consumable",
+        "description": "A tasty side of smoked fish."
+      },
+      {
+        "name": "FishWraps",
+        "assetId": "8f6025ebc8a304607b7992ccbb0863cb",
+        "token": "$item_fishwraps",
+        "englishName": "Fish Wraps",
+        "type": "Consumable",
+        "description": "Bread and fish, what more to wish?"
+      },
+      {
+        "name": "HealthPotion",
+        "assetId": "6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a",
+        "token": "$item_healthpotion",
+        "englishName": "Health Potion",
+        "type": "Consumable",
+        "description": "Restores health over time."
+      },
+      {
+        "name": "Honey",
+        "assetId": "5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+        "token": "$item_honey",
+        "englishName": "Honey",
+        "type": "Consumable",
+        "description": "Sweet and sticky honey."
+      },
+      {
+        "name": "MeadFrostResist",
+        "assetId": "5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
+        "token": "$item_meadfrostresist",
+        "englishName": "Frost Resistance Mead",
+        "type": "Consumable",
+        "description": "Protects against the cold."
+      },
+      {
+        "name": "MeadHealthMajor",
+        "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
+        "token": "$item_meadhealthmajor",
+        "englishName": "Major Healing Mead",
+        "type": "Consumable",
+        "description": "Restores a large amount of health over time."
+      },
+      {
+        "name": "MeadTasty",
+        "assetId": "7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f",
+        "token": "$item_meadtasty",
+        "englishName": "Tasty Mead",
+        "type": "Consumable",
+        "description": "It tastes great!"
+      },
+      {
+        "name": "Mushroom",
+        "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
+        "token": "$item_mushroom",
+        "englishName": "Mushroom",
+        "type": "Consumable",
+        "description": "A tasty forest mushroom."
+      },
+      {
+        "name": "Raspberry",
+        "assetId": "1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d",
+        "token": "$item_raspberry",
+        "englishName": "Raspberry",
+        "type": "Consumable",
+        "description": "Sweet and delicious."
+      },
+      {
+        "name": "SerpentStew",
+        "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
+        "token": "$item_serpentstew",
+        "englishName": "Serpent Stew",
+        "type": "Consumable",
+        "description": "A stew made from serpent meat."
+      },
+      {
+        "name": "StaminaPotion",
+        "assetId": "2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c",
+        "token": "$item_staminapotion",
+        "englishName": "Stamina Potion",
+        "type": "Consumable",
+        "description": "Restores stamina over time."
+      },
+      {
+        "name": "TurnipStew",
+        "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
+        "token": "$item_turnipstew",
+        "englishName": "Turnip Stew",
+        "type": "Consumable",
+        "description": "Hearty and warming."
+      }
+    ],
+    "Material": [
+      {
+        "name": "Acorn",
+        "assetId": "44cca2d8936df8c428f5d72af9e35379",
+        "token": "$item_oakseeds",
+        "englishName": "Acorns",
+        "type": "Material",
+        "description": "Plant them to grow an oak tree."
+      },
+      {
+        "name": "Amber",
+        "assetId": "f7b1daf6a623b4e7eaefbc3a58cde866",
+        "token": "$item_amber",
+        "englishName": "Amber",
+        "type": "Material",
+        "description": "<color=yellow>Valuable"
+      },
+      {
+        "name": "AmberPearl",
+        "assetId": "4dc179674a53ef84298539d805f7d690",
+        "token": "$item_amberpearl",
+        "englishName": "Amber Pearl",
+        "type": "Material",
+        "description": "<color=yellow>Valuable"
+      },
+      {
+        "name": "AskHide",
+        "assetId": "f3a80b05846da25418e883bd19ef7ccd",
+        "token": "$item_askhide",
+        "englishName": "Asksvin Hide",
+        "type": "Material",
+        "description": "This sturdy leather is thick, and still warm to the touch."
+      },
+      {
+        "name": "Barley",
+        "assetId": "657fac4f0dba146bbbb62b1ac4c93957",
+        "token": "$item_barley",
+        "englishName": "Barley",
+        "type": "Material",
+        "description": "A bundle of barley."
+      },
+      {
+        "name": "BarleyFlour",
+        "assetId": "8dac1e340a1874ce6acc249c3fcbe3d6",
+        "token": "$item_barleyflour",
+        "englishName": "Barley Flour",
+        "type": "Material",
+        "description": "Great for baking bread."
+      },
+      {
+        "name": "BeechSeeds",
+        "assetId": "d04c1f943742a4d8988c883b061bf668",
+        "token": "$item_beechseeds",
+        "englishName": "Beech Seeds",
+        "type": "Material",
+        "description": "Plant them to grow a beech tree."
+      },
+      {
+        "name": "BirchSeeds",
+        "assetId": "0ac7df79464d86a4480969ba2136bfbe",
+        "token": "$item_birchseeds",
+        "englishName": "Birch Seeds",
+        "type": "Material",
+        "description": "Plant them to grow a birch tree."
+      },
+      {
+        "name": "BlackMetal",
+        "assetId": "4deafc8c9808b40bf96b4c14cfbe99b5",
+        "token": "$item_blackmetal",
+        "englishName": "Black Metal",
+        "type": "Material",
+        "description": "A heavy bar of dark metal."
+      },
+      {
+        "name": "BlackMetalScrap",
+        "assetId": "3138a938a4c5746658618ef4749a84d2",
+        "token": "$item_blackmetalscrap",
+        "englishName": "Black Metal Scrap",
+        "type": "Material",
+        "description": "A twisted hunk of dark metal."
+      },
+      {
+        "name": "Bloodbag",
+        "assetId": "bb5b960fe2536af4c8e22eb71e1079ca",
+        "token": "$item_bloodbag",
+        "englishName": "Bloodbag",
+        "type": "Material",
+        "description": "The contents of a leech. Ick!"
+      },
+      {
+        "name": "BoneFragments",
+        "assetId": "f2e435d4bef9a4c77bcc33e1081b226f",
+        "token": "$item_bonefragments",
+        "englishName": "Bone Fragments",
+        "type": "Material",
+        "description": "A pile of shattered bones."
+      },
+      {
+        "name": "Bronze",
+        "assetId": "629fd54829a1d446d8905f0b0eac9982",
+        "token": "$item_bronze",
+        "englishName": "Bronze",
+        "type": "Material",
+        "description": "A strong alloy of copper and tin."
+      },
+      {
+        "name": "BronzeNails",
+        "assetId": "c939491e12ed84c48b8085edc1559a75",
+        "token": "$item_bronzenails",
+        "englishName": "Bronze Nails",
+        "type": "Material",
+        "description": "Used in construction of ships and furniture."
+      },
+      {
+        "name": "Carapace",
+        "assetId": "76a31a5097c2f583b9833c44b6817b89",
+        "token": "$item_carapace",
+        "englishName": "Carapace",
+        "type": "Material",
+        "description": "A plate of chitinous armour."
+      },
+      {
+        "name": "CarrotSeeds",
+        "assetId": "faa8a6334d1fa4632accbd46705df2f9",
+        "token": "$item_carrotseeds",
+        "englishName": "Carrot Seeds",
+        "type": "Material",
+        "description": "Plant these if you like carrots..."
+      },
+      {
+        "name": "Chain",
+        "assetId": "464ae55df98814e1c8cf5e61ef13589c",
+        "token": "$item_chain",
+        "englishName": "Chain",
+        "type": "Material",
+        "description": "A link of iron chain."
+      },
+      {
+        "name": "Chitin",
+        "assetId": "5b647cde73f714bd1a46fa69ba5a52a1",
+        "token": "$item_chitin",
+        "englishName": "Chitin",
+        "type": "Material",
+        "description": "A shard of crustacean shell."
+      },
+      {
+        "name": "Coal",
+        "assetId": "46fa21129465749248a5a9f11a47bd0c",
+        "token": "$item_coal",
+        "englishName": "Coal",
+        "type": "Material",
+        "description": "A lump of coal."
+      },
+      {
+        "name": "Coins",
+        "assetId": "38e3fc6e8552046979e13b7967e862e4",
+        "token": "$item_coins",
+        "englishName": "Coins",
+        "type": "Material",
+        "description": "<color=yellow>Valuable"
+      },
+      {
+        "name": "Copper",
+        "assetId": "a780bd461780849a7afccc525f927e2d",
+        "token": "$item_copper",
+        "englishName": "Copper",
+        "type": "Material",
+        "description": "A bar of pure copper ready to be worked."
+      },
+      {
+        "name": "CopperOre",
+        "assetId": "9bf8377529ad449bdb1de851e9e29dbf",
+        "token": "$item_copperore",
+        "englishName": "Copper Ore",
+        "type": "Material",
+        "description": "Unrefined copper. Needs to be refined in a smelter."
+      },
+      {
+        "name": "Crystal",
+        "assetId": "60f705fc57ed0445f85dc8d5373e3733",
+        "token": "$item_crystal",
+        "englishName": "Crystal",
+        "type": "Material",
+        "description": "A shard of crystal from deep within the earth."
+      },
+      {
+        "name": "DeerHide",
+        "assetId": "e8781dc863b7c41a79681458607070c7",
+        "token": "$item_deerhide",
+        "englishName": "Deer Hide",
+        "type": "Material",
+        "description": "A cleaned hide from a deer."
+      },
+      {
+        "name": "DragonTear",
+        "assetId": "04c891adfbe3841a2bb528e1af63d626",
+        "token": "$item_dragontear",
+        "englishName": "Dragon Tear",
+        "type": "Material",
+        "description": "The last frozen tear of a dragon, pulsating with mysterious energy."
+      },
+      {
+        "name": "ElderBark",
+        "assetId": "cc0a7835a9cb7451bbe7c069a6cfe712",
+        "token": "$item_elderbark",
+        "englishName": "Ancient Bark",
+        "type": "Material",
+        "description": "An ancient and sturdy material."
+      },
+      {
+        "name": "Entrails",
+        "assetId": "98b417d6832371f4e8678518bc449829",
+        "token": "$item_entrails",
+        "englishName": "Entrails",
+        "type": "Material",
+        "description": "A slimy length of something's insides."
+      },
+      {
+        "name": "Feathers",
+        "assetId": "bebb7e6da0544448a9f24e2df73a9aa6",
+        "token": "$item_feathers",
+        "englishName": "Feathers",
+        "type": "Material",
+        "description": "A small pile of feathers."
+      },
+      {
+        "name": "FineWood",
+        "assetId": "cdeae9814f3c8444da7fec7f99379fb6",
+        "token": "$item_finewood",
+        "englishName": "Finewood",
+        "type": "Material",
+        "description": "High quality wood for fine carpentry."
+      },
+      {
+        "name": "FirCone",
+        "assetId": "5b42e2dd2a7b5476e9c5d5e08d46d00c",
+        "token": "$item_fircone",
+        "englishName": "Fir Cone",
+        "type": "Material",
+        "description": "Plant it to grow a fir tree."
+      },
+      {
+        "name": "Flax",
+        "assetId": "8f6761a3308984cf89fcbf65dc3d206c",
+        "token": "$item_flax",
+        "englishName": "Flax",
+        "type": "Material",
+        "description": "Unspun fibers from a flax plant."
+      },
+      {
+        "name": "Flint",
+        "assetId": "5915af50ed981464a93e3ac7e89f25a8",
+        "token": "$item_flint",
+        "englishName": "Flint",
+        "type": "Material",
+        "description": "Can be shaped into sharp blades."
+      },
+      {
+        "name": "FreezeGland",
+        "assetId": "0aab05dfb872994408ca4f1bed05351a",
+        "token": "$item_freezegland",
+        "englishName": "Freeze Gland",
+        "type": "Material",
+        "description": "This mysterious organ keeps a perfect temperature."
+      },
+      {
+        "name": "GreydwarfEye",
+        "assetId": "afeb72fbcd0a14c8989e204ad0ddd331",
+        "token": "$item_greydwarfeye",
+        "englishName": "Greydwarf Eye",
+        "type": "Material",
+        "description": "The milky eyeball of a Greydwarf."
+      },
+      {
+        "name": "Guck",
+        "assetId": "6100467d04fb24fa987be76420fb63fb",
+        "token": "$item_guck",
+        "englishName": "Guck",
+        "type": "Material",
+        "description": "It smells like fermented fish."
+      },
+      {
+        "name": "HardAntler",
+        "assetId": "387f1ff8c82f149af84e133e431d41a3",
+        "token": "$item_hardantler",
+        "englishName": "Hard Antler",
+        "type": "Material",
+        "description": "A piece of very hard antlers."
+      },
+      {
+        "name": "Iron",
+        "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
+        "token": "$item_iron",
+        "englishName": "Iron",
+        "type": "Material",
+        "description": "A bar of iron."
+      },
+      {
+        "name": "IronNails",
+        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d",
+        "token": "$item_ironnails",
+        "englishName": "Iron Nails",
+        "type": "Material",
+        "description": "Used in construction."
+      },
+      {
+        "name": "IronOre",
+        "assetId": "2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e",
+        "token": "$item_ironore",
+        "englishName": "Iron Ore",
+        "type": "Material",
+        "description": "Raw iron ore."
+      },
+      {
+        "name": "LeatherScraps",
+        "assetId": "0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a",
+        "token": "$item_leatherscraps",
+        "englishName": "Leather Scraps",
+        "type": "Material",
+        "description": "A pile of leather scraps."
+      },
+      {
+        "name": "LinenThread",
+        "assetId": "9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b",
+        "token": "$item_linenthread",
+        "englishName": "Linen Thread",
+        "type": "Material",
+        "description": "Strong thread made from flax."
+      },
+      {
+        "name": "Obsidian",
+        "assetId": "8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c",
+        "token": "$item_obsidian",
+        "englishName": "Obsidian",
+        "type": "Material",
+        "description": "A volcanic glass."
+      },
+      {
+        "name": "Resin",
+        "assetId": "9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f",
+        "token": "$item_resin",
+        "englishName": "Resin",
+        "type": "Material",
+        "description": "Sticky tree resin."
+      },
+      {
+        "name": "RoundLog",
+        "assetId": "8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a",
+        "token": "$item_roundlog",
+        "englishName": "Round Log",
+        "type": "Material",
+        "description": "Fine wood from a core tree."
+      },
+      {
+        "name": "Ruby",
+        "assetId": "7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b",
+        "token": "$item_ruby",
+        "englishName": "Ruby",
+        "type": "Material",
+        "description": "A precious red gem."
+      },
+      {
+        "name": "Silver",
+        "assetId": "6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c",
+        "token": "$item_silver",
+        "englishName": "Silver",
+        "type": "Material",
+        "description": "A bar of silver."
+      },
+      {
+        "name": "SilverOre",
+        "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
+        "token": "$item_silverore",
+        "englishName": "Silver Ore",
+        "type": "Material",
+        "description": "Raw silver ore."
+      },
+      {
+        "name": "Stone",
+        "assetId": "1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d",
+        "token": "$item_stone",
+        "englishName": "Stone",
+        "type": "Material",
+        "description": "A plain old stone."
+      },
+      {
+        "name": "SurtlingCore",
+        "assetId": "0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e",
+        "token": "$item_surtlingcore",
+        "englishName": "Surtling Core",
+        "type": "Material",
+        "description": "It hums with a mysterious energy."
+      },
+      {
+        "name": "Thistle",
+        "assetId": "5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
+        "token": "$item_thistle",
+        "englishName": "Thistle",
+        "type": "Material",
+        "description": "A prickly thistle."
+      },
+      {
+        "name": "Tin",
+        "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
+        "token": "$item_tin",
+        "englishName": "Tin",
+        "type": "Material",
+        "description": "A bar of tin."
+      },
+      {
+        "name": "TinOre",
+        "assetId": "3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f",
+        "token": "$item_tinore",
+        "englishName": "Tin Ore",
+        "type": "Material",
+        "description": "Raw tin ore."
+      },
+      {
+        "name": "TrollHide",
+        "assetId": "2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a",
+        "token": "$item_trollhide",
+        "englishName": "Troll Hide",
+        "type": "Material",
+        "description": "A tough troll hide."
+      },
+      {
+        "name": "WolfFang",
+        "assetId": "0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a",
+        "token": "$item_wolffang",
+        "englishName": "Wolf Fang",
+        "type": "Material",
+        "description": "A sharp canine tooth."
+      },
+      {
+        "name": "WolfPelt",
+        "assetId": "7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d",
+        "token": "$item_wolfpelt",
+        "englishName": "Wolf Pelt",
+        "type": "Material",
+        "description": "A thick fur pelt."
+      },
+      {
+        "name": "Wood",
+        "assetId": "6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e",
+        "token": "$item_wood",
+        "englishName": "Wood",
+        "type": "Material",
+        "description": "Good, sturdy wood."
+      },
+      {
+        "name": "YmirRemains",
+        "assetId": "5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f",
+        "token": "$item_ymirremains",
+        "englishName": "Ymir Flesh",
+        "type": "Material",
+        "description": "The earthly remains of the giant Ymir."
+      }
+    ],
+    "Trophy": [
+      {
+        "name": "TrophyAbomination",
+        "assetId": "1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b",
+        "token": "$item_trophy_abomination",
+        "englishName": "Abomination Trophy",
+        "type": "Trophy",
+        "description": "It still twitches occasionally."
+      },
+      {
+        "name": "TrophyBlob",
+        "assetId": "0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c",
+        "token": "$item_trophy_blob",
+        "englishName": "Blob Trophy",
+        "type": "Trophy",
+        "description": "A green, slimy blob."
+      },
+      {
+        "name": "TrophyBoar",
+        "assetId": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d",
+        "token": "$item_trophy_boar",
+        "englishName": "Boar Trophy",
+        "type": "Trophy",
+        "description": "A boar's head."
+      },
+      {
+        "name": "TrophyBonemass",
+        "assetId": "8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e",
+        "token": "$item_trophy_bonemass",
+        "englishName": "Bonemass Trophy",
+        "type": "Trophy",
+        "description": "It drips with a foul substance."
+      },
+      {
+        "name": "TrophyDeer",
+        "assetId": "7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f",
+        "token": "$item_trophy_deer",
+        "englishName": "Deer Trophy",
+        "type": "Trophy",
+        "description": "A deer's head."
+      },
+      {
+        "name": "TrophyDraugr",
+        "assetId": "5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+        "token": "$item_trophy_draugr",
+        "englishName": "Draugr Trophy",
+        "type": "Trophy",
+        "description": "The desiccated head of a Draugr."
+      },
+      {
+        "name": "TrophyEikthyr",
+        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d",
+        "token": "$item_trophy_eikthyr",
+        "englishName": "Eikthyr Trophy",
+        "type": "Trophy",
+        "description": "The head of Eikthyr, still buzzing with power."
+      },
+      {
+        "name": "TrophyGreydwarf",
+        "assetId": "4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a",
+        "token": "$item_trophy_greydwarf",
+        "englishName": "Greydwarf Trophy",
+        "type": "Trophy",
+        "description": "A gnarled, mossy head."
+      },
+      {
+        "name": "TrophyNeck",
+        "assetId": "8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a",
+        "token": "$item_trophy_neck",
+        "englishName": "Neck Trophy",
+        "type": "Trophy",
+        "description": "A slimy, lizard-like head."
+      },
+      {
+        "name": "TrophySkeleton",
+        "assetId": "5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
+        "token": "$item_trophy_skeleton",
+        "englishName": "Skeleton Trophy",
+        "type": "Trophy",
+        "description": "The grinning skull of a skeleton."
+      },
+      {
+        "name": "TrophySurtling",
+        "assetId": "3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f",
+        "token": "$item_trophy_surtling",
+        "englishName": "Surtling Trophy",
+        "type": "Trophy",
+        "description": "Composed of glowing embers, it still feels warm."
+      },
+      {
+        "name": "TrophyTheElder",
+        "assetId": "2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a",
+        "token": "$item_trophy_theelder",
+        "englishName": "The Elder Trophy",
+        "type": "Trophy",
+        "description": "It whispers of ancient things."
+      },
+      {
+        "name": "TrophyWolf",
+        "assetId": "8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e",
+        "token": "$item_trophy_wolf",
+        "englishName": "Wolf Trophy",
+        "type": "Trophy",
+        "description": "A wolf's head, frozen in a snarl."
+      }
+    ],
+    "Misc": [
+      {
+        "name": "AncientSeed",
+        "assetId": "30790457c236149db9bffcf03654dca4",
+        "token": "$item_ancientseed",
+        "englishName": "Ancient Seed",
+        "type": "Misc",
+        "description": "Held against your ear, you hear tiny whisperings within..."
+      },
+      {
+        "name": "AsksvinEgg",
+        "assetId": "7583849c02f0d0d4a8b118878dbb94a9",
+        "token": "$item_asksvin_egg",
+        "englishName": "Asksvin Egg",
+        "type": "Misc",
+        "description": "Hard as rock, yet you can sense the presence of something inside. This should be kept warm."
+      },
+      {
+        "name": "BarberKit",
+        "assetId": "96340c9f77996c14d9898368a678204a",
+        "token": "$item_barberkit",
+        "englishName": "Barber Kit",
+        "type": "Misc",
+        "description": "A kit fit for the finest of barbers."
+      },
+      {
+        "name": "Bell",
+        "assetId": "fcb233ef1c1a23d45a6cc6498c3c29d1",
+        "token": "$item_bell",
+        "englishName": "Bell",
+        "type": "Misc",
+        "description": "For whom does the bell toll?"
+      },
+      {
+        "name": "CryptKey",
+        "assetId": "fd7ff622246ebc94eb92385515cc06d3",
+        "token": "$item_cryptkey",
+        "englishName": "Swamp Key",
+        "type": "Misc",
+        "description": "Partly covered in caked mud, it smells foetid."
+      },
+      {
+        "name": "DragonEgg",
+        "assetId": "230a3689154484e76bdd8a758d731b1c",
+        "token": "$item_dragonegg",
+        "englishName": "Dragon Egg",
+        "type": "Misc",
+        "description": "Far heavier than it looks, with a faint humming sound from within."
+      },
+      {
+        "name": "GoblinTotem",
+        "assetId": "9ab9cabcb5c234f858fa8ea5a57ed4f8",
+        "token": "$item_goblintotem",
+        "englishName": "Fuling Totem",
+        "type": "Misc",
+        "description": "Channels the ancient power of Yagluth."
+      },
+      {
+        "name": "Vegvisir",
+        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d",
+        "token": "$item_vegvisir",
+        "englishName": "Vegvisir",
+        "type": "Misc",
+        "description": "Shows the location of a boss."
+      },
+      {
+        "name": "Wisp",
+        "assetId": "2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e",
+        "token": "$item_wisp",
+        "englishName": "Wisp",
+        "type": "Misc",
+        "description": "A captured wisp."
+      }
+    ],
+    "Customization": [
+      {
+        "name": "Beard1",
+        "assetId": "1f1bf61dd5ebb4b9b8462976b3a5bf99",
+        "token": "$customization_beard01",
+        "englishName": "Majestic",
+        "type": "Customization",
+        "description": "NULL"
+      },
+      {
+        "name": "Beard2",
+        "assetId": "de45bcd4d3d7f40dd93a0da5eb013eb8",
+        "token": "$customization_beard02",
+        "englishName": "Twin Braids",
+        "type": "Customization",
+        "description": "NULL"
+      },
+      {
+        "name": "Hair1",
+        "assetId": "bdb4b2446f035468c9c3a2d415dfed89",
+        "token": "$customization_hair01",
+        "englishName": "Windswept",
+        "type": "Customization",
+        "description": "NULL"
+      },
+      {
+        "name": "Hair2",
+        "assetId": "fe7ce3a247f6148288cae38254874d1d",
+        "token": "$customization_hair02",
+        "englishName": "High Ponytail",
+        "type": "Customization",
+        "description": "NULL"
+      }
+    ]
+  }
+}

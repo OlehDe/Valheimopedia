@@ -87,14 +87,13 @@
 
     input {
       width: 100%;
-      padding: 0.75rem 1rem; /* верх/низ 12px, ліво/право 16px */
+      padding: 0.75rem 1rem;
       border: 1px solid #d1d5db;
       border-radius: var(--radius-sm);
       font-size: 1rem;
-      box-sizing: border-box; /* Додає padding всередину width */
+      box-sizing: border-box;
       transition: border-color 0.2s ease;
     }
-
 
     input:focus {
       outline: none;
@@ -118,6 +117,20 @@
     button:hover {
       background-color: var(--primary-hover);
       transform: translateY(-1px);
+    }
+
+    /* === Додано для повідомлень про помилки === */
+    .error-messages {
+      background-color: #fee2e2;
+      color: #b91c1c;
+      border: 1px solid #fca5a5;
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .error-messages p {
+      margin: 0.25rem 0;
     }
 
     @media (max-width: 600px) {
@@ -152,6 +165,21 @@
 
 <main>
   <h2>Реєстрація</h2>
+
+  <!-- 🔴 Блок для відображення помилок -->
+  {% if form.errors %}
+  <div class="error-messages">
+    {% for field in form %}
+      {% for error in field.errors %}
+        <p><strong>{{ field.label }}:</strong> {{ error }}</p>
+      {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+      <p>{{ error }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

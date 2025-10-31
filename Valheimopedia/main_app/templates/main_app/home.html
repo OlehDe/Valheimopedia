@@ -299,10 +299,11 @@
 <header>
   <h1>Valheimopedia</h1>
   <div class="auth-buttons">
-    <a href="/account">Акаунт</a>
-    {% if not user.is_authenticated %}
-    <a href="/login/">Увійти</a>
-    <a href="/register/">Реєстрація</a>
+    {% if user.is_authenticated %}
+      <a href="/account">Акаунт</a>
+    {% else %}
+      <a href="/login">Увійти</a>
+      <a href="/register">Зареєструватися</a>
     {% endif %}
   </div>
 </header>
@@ -310,6 +311,7 @@
 <nav>
   <a href="/">Головна</a>
   <a href="/all_news/">Усі новини</a>
+  <a href="/all_items/">Усі предмети</a>
 
   {% if user.is_authenticated %}
     <div class="add-button">

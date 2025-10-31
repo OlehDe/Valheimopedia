@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Усі предмети - Valheimopedia</title>
+
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --secondary-color: #3b82f6;
+      --accent-color: #10b981;
+      --accent-hover: #0d9f6e;
+      --text-color: #1f2937;
+      --text-light: #6b7280;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .auth-buttons a {
+      background-color: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #f0f4ff;
+      transform: translateY(-1px);
+    }
+
+    nav {
+      background-color: var(--primary-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    nav a {
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .add-button a {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .add-button a:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .add-button a::before {
+      content: "+";
+      font-size: 1.2rem;
+    }
+
+    .disabled-button {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ========================================
+    🔽 НОВІ СТИЛІ для сторінки предметів 🔽
+    ========================================
+    */
+
+    /* Контейнер для кнопок-фільтрів */
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      padding: 1.5rem;
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2rem;
+    }
+
+    .category-filters button {
+      background-color: #e0e7ff; /* Світло-синій фон */
+      color: var(--primary-color);
+      border: 2px solid transparent;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .category-filters button:hover {
+      background-color: #d0d7f7;
+    }
+
+    /* Стиль для активної кнопки */
+    .category-filters button.active {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-hover);
+    }
+
+    /* Сітка для карток предметів */
+    .items-grid {
+      display: grid;
+      /* Адаптивна сітка: 1 колонка на мобільних, 4 на десктопах */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Стиль для картки одного предмета */
+    .item-card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .item-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .item-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .item-card p {
+      margin: 0.25rem 0;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* Виділяємо ID та Токен */
+    .item-card p strong {
+      color: var(--text-color);
+      min-width: 60px;
+      display: inline-block;
+    }
+
+    .item-card .item-id,
+    .item-card .item-token {
+      font-family: 'Courier New', Courier, monospace;
+      color: var(--accent-color);
+      font-weight: 600;
+      background-color: #f0fdf4;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    /* Повідомлення про помилку або порожній список */
+    .items-grid .empty-message {
+        grid-column: 1 / -1; /* Займає всю ширину сітки */
+        text-align: center;
+        padding: 3rem;
+        background-color: var(--card-bg);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        color: var(--text-light);
+        font-size: 1.1rem;
+    }
+
+    /* ========================================
+       🔼 КІНЕЦЬ НОВИХ СТИЛІВ 🔼
+       ========================================
+    */
+
+    /* Старі стилі для новин (можна видалити, якщо ця сторінка ТІЛЬКИ для предметів) */
+    .news {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .news:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    /* ... (решта старих стилів) ... */
+
+    @media (max-width: 768px) {
+      header { padding: 1rem; }
+      .auth-buttons {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+      }
+      main { padding: 1rem; }
+
+      .category-filters {
+        padding: 1rem;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>Valheimopedia</h1>
+  <div class="auth-buttons">
+    {% if user.is_authenticated %}
+      <a href="/account">Акаунт</a>
+    {% else %}
+      <a href="/login">Увійти</a>
+      <a href="/register">Зареєструватися</a>
+    {% endif %}
+  </div>
+</header>
+
+<nav>
+  <a href="/">Головна</a>
+  <a href="/all_news/">Усі новини</a>
+  <a href="/all_items/">Усі предмети</a>
+
+  {% if user.is_authenticated %}
+    <div class="add-button">
+      <a href="/add_news/">Додати новину</a>
+    </div>
+  {% else %}
+    <div class="add-button disabled-button">
+      <a href="#">Додати новину</a>
+    </div>
+  {% endif %}
+</nav>
+
+<main>
+
+  <h1 style="text-align: center; color: var(--primary-color);">Усі предмети</h1>
+
+  <div class="category-filters" id="category-filters">
+    <button type="button" class="active" data-category="Всі">Всі</button>
+    <button type="button" data-category="Обладунки">Обладунки</button>
+    <button type="button" data-category="Нагрудні обладунки">Нагрудні обладунки</button>
+    <button type="button" data-category="Болти">Болти</button>
+    <button type="button" data-category="Стріли">Стріли</button>
+    <button type="button" data-category="Луки">Луки</button>
+    <button type="button" data-category="Дворучна зброя">Дворучна зброя</button>
+    <button type="button" data-category="Одноручна зброя">Одноручна зброя</button>
+    </div>
+
+  {% if error %}
+    <div class="items-grid">
+      <p class="empty-message">{{ error }}</p>
+    </div>
+  {% else %}
+    <div class="items-grid" id="items-grid">
+      </div>
+  {% endif %}
+
+</main>
+{{ items|json_script:"items-data" }}
+
+
+<script>
+  // Чекаємо, поки сторінка завантажиться
+  document.addEventListener('DOMContentLoaded', () => {
+
+    let itemsData; // Тут будемо зберігати всі предмети
+
+    // Отримуємо елементи зі сторінки
+    const itemsGrid = document.getElementById('items-grid');
+    const filterContainer = document.getElementById('category-filters');
+    const buttons = filterContainer.querySelectorAll('button');
+
+    // 1. Отримуємо дані з Django
+    try {
+      // Парсимо JSON, який ми "запекли" у сторінку
+      itemsData = JSON.parse(document.getElementById('items-data').textContent);
+
+      // Перевіряємо, чи це об'єкт (словник)
+      if (typeof itemsData !== 'object' || Array.isArray(itemsData) || itemsData === null) {
+          throw new Error("Дані мають бути об'єктом (словником) категорій.");
+      }
+
+    } catch (e) {
+      console.error("Не вдалося завантажити або розпарсити дані предметів:", e);
+      itemsGrid.innerHTML = `<p class="empty-message">Помилка завантаження даних предметів. Перевірте консоль.</p>`;
+      return; // Зупиняємо виконання, якщо даних немає
+    }
+
+    // 2. Функція для відображення предметів
+    function renderItems(categoryKey) {
+      // Очищуємо сітку
+      itemsGrid.innerHTML = '';
+
+      let itemsToShow = [];
+      let itemsFound = false;
+
+      if (categoryKey === 'Всі') {
+        // Якщо "Всі", збираємо предмети з усіх категорій
+        for (const key in itemsData) {
+          // Додаємо всі предмети з кожної категорії до загального списку
+          if (Array.isArray(itemsData[key])) {
+             itemsToShow = itemsToShow.concat(itemsData[key]);
+          }
+        }
+      } else {
+        // Інакше беремо предмети з конкретної категорії
+        if (itemsData[categoryKey] && Array.isArray(itemsData[categoryKey])) {
+          itemsToShow = itemsData[categoryKey];
+        }
+      }
+
+      // 3. Створюємо HTML для кожної картки
+      if (itemsToShow.length > 0) {
+        itemsFound = true;
+        itemsToShow.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'item-card';
+
+          // Використовуємо поля з вашого JSON
+          // (Припускаємо, що у вас є 'Name', 'Piece', 'Type', 'Token')
+          card.innerHTML = `
+            <h3>${item.Name || 'Без назви'}</h3>
+            <p><strong>Тип:</strong> ${item.Type || 'N/A'}</p>
+            <p><strong>ID:</strong> <span class="item-id">${item.Piece || 'N/A'}</span></p>
+            <p><strong>Токен:</strong> <span class="item-token">${item.Token || 'N/A'}</span></p>
+          `;
+          itemsGrid.appendChild(card);
+        });
+      }
+
+      // Якщо жодного предмета не знайдено
+      if (!itemsFound) {
+        itemsGrid.innerHTML = `<p class="empty-message">У цій категорії предмети відсутні.</p>`;
+      }
+    }
+
+    // 4. Обробник кліків на кнопки
+    filterContainer.addEventListener('click', (event) => {
+      // Перевіряємо, що клікнули саме на кнопку
+      if (event.target.tagName === 'BUTTON') {
+
+        // Знімаємо клас 'active' з усіх кнопок
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // Додаємо клас 'active' тій, на яку клікнули
+        const clickedButton = event.target;
+        clickedButton.classList.add('active');
+
+        // Отримуємо назву категорії з data-атрибута
+        const category = clickedButton.dataset.category;
+
+        // Викликаємо функцію відображення
+        renderItems(category);
+      }
+    });
+
+    // 5. Завантажуємо всі предмети при першому відкритті сторінки
+    renderItems('Всі');
+
+  });
+</script>
+
+</body>
+</html>
