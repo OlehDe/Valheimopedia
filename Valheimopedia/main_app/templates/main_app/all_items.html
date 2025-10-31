@@ -329,100 +329,110 @@
   {% endif %}
 
 </main>
+
 {{ items|json_script:"items-data" }}
 
 
 <script>
-  // Чекаємо, поки сторінка завантажиться
   document.addEventListener('DOMContentLoaded', () => {
 
-    let itemsData; // Тут будемо зберігати всі предмети
+    let allCategoriesData; // Тут будемо зберігати об'єкт з категоріями
 
-    // Отримуємо елементи зі сторінки
     const itemsGrid = document.getElementById('items-grid');
     const filterContainer = document.getElementById('category-filters');
     const buttons = filterContainer.querySelectorAll('button');
 
     // 1. Отримуємо дані з Django
     try {
-      // Парсимо JSON, який ми "запекли" у сторінку
-      itemsData = JSON.parse(document.getElementById('items-data').textContent);
+      // Парсимо дані
+      const rawData = JSON.parse(document.getElementById('items-data').textContent);
 
-      // Перевіряємо, чи це об'єкт (словник)
-      if (typeof itemsData !== 'object' || Array.isArray(itemsData) || itemsData === null) {
-          throw new Error("Дані мають бути об'єктом (словником) категорій.");
+      // (ВИПРАВЛЕННЯ №1)
+      // Отримуємо дані з вкладеного ключа "items"
+      if (rawData && typeof rawData.items === 'object' && rawData.items !== null) {
+        allCategoriesData = rawData.items;
+      } else {
+        // Якщо ключ "items" не знайдено, спробуємо використати 'rawData'
+        console.warn("Ключ 'items' не знайдено в JSON. Спробуємо використати дані верхнього рівня.");
+        allCategoriesData = rawData;
+      }
+
+      // Перевіряємо, чи це об'єкт
+      if (typeof allCategoriesData !== 'object' || Array.isArray(allCategoriesData)) {
+           throw new Error("Очікувана структура даних - об'єкт (словник) з категоріями.");
       }
 
     } catch (e) {
       console.error("Не вдалося завантажити або розпарсити дані предметів:", e);
-      itemsGrid.innerHTML = `<p class="empty-message">Помилка завантаження даних предметів. Перевірте консоль.</p>`;
-      return; // Зупиняємо виконання, якщо даних немає
+      if(itemsGrid) {
+          itemsGrid.innerHTML = `<p class="empty-message">Помилка завантаження даних предметів. Перевірте консоль.</p>`;
+      }
+      return;
     }
 
     // 2. Функція для відображення предметів
     function renderItems(categoryKey) {
-      // Очищуємо сітку
       itemsGrid.innerHTML = '';
-
       let itemsToShow = [];
       let itemsFound = false;
 
+      // Ми очікуємо, що 'allCategoriesData' - це об'єкт:
+      // { "Обладунки": [...], "Стріли": [...] }
+
       if (categoryKey === 'Всі') {
-        // Якщо "Всі", збираємо предмети з усіх категорій
-        for (const key in itemsData) {
-          // Додаємо всі предмети з кожної категорії до загального списку
-          if (Array.isArray(itemsData[key])) {
-             itemsToShow = itemsToShow.concat(itemsData[key]);
+        for (const key in allCategoriesData) {
+          if (Array.isArray(allCategoriesData[key])) {
+            itemsToShow = itemsToShow.concat(allCategoriesData[key]);
           }
         }
       } else {
-        // Інакше беремо предмети з конкретної категорії
-        if (itemsData[categoryKey] && Array.isArray(itemsData[categoryKey])) {
-          itemsToShow = itemsData[categoryKey];
+        // Шукаємо точний ключ
+        if (allCategoriesData[categoryKey] && Array.isArray(allCategoriesData[categoryKey])) {
+          itemsToShow = allCategoriesData[categoryKey];
         }
       }
 
       // 3. Створюємо HTML для кожної картки
       if (itemsToShow.length > 0) {
         itemsFound = true;
+
+        // 🔽 (ВИПРАВЛЕННЯ №3 - ВІДОБРАЖЕННЯ ТІЛЬКИ name, englishName, type) 🔽
         itemsToShow.forEach(item => {
           const card = document.createElement('div');
           card.className = 'item-card';
 
-          // Використовуємо поля з вашого JSON
-          // (Припускаємо, що у вас є 'Name', 'Piece', 'Type', 'Token')
-          card.innerHTML = `
-            <h3>${item.Name || 'Без назви'}</h3>
-            <p><strong>Тип:</strong> ${item.Type || 'N/A'}</p>
-            <p><strong>ID:</strong> <span class="item-id">${item.Piece || 'N/A'}</span></p>
-            <p><strong>Токен:</strong> <span class="item-token">${item.Token || 'N/A'}</span></p>
-          `;
+          // Отримуємо дані
+          const englishName = item.englishName || item[' englishName'];
+          const internalName = item.name || 'N/A';
+          const itemType = item.type || 'N/A';
+
+          let cardHTML = `<h3>${internalName}</h3>`; // 'name' як заголовок
+
+          // Додаємо 'englishName', якщо воно існує і відрізняється
+          if (englishName && englishName.trim() !== internalName) {
+            cardHTML += `<p><strong>Англ. назва:</strong> ${englishName.trim()}</p>`;
+          }
+
+          // Додаємо 'type'
+          cardHTML += `<p><strong>Тип:</strong> ${itemType}</p>`;
+
+          card.innerHTML = cardHTML;
           itemsGrid.appendChild(card);
         });
       }
 
-      // Якщо жодного предмета не знайдено
       if (!itemsFound) {
-        itemsGrid.innerHTML = `<p class="empty-message">У цій категорії предмети відсутні.</p>`;
+        itemsGrid.innerHTML = `<p class="empty-message">У категорії "${categoryKey}" предмети відсутні.</p>`;
       }
     }
 
-    // 4. Обробник кліків на кнопки
+    // 4. Обробник кліків на кнопки (без змін)
     filterContainer.addEventListener('click', (event) => {
-      // Перевіряємо, що клікнули саме на кнопку
       if (event.target.tagName === 'BUTTON') {
-
-        // Знімаємо клас 'active' з усіх кнопок
         buttons.forEach(btn => btn.classList.remove('active'));
-
-        // Додаємо клас 'active' тій, на яку клікнули
         const clickedButton = event.target;
         clickedButton.classList.add('active');
-
-        // Отримуємо назву категорії з data-атрибута
         const category = clickedButton.dataset.category;
-
-        // Викликаємо функцію відображення
         renderItems(category);
       }
     });
