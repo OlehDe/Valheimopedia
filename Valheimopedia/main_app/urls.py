@@ -15,4 +15,6 @@ urlpatterns = [
     path('comment/<int:pk>/delete/', views.comment_delete, name='comment_delete'),
 
     path('all_items/', all_items_view, name='all_items'),
+    path('item/<str:item_asset_id>/', views.item_detail_view, name='item_detail'),
+    path('set/<str:set_slug>/', views.set_detail_view, name='set_detail'),
 ]

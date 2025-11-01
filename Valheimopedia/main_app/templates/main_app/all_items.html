@@ -172,6 +172,11 @@
       gap: 1.5rem;
     }
 
+    /* Прибирає підкреслення з карток-посилань */
+    .item-card-link {
+        text-decoration: none;
+    }
+
     /* Стиль для картки одного предмета */
     .item-card {
       background-color: var(--card-bg);
@@ -311,6 +316,7 @@
   <div class="category-filters" id="category-filters">
     <button type="button" class="active" data-category="Всі">Всі</button>
     <button type="button" data-category="Обладунки">Обладунки</button>
+    <button type="button" data-category="Комплект обладунків">Комплект обладунків</button>
     <button type="button" data-category="Нагрудні обладунки">Нагрудні обладунки</button>
     <button type="button" data-category="Болти">Болти</button>
     <button type="button" data-category="Стріли">Стріли</button>
@@ -342,87 +348,135 @@
     const filterContainer = document.getElementById('category-filters');
     const buttons = filterContainer.querySelectorAll('button');
 
-    // 1. Отримуємо дані з Django
+    // 1. Отримуємо дані з Django (без змін)
     try {
-      // Парсимо дані
       const rawData = JSON.parse(document.getElementById('items-data').textContent);
-
-      // (ВИПРАВЛЕННЯ №1)
-      // Отримуємо дані з вкладеного ключа "items"
       if (rawData && typeof rawData.items === 'object' && rawData.items !== null) {
         allCategoriesData = rawData.items;
       } else {
-        // Якщо ключ "items" не знайдено, спробуємо використати 'rawData'
-        console.warn("Ключ 'items' не знайдено в JSON. Спробуємо використати дані верхнього рівня.");
+        console.warn("Ключ 'items' не знайдено в JSON.");
         allCategoriesData = rawData;
       }
-
-      // Перевіряємо, чи це об'єкт
       if (typeof allCategoriesData !== 'object' || Array.isArray(allCategoriesData)) {
-           throw new Error("Очікувана структура даних - об'єкт (словник) з категоріями.");
+           throw new Error("Структура даних - не об'єкт (словник).");
       }
-
     } catch (e) {
-      console.error("Не вдалося завантажити або розпарсити дані предметів:", e);
+      console.error("Не вдалося завантажити дані предметів:", e);
       if(itemsGrid) {
-          itemsGrid.innerHTML = `<p class="empty-message">Помилка завантаження даних предметів. Перевірте консоль.</p>`;
+          itemsGrid.innerHTML = `<p class="empty-message">Помилка завантаження даних.</p>`;
       }
       return;
     }
 
-    // 2. Функція для відображення предметів
-    function renderItems(categoryKey) {
-      itemsGrid.innerHTML = '';
-      let itemsToShow = [];
-      let itemsFound = false;
-
-      // Ми очікуємо, що 'allCategoriesData' - це об'єкт:
-      // { "Обладунки": [...], "Стріли": [...] }
-
-      if (categoryKey === 'Всі') {
-        for (const key in allCategoriesData) {
-          if (Array.isArray(allCategoriesData[key])) {
-            itemsToShow = itemsToShow.concat(allCategoriesData[key]);
-          }
+    // 🔽 --- НОВА ФУНКЦІЯ: Рекурсивно знаходить всі ПРЕДМЕТИ --- 🔽
+    function getAllItemsFrom(data) {
+        if (Array.isArray(data)) {
+            return data.flatMap(item => getAllItemsFrom(item));
         }
-      } else {
-        // Шукаємо точний ключ
-        if (allCategoriesData[categoryKey] && Array.isArray(allCategoriesData[categoryKey])) {
-          itemsToShow = allCategoriesData[categoryKey];
+        if (typeof data === 'object' && data !== null) {
+            if (data.assetId && data.name) {
+                return [data]; // Це предмет
+            }
+            // Це об'єкт-категорія, шукаємо глибше
+            return Object.values(data).flatMap(value => getAllItemsFrom(value));
         }
-      }
+        return [];
+    }
 
-      // 3. Створюємо HTML для кожної картки
-      if (itemsToShow.length > 0) {
-        itemsFound = true;
+    // 🔽 --- НОВА ФУНКЦІЯ: Створює картки для ПРЕДМЕТІВ (як раніше) --- 🔽
+    function renderItemCards(itemsArray) {
+        itemsGrid.innerHTML = '';
+        if (!itemsArray || itemsArray.length === 0) {
+            itemsGrid.innerHTML = `<p class="empty-message">Предмети відсутні.</p>`;
+            return;
+        }
 
-        // 🔽 (ВИПРАВЛЕННЯ №3 - ВІДОБРАЖЕННЯ ТІЛЬКИ name, englishName, type) 🔽
-        itemsToShow.forEach(item => {
-          const card = document.createElement('div');
-          card.className = 'item-card';
+        itemsArray.forEach(item => {
+          if (item && item.assetId) {
+            const card = document.createElement('a');
+            card.href = `/item/${item.assetId}/`;
+            card.className = 'item-card item-card-link';
 
-          // Отримуємо дані
-          const englishName = item.englishName || item[' englishName'];
-          const internalName = item.name || 'N/A';
-          const itemType = item.type || 'N/A';
+            const englishName = item.englishName || item[' englishName'];
+            const internalName = item.name || 'N/A';
+            const itemType = item.type || 'N/A';
 
-          let cardHTML = `<h3>${internalName}</h3>`; // 'name' як заголовок
+            let cardHTML = `<h3>${internalName}</h3>`;
+            if (englishName && englishName.trim() !== internalName) {
+              cardHTML += `<p><strong>Англ. назва:</strong> ${englishName.trim()}</p>`;
+            }
+            cardHTML += `<p><strong>Тип:</strong> ${itemType}</p>`;
 
-          // Додаємо 'englishName', якщо воно існує і відрізняється
-          if (englishName && englishName.trim() !== internalName) {
-            cardHTML += `<p><strong>Англ. назва:</strong> ${englishName.trim()}</p>`;
+            card.innerHTML = cardHTML;
+            itemsGrid.appendChild(card);
           }
-
-          // Додаємо 'type'
-          cardHTML += `<p><strong>Тип:</strong> ${itemType}</p>`;
-
-          card.innerHTML = cardHTML;
-          itemsGrid.appendChild(card);
         });
-      }
+    }
 
-      if (!itemsFound) {
-        itemsGrid.innerHTML = `<p class="empty-message">У категорії "${categoryKey}" предмети відсутні.</p>`;
+    // 🔽 --- НОВА ФУНКЦІЯ: Створює картки для КОМПЛЕКТІВ --- 🔽
+    function renderSetCards(setsArray) {
+        itemsGrid.innerHTML = '';
+        if (!setsArray || setsArray.length === 0) {
+            itemsGrid.innerHTML = `<p class="empty-message">Комплекти відсутні.</p>`;
+            return;
+        }
+
+        setsArray.forEach(set => {
+            if (set && set.setSlug) {
+                const card = document.createElement('a');
+                // Посилання веде на нову сторінку /set/...
+                card.href = `/set/${set.setSlug}/`;
+                card.className = 'item-card item-card-link';
+
+                let cardHTML = `<h3>${set.setName || 'N/A'}</h3>`;
+
+                // Додаємо зображення комплекту (якщо є)
+                if (set.set_image_url) {
+                    cardHTML += `
+                        <div style="background-color: #f9f9f9; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #eee;">
+                            <img src="${set.set_image_url}" alt="${set.setName}" style="width: 100%; height: 180px; object-fit: contain; padding: 10px;">
+                        </div>
+                    `;
+                }
+                cardHTML += `<p><strong>Категорія:</strong> ${set.setCategory || 'N/A'}</p>`;
+
+                card.innerHTML = cardHTML;
+                itemsGrid.appendChild(card);
+            }
+        });
+    }
+
+
+    // 2. Функція для відображення (РОЗПОДІЛЬНИК)
+    function renderContent(categoryKey) {
+
+      // 🔽 --- ГОЛОВНА ЛОГІЧНА ЗМІНА --- 🔽
+      if (categoryKey === 'Комплект обладунків') {
+          // *** ЯКЩО ЦЕ КОМПЛЕКТИ, викликаємо renderSetCards ***
+          const setsData = allCategoriesData[categoryKey] || [];
+          renderSetCards(setsData);
+
+      } else {
+          // *** ДЛЯ ВСІХ ІНШИХ, викликаємо renderItemCards (як раніше) ***
+          let itemsToShow = [];
+
+          if (categoryKey === 'Всі') {
+            itemsToShow = getAllItemsFrom(allCategoriesData);
+
+          } else if (categoryKey === 'Обладунки') {
+            const armorObject = allCategoriesData['Обладунки'];
+            itemsToShow = getAllItemsFrom(armorObject);
+
+          } else if (categoryKey === 'Нагрудні обладунки') {
+            const chestData = allCategoriesData['Обладунки'] ? allCategoriesData['Обладунки']['Chest'] : undefined;
+            itemsToShow = getAllItemsFrom(chestData);
+
+          } else {
+            const categoryData = allCategoriesData[categoryKey];
+            itemsToShow = getAllItemsFrom(categoryData);
+          }
+
+          renderItemCards(itemsToShow);
       }
     }
 
@@ -433,15 +487,14 @@
         const clickedButton = event.target;
         clickedButton.classList.add('active');
         const category = clickedButton.dataset.category;
-        renderItems(category);
+        renderContent(category); // Викликаємо нову функцію-розподільник
       }
     });
 
     // 5. Завантажуємо всі предмети при першому відкритті сторінки
-    renderItems('Всі');
+    renderContent('Всі');
 
   });
 </script>
-
 </body>
 </html>
