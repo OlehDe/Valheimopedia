@@ -507,74 +507,45 @@
           "image_url": "https://static.wikia.nocookie.net/valheim/images/8/82/%D0%9F%D0%BB%D0%B0%D1%89_%D0%B7_%D0%BE%D0%BB%D0%B5%D0%BD%D1%8F%D1%87%D0%BE%D1%97_%D1%88%D0%BA%D1%96%D1%80%D0%B8.png/revision/latest"
         }
       ]
+    },
+
+    {
+      "setName": "Броня зі шкіри троля",
+      "setCategory": "Чорнолісся",
+      "setSlug": "bronya_z_trolia",
+      "set_image_url": "https://surl.li/nfttnp",
+      "items": [
+        {
+          "name": "Каптур з тролячої шкіри",
+          "assetId": "ec299b452222da34499118074b13df7d",
+          "token": "$item_helmet_trollleather",
+          "englishName": "Troll Leather Hood",
+          "type": "Шолом",
+          "description": "Шкіра троля важко піддається обробці, але з неї виходить винятковий обладунок."
+        }
+      ]
     }
-  ],
+    ],
 
     "Обладунки": {
       "Шолом": [
-        {
-          "name": "Шолом Аска",
-          "assetId": "b629c3b0aac7ea848b0932c731c8ea72",
-          "token": "$item_helmet_medium_ashlands",
-          "englishName": "Hood of Ask",
-          "type": "Шолом",
-          "description": "Як перший чоловік Мідгарду, Аск знав, що не варто привертати до себе надто багато уваги."
-        },
-        {
-          "name": "Головний убір Ведмедя",
-          "assetId": "40efa98b412a32c40bba51a2f071e7c8",
-          "token": "$item_helmet_berserker",
-          "englishName": "Headdress of the Bear",
-          "type": "Шолом",
-          "description": "Нехай первісна лють могутнього ведмедя поглине тебе."
-        },
-        {
-          "name": "Бронзовий шолом",
-          "assetId": "28ef13913d6c74a7a9ebbc7c1f896498",
-          "token": "$item_helmet_bronze",
-          "englishName": "Bronze Helmet",
-          "type": "Шолом",
-          "description": "Це допоможе зберегти твої мізки всередині черепа."
-        },
-        {
-          "name": "Панцирний шолом",
-          "assetId": "b6ca4af0912227b4f8eb8570f7e2c808",
-          "token": "$item_helmet_carapace",
-          "englishName": "Carapace Helmet",
-          "type": "Шолом",
-          "description": "Люди можуть сказати, що ти схожий на гігантського мурашку. Але вони скажуть це лише один раз."
-        },
-        {
-          "name": "Шолом дракона",
-          "assetId": "0f660ef0d8f7a4aca8f0d258929f21c3",
-          "token": "$item_helmet_drake",
-          "englishName": "Drake Helmet",
-          "type": "Шолом",
-          "description": "Вишуканий і ретельно виготовлений шолом."
-        },
         {
           "name": "Шолом Дверґа",
           "assetId": "51cad84c5c6dcb743a28061412c85669",
           "token": "$item_helmet_dverger",
           "englishName": "Dverger Circlet",
           "type": "Шолом",
-          "description": "Портативне вічне джерело світла для дослідників підземель."
-        },
-        {
-          "name": "Шолом Фенріра",
-          "assetId": "a9869bc727d96cc4e9fceb2c097bdf21",
-          "token": "$item_helmet_fenris",
-          "englishName": "Fenris Hood",
-          "type": "Шолом",
-          "description": "Очі звіра були мудрими й проникливими, щоб за один погляд оцінити силу воїна."
-        },
-        {
-          "name": "Залізний шолом",
-          "assetId": "79a671c21965643a38e2bc4e4d00b485",
-          "token": "$item_helmet_iron",
-          "englishName": "Iron Helmet",
-          "type": "Шолом",
-          "description": "Шолом із полірованого заліза, гідний героя."
+          "description": "Портативне вічне джерело світла для дослідників підземель.",
+          "image_url": "",
+          "stats": {
+            "armor": "2/-/-/-",
+            "weight": "1",
+            "special": "Cone shaped light source",
+            "crafting": {
+              "materials": "Coins: 620",
+              "station": "Haldor"
+            }
+          }
         },
         {
           "name": "Шкіряний шолом",
@@ -582,7 +553,143 @@
           "token": "$item_helmet_leather",
           "englishName": "Leather Helmet",
           "type": "Шолом",
-          "description": "Каптур із міцної шкіри."
+          "description": "Каптур із міцної шкіри.",
+          "image_url": "https://surl.li/liwmyk",
+          "stats": {
+            "armor": "2/4/6/8",
+            "weight": "1",
+            "special": "",
+            "crafting": {
+              "materials": "Deer hide: 6/6/12/18, Bone fragments: -/5/10/15",
+              "station": "Workbench: 2/3/4/5"
+            }
+          }
+        },
+        {
+          "name": "Каптур з тролячої шкіри",
+          "assetId": "ec299b452222da34499118074b13df7d",
+          "token": "$item_helmet_trollleather",
+          "englishName": "Troll Leather Hood",
+          "type": "Шолом",
+          "description": "Шкіра троля важко піддається обробці, але з неї виходить винятковий обладунок.",
+          "image_url": "",
+          "stats": {
+            "armor": "6/8/10/12",
+            "weight": "1",
+            "special": "Troll Set bonus: +15 Sneak (Skill)",
+            "crafting": {
+              "materials": "Troll hide: 5/2/4/6, Bone fragments: 3/1/2/3",
+              "station": "Workbench: 2/3/4/5"
+            }
+          }
+        },
+        {
+          "name": "Головний убір Ведмедя",
+          "assetId": "40efa98b412a32c40bba51a2f071e7c8",
+          "token": "$item_helmet_berserker",
+          "englishName": "Headdress of the Bear",
+          "type": "Шолом",
+          "description": "Нехай первісна лють могутнього ведмедя поглине тебе.",
+          "image_url": "",
+          "stats": {
+            "armor": "7/9/11/13",
+            "weight": "1",
+            "special": "Berserk: +30% Health regen, +15% Stamina regen, Slightly weak (+25%) vs Blunt, Slash and Pierce, +10% Slash and Chop",
+            "crafting": {
+              "materials": "Bear hide: 5/2/4/6, Bear trophy: 1/-/-/-",
+              "station": "Workbench: 2/3/4/5"
+            }
+          }
+        },
+        {
+          "name": "Бронзовий шолом",
+          "assetId": "28ef13913d6c74a7a9ebbc7c1f896498",
+          "token": "$item_helmet_bronze",
+          "englishName": "Bronze Helmet",
+          "type": "Шолом",
+          "description": "Це допоможе зберегти твої мізки всередині черепа.",
+          "image_url": "",
+          "stats": {
+            "armor": "8/10/12/14",
+            "weight": "3",
+            "special": "",
+            "crafting": {
+              "materials": "Bronze: 5/3/6/9, Deer hide: 2/-/-/-",
+              "station": "Forge: 1/2/3/4"
+            }
+          }
+        },
+        {
+          "name": "Маска з кореню",
+          "assetId": "28ef13913d6c74a7a9ebbc7c1f896498",
+          "token": "$item_root_mask",
+          "englishName": "Root mask",
+          "type": "Шолом",
+          "description": "Маска з великого кореню",
+          "image_url": "",
+          "stats": {
+            "armor": "8/10/12/14",
+            "weight": "3",
+            "special": "Resistant(0.5x) VS Poison, Weak(1.5x) VS Fire, Root Set bonus: +15 Bows (Skill)",
+            "crafting": {
+              "materials": "Root: 10/2/4/6, Ancient bark: 10/5/10/15, Leather scraps: 4/-/-/-",
+              "station": "Workbench: 2/3/4/5"
+            }
+          }
+        },
+        {
+          "name": "Залізний шолом",
+          "assetId": "79a671c21965643a38e2bc4e4d00b485",
+          "token": "$item_helmet_iron",
+          "englishName": "Iron Helmet",
+          "type": "Шолом",
+          "description": "Шолом із полірованого заліза, гідний героя.",
+          "image_url": "",
+          "stats": {
+            "armor": "14/16/18/20",
+            "weight": "3",
+            "special": "",
+            "crafting": {
+              "materials": "Iron: 20/5/10/15, Deer hide: 2/-/-/-",
+              "station": "Forge: 1/2/3/4"
+            }
+          }
+        },
+        {
+          "name": "Каптур Фенріра",
+          "assetId": "a9869bc727d96cc4e9fceb2c097bdf21",
+          "token": "$item_helmet_fenris",
+          "englishName": "Fenris Hood",
+          "type": "Шолом",
+          "description": "Очі звіра були мудрими й проникливими, щоб за один погляд оцінити силу воїна.",
+          "image_url": "",
+          "stats": {
+            "armor": "10/12/14/16",
+            "weight": "1",
+            "special": "+3% Movement speed, Fenris Set bonus: +15 Fists (Skill), Resistant(0.5x) VS Fire",
+            "crafting": {
+              "materials": "Fenris hair: 20/5/10/15, Wolf pelt: 2/4/8/12, Cultist trophy: 1/-/-/-",
+              "station": "Workbench: 2/3/4/5"
+            }
+          }
+        },
+        {
+          "name": "Шолом дракона",
+          "assetId": "0f660ef0d8f7a4aca8f0d258929f21c3",
+          "token": "$item_helmet_drake",
+          "englishName": "Drake Helmet",
+          "type": "Шолом",
+          "description": "Вишуканий і ретельно виготовлений шолом.",
+          "image_url": "",
+          "stats": {
+            "armor": "20/22/24/26",
+            "weight": "3",
+            "special": "",
+            "crafting": {
+              "materials": "Silver: 20/5/10/15, Wolf pelt: 2/-/-/-, Drake trophy: 2/-/-/-",
+              "station": "Forge: 1/2/3/4"
+            }
+          }
         },
         {
           "name": "Підбитий шолом",
@@ -590,15 +697,53 @@
           "token": "$item_helmet_padded",
           "englishName": "Padded Helmet",
           "type": "Шолом",
-          "description": "Щільно прилягає, добре зроблений."
+          "description": "Щільно прилягає, добре зроблений.",
+          "image_url": "",
+          "stats": {
+            "armor": "26/28/30/32",
+            "weight": "3",
+            "special": "",
+            "crafting": {
+              "materials": "Iron: 10/5/10/15, Linen thread: 15/10/20/30",
+              "station": "Forge: 1/2/3/4"
+            }
+          }
         },
         {
-          "name": "Шолом з тролячої шкіри",
-          "assetId": "ec299b452222da34499118074b13df7d",
-          "token": "$item_helmet_trollleather",
-          "englishName": "Troll Leather Hood",
+          "name": "Панцирний шолом",
+          "assetId": "b6ca4af0912227b4f8eb8570f7e2c808",
+          "token": "$item_helmet_carapace",
+          "englishName": "Carapace Helmet",
           "type": "Шолом",
-          "description": "Шкіра троля важко піддається обробці, але з неї виходить винятковий обладунок."
+          "description": "Люди можуть сказати, що ти схожий на гігантського мурашку. Але вони скажуть це лише один раз.",
+          "image_url": "",
+          "stats": {
+            "armor": "32/34/36/38",
+            "weight": "3",
+            "special": "",
+            "crafting": {
+              "materials": "Carapace: 16/8/16/24, Scale hide: 3/1/2/3, Mandible: 2/-/-/-, Refined eitr: 4/2/4/6",
+              "station": "Black forge: 1/2/3/4"
+            }
+          }
+        },
+        {
+          "name": "Шолом Аска",
+          "assetId": "b629c3b0aac7ea848b0932c731c8ea72",
+          "token": "$item_helmet_medium_ashlands",
+          "englishName": "Hood of Ask",
+          "type": "Шолом",
+          "description": "Як перший чоловік Мідгарду, Аск знав, що не варто привертати до себе надто багато уваги.",
+          "image_url": "",
+          "stats": {
+            "armor": "28/30/32/34",
+            "weight": "1",
+            "special": "Ask's Endurance (full set)",
+            "crafting": {
+              "materials": "Linen thread: 15/10/20/30, Lox pelt: 4/2/4/6, Asksvin hide: 10/5/10/15",
+              "station": "Black forge: 3/4/5/6"
+            }
+          }
         }
       ],
       "Нагрудні обладунки": [
