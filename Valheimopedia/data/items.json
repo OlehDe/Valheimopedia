@@ -524,6 +524,141 @@
           "description": "Шкіра троля важко піддається обробці, але з неї виходить винятковий обладунок."
         }
       ]
+    },
+    {
+      "setName": "Броня зі шкіри ведмедя",
+      "setCategory": "Чорнолісся",
+      "setSlug": "bronya_z_vedmedia",
+      "set_image_url": "https://surl.li/elskwg",
+      "items": [
+
+      ]
+
+    },
+    {
+      "setName": "Бронзова броня",
+      "setCategory": "Чорнолісся",
+      "setSlug": "bronya_z_bronzu",
+      "set_image_url": "https://surl.li/gtljow",
+      "items": [
+
+      ]
+
+    },
+
+    {
+      "setName": "Броня із кореня",
+      "setCategory": "Болото",
+      "setSlug": "bronya_z_korenia",
+      "set_image_url": "https://surl.li/netsuv",
+      "items": [
+
+      ]
+
+    },
+    {
+      "setName": "Залізна броня",
+      "setCategory": "Болото",
+      "setSlug": "bronya_z_zaliza",
+      "set_image_url": "https://surl.li/gppitr",
+      "items": [
+
+      ]
+
+    },
+
+    {
+      "setName": "Броня з Фенріра",
+      "setCategory": "Гора",
+      "setSlug": "bronya_z_fenrirs",
+      "set_image_url": "https://surl.li/yzrfhs",
+      "items": [
+
+      ]
+
+    },
+    {
+      "setName": "Броня зі шкіри вовка",
+      "setCategory": "Гора",
+      "setSlug": "bronya_z_vovka",
+      "set_image_url": "https://surl.lu/dawaby",
+      "items": [
+
+      ]
+
+    },
+
+    {
+      "setName": "Броня з кісток",
+      "setCategory": "Рівнини",
+      "setSlug": "bronya_z_kistok",
+      "set_image_url": "https://surl.li/mwjtvy",
+      "items": [
+
+      ]
+
+    },
+    {
+      "setName": "М'яка броня",
+      "setCategory": "Рівнини",
+      "setSlug": "bronya_z_Padded",
+      "set_image_url": "https://surl.li/uzdscg",
+      "items": [
+
+      ]
+
+    },
+
+    {
+      "setName": "Броня з Ейтру",
+      "setCategory": "Туманні землі",
+      "setSlug": "bronya_z_Eitr",
+      "set_image_url": "https://surl.li/zgugil",
+      "items": [
+
+      ]
+
+    },
+    {
+      "setName": "Панцирний обладунок",
+      "setCategory": "Туманні землі",
+      "setSlug": "bronya_z_panceru",
+      "set_image_url": "https://surl.li/ipzonu",
+      "items": [
+
+      ]
+
+    },
+
+    {
+      "setName": "Броня Аска",
+      "setCategory": "Ад",
+      "setSlug": "bronya_z_Ask",
+      "set_image_url": "https://surl.lt/pabppo",
+      "items": [
+
+      ]
+
+    },
+    {
+      "setName": "Броня Ембла",
+      "setCategory": "Ад",
+      "setSlug": "bronya_z_Embla",
+      "set_image_url": "https://surl.li/opntox",
+      "items": [
+
+      ]
+
+    },
+    {
+      "setName": "Броня з полум'яного металу",
+      "setCategory": "Ад",
+      "setSlug": "bronya_z_Flametal ",
+      "set_image_url": "https://surl.li/mluztt",
+      "items": [
+
+      ]
+
     }
     ],
 
