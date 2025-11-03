@@ -841,7 +841,7 @@
 
     {
       "setName": "Броня Аска",
-      "setCategory": "Ад",
+      "setCategory": "Пекло",
       "setSlug": "bronya_z_Ask",
       "set_image_url": "https://surl.lt/pabppo",
       "items": [
@@ -851,7 +851,7 @@
     },
     {
       "setName": "Броня Ембла",
-      "setCategory": "Ад",
+      "setCategory": "Пекло",
       "setSlug": "bronya_z_Embla",
       "set_image_url": "https://surl.li/opntox",
       "items": [
@@ -861,7 +861,7 @@
     },
     {
       "setName": "Броня з полум'яного металу",
-      "setCategory": "Ад",
+      "setCategory": "Пекло",
       "setSlug": "bronya_z_Flametal ",
       "set_image_url": "https://surl.li/mluztt",
       "items": [

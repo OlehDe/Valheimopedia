@@ -323,12 +323,9 @@
                 <div class="general-stats">
                     {% if set.Weight %}<p><strong>Вага:</strong> {{ set.Weight }}</p>{% endif %}
 
-                    {% for key, value in set.items %}
-                        {% if key == "Movement speed" %}
-                            <p><strong>Швидкість руху:</strong> {{ value }}</p>
-                        {% endif %}
-                    {% endfor %}
-
+                    {% if set.MovementSpeed %}
+                        <p><strong>Швидкість руху:</strong> {{ set.MovementSpeed }}</p>
+                    {% endif %}
                     {% if set.Effects %}<p><strong>Ефекти:</strong> {{ set.Effects|linebreaksbr }}</p>{% endif %}
                 </div>
 
