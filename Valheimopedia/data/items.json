@@ -441,6 +441,17 @@
     {
       "setName": "Ганчіркова броня",
       "setCategory": "Левади",
+      "Weight": "4",
+      "level1": {
+        "Armor set": "2",
+        "Workbench level": "1",
+        "Durability": "200"
+      },
+      "level2": {
+        "Armor set": "4",
+        "Workbench level": "2",
+        "Durability": "250"
+      },
       "setSlug": "ganchirkova-bronya",
       "set_image_url": "https://surl.li/ppmgon",
       "items": [
@@ -467,6 +478,27 @@
     {
       "setName": "Шкіряна броня",
       "setCategory": "Левади",
+      "Weight": "15",
+      "level1": {
+        "Armor set": "7",
+        "Workbench level": "2",
+        "Durability": "400"
+      },
+      "level2": {
+        "Armor set": "14",
+        "Workbench level": "3",
+        "Durability": "500"
+      },
+      "level3": {
+        "Armor set": "21",
+        "Workbench level": "4",
+        "Durability": "600"
+      },
+      "level4": {
+        "Armor set": "28",
+        "Workbench level": "5",
+        "Durability": "700"
+      },
       "setSlug": "shkiryana-bronya",
       "set_image_url": "https://surl.lu/wpeejj",
       "items": [
@@ -512,6 +544,32 @@
     {
       "setName": "Броня зі шкіри троля",
       "setCategory": "Чорнолісся",
+      "Effects": "Підкрадатися +15",
+      "Weight": "15",
+      "level1": {
+        "Armor set": "19",
+        "Workbench level": "2",
+        "Durability": "500",
+        "Cape Durability": "500"
+      },
+      "level2": {
+        "Armor set": "26",
+        "Workbench level": "3",
+        "Durability": "700",
+        "Cape Durability": "550"
+      },
+      "level3": {
+        "Armor set": "33",
+        "Workbench level": "4",
+        "Durability": "900",
+        "Cape Durability": "600"
+      },
+      "level4": {
+        "Armor set": "40",
+        "Workbench level": "5",
+        "Durability": "1100",
+        "Cape Durability": "650"
+      },
       "setSlug": "bronya_z_trolia",
       "set_image_url": "https://surl.li/nfttnp",
       "items": [
@@ -528,6 +586,28 @@
     {
       "setName": "Броня зі шкіри ведмедя",
       "setCategory": "Чорнолісся",
+      "Effects": "Берсерк :\n+30% регенерації здоров'я\n+15% регенерації витривалості\nТрохи слабкий (+25%) проти Бланта, Слеша та Пірса\n+10% до різу\n+10% рубання",
+      "Weight": "11",
+      "level1": {
+        "Armor set": "21",
+        "Workbench level": "2",
+        "Durability": "1000"
+      },
+      "level2": {
+        "Armor set": "27",
+        "Workbench level": "3",
+        "Durability": "1200"
+      },
+      "level3": {
+        "Armor set": "33",
+        "Workbench level": "4",
+        "Durability": "1400"
+      },
+      "level4": {
+        "Armor set": "39",
+        "Workbench level": "5",
+        "Durability": "1600"
+      },
       "setSlug": "bronya_z_vedmedia",
       "set_image_url": "https://surl.li/elskwg",
       "items": [
@@ -538,6 +618,28 @@
     {
       "setName": "Бронзова броня",
       "setCategory": "Чорнолісся",
+      "Movement speed": "Швидкість руху -10%",
+      "Weight": "23",
+      "level1": {
+        "Armor set": "24",
+        "Forge level": "1",
+        "Durability": "1000"
+      },
+      "level2": {
+        "Armor set": "30",
+        "Forge level": "2",
+        "Durability": "1200"
+      },
+      "level3": {
+        "Armor set": "36",
+        "Forge level": "3",
+        "Durability": "1400"
+      },
+      "level4": {
+        "Armor set": "42",
+        "Forge level": "4",
+        "Durability": "1600"
+      },
       "setSlug": "bronya_z_bronzu",
       "set_image_url": "https://surl.li/gtljow",
       "items": [
@@ -549,6 +651,29 @@
     {
       "setName": "Броня із кореня",
       "setCategory": "Болото",
+      "Movement speed": "Швидкість руху -4%",
+      "Effects": "Луки +15 *\nСтійкість до отрути та Пронизлива дія\nСлабкість до вогню",
+      "Weight": "23",
+      "level1": {
+        "Armor set": "24",
+        "Workbench level": "2",
+        "Durability": "800"
+      },
+      "level2": {
+        "Armor set": "30",
+        "Workbench level": "3",
+        "Durability": "900"
+      },
+      "level3": {
+        "Armor set": "36",
+        "Workbench level": "4",
+        "Durability": "1000"
+      },
+      "level4": {
+        "Armor set": "42",
+        "Workbench level": "5",
+        "Durability": "1100"
+      },
       "setSlug": "bronya_z_korenia",
       "set_image_url": "https://surl.li/netsuv",
       "items": [
@@ -559,6 +684,32 @@
     {
       "setName": "Залізна броня",
       "setCategory": "Болото",
+      "Movement_speed": "Швидкість руху -10%",
+      "Weight": "33",
+      "level1": {
+        "Armor set": "42",
+        "Forge level crafting": "2",
+        "Forge level repairing": "2",
+        "Durability": "1000"
+      },
+      "level2": {
+        "Armor set": "48",
+        "Forge level crafting": "3",
+        "Forge level repairing": "2",
+        "Durability": "1200"
+      },
+      "level3": {
+        "Armor set": "54",
+        "Forge level crafting": "4",
+        "Forge level repairing": "2",
+        "Durability": "1400"
+      },
+      "level4": {
+        "Armor set": "60",
+        "Forge level crafting": "5",
+        "Forge level repairing": "2",
+        "Durability": "1600"
+      },
       "setSlug": "bronya_z_zaliza",
       "set_image_url": "https://surl.li/gppitr",
       "items": [
@@ -570,6 +721,29 @@
     {
       "setName": "Броня з Фенріра",
       "setCategory": "Гора",
+      "Movement speed": "Швидкість руху +9%",
+      "Effects": "+15 Кулаки*\nСтійкість (x0.5) проти Вогню*\nСтійкість (x0.5) проти Морозу",
+      "Weight": "21",
+      "level1": {
+        "Armor set": "30",
+        "Workbench level": "2",
+        "Durability": "1000"
+      },
+      "level2": {
+        "Armor set": "36",
+        "Workbench level": "3",
+        "Durability": "1200"
+      },
+      "level3": {
+        "Armor set": "42",
+        "Workbench level": "4",
+        "Durability": "1400"
+      },
+      "level4": {
+        "Armor set": "48",
+        "Workbench level": "5",
+        "Durability": "1600"
+      },
       "setSlug": "bronya_z_fenrirs",
       "set_image_url": "https://surl.li/yzrfhs",
       "items": [
@@ -580,6 +754,41 @@
     {
       "setName": "Броня зі шкіри вовка",
       "setCategory": "Гора",
+      "Movement speed": "Швидкість руху -10%",
+      "Effects": "Стійкість проти морозостійкості",
+      "Weight": "37",
+      "level1": {
+        "Armor set": "61",
+        "Workbench level": "1 (плащ)",
+        "Forge level1": "1 (шолом)",
+        "Forge level2": "2 (нагрудник/штани)",
+        "Durability": "1000",
+        "Cape Durability": "1000"
+      },
+      "level2": {
+        "Armor set": "68",
+        "Workbench level": "2 (плащ)",
+        "Forge level1": "2 (шолом)",
+        "Forge level2": "2 (нагрудник/штани)",
+        "Durability": "1200",
+        "Cape Durability": "1050"
+      },
+      "level3": {
+        "Armor set": "75",
+        "Workbench level": "4 (плащ)",
+        "Forge level1": "4 (шолом)",
+        "Forge level2": "4 (нагрудник/штани)",
+        "Durability": "1400",
+        "Cape Durability": "1100"
+      },
+      "level4": {
+        "Armor set": "82",
+        "Workbench level": "4 (плащ)",
+        "Forge level1": "4 (шолом)",
+        "Forge level2": "4 (нагрудник/штани)",
+        "Durability": "1600",
+        "Cape Durability": "1150"
+      },
       "setSlug": "bronya_z_vovka",
       "set_image_url": "https://surl.lu/dawaby",
       "items": [
