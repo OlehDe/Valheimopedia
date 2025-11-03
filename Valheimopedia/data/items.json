@@ -618,7 +618,7 @@
     {
       "setName": "Бронзова броня",
       "setCategory": "Чорнолісся",
-      "Movement speed": "Швидкість руху -10%",
+      "Effects": "Швидкість руху -10%",
       "Weight": "23",
       "level1": {
         "Armor set": "24",
@@ -651,8 +651,7 @@
     {
       "setName": "Броня із кореня",
       "setCategory": "Болото",
-      "Movement speed": "Швидкість руху -4%",
-      "Effects": "Луки +15 *\nСтійкість до отрути та Пронизлива дія\nСлабкість до вогню",
+      "Effects": "Луки +15 *\nСтійкість до отрути та Пронизлива дія\nСлабкість до вогню\nШвидкість руху -4%",
       "Weight": "23",
       "level1": {
         "Armor set": "24",
@@ -684,7 +683,7 @@
     {
       "setName": "Залізна броня",
       "setCategory": "Болото",
-      "Movement_speed": "Швидкість руху -10%",
+      "Effects": "Швидкість руху -10%",
       "Weight": "33",
       "level1": {
         "Armor set": "42",
@@ -721,8 +720,7 @@
     {
       "setName": "Броня з Фенріра",
       "setCategory": "Гора",
-      "Movement speed": "Швидкість руху +9%",
-      "Effects": "+15 Кулаки*\nСтійкість (x0.5) проти Вогню*\nСтійкість (x0.5) проти Морозу",
+      "Effects": "+15 Кулаки*\nСтійкість (x0.5) проти Вогню*\nСтійкість (x0.5) проти Морозу\nШвидкість руху +9%",
       "Weight": "21",
       "level1": {
         "Armor set": "30",
@@ -754,8 +752,7 @@
     {
       "setName": "Броня зі шкіри вовка",
       "setCategory": "Гора",
-      "Movement speed": "Швидкість руху -10%",
-      "Effects": "Стійкість проти морозостійкості",
+      "Effects": "Стійкість проти морозостійкості\nШвидкість руху -10%",
       "Weight": "37",
       "level1": {
         "Armor set": "61",
@@ -800,6 +797,28 @@
     {
       "setName": "Броня з кісток",
       "setCategory": "Рівнини",
+      "Effects": "Гнів Злої кістки :\n+20% регенерації здоров'я\n+40% регенерації витривалості\nТрохи слабкий (+25%) проти Бланта, Слеша та Пірса\n+20% Блант\n+20% Пробивна здатність",
+      "Weight": "11",
+      "level1": {
+        "Armor set": "48",
+        "Forge level": "2",
+        "Durability": "1000"
+      },
+      "level2": {
+        "Armor set": "54",
+        "Forge level": "3",
+        "Durability": "1200"
+      },
+      "level3": {
+        "Armor set": "60",
+        "Forge level": "4",
+        "Durability": "1400"
+      },
+      "level4": {
+        "Armor set": "66",
+        "Forge level": "5",
+        "Durability": "1600"
+      },
       "setSlug": "bronya_z_kistok",
       "set_image_url": "https://surl.li/mwjtvy",
       "items": [
@@ -808,8 +827,42 @@
 
     },
     {
-      "setName": "М'яка броня",
+      "setName": "Обита броня",
       "setCategory": "Рівнини",
+      "Effects": "Швидкість руху -10%",
+      "Weight": "27",
+      "level1": {
+        "Armor set": "79",
+        "Workbench level": "1 (плащ)",
+        "Forge level1": "1 (шолом)",
+        "Forge level2": "2 (нагрудник/штани)",
+        "Durability": "1000",
+        "Cape Durability": "1500"
+      },
+      "level2": {
+        "Armor set": "86",
+        "Workbench level": "2 (плащ)",
+        "Forge level1": "2 (шолом)",
+        "Forge level2": "2 (нагрудник/штани)",
+        "Durability": "1200",
+        "Cape Durability": "1550"
+      },
+      "level3": {
+        "Armor set": "93",
+        "Workbench level": "3 (плащ)",
+        "Forge level1": "3 (шолом)",
+        "Forge level2": "3 (нагрудник/штани)",
+        "Durability": "1400",
+        "Cape Durability": "1600"
+      },
+      "level4": {
+        "Armor set": "100",
+        "Workbench level": "4 (плащ)",
+        "Forge level1": "4 (шолом)",
+        "Forge level2": "4 (нагрудник/штани)",
+        "Durability": "1600",
+        "Cape Durability": "1650"
+      },
       "setSlug": "bronya_z_Padded",
       "set_image_url": "https://surl.li/uzdscg",
       "items": [
@@ -821,6 +874,32 @@
     {
       "setName": "Броня з Ейтру",
       "setCategory": "Туманні землі",
+      "Effects": "Регенерація Ейтра +100%\nОпірність проти Морозу\nПадіння пір'я\nДуже слабке (2x) проти Вогню\nШвидкість руху -4%",
+      "Weight": "15",
+      "level1": {
+        "Armor set": "49",
+        "Galdr table level": "1",
+        "Durability": "1000",
+        "Cape Durability": "1200"
+      },
+      "level2": {
+        "Armor set": "56",
+        "Galdr table level": "2",
+        "Durability": "1200",
+        "Cape Durability": "1250"
+      },
+      "level3": {
+        "Armor set": "63",
+        "Galdr table level": "3",
+        "Durability": "1400",
+        "Cape Durability": "1300"
+      },
+      "level4": {
+        "Armor set": "70",
+        "Galdr table level": "4",
+        "Durability": "1600",
+        "Cape Durability": "1350"
+      },
       "setSlug": "bronya_z_Eitr",
       "set_image_url": "https://surl.li/zgugil",
       "items": [
@@ -831,6 +910,28 @@
     {
       "setName": "Панцирний обладунок",
       "setCategory": "Туманні землі",
+      "Effects": "Швидкість руху -10%",
+      "Weight": "23",
+      "level1": {
+        "Armor set": "96",
+        "Black forge level": "1",
+        "Durability": "1200"
+      },
+      "level2": {
+        "Armor set": "102",
+        "Black forge level": "2",
+        "Durability": "1400"
+      },
+      "level3": {
+        "Armor set": "108",
+        "Black forge level": "3",
+        "Durability": "1600"
+      },
+      "level4": {
+        "Armor set": "114",
+        "Black forge level": "4",
+        "Durability": "1800"
+      },
       "setSlug": "bronya_z_panceru",
       "set_image_url": "https://surl.li/ipzonu",
       "items": [
@@ -842,6 +943,28 @@
     {
       "setName": "Броня Аска",
       "setCategory": "Пекло",
+      "Effects": "Витривалість Питання *:\nВитрата витривалості на біг: -10%\nВитрата витривалості на стрибок: -10%\nВитрата витривалості на атаку: -20%\nПронизлива здатність : +10%",
+      "Weight": "11",
+      "level1": {
+        "Armor set": "84",
+        "Black forge level": "3",
+        "Durability": "1000"
+      },
+      "level2": {
+        "Armor set": "90",
+        "Black forge level": "4",
+        "Durability": "1200"
+      },
+      "level3": {
+        "Armor set": "96",
+        "Black forge level": "5",
+        "Durability": "1400"
+      },
+      "level4": {
+        "Armor set": "102",
+        "Black forge level": "6 (наразі недоступний)",
+        "Durability": "1600"
+      },
       "setSlug": "bronya_z_Ask",
       "set_image_url": "https://surl.lt/pabppo",
       "items": [
@@ -852,6 +975,28 @@
     {
       "setName": "Броня Ембла",
       "setCategory": "Пекло",
+      "Effects": "Регенерація Ейтра +130%\nШвидкість руху -4%",
+      "Weight": "11",
+      "level1": {
+        "Armor set": "57",
+        "Black forge level": "2",
+        "Durability": "1000"
+      },
+      "level2": {
+        "Armor set": "63",
+        "Black forge level": "3",
+        "Durability": "1200"
+      },
+      "level3": {
+        "Armor set": "69",
+        "Black forge level": "4",
+        "Durability": "1400"
+      },
+      "level4": {
+        "Armor set": "75",
+        "Black forge level": "5 (наразі недоступний)",
+        "Durability": "1600"
+      },
       "setSlug": "bronya_z_Embla",
       "set_image_url": "https://surl.li/opntox",
       "items": [
@@ -862,6 +1007,28 @@
     {
       "setName": "Броня з полум'яного металу",
       "setCategory": "Пекло",
+      "Effects": "Термостійкість +40%\nШвидкість руху -10%",
+      "Weight": "23",
+      "level1": {
+        "Armor set": "114",
+        "Black forge level": "3",
+        "Durability": "800(шолом), 1000(нагрудник, штани)"
+      },
+      "level2": {
+        "Armor set": "120",
+        "Black forge level": "4",
+        "Durability": "900(шолом), 1200(нагрудник, штани)"
+      },
+      "level3": {
+        "Armor set": "126",
+        "Black forge level": "5",
+        "Durability": "1000(шолом), 1400(нагрудник, штани)"
+      },
+      "level4": {
+        "Armor set": "132",
+        "Black forge level": "6 (наразі недоступний)",
+        "Durability": "1000(шолом), 1400(нагрудник, штани)"
+      },
       "setSlug": "bronya_z_Flametal ",
       "set_image_url": "https://surl.li/mluztt",
       "items": [
@@ -874,7 +1041,7 @@
     "Обладунки": {
       "Шолом": [
         {
-          "name": "Шолом Дверґа",
+          "name": "Дворфський вінець",
           "assetId": "51cad84c5c6dcb743a28061412c85669",
           "token": "$item_helmet_dverger",
           "englishName": "Dverger Circlet",
@@ -1338,7 +1505,7 @@
         }
       ]
     },
-    "Tool": [
+    "Інструменти": [
       {
         "name": "Cultivator",
         "assetId": "b1dab29aa3c2544eeaa48e64ca4db4dc",
@@ -1388,22 +1555,22 @@
         "description": "A sturdy iron pickaxe."
       }
     ],
-    "Utility": [
+    "Унікальні предмети": [
       {
-        "name": "BeltStrength",
+        "name": "Мегінгьорн",
         "assetId": "7690b97064b61444e80b63815cfae915",
         "token": "$item_beltstrength",
         "englishName": "Megingjord",
-        "type": "Utility",
-        "description": "Gives the wearer superhuman strength."
+        "type": "Утиліти",
+        "description": "Надає тому, хто його носить, надлюдську силу."
       },
       {
-        "name": "Demister",
+        "name": "Світлячок",
         "assetId": "aa3ae149fbf3709dfb2fefa4b11ecdf5",
         "token": "$item_demister",
         "englishName": "Wisplight",
-        "type": "Utility",
-        "description": "A bound wisp to guide you through the thickest of mists."
+        "type": "Утиліти",
+        "description": "Прив'язаний вогник, що проведе вас крізь найгустіший туман."
       }
     ],
     "Consumable": [
