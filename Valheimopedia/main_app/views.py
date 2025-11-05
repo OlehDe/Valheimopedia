@@ -1,5 +1,6 @@
 # main_app/views.py
-from django.shortcuts import render, redirect
+from _pytest.nodes import Item
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -104,24 +105,23 @@ def set_detail_view(request, set_slug):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
+            all_categories = data.get('items', {})
             sets_list = data.get('items', {}).get('Комплект обладунків', [])
 
             for armor_set in sets_list:
-
-                # 🔽🔽🔽 ОСЬ ТУТ ВИПРАВЛЕННЯ 🔽🔽🔽
-                # Міняємо 'setName' на 'setSlug',
-                # щоб порівнювати slug з URL-адреси зі slug-ом у файлі JSON
                 if armor_set.get('setSlug') == set_slug:
-                    # 🔼🔼🔼 КІНЕЦЬ ВИПРАВЛЕННЯ 🔼🔼🔼
-
                     found_set = armor_set
 
-                    # ‼️ ПРИМІТКА: Ваш новий JSON містить ключ "items": [...]
-                    # Це ЧУДОВО. Це означає, що вам більше не потрібна
-                    # "милиця" 'items_list = []', яку я додавав раніше.
-                    # 'found_set' вже містить список своїх предметів.
+                    # 🔽 ДОДАЄМО ЗАВАНТАЖЕННЯ ПОВНОЇ ІНФОРМАЦІЇ ПРО ПРЕДМЕТИ 🔽
+                    items_with_data = []
+                    for asset_id in found_set.get('items', []):
+                        item_data = find_item_in_data(all_categories, asset_id)
+                        if item_data:
+                            items_with_data.append(item_data)
 
-                    break  # Зупиняємо цикл, бо ми знайшли комплект
+                    # Додаємо список предметів з повною інформацією
+                    found_set['items_with_data'] = items_with_data
+                    break
 
     except FileNotFoundError:
         error_message = "Помилка: Файл 'items.json' не знайдено."
@@ -131,13 +131,12 @@ def set_detail_view(request, set_slug):
         error_message = f"Виникла неочікувана помилка: {e}"
 
     if not found_set:
-        error_message = f"Комплект броні '{set_slug}' не знайдено. Перевірте, чи правильно вказана назва."
+        error_message = f"Комплект броні '{set_slug}' не знайдено."
 
     return render(request, 'main_app/set_detail.html', {
         'set': found_set,
         'error': error_message
     })
-
 
 # ... (решта вашого коду views.py) ...
 # -----------------------------------------------------------------

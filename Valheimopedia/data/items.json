@@ -206,7 +206,7 @@
       },
       {
         "name": "Оленебій",
-        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d",
+        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b999d",
         "token": "$item_sledge_stagbreaker",
         "englishName": "Stagbreaker",
         "type": "Дворучна зброя",
@@ -455,24 +455,8 @@
       "setSlug": "ganchirkova-bronya",
       "set_image_url": "https://surl.li/ppmgon",
       "items": [
-        {
-          "name": "Ганчіркові штани",
-          "assetId": "668335ca58aaf49079ea9561535e8bed",
-          "token": "$item_legs_rags",
-          "englishName": "Rag Trousers",
-          "type": "Штани",
-          "description": "Простий засіб від наготи.",
-          "image_url": "https://surl.li/rfqhss"
-        },
-        {
-          "name": "Туніка з ганчірки",
-          "assetId": "20aac000994044116956b2a111cc4311",
-          "token": "$item_chest_rags",
-          "englishName": "Rag Tunic",
-          "type": "Нагрудник",
-          "description": "Краще, ніж нічого.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/52/%D0%A0%D1%8F%D0%B4%D0%BD%D0%B8%D0%BD%D0%BD%D0%B0_%D1%82%D1%83%D0%BD%D1%96%D0%BA%D0%B0.png/revision/latest"
-        }
+        "20aac000994044116956b2a111cc4311",
+        "668335ca58aaf49079ea9561535e8bed"
       ]
     },
     {
@@ -502,42 +486,10 @@
       "setSlug": "shkiryana-bronya",
       "set_image_url": "https://surl.lu/wpeejj",
       "items": [
-        {
-          "name": "Шкіряний шолом",
-          "assetId": "657cf832e4b2346518de430288729d0d",
-          "token": "$item_helmet_leather",
-          "englishName": "Leather Helmet",
-          "type": "Шолом",
-          "description": "Каптур із міцної шкіри.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/d/d4/%D0%A8%D0%BA%D1%96%D1%80%D1%8F%D0%BD%D0%B8%D0%B9_%D1%88%D0%BE%D0%BB%D0%BE%D0%BC.png/revision/latest"
-        },
-        {
-          "name": "Шкіряна туніка",
-          "assetId": "c560c07cd710649d0ba2473bec5dd389",
-          "token": "$item_chest_leather",
-          "englishName": "Leather Tunic",
-          "type": "Нагрудник",
-          "description": "Туніка з тваринної шкіри.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/30/%D0%A8%D0%BA%D1%96%D1%80%D1%8F%D0%BD%D0%B0_%D1%82%D1%83%D0%BD%D1%96%D0%BA%D0%B0.png/revision/latest"
-        },
-        {
-          "name": "Шкіряні штани",
-          "assetId": "3a4d67590eba143f1940afa963b69f7f",
-          "token": "$item_legs_leather",
-          "englishName": "Leather Trousers",
-          "type": "Штани",
-          "description": "Вони трохи скриплять під час ходьби.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e6/%D0%A8%D0%BA%D1%96%D1%80%D1%8F%D0%BD%D1%96_%D1%88%D1%82%D0%B0%D0%BD%D0%B8.png/revision/latest"
-        },
-        {
-          "name": "Накидка з оленячої шкури",
-          "assetId": "39677b7a4296f4510ba3d42e9e6e69a1",
-          "token": "$item_cape_deerhide",
-          "englishName": "Deer Hide Cape",
-          "type": "Плащ",
-          "description": "Сільський шик.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/82/%D0%9F%D0%BB%D0%B0%D1%89_%D0%B7_%D0%BE%D0%BB%D0%B5%D0%BD%D1%8F%D1%87%D0%BE%D1%97_%D1%88%D0%BA%D1%96%D1%80%D0%B8.png/revision/latest"
-        }
+        "657cf832e4b2346518de430288729d0d",
+        "c560c07cd710649d0ba2473bec5dd389",
+        "3a4d67590eba143f1940afa963b69f7f",
+        "39677b7a4296f4510ba3d42e9e6e69a1"
       ]
     },
 
@@ -573,14 +525,10 @@
       "setSlug": "bronya_z_trolia",
       "set_image_url": "https://surl.li/nfttnp",
       "items": [
-        {
-          "name": "Каптур з тролячої шкіри",
-          "assetId": "ec299b452222da34499118074b13df7d",
-          "token": "$item_helmet_trollleather",
-          "englishName": "Troll Leather Hood",
-          "type": "Шолом",
-          "description": "Шкіра троля важко піддається обробці, але з неї виходить винятковий обладунок."
-        }
+        "ec299b452222da34499118074b13df7d",
+        "36b8b5f1b73f64451b674edfc0e0395b",
+        "0c826230f0bae4c80a534fc497aebac4",
+        "c140f11f24500f84d8c97166a571bfcf"
       ]
     },
     {
@@ -611,7 +559,9 @@
       "setSlug": "bronya_z_vedmedia",
       "set_image_url": "https://surl.li/elskwg",
       "items": [
-
+        "40efa98b412a32c40bba51a2f071e7c8",
+        "33a8bf087bdecef459c2749e6f57ca01",
+        "565dd6b2a59a0ad4782c98a18c5578c9"
       ]
 
     },
@@ -643,9 +593,10 @@
       "setSlug": "bronya_z_bronzu",
       "set_image_url": "https://surl.li/gtljow",
       "items": [
-
+        "28ef13913d6c74a7a9ebbc7c1f896498",
+        "7115ea97fbd2d4cc686f26e4f9b13d7d",
+        "3aa67ee8462d949478689f66652b5659"
       ]
-
     },
 
     {
@@ -676,7 +627,9 @@
       "setSlug": "bronya_z_korenia",
       "set_image_url": "https://surl.li/netsuv",
       "items": [
-
+        "28ef13913d6c74a7a9ebbc7c1f896498",
+        "36b9c8cb3d69b1d4092efe5455f00648",
+        "d972417c1ae71974095085f2ee994efc"
       ]
 
     },
@@ -712,7 +665,9 @@
       "setSlug": "bronya_z_zaliza",
       "set_image_url": "https://surl.li/gppitr",
       "items": [
-
+        "79a671c21965643a38e2bc4e4d00b485",
+        "a6abefa79fd5f4d18ac0123c58f9f42a",
+        "340aa8477da1f4277a48346379dd6dd2"
       ]
 
     },
@@ -745,9 +700,10 @@
       "setSlug": "bronya_z_fenrirs",
       "set_image_url": "https://surl.li/yzrfhs",
       "items": [
-
+        "a9869bc727d96cc4e9fceb2c097bdf21",
+        "a6abefa79fd5f4d18ac0123c5999f42a",
+        "340aa8477da1f4277a48346379ds6dd2"
       ]
-
     },
     {
       "setName": "Броня зі шкіри вовка",
@@ -789,7 +745,10 @@
       "setSlug": "bronya_z_vovka",
       "set_image_url": "https://surl.lu/dawaby",
       "items": [
-
+        "0f660ef0d8f7a4aca8f0d258929f21c3",
+        "06a9f43e2319d4ff2a68a085a338f636",
+        "8b0685cca4c214bbbb81c26a4ec46cb9",
+        "0d266be25589049dbb9c0f88c66f9a35"
       ]
 
     },
@@ -822,7 +781,9 @@
       "setSlug": "bronya_z_kistok",
       "set_image_url": "https://surl.li/mwjtvy",
       "items": [
-
+        "0f660ef0d8f7a4aca8f0d258929f2223",
+        "06a9f43e2319d4ff2a68a085a3388836",
+        "8b0685cca4c214bbbb81c26a4ec46669"
       ]
 
     },
@@ -866,7 +827,10 @@
       "setSlug": "bronya_z_Padded",
       "set_image_url": "https://surl.li/uzdscg",
       "items": [
-
+        "d8a26e1f0602f4543837d15111877dc1",
+        "e4154881a4bef442fa2498df23668a40",
+        "3026a1d4f080c4693a15c16426d6a70e",
+        "34cc1b4dfde224cc88a1610d22f68212"
       ]
 
     },
@@ -903,7 +867,10 @@
       "setSlug": "bronya_z_Eitr",
       "set_image_url": "https://surl.li/zgugil",
       "items": [
-
+        "d8a26e1f0602f4543837d15111877771",
+        "e4154881a4bef442fa2498df23668880",
+        "3026a1d4f080c4693a15c1646666770e",
+        "b0b5882b91c57294bb05b50f3ecd6d81"
       ]
 
     },
@@ -935,7 +902,9 @@
       "setSlug": "bronya_z_panceru",
       "set_image_url": "https://surl.li/ipzonu",
       "items": [
-
+        "b6ca4af0912227b4f8eb8570f7e2c808",
+        "fc3146dae7922f749a7fd0c5e6301e3e",
+        "62a2c4b1f8e559d4296200a69af62acb"
       ]
 
     },
@@ -968,7 +937,9 @@
       "setSlug": "bronya_z_Ask",
       "set_image_url": "https://surl.lt/pabppo",
       "items": [
-
+        "b629c3b0aac7ea848b0932c731c8ea72",
+        "a989eeea9eadaa943bca7a89b6913c10",
+        "547ac0e99cef41f448c93129bdbd2196"
       ]
 
     },
@@ -1000,7 +971,9 @@
       "setSlug": "bronya_z_Embla",
       "set_image_url": "https://surl.li/opntox",
       "items": [
-
+        "b629c3b0aac7ea848b0932c731c83472",
+        "a989eeea9eadaa943bca7a89b6999910",
+        "3026a1d4f080c4699995c1646666770e"
       ]
 
     },
@@ -1032,7 +1005,9 @@
       "setSlug": "bronya_z_Flametal ",
       "set_image_url": "https://surl.li/mluztt",
       "items": [
-
+        "b629c3b00007ea848b0932c731c83472",
+        "a989eeea9eadaa9433337a89b6999910",
+        "3026a1d4f08000099995c1646666770e"
       ]
 
     }
@@ -1047,7 +1022,7 @@
           "englishName": "Dverger Circlet",
           "type": "Шолом",
           "description": "Портативне вічне джерело світла для дослідників підземель.",
-          "image_url": "",
+          "image_url": "https://surl.li/bpjvfr",
           "stats": {
             "armor": "2/-/-/-",
             "weight": "1",
@@ -1083,7 +1058,7 @@
           "englishName": "Troll Leather Hood",
           "type": "Шолом",
           "description": "Шкіра троля важко піддається обробці, але з неї виходить винятковий обладунок.",
-          "image_url": "",
+          "image_url": "https://surl.lu/ggjkdm",
           "stats": {
             "armor": "6/8/10/12",
             "weight": "1",
@@ -1101,7 +1076,7 @@
           "englishName": "Headdress of the Bear",
           "type": "Шолом",
           "description": "Нехай первісна лють могутнього ведмедя поглине тебе.",
-          "image_url": "",
+          "image_url": "https://surl.li/vbnkvp",
           "stats": {
             "armor": "7/9/11/13",
             "weight": "1",
@@ -1119,7 +1094,7 @@
           "englishName": "Bronze Helmet",
           "type": "Шолом",
           "description": "Це допоможе зберегти твої мізки всередині черепа.",
-          "image_url": "",
+          "image_url": "https://surl.li/dkjxff",
           "stats": {
             "armor": "8/10/12/14",
             "weight": "3",
@@ -1137,7 +1112,7 @@
           "englishName": "Root mask",
           "type": "Шолом",
           "description": "Маска з великого кореню",
-          "image_url": "",
+          "image_url": "https://surl.li/bkgmdx",
           "stats": {
             "armor": "8/10/12/14",
             "weight": "3",
@@ -1155,7 +1130,7 @@
           "englishName": "Iron Helmet",
           "type": "Шолом",
           "description": "Шолом із полірованого заліза, гідний героя.",
-          "image_url": "",
+          "image_url": "https://surl.li/kjbair",
           "stats": {
             "armor": "14/16/18/20",
             "weight": "3",
@@ -1173,7 +1148,7 @@
           "englishName": "Fenris Hood",
           "type": "Шолом",
           "description": "Очі звіра були мудрими й проникливими, щоб за один погляд оцінити силу воїна.",
-          "image_url": "",
+          "image_url": "https://surl.li/tbrdma",
           "stats": {
             "armor": "10/12/14/16",
             "weight": "1",
@@ -1191,7 +1166,7 @@
           "englishName": "Drake Helmet",
           "type": "Шолом",
           "description": "Вишуканий і ретельно виготовлений шолом.",
-          "image_url": "",
+          "image_url": "https://surl.li/adhgzm",
           "stats": {
             "armor": "20/22/24/26",
             "weight": "3",
@@ -1203,13 +1178,13 @@
           }
         },
         {
-          "name": "Підбитий шолом",
+          "name": "Обитий шолом",
           "assetId": "d8a26e1f0602f4543837d15111877dc1",
           "token": "$item_helmet_padded",
           "englishName": "Padded Helmet",
           "type": "Шолом",
           "description": "Щільно прилягає, добре зроблений.",
-          "image_url": "",
+          "image_url": "https://surl.li/ugdilw",
           "stats": {
             "armor": "26/28/30/32",
             "weight": "3",
@@ -1221,13 +1196,49 @@
           }
         },
         {
+          "name": "Шолом з кісток",
+          "assetId": "0f660ef0d8f7a4aca8f0d258929f2223",
+          "token": "$item_helmet_Vilebone",
+          "englishName": "Vilebone visage",
+          "type": "Шолом",
+          "description": "Вишуканий із кісток шолом.",
+          "image_url": "https://surl.li/ftfdmj",
+          "stats": {
+            "armor": "12/14/16/18",
+            "weight": "1",
+            "special": "",
+            "crafting": {
+              "materials": "",
+              "station": "Forge: 1/2/3/4"
+            }
+          }
+        },
+        {
+          "name": "Каптур Ейтру",
+          "assetId": "d8a26e1f0602f4543837d15111877771",
+          "token": "$item_helmet_Eitr-weave",
+          "englishName": "Eitr-weave hood",
+          "type": "Шолом",
+          "description": "Eitr-weave.",
+          "image_url": "https://surli.cc/oiyvcj",
+          "stats": {
+            "armor": "16/18/20/22",
+            "weight": "3",
+            "special": "",
+            "crafting": {
+              "materials": "",
+              "station": ""
+            }
+          }
+        },
+        {
           "name": "Панцирний шолом",
           "assetId": "b6ca4af0912227b4f8eb8570f7e2c808",
           "token": "$item_helmet_carapace",
           "englishName": "Carapace Helmet",
           "type": "Шолом",
           "description": "Люди можуть сказати, що ти схожий на гігантського мурашку. Але вони скажуть це лише один раз.",
-          "image_url": "",
+          "image_url": "https://surl.li/uwqvfa",
           "stats": {
             "armor": "32/34/36/38",
             "weight": "3",
@@ -1239,13 +1250,13 @@
           }
         },
         {
-          "name": "Шолом Аска",
+          "name": "Каптур Аска",
           "assetId": "b629c3b0aac7ea848b0932c731c8ea72",
           "token": "$item_helmet_medium_ashlands",
           "englishName": "Hood of Ask",
           "type": "Шолом",
           "description": "Як перший чоловік Мідгарду, Аск знав, що не варто привертати до себе надто багато уваги.",
-          "image_url": "",
+          "image_url": "https://surl.li/ayjtip",
           "stats": {
             "armor": "28/30/32/34",
             "weight": "1",
@@ -1255,48 +1266,53 @@
               "station": "Black forge: 3/4/5/6"
             }
           }
+        },
+        {
+          "name": "Каптур Ембела",
+          "assetId": "b629c3b0aac7ea848b0932c731c83472",
+          "token": "$item_helmet_Embla",
+          "englishName": "Hood of Embla",
+          "type": "Шолом",
+          "description": "Як другий чоловік Мідгарду, Ембел знав, що не варто привертати до себе надто багато уваги.",
+          "image_url": "https://surl.lu/xkqzna",
+          "stats": {
+            "armor": "19/21/23/25",
+            "weight": "1",
+            "special": "(full set)",
+            "crafting": {
+              "materials": "",
+              "station": ""
+            }
+          }
+        },
+        {
+          "name": "Шолом з вогняного металу",
+          "assetId": "b629c3b00007ea848b0932c731c83472",
+          "token": "$item_helmet_Flametal",
+          "englishName": "Flametal Helmet",
+          "type": "Шолом",
+          "description": "Flametal Helmet",
+          "image_url": "https://surl.li/zbkxfw",
+          "stats": {
+            "armor": "38/40/42/44",
+            "weight": "3",
+            "special": "(full set)",
+            "crafting": {
+              "materials": "",
+              "station": ""
+            }
+          }
         }
       ],
       "Нагрудні обладунки": [
         {
-          "name": "Нагрудник Попелищ Середній",
-          "assetId": "a989eeea9eadaa943bca7a89b6913c10",
-          "token": "$item_chest_medium_ashlands",
-          "englishName": "Breastplate of Ask",
+          "name": "Туніка з ганчірки",
+          "assetId": "20aac000994044116956b2a111cc4311",
+          "token": "$item_chest_rags",
+          "englishName": "Rag Tunic",
           "type": "Нагрудник",
-          "description": "Перша людина в Мідґарді знала, як захистити свої найважливіші органи, можливо, саме таким нагрудником."
-        },
-        {
-          "name": "Нагрудник Берсерка",
-          "assetId": "33a8bf087bdecef459c2749e6f57ca01",
-          "token": "$item_chest_berserker",
-          "englishName": "Patterns of the Bear",
-          "type": "Нагрудник",
-          "description": "Якщо ці складні візерунки можуть захищати воїнів з далеких країв, вони зможуть захистити і тебе."
-        },
-        {
-          "name": "Нагрудник Бронзовий",
-          "assetId": "7115ea97fbd2d4cc686f26e4f9b13d7d",
-          "token": "$item_chest_bronze",
-          "englishName": "Bronze Plate Tunic",
-          "type": "Нагрудник",
-          "description": "Нагрудник з кованої бронзи."
-        },
-        {
-          "name": "Нагрудник Панцирний",
-          "assetId": "fc3146dae7922f749a7fd0c5e6301e3e",
-          "token": "$item_chest_carapace",
-          "englishName": "Carapace Breastplate",
-          "type": "Нагрудник",
-          "description": "Нагрудник, виготовлений з відполірованого панцира гігантської комахи."
-        },
-        {
-          "name": "Нагрудник Залізний",
-          "assetId": "a6abefa79fd5f4d18ac0123c58f9f42a",
-          "token": "$item_chest_iron",
-          "englishName": "Iron Scale Mail",
-          "type": "Нагрудник",
-          "description": "Залізна кольчуга, яка відбиває всі удари, крім найсильніших."
+          "description": "Краще, ніж нічого.",
+          "image_url": "https://surl.li/autjbk"
         },
         {
           "name": "Шкіряна туніка",
@@ -1304,23 +1320,35 @@
           "token": "$item_chest_leather",
           "englishName": "Leather Tunic",
           "type": "Нагрудник",
-          "description": "Туніка з тваринної шкіри."
+          "description": "Туніка з тваринної шкіри.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/cb/Leather_tunic.png/revision/latest?cb=20210209042720"
         },
         {
-          "name": "Стеганий Нагрудник",
-          "assetId": "e4154881a4bef442fa2498df23668a40",
-          "token": "$item_chest_pcuirass",
-          "englishName": "Padded Cuirass",
+          "name": "Туніка З Шкіри Троля",
+          "assetId": "36b8b5f1b73f64451b674edfc0e0395b",
+          "token": "$item_chest_trollleather",
+          "englishName": "Troll Leather Tunic",
           "type": "Нагрудник",
-          "description": "Мастеровий і міцний, здатний відбити навіть найгостріші леза."
+          "description": "Шкіру троля важко здерти, але вона міцна та тепла.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b4/Troll_leather_tunic.png/revision/latest?cb=20210209144905"
         },
         {
-          "name": "Туніка з ганчірки",
-          "assetId": "20aac000994044116956b2a111cc4311",
-          "token": "$item_chest_rags",
-          "englishName": "Rag Tunic",
+          "name": "Кольє Берсерка",
+          "assetId": "33a8bf087bdecef459c2749e6f57ca01",
+          "token": "$item_chest_berserker",
+          "englishName": "Patterns of the Bear",
           "type": "Нагрудник",
-          "description": "Краще, ніж нічого."
+          "description": "Якщо ці складні візерунки можуть захищати воїнів з далеких країв, вони зможуть захистити і тебе.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/06/Patterns_of_the_Bear.png/revision/latest?cb=20250821173634"
+        },
+        {
+          "name": "Нагрудник Бронзовий",
+          "assetId": "7115ea97fbd2d4cc686f26e4f9b13d7d",
+          "token": "$item_chest_bronze",
+          "englishName": "Bronze Plate Tunic",
+          "type": "Нагрудник",
+          "description": "Нагрудник з кованої бронзи.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/30/Bronze_plate_cuirass.png/revision/latest?cb=20210210033801"
         },
         {
           "name": "Нагрудник З Коріння",
@@ -1328,15 +1356,26 @@
           "token": "$item_chest_root",
           "englishName": "Root Harnesk",
           "type": "Нагрудник",
-          "description": "Мастеровий і міцний, здатний відбити навіть найгостріші леза."
+          "description": "Мастеровий і міцний, здатний відбити навіть найгостріші леза.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/30/Root_harnesk.png/revision/latest?cb=20211208154501"
         },
         {
-          "name": "Нагрудник З Шкіри Троля",
-          "assetId": "36b8b5f1b73f64451b674edfc0e0395b",
-          "token": "$item_chest_trollleather",
-          "englishName": "Troll Leather Tunic",
+          "name": "Нагрудник Залізний",
+          "assetId": "a6abefa79fd5f4d18ac0123c58f9f42a",
+          "token": "$item_chest_iron",
+          "englishName": "Iron Scale Mail",
           "type": "Нагрудник",
-          "description": "Шкіру троля важко здерти, але вона міцна та тепла."
+          "description": "Залізна кольчуга, яка відбиває всі удари, крім найсильніших.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/d/d3/Iron_scale_mail.png/revision/latest?cb=20210215131223"
+        },
+        {
+          "name": "Накидка Фенріра",
+          "assetId": "a6abefa79fd5f4d18ac0123c5999f42a",
+          "token": "$item_chest_fenris",
+          "englishName": "Fenris coat",
+          "type": "Нагрудник",
+          "description": "Залізна кольчуга, яка відбиває всі удари, крім найсильніших.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/89/Fenris_coat.png/revision/latest?cb=20220219144142"
         },
         {
           "name": "Нагрудник З Вовчої Шкіри",
@@ -1344,66 +1383,74 @@
           "token": "$item_chest_wolf",
           "englishName": "Wolf Hide Chestpiece",
           "type": "Нагрудник",
-          "description": "Куртка з вовчої шкіри, тепла і дикого вигляду. Захищає від холоду."
+          "description": "Куртка з вовчої шкіри, тепла і дикого вигляду. Захищає від холоду.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/55/Wolf_hide_chestpiece.png/revision/latest?cb=20210215131244"
+        },
+        {
+          "name": "Нагрудник З Кісток",
+          "assetId": "06a9f43e2319d4ff2a68a085a3388836",
+          "token": "$item_chest_Vilebone",
+          "englishName": "Vilebone cage",
+          "type": "Нагрудник",
+          "description": "З кісток",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/1/16/Vilebone_cage.png/revision/latest?cb=20250821175425"
+        },
+        {
+          "name": "Обитий Нагрудник",
+          "assetId": "e4154881a4bef442fa2498df23668a40",
+          "token": "$item_chest_pcuirass",
+          "englishName": "Padded Cuirass",
+          "type": "Нагрудник",
+          "description": "Мастеровий і міцний, здатний відбити навіть найгостріші леза.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/53/Padded_cuirass.png/revision/latest?cb=20210215131239"
+        },
+        {
+          "name": "Нагрудник Ейтру",
+          "assetId": "e4154881a4bef442fa2498df23668880",
+          "token": "$item_chest_Eitr-weave",
+          "englishName": "Eitr-weave robe",
+          "type": "Нагрудник",
+          "description": "Eitr-weave",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c6/Eitr-weave_robe.png/revision/latest?cb=20221129135829"
+        },
+        {
+          "name": "Нагрудник Панцирний",
+          "assetId": "fc3146dae7922f749a7fd0c5e6301e3e",
+          "token": "$item_chest_carapace",
+          "englishName": "Carapace Breastplate",
+          "type": "Нагрудник",
+          "description": "Нагрудник, виготовлений з відполірованого панцира гігантської комахи.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/21/Carapace_breastplate.png/revision/latest?cb=20221126191122"
+        },
+        {
+          "name": "Нагрудник Аска",
+          "assetId": "a989eeea9eadaa943bca7a89b6913c10",
+          "token": "$item_chest_medium_ashlands",
+          "englishName": "Breastplate of Ask",
+          "type": "Нагрудник",
+          "description": "Перша людина в Мідґарді знала, як захистити свої найважливіші органи, можливо, саме таким нагрудником.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/0d/Breastplate_of_Ask.png/revision/latest?cb=20240423144505"
+        },
+        {
+          "name": "Нагрудник Ембла",
+          "assetId": "a989eeea9eadaa943bca7a89b6999910",
+          "token": "$item_chest_Embla",
+          "englishName": "Robes of Embla",
+          "type": "Нагрудник",
+          "description": "Друга людина в Мідґарді знала, як захистити свої найважливіші органи, можливо, саме таким нагрудником.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/06/Robes_of_Embla.png/revision/latest?cb=20240423145011"
+        },
+        {
+          "name": "Нагрудник з вогняного металу",
+          "assetId": "a989eeea9eadaa9433337a89b6999910",
+          "token": "$item_chest_Flametal",
+          "englishName": "Flametal Breastplate",
+          "type": "Нагрудник",
+          "description": "Flametal Breastplate",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/7/74/Flametal_Breastplate.png/revision/latest?cb=20240423144655"
         }
       ],
       "Штани": [
-        {
-          "name": "Штани Попелищ Середні",
-          "assetId": "547ac0e99cef41f448c93129bdbd2196",
-          "token": "$item_legs_medium_ashlands",
-          "englishName": "Trousers of Ask",
-          "type": "Штани",
-          "description": "Перша людина, що блукала Мідґардом, воліла ступати легко. Носії цих штанів могли б повчитися у нього."
-        },
-        {
-          "name": "Штани Берсерка",
-          "assetId": "565dd6b2a59a0ad4782c98a18c5578c9",
-          "token": "$item_legs_berserker",
-          "englishName": "Loincloth of the Bear",
-          "type": "Штани",
-          "description": "Закриває все найважливіше, але не більше того."
-        },
-        {
-          "name": "Штани Бронзові",
-          "assetId": "3aa67ee8462d949478689f66652b5659",
-          "token": "$item_legs_bronze",
-          "englishName": "Bronze Plate Leggings",
-          "type": "Штани",
-          "description": "Бронзові поножи для захисту ваших ніг."
-        },
-        {
-          "name": "Штани З Панцира",
-          "assetId": "62a2c4b1f8e559d4296200a69af62acb",
-          "token": "$item_legs_carapace",
-          "englishName": "Carapace Greaves",
-          "type": "Штани",
-          "description": "Наголінники з твердого панцира."
-        },
-        {
-          "name": "Штани Залізні",
-          "assetId": "340aa8477da1f4277a48346379dd6dd2",
-          "token": "$item_legs_iron",
-          "englishName": "Iron Greaves",
-          "type": "Штани",
-          "description": "Залізні поножи для захисту ваших ніг."
-        },
-        {
-          "name": "Шкіряні штани",
-          "assetId": "3a4d67590eba143f1940afa963b69f7f",
-          "token": "$item_legs_leather",
-          "englishName": "Leather Trousers",
-          "type": "Штани",
-          "description": "Вони трохи скриплять під час ходьби."
-        },
-        {
-          "name": "Штани Стегані",
-          "assetId": "3026a1d4f080c4693a15c16426d6a70e",
-          "token": "$item_legs_pgreaves",
-          "englishName": "Padded Greaves",
-          "type": "Штани",
-          "description": "Мастеровий захист для ніг."
-        },
         {
           "name": "Ганчіркові штани",
           "assetId": "668335ca58aaf49079ea9561535e8bed",
@@ -1414,12 +1461,13 @@
           "image_url": "https://surl.li/rfqhss"
         },
         {
-          "name": "Штани З Коріння",
-          "assetId": "d972417c1ae71974095085f2ee994efc",
-          "token": "$item_legs_root",
-          "englishName": "Root Leggings",
+          "name": "Шкіряні штани",
+          "assetId": "3a4d67590eba143f1940afa963b69f7f",
+          "token": "$item_legs_leather",
+          "englishName": "Leather Trousers",
           "type": "Штани",
-          "description": "Легкі обладунки, дивним чином сплетені з древнього коріння та кори."
+          "description": "Вони трохи скриплять під час ходьби.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/82/Leather_pants.png/revision/latest?cb=20210209042343"
         },
         {
           "name": "Штани З Шкіри Троля",
@@ -1427,7 +1475,53 @@
           "token": "$item_legs_trollleather",
           "englishName": "Troll Leather Trousers",
           "type": "Штани",
-          "description": "Штани з міцної тролевої шкіри."
+          "description": "Штани з міцної тролевої шкіри.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3d/Troll_leather_pants.png/revision/latest?cb=20210209144501"
+        },
+        {
+          "name": "Штани Берсерка",
+          "assetId": "565dd6b2a59a0ad4782c98a18c5578c9",
+          "token": "$item_legs_berserker",
+          "englishName": "Loincloth of the Bear",
+          "type": "Штани",
+          "description": "Закриває все найважливіше, але не більше того.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/ab/Loincloth_of_the_Bear.png/revision/latest?cb=20250821173949"
+        },
+        {
+          "name": "Штани Бронзові",
+          "assetId": "3aa67ee8462d949478689f66652b5659",
+          "token": "$item_legs_bronze",
+          "englishName": "Bronze Plate Leggings",
+          "type": "Штани",
+          "description": "Бронзові поножи для захисту ваших ніг.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/4/42/Bronze_plate_leggings.png/revision/latest?cb=20210210033859"
+        },
+        {
+          "name": "Штани З Коріння",
+          "assetId": "d972417c1ae71974095085f2ee994efc",
+          "token": "$item_legs_root",
+          "englishName": "Root Leggings",
+          "type": "Штани",
+          "description": "Легкі обладунки, дивним чином сплетені з древнього коріння та кори.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/88/Root_leggings.png/revision/latest?cb=20211208154805"
+        },
+        {
+          "name": "Штани Залізні",
+          "assetId": "340aa8477da1f4277a48346379dd6dd2",
+          "token": "$item_legs_iron",
+          "englishName": "Iron Greaves",
+          "type": "Штани",
+          "description": "Залізні поножи для захисту ваших ніг.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/2e/Iron_greaves.png/revision/latest?cb=20210215131230"
+        },
+        {
+          "name": "Штани Фенріра",
+          "assetId": "340aa8477da1f4277a48346379ds6dd2",
+          "token": "$item_legs_fenris",
+          "englishName": "Fenris leggings",
+          "type": "Штани",
+          "description": "Залізні поножи для захисту ваших ніг.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/eb/Fenris_leggings.png/revision/latest?cb=20220219144142"
         },
         {
           "name": "Штани З Вовчої Шкіри",
@@ -1435,17 +1529,82 @@
           "token": "$item_legs_wolf",
           "englishName": "Wolf Hide Trousers",
           "type": "Штани",
-          "description": "Косматі штани з вовчої шкіри."
+          "description": "Косматі штани з вовчої шкіри.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/83/Wolf_hide_trousers.png/revision/latest?cb=20210215131246"
+        },
+        {
+          "name": "Штани З Кісток",
+          "assetId": "8b0685cca4c214bbbb81c26a4ec46669",
+          "token": "$item_legs_Vilebone",
+          "englishName": "Vilebone drapes",
+          "type": "Штани",
+          "description": "Косматі штани з кісток.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c5/Vilebone_drapes.png/revision/latest?cb=20250821175437"
+        },
+        {
+          "name": "Обиті Штани",
+          "assetId": "3026a1d4f080c4693a15c16426d6a70e",
+          "token": "$item_legs_pgreaves",
+          "englishName": "Padded Greaves",
+          "type": "Штани",
+          "description": "Мастеровий захист для ніг.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c8/Padded_greaves.png/revision/latest?cb=20210215131240"
+        },
+        {
+          "name": "Штани З Панцира",
+          "assetId": "62a2c4b1f8e559d4296200a69af62acb",
+          "token": "$item_legs_carapace",
+          "englishName": "Carapace Greaves",
+          "type": "Штани",
+          "description": "Наголінники з твердого панцира.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b1/Carapace_greaves.png/revision/latest?cb=20221126191214"
+        },
+        {
+          "name": "Штани Ейтру",
+          "assetId": "3026a1d4f080c4693a15c1646666770e",
+          "token": "$item_legs_Eitr-weave",
+          "englishName": "Eitr-weave trousers",
+          "type": "Штани",
+          "description": "Eitr-weave trousers",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/25/Eitr-weave_trousers.png/revision/latest?cb=20221129135838"
+        },
+        {
+          "name": "Штани Аска",
+          "assetId": "547ac0e99cef41f448c93129bdbd2196",
+          "token": "$item_legs_medium_ashlands",
+          "englishName": "Trousers of Ask",
+          "type": "Штани",
+          "description": "Перша людина, що блукала Мідґардом, воліла ступати легко. Носії цих штанів могли б повчитися у нього.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a6/Trousers_of_Ask.png/revision/latest?cb=20240423144554"
+        },
+        {
+          "name": "Штани Ембла",
+          "assetId": "3026a1d4f080c4699995c1646666770e",
+          "token": "$item_legs_Embla",
+          "englishName": "Trousers of Embla",
+          "type": "Штани",
+          "description": "Trousers of Embla",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b2/Trousers_of_Embla.png/revision/latest?cb=20240423145048"
+        },
+        {
+          "name": "Штани з вогняного металу",
+          "assetId": "3026a1d4f08000099995c1646666770e",
+          "token": "$item_legs_Flametal",
+          "englishName": "Flametal Greaves",
+          "type": "Штани",
+          "description": "Trousers of Embla",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/9/92/Flametal_Greaves.png/revision/latest?cb=20240423144735"
         }
       ],
       "Плащ": [
         {
-          "name": "Плащ Попелястий",
-          "assetId": "ebfbafddb61bf9444bbec87bca920f4e",
-          "token": "$item_cape_ash",
-          "englishName": "Ashen Cape",
+          "name": "Плащ Одіна",
+          "assetId": "a8650cb3f36c2f61e9bd01533123cfc2",
+          "token": "$item_cape_odin",
+          "englishName": "Cape of Odin",
           "type": "Плащ",
-          "description": "Тонкі металеві нитки вплетені в цей плащ, створюючи складний візерунок, наче доля, ткана самими норнами."
+          "description": "Найкращі воїни Одіна заслуговують найкращої тканини.",
+          "image_url": ""
         },
         {
           "name": "Накидка з оленячої шкури",
@@ -1453,39 +1612,8 @@
           "token": "$item_cape_deerhide",
           "englishName": "Deer Hide Cape",
           "type": "Плащ",
-          "description": "Сільський шик."
-        },
-        {
-          "name": "Плащ Перцевий",
-          "assetId": "b0b5882b91c57294bb05b50f3ecd6d81",
-          "token": "$item_cape_feather",
-          "englishName": "Feather Cape",
-          "type": "Плащ",
-          "description": "Надівання цього плаща змушує відчувати себе легшим, наче ви вмієте літати!"
-        },
-        {
-          "name": "Плащ Лляний",
-          "assetId": "34cc1b4dfde224cc88a1610d22f68212",
-          "token": "$item_cape_linen",
-          "englishName": "Linen Cape",
-          "type": "Плащ",
-          "description": "Простий мандрівний плащ."
-        },
-        {
-          "name": "Плащ Локс",
-          "assetId": "14a4713ba74d84687948f933010e0805",
-          "token": "$item_cape_lox",
-          "englishName": "Lox Cape",
-          "type": "Плащ",
-          "description": "Шкура однієї з великих тварин, товста та тепла."
-        },
-        {
-          "name": "Плащ Одіна",
-          "assetId": "a8650cb3f36c2f61e9bd01533123cfc2",
-          "token": "$item_cape_odin",
-          "englishName": "Cape of Odin",
-          "type": "Плащ",
-          "description": "Найкращі воїни Одіна заслуговують найкращої тканини."
+          "description": "Сільський шик.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/38/Deer_hide_cape.png/revision/latest?cb=20210209041809"
         },
         {
           "name": "Плащ З Шкіри Троля",
@@ -1493,7 +1621,8 @@
           "token": "$item_cape_trollhide",
           "englishName": "Troll Hide Cape",
           "type": "Плащ",
-          "description": "Шкіра троля міцна та еластична."
+          "description": "Шкіра троля міцна та еластична.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/9/90/Troll_hide_cape.png/revision/latest?cb=20210209145246"
         },
         {
           "name": "Плащ з Вовка",
@@ -1501,76 +1630,104 @@
           "token": "$item_cape_wolf",
           "englishName": "Wolf Fur Cape",
           "type": "Плащ",
-          "description": "Вовки - природні виживальники. Цьому просто не пощастило. Тепер його шкіра зігріватиме вас у снігу."
+          "description": "Вовки - природні виживальники. Цьому просто не пощастило. Тепер його шкіра зігріватиме вас у снігу.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/7/72/Wolf_fur_cape.png/revision/latest?cb=20210215131439"
+        },
+        {
+          "name": "Плащ Локс",
+          "assetId": "14a4713ba74d84687948f933010e0805",
+          "token": "$item_cape_lox",
+          "englishName": "Lox Cape",
+          "type": "Плащ",
+          "description": "Шкура однієї з великих тварин, товста та тепла.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/ce/Lox_cape.png/revision/latest?cb=20210215131436"
+        },
+        {
+          "name": "Плащ Лляний",
+          "assetId": "34cc1b4dfde224cc88a1610d22f68212",
+          "token": "$item_cape_linen",
+          "englishName": "Linen Cape",
+          "type": "Плащ",
+          "description": "Простий мандрівний плащ.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e3/Linen_cape.png/revision/latest?cb=20210215131429"
+        },
+        {
+          "name": "Плащ з пір'я",
+          "assetId": "b0b5882b91c57294bb05b50f3ecd6d81",
+          "token": "$item_cape_feather",
+          "englishName": "Feather Cape",
+          "type": "Плащ",
+          "description": "Надівання цього плаща змушує відчувати себе легшим, наче ви вмієте літати!",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/0e/Feather_cape.png/revision/latest?cb=20221127200910"
+        },
+        {
+          "name": "Плащ Асквіна",
+          "assetId": "b0b5882b91c57294bb05b50f333d6d81",
+          "token": "$item_cape_Asksvin",
+          "englishName": "Asksvin cloak",
+          "type": "Плащ",
+          "description": "AsksvinAsksvinAsksvin!",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/6/61/Asksvincape.png/revision/latest/scale-to-width-down/71?cb=20240511110834"
+        },
+        {
+          "name": "Плащ Попелу",
+          "assetId": "ebfbafddb61bf9444bbec87bca920f4e",
+          "token": "$item_cape_ash",
+          "englishName": "Ashen Cape",
+          "type": "Плащ",
+          "description": "Тонкі металеві нитки вплетені в цей плащ, створюючи складний візерунок, наче доля, ткана самими норнами.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/59/Ashen_cape.png/revision/latest?cb=20240423145845"
         }
       ]
     },
     "Інструменти": [
       {
-        "name": "Cultivator",
+        "name": "Сапка",
         "assetId": "b1dab29aa3c2544eeaa48e64ca4db4dc",
         "token": "$item_cultivator",
         "englishName": "Cultivator",
-        "type": "Tool",
-        "description": "A farming tool for tilling soil."
+        "type": "Інструмент",
+        "description": "Сільськогосподарський інструмент для обробки ґрунту."
       },
       {
-        "name": "Hammer",
+        "name": "Молот",
         "assetId": "461103794f2a242d2bbc1802f8deae58",
         "token": "$item_hammer",
         "englishName": "Hammer",
-        "type": "Tool",
-        "description": "With this to your hand, you can raise high halls and mighty fortifications."
+        "type": "Інструмент",
+        "description": "З цим інструментом у руці ви зможете зводити високі зали та могутні укріплення."
       },
       {
-        "name": "FishingRod",
+        "name": "Вудка",
         "assetId": "6a649b24a1e974b119f9c0c21e5e7d7f",
         "token": "$item_fishingrod",
         "englishName": "Fishing Rod",
-        "type": "Tool",
-        "description": "Standard issue dvergr fishing rod."
+        "type": "Інструмент",
+        "description": "Стандартна вудка двергрів."
       },
       {
-        "name": "PickaxeAntler",
+        "name": "Рогове кайло",
         "assetId": "6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e",
         "token": "$item_pickaxe_antler",
         "englishName": "Antler Pickaxe",
-        "type": "Tool",
-        "description": "A pickaxe made from a hard antler."
+        "type": "Інструмент",
+        "description": "Кирка, зроблена з твердого рогу."
       },
       {
-        "name": "PickaxeBronze",
+        "name": "Бронзове кайло",
         "assetId": "5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f",
         "token": "$item_pickaxe_bronze",
         "englishName": "Bronze Pickaxe",
-        "type": "Tool",
-        "description": "A durable bronze pickaxe."
+        "type": "Інструмент",
+        "description": "Міцна бронзова кирка."
       },
       {
-        "name": "PickaxeIron",
+        "name": "Залізне кайло",
         "assetId": "4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a",
         "token": "$item_pickaxe_iron",
         "englishName": "Iron Pickaxe",
-        "type": "Tool",
-        "description": "A sturdy iron pickaxe."
-      }
-    ],
-    "Унікальні предмети": [
-      {
-        "name": "Мегінгьорн",
-        "assetId": "7690b97064b61444e80b63815cfae915",
-        "token": "$item_beltstrength",
-        "englishName": "Megingjord",
-        "type": "Утиліти",
-        "description": "Надає тому, хто його носить, надлюдську силу."
-      },
-      {
-        "name": "Світлячок",
-        "assetId": "aa3ae149fbf3709dfb2fefa4b11ecdf5",
-        "token": "$item_demister",
-        "englishName": "Wisplight",
-        "type": "Утиліти",
-        "description": "Прив'язаний вогник, що проведе вас крізь найгустіший туман."
+        "type": "Інструмент",
+        "description": "Надійна залізна кирка."
       }
     ],
     "Consumable": [
@@ -1720,7 +1877,7 @@
       },
       {
         "name": "HealthPotion",
-        "assetId": "6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a",
+        "assetId": "6d5e4f3a2b1c0d9e8f7a6b544d322f1a",
         "token": "$item_healthpotion",
         "englishName": "Health Potion",
         "type": "Consumable",
@@ -1799,464 +1956,477 @@
         "description": "Hearty and warming."
       }
     ],
-    "Material": [
-      {
-        "name": "Acorn",
-        "assetId": "44cca2d8936df8c428f5d72af9e35379",
-        "token": "$item_oakseeds",
-        "englishName": "Acorns",
-        "type": "Material",
-        "description": "Plant them to grow an oak tree."
+    "Матеріали": {
+      "Метали": {
+        "629fd54829a1d446d8905f0b0eac9982": {
+          "name": "Бронза",
+          "assetId": "629fd54829a1d446d8905f0b0eac9982",
+          "token": "$item_bronze",
+          "englishName": "Bronze",
+          "type": "Матеріал",
+          "description": "Міцний сплав міді та олова."
+        },
+        "a780bd461780849a7afccc525f927e2d": {
+          "name": "Мідь",
+          "assetId": "a780bd461780849a7afccc525f927e2d",
+          "token": "$item_copper",
+          "englishName": "Copper",
+          "type": "Матеріал",
+          "description": "Злиток чистої міді, готовий до обробки."
+        },
+        "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c": {
+          "name": "Залізо",
+          "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
+          "token": "$item_iron",
+          "englishName": "Iron",
+          "type": "Матеріал",
+          "description": "Злиток заліза."
+        },
+        "6f5a4b3c2d1e0f9a8b7c6d5e42322b1c": {
+          "name": "Срібло",
+          "assetId": "6f5a4b3c2d1e0f9a8b7c6d5e42322b1c",
+          "token": "$item_silver",
+          "englishName": "Silver",
+          "type": "Матеріал",
+          "description": "Злиток срібла."
+        },
+        "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e": {
+          "name": "Олово",
+          "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
+          "token": "$item_tin",
+          "englishName": "Tin",
+          "type": "Матеріал",
+          "description": "Злиток олова."
+        },
+        "4deafc8c9808b40bf96b4c14cfbe99b5": {
+          "name": "ЧорнийМетал",
+          "assetId": "4deafc8c9808b40bf96b4c14cfbe99b5",
+          "token": "$item_blackmetal",
+          "englishName": "Black Metal",
+          "type": "Матеріал",
+          "description": "Важкий злиток темного металу."
+        }
       },
-      {
-        "name": "Amber",
-        "assetId": "f7b1daf6a623b4e7eaefbc3a58cde866",
-        "token": "$item_amber",
-        "englishName": "Amber",
-        "type": "Material",
-        "description": "<color=yellow>Valuable"
-      },
-      {
-        "name": "AmberPearl",
-        "assetId": "4dc179674a53ef84298539d805f7d690",
-        "token": "$item_amberpearl",
-        "englishName": "Amber Pearl",
-        "type": "Material",
-        "description": "<color=yellow>Valuable"
-      },
-      {
-        "name": "AskHide",
-        "assetId": "f3a80b05846da25418e883bd19ef7ccd",
-        "token": "$item_askhide",
-        "englishName": "Asksvin Hide",
-        "type": "Material",
-        "description": "This sturdy leather is thick, and still warm to the touch."
-      },
-      {
-        "name": "Barley",
-        "assetId": "657fac4f0dba146bbbb62b1ac4c93957",
-        "token": "$item_barley",
-        "englishName": "Barley",
-        "type": "Material",
-        "description": "A bundle of barley."
-      },
-      {
-        "name": "BarleyFlour",
-        "assetId": "8dac1e340a1874ce6acc249c3fcbe3d6",
-        "token": "$item_barleyflour",
-        "englishName": "Barley Flour",
-        "type": "Material",
-        "description": "Great for baking bread."
-      },
-      {
-        "name": "BeechSeeds",
-        "assetId": "d04c1f943742a4d8988c883b061bf668",
-        "token": "$item_beechseeds",
-        "englishName": "Beech Seeds",
-        "type": "Material",
-        "description": "Plant them to grow a beech tree."
-      },
-      {
-        "name": "BirchSeeds",
-        "assetId": "0ac7df79464d86a4480969ba2136bfbe",
-        "token": "$item_birchseeds",
-        "englishName": "Birch Seeds",
-        "type": "Material",
-        "description": "Plant them to grow a birch tree."
-      },
-      {
-        "name": "BlackMetal",
-        "assetId": "4deafc8c9808b40bf96b4c14cfbe99b5",
-        "token": "$item_blackmetal",
-        "englishName": "Black Metal",
-        "type": "Material",
-        "description": "A heavy bar of dark metal."
-      },
-      {
-        "name": "BlackMetalScrap",
-        "assetId": "3138a938a4c5746658618ef4749a84d2",
-        "token": "$item_blackmetalscrap",
-        "englishName": "Black Metal Scrap",
-        "type": "Material",
-        "description": "A twisted hunk of dark metal."
-      },
-      {
-        "name": "Bloodbag",
-        "assetId": "bb5b960fe2536af4c8e22eb71e1079ca",
-        "token": "$item_bloodbag",
-        "englishName": "Bloodbag",
-        "type": "Material",
-        "description": "The contents of a leech. Ick!"
-      },
-      {
-        "name": "BoneFragments",
-        "assetId": "f2e435d4bef9a4c77bcc33e1081b226f",
-        "token": "$item_bonefragments",
-        "englishName": "Bone Fragments",
-        "type": "Material",
-        "description": "A pile of shattered bones."
-      },
-      {
-        "name": "Bronze",
-        "assetId": "629fd54829a1d446d8905f0b0eac9982",
-        "token": "$item_bronze",
-        "englishName": "Bronze",
-        "type": "Material",
-        "description": "A strong alloy of copper and tin."
-      },
-      {
-        "name": "BronzeNails",
-        "assetId": "c939491e12ed84c48b8085edc1559a75",
-        "token": "$item_bronzenails",
-        "englishName": "Bronze Nails",
-        "type": "Material",
-        "description": "Used in construction of ships and furniture."
-      },
-      {
-        "name": "Carapace",
-        "assetId": "76a31a5097c2f583b9833c44b6817b89",
-        "token": "$item_carapace",
-        "englishName": "Carapace",
-        "type": "Material",
-        "description": "A plate of chitinous armour."
-      },
-      {
-        "name": "CarrotSeeds",
-        "assetId": "faa8a6334d1fa4632accbd46705df2f9",
-        "token": "$item_carrotseeds",
-        "englishName": "Carrot Seeds",
-        "type": "Material",
-        "description": "Plant these if you like carrots..."
-      },
-      {
-        "name": "Chain",
-        "assetId": "464ae55df98814e1c8cf5e61ef13589c",
-        "token": "$item_chain",
-        "englishName": "Chain",
-        "type": "Material",
-        "description": "A link of iron chain."
-      },
-      {
-        "name": "Chitin",
-        "assetId": "5b647cde73f714bd1a46fa69ba5a52a1",
-        "token": "$item_chitin",
-        "englishName": "Chitin",
-        "type": "Material",
-        "description": "A shard of crustacean shell."
-      },
-      {
-        "name": "Coal",
-        "assetId": "46fa21129465749248a5a9f11a47bd0c",
-        "token": "$item_coal",
-        "englishName": "Coal",
-        "type": "Material",
-        "description": "A lump of coal."
-      },
-      {
-        "name": "Coins",
-        "assetId": "38e3fc6e8552046979e13b7967e862e4",
-        "token": "$item_coins",
-        "englishName": "Coins",
-        "type": "Material",
-        "description": "<color=yellow>Valuable"
-      },
-      {
-        "name": "Copper",
-        "assetId": "a780bd461780849a7afccc525f927e2d",
-        "token": "$item_copper",
-        "englishName": "Copper",
-        "type": "Material",
-        "description": "A bar of pure copper ready to be worked."
-      },
-      {
-        "name": "CopperOre",
-        "assetId": "9bf8377529ad449bdb1de851e9e29dbf",
-        "token": "$item_copperore",
-        "englishName": "Copper Ore",
-        "type": "Material",
-        "description": "Unrefined copper. Needs to be refined in a smelter."
-      },
-      {
-        "name": "Crystal",
-        "assetId": "60f705fc57ed0445f85dc8d5373e3733",
-        "token": "$item_crystal",
-        "englishName": "Crystal",
-        "type": "Material",
-        "description": "A shard of crystal from deep within the earth."
-      },
-      {
-        "name": "DeerHide",
-        "assetId": "e8781dc863b7c41a79681458607070c7",
-        "token": "$item_deerhide",
-        "englishName": "Deer Hide",
-        "type": "Material",
-        "description": "A cleaned hide from a deer."
-      },
-      {
-        "name": "DragonTear",
-        "assetId": "04c891adfbe3841a2bb528e1af63d626",
-        "token": "$item_dragontear",
-        "englishName": "Dragon Tear",
-        "type": "Material",
-        "description": "The last frozen tear of a dragon, pulsating with mysterious energy."
-      },
-      {
-        "name": "ElderBark",
-        "assetId": "cc0a7835a9cb7451bbe7c069a6cfe712",
-        "token": "$item_elderbark",
-        "englishName": "Ancient Bark",
-        "type": "Material",
-        "description": "An ancient and sturdy material."
-      },
-      {
-        "name": "Entrails",
-        "assetId": "98b417d6832371f4e8678518bc449829",
-        "token": "$item_entrails",
-        "englishName": "Entrails",
-        "type": "Material",
-        "description": "A slimy length of something's insides."
-      },
-      {
-        "name": "Feathers",
-        "assetId": "bebb7e6da0544448a9f24e2df73a9aa6",
-        "token": "$item_feathers",
-        "englishName": "Feathers",
-        "type": "Material",
-        "description": "A small pile of feathers."
-      },
-      {
-        "name": "FineWood",
-        "assetId": "cdeae9814f3c8444da7fec7f99379fb6",
-        "token": "$item_finewood",
-        "englishName": "Finewood",
-        "type": "Material",
-        "description": "High quality wood for fine carpentry."
-      },
-      {
-        "name": "FirCone",
-        "assetId": "5b42e2dd2a7b5476e9c5d5e08d46d00c",
-        "token": "$item_fircone",
-        "englishName": "Fir Cone",
-        "type": "Material",
-        "description": "Plant it to grow a fir tree."
-      },
-      {
-        "name": "Flax",
-        "assetId": "8f6761a3308984cf89fcbf65dc3d206c",
-        "token": "$item_flax",
-        "englishName": "Flax",
-        "type": "Material",
-        "description": "Unspun fibers from a flax plant."
-      },
-      {
-        "name": "Flint",
-        "assetId": "5915af50ed981464a93e3ac7e89f25a8",
-        "token": "$item_flint",
-        "englishName": "Flint",
-        "type": "Material",
-        "description": "Can be shaped into sharp blades."
-      },
-      {
-        "name": "FreezeGland",
-        "assetId": "0aab05dfb872994408ca4f1bed05351a",
-        "token": "$item_freezegland",
-        "englishName": "Freeze Gland",
-        "type": "Material",
-        "description": "This mysterious organ keeps a perfect temperature."
-      },
-      {
-        "name": "GreydwarfEye",
-        "assetId": "afeb72fbcd0a14c8989e204ad0ddd331",
-        "token": "$item_greydwarfeye",
-        "englishName": "Greydwarf Eye",
-        "type": "Material",
-        "description": "The milky eyeball of a Greydwarf."
-      },
-      {
-        "name": "Guck",
-        "assetId": "6100467d04fb24fa987be76420fb63fb",
-        "token": "$item_guck",
-        "englishName": "Guck",
-        "type": "Material",
-        "description": "It smells like fermented fish."
-      },
-      {
-        "name": "HardAntler",
-        "assetId": "387f1ff8c82f149af84e133e431d41a3",
-        "token": "$item_hardantler",
-        "englishName": "Hard Antler",
-        "type": "Material",
-        "description": "A piece of very hard antlers."
-      },
-      {
-        "name": "Iron",
-        "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
-        "token": "$item_iron",
-        "englishName": "Iron",
-        "type": "Material",
-        "description": "A bar of iron."
-      },
-      {
-        "name": "IronNails",
-        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d",
-        "token": "$item_ironnails",
-        "englishName": "Iron Nails",
-        "type": "Material",
-        "description": "Used in construction."
-      },
-      {
-        "name": "IronOre",
-        "assetId": "2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e",
-        "token": "$item_ironore",
-        "englishName": "Iron Ore",
-        "type": "Material",
-        "description": "Raw iron ore."
-      },
-      {
-        "name": "LeatherScraps",
-        "assetId": "0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a",
-        "token": "$item_leatherscraps",
-        "englishName": "Leather Scraps",
-        "type": "Material",
-        "description": "A pile of leather scraps."
-      },
-      {
-        "name": "LinenThread",
-        "assetId": "9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b",
-        "token": "$item_linenthread",
-        "englishName": "Linen Thread",
-        "type": "Material",
-        "description": "Strong thread made from flax."
-      },
-      {
-        "name": "Obsidian",
-        "assetId": "8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c",
-        "token": "$item_obsidian",
-        "englishName": "Obsidian",
-        "type": "Material",
-        "description": "A volcanic glass."
-      },
-      {
-        "name": "Resin",
-        "assetId": "9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f",
-        "token": "$item_resin",
-        "englishName": "Resin",
-        "type": "Material",
-        "description": "Sticky tree resin."
-      },
-      {
-        "name": "RoundLog",
-        "assetId": "8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a",
-        "token": "$item_roundlog",
-        "englishName": "Round Log",
-        "type": "Material",
-        "description": "Fine wood from a core tree."
-      },
-      {
-        "name": "Ruby",
-        "assetId": "7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b",
-        "token": "$item_ruby",
-        "englishName": "Ruby",
-        "type": "Material",
-        "description": "A precious red gem."
-      },
-      {
-        "name": "Silver",
-        "assetId": "6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c",
-        "token": "$item_silver",
-        "englishName": "Silver",
-        "type": "Material",
-        "description": "A bar of silver."
-      },
-      {
-        "name": "SilverOre",
-        "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
-        "token": "$item_silverore",
-        "englishName": "Silver Ore",
-        "type": "Material",
-        "description": "Raw silver ore."
-      },
-      {
-        "name": "Stone",
-        "assetId": "1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d",
-        "token": "$item_stone",
-        "englishName": "Stone",
-        "type": "Material",
-        "description": "A plain old stone."
-      },
-      {
-        "name": "SurtlingCore",
-        "assetId": "0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e",
-        "token": "$item_surtlingcore",
-        "englishName": "Surtling Core",
-        "type": "Material",
-        "description": "It hums with a mysterious energy."
-      },
-      {
-        "name": "Thistle",
-        "assetId": "5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
-        "token": "$item_thistle",
-        "englishName": "Thistle",
-        "type": "Material",
-        "description": "A prickly thistle."
-      },
-      {
-        "name": "Tin",
-        "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
-        "token": "$item_tin",
-        "englishName": "Tin",
-        "type": "Material",
-        "description": "A bar of tin."
-      },
-      {
-        "name": "TinOre",
-        "assetId": "3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f",
-        "token": "$item_tinore",
-        "englishName": "Tin Ore",
-        "type": "Material",
-        "description": "Raw tin ore."
-      },
-      {
-        "name": "TrollHide",
-        "assetId": "2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a",
-        "token": "$item_trollhide",
-        "englishName": "Troll Hide",
-        "type": "Material",
-        "description": "A tough troll hide."
-      },
-      {
-        "name": "WolfFang",
-        "assetId": "0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a",
-        "token": "$item_wolffang",
-        "englishName": "Wolf Fang",
-        "type": "Material",
-        "description": "A sharp canine tooth."
-      },
-      {
-        "name": "WolfPelt",
-        "assetId": "7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d",
-        "token": "$item_wolfpelt",
-        "englishName": "Wolf Pelt",
-        "type": "Material",
-        "description": "A thick fur pelt."
-      },
-      {
-        "name": "Wood",
-        "assetId": "6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e",
-        "token": "$item_wood",
-        "englishName": "Wood",
-        "type": "Material",
-        "description": "Good, sturdy wood."
-      },
-      {
-        "name": "YmirRemains",
-        "assetId": "5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f",
-        "token": "$item_ymirremains",
-        "englishName": "Ymir Flesh",
-        "type": "Material",
-        "description": "The earthly remains of the giant Ymir."
-      }
-    ],
+      "Руди": [
+        {
+          "name": "МіднаРуда",
+          "assetId": "9bf8377529ad449bdb1de851e9e29dbf",
+          "token": "$item_copperore",
+          "englishName": "Copper Ore",
+          "type": "Матеріал",
+          "description": "Неочищена мідь. Потрібно переплавити у плавильні."
+        },
+        {
+          "name": "ЗалізнаРуда",
+          "assetId": "2b1c0d9e8f7a6b5c4d3e2f1a0b928d7e",
+          "token": "$item_ironore",
+          "englishName": "Iron Ore",
+          "type": "Матеріал",
+          "description": "Сира залізна руда."
+        },
+        {
+          "name": "СрібнаРуда",
+          "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
+          "token": "$item_silverore",
+          "englishName": "Silver Ore",
+          "type": "Матеріал",
+          "description": "Сира срібна руда."
+        },
+        {
+          "name": "Олов'янаРуда",
+          "assetId": "3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f",
+          "token": "$item_tinore",
+          "englishName": "Tin Ore",
+          "type": "Матеріал",
+          "description": "Сира олов'яна руда."
+        },
+        {
+          "name": "УламокЧорногоМеталу",
+          "assetId": "3138a938a4c5746658618ef4749a84d2",
+          "token": "$item_blackmetalscrap",
+          "englishName": "Black Metal Scrap",
+          "type": "Матеріал",
+          "description": "Перекручений шматок темного металу."
+        }
+      ],
+
+      "МатеріалиЗТварин": [
+        {
+          "name": "ШкіраАска",
+          "assetId": "f3a80b05846da25418e883bd19ef7ccd",
+          "token": "$item_askhide",
+          "englishName": "Asksvin Hide",
+          "type": "Матеріал",
+          "description": "Ця міцна шкіра товста і все ще тепла на дотик."
+        },
+        {
+          "name": "Кров'янийМішок",
+          "assetId": "bb5b960fe2536af4c8e22eb71e1079ca",
+          "token": "$item_bloodbag",
+          "englishName": "Bloodbag",
+          "type": "Матеріал",
+          "description": "Вміст п'явки. Фу!"
+        },
+        {
+          "name": "УламкиКісток",
+          "assetId": "f2e435d4bef9a4c77bcc33e1081b226f",
+          "token": "$item_bonefragments",
+          "englishName": "Bone Fragments",
+          "type": "Матеріал",
+          "description": "Купа розбитих кісток."
+        },
+        {
+          "name": "Карапакс",
+          "assetId": "76a31a5097c2f583b9833c44b6817b89",
+          "token": "$item_carapace",
+          "englishName": "Carapace",
+          "type": "Матеріал",
+          "description": "Пластина хітинового обладунку."
+        },
+        {
+          "name": "Хітин",
+          "assetId": "5b647cde73f714bd1a46fa69ba5a52a1",
+          "token": "$item_chitin",
+          "englishName": "Chitin",
+          "type": "Матеріал",
+          "description": "Уламок панцира ракоподібного."
+        },
+        {
+          "name": "ОленячаШкіра",
+          "assetId": "e8781dc863b7c41a79681458607070c7",
+          "token": "$item_deerhide",
+          "englishName": "Deer Hide",
+          "type": "Матеріал",
+          "description": "Очищена шкіра оленя."
+        },
+        {
+          "name": "Нутрощі",
+          "assetId": "98b417d6832371f4e8678518bc449829",
+          "token": "$item_entrails",
+          "englishName": "Entrails",
+          "type": "Матеріал",
+          "description": "Слизька частина чиїхось внутрішностей."
+        },
+        {
+          "name": "Пір'я",
+          "assetId": "bebb7e6da0544448a9f24e2df73a9aa6",
+          "token": "$item_feathers",
+          "englishName": "Feathers",
+          "type": "Матеріал",
+          "description": "Невелика купка пір'я."
+        },
+        {
+          "name": "МорознаЗалоза",
+          "assetId": "0aab05dfb872994408ca4f1bed05351a",
+          "token": "$item_freezegland",
+          "englishName": "Freeze Gland",
+          "type": "Матеріал",
+          "description": "Цей таємничий орган підтримує ідеальну температуру."
+        },
+        {
+          "name": "ОкоГрейдворфа",
+          "assetId": "afeb72fbcd0a14c8989e204ad0ddd331",
+          "token": "$item_greydwarfeye",
+          "englishName": "Greydwarf Eye",
+          "type": "Матеріал",
+          "description": "Молочне око Грейдворфа."
+        },
+        {
+          "name": "ТвердийРіг",
+          "assetId": "387f1ff8c82f149af84e133e431d41a3",
+          "token": "$item_hardantler",
+          "englishName": "Hard Antler",
+          "type": "Матеріал",
+          "description": "Шматок дуже твердого рогу."
+        },
+        {
+          "name": "ШматкиШкіри",
+          "assetId": "0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a",
+          "token": "$item_leatherscraps",
+          "englishName": "Leather Scraps",
+          "type": "Матеріал",
+          "description": "Купка шматків шкіри."
+        },
+        {
+          "name": "ТроловаШкіра",
+          "assetId": "2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a",
+          "token": "$item_trollhide",
+          "englishName": "Troll Hide",
+          "type": "Матеріал",
+          "description": "Міцна тролова шкіра."
+        },
+        {
+          "name": "ВовчийІкло",
+          "assetId": "0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a",
+          "token": "$item_wolffang",
+          "englishName": "Wolf Fang",
+          "type": "Матеріал",
+          "description": "Гострий ікло."
+        },
+        {
+          "name": "ВовчаШкура",
+          "assetId": "7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d",
+          "token": "$item_wolfpelt",
+          "englishName": "Wolf Pelt",
+          "type": "Матеріал",
+          "description": "Товста хутряна шкура."
+        }
+      ],
+
+      "ГрошіТаЦінності": [
+        {
+          "name": "Бурштин",
+          "assetId": "f7b1daf6a623b4e7eaefbc3a58cde866",
+          "token": "$item_amber",
+          "englishName": "Amber",
+          "type": "Матеріал",
+          "description": "<color=yellow>Цінний</color>"
+        },
+        {
+          "name": "БурштиноваПерлина",
+          "assetId": "4dc179674a53ef84298539d805f7d690",
+          "token": "$item_amberpearl",
+          "englishName": "Amber Pearl",
+          "type": "Матеріал",
+          "description": "<color=yellow>Цінний</color>"
+        },
+        {
+          "name": "Монети",
+          "assetId": "38e3fc6e8552046979e13b7967e862e4",
+          "token": "$item_coins",
+          "englishName": "Coins",
+          "type": "Матеріал",
+          "description": "<color=yellow>Цінний</color>"
+        },
+        {
+          "name": "Кристал",
+          "assetId": "60f705fc57ed0445f85dc8d5373e3733",
+          "token": "$item_crystal",
+          "englishName": "Crystal",
+          "type": "Матеріал",
+          "description": "Уламок кристалу з глибин землі."
+        },
+        {
+          "name": "Рубін",
+          "assetId": "7e6f5a4b3c2d1e0f9a8b7c6d5e4f322b",
+          "token": "$item_ruby",
+          "englishName": "Ruby",
+          "type": "Матеріал",
+          "description": "Дорогоцінний червоний камінь."
+        },
+        {
+          "name": "СерцевинаСуртлінга",
+          "assetId": "0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e",
+          "token": "$item_surtlingcore",
+          "englishName": "Surtling Core",
+          "type": "Матеріал",
+          "description": "Воно дзижчить таємничою енергією."
+        }
+      ],
+
+      "ІншіМатеріали": [
+        {
+          "name": "Жолудь",
+          "assetId": "44cca2d8936df8c428f5d72af9e35379",
+          "token": "$item_oakseeds",
+          "englishName": "Acorns",
+          "type": "Матеріал",
+          "description": "Посадіть їх, щоб виростити дуб."
+        },
+        {
+          "name": "Ячмінь",
+          "assetId": "657fac4f0dba146bbbb62b1ac4c93957",
+          "token": "$item_barley",
+          "englishName": "Barley",
+          "type": "Матеріал",
+          "description": "Зв'язка ячменю."
+        },
+        {
+          "name": "ЯчміннеБорошно",
+          "assetId": "8dac1e340a1874ce6acc249c3fcbe3d6",
+          "token": "$item_barleyflour",
+          "englishName": "Barley Flour",
+          "type": "Матеріал",
+          "description": "Чудово підходить для випічки хліба."
+        },
+        {
+          "name": "НасінняБука",
+          "assetId": "d04c1f943742a4d8988c883b061bf668",
+          "token": "$item_beechseeds",
+          "englishName": "Beech Seeds",
+          "type": "Матеріал",
+          "description": "Посадіть їх, щоб виростити бук."
+        },
+        {
+          "name": "НасінняБерези",
+          "assetId": "0ac7df79464d86a4480969ba2136bfbe",
+          "token": "$item_birchseeds",
+          "englishName": "Birch Seeds",
+          "type": "Матеріал",
+          "description": "Посадіть їх, щоб виростити березу."
+        },
+        {
+          "name": "БронзовіЦвяхи",
+          "assetId": "c939491e12ed84c48b8085edc1559a75",
+          "token": "$item_bronzenails",
+          "englishName": "Bronze Nails",
+          "type": "Матеріал",
+          "description": "Використовуються для будівництва кораблів та меблів."
+        },
+        {
+          "name": "НасінняМоркви",
+          "assetId": "faa8a6334d1fa4632accbd46705df2f9",
+          "token": "$item_carrotseeds",
+          "englishName": "Carrot Seeds",
+          "type": "Матеріал",
+          "description": "Посадіть їх, якщо ви любите моркву..."
+        },
+        {
+          "name": "Ланцюг",
+          "assetId": "464ae55df98814e1c8cf5e61ef13589c",
+          "token": "$item_chain",
+          "englishName": "Chain",
+          "type": "Матеріал",
+          "description": "Ланка залізного ланцюга."
+        },
+        {
+          "name": "Вугілля",
+          "assetId": "46fa21129465749248a5a9f11a47bd0c",
+          "token": "$item_coal",
+          "englishName": "Coal",
+          "type": "Матеріал",
+          "description": "Шматок вугілля."
+        },
+        {
+          "name": "ДраконоваСльоза",
+          "assetId": "04c891adfbe3841a2bb528e1af63d626",
+          "token": "$item_dragontear",
+          "englishName": "Dragon Tear",
+          "type": "Матеріал",
+          "description": "Остання замерзла сльоза дракона, що пульсує таємничою енергією."
+        },
+        {
+          "name": "СтародавняКора",
+          "assetId": "cc0a7835a9cb7451bbe7c069a6cfe712",
+          "token": "$item_elderbark",
+          "englishName": "Ancient Bark",
+          "type": "Матеріал",
+          "description": "Стародавній і міцний матеріал."
+        },
+        {
+          "name": "ДобротнаДеревина",
+          "assetId": "cdeae9814f3c8444da7fec7f99379fb6",
+          "token": "$item_finewood",
+          "englishName": "Finewood",
+          "type": "Матеріал",
+          "description": "Високоякісна деревина для тонкої столярної роботи."
+        },
+        {
+          "name": "ЯлиноваШишка",
+          "assetId": "5b42e2dd2a7b5476e9c5d5e08d46d00c",
+          "token": "$item_fircone",
+          "englishName": "Fir Cone",
+          "type": "Матеріал",
+          "description": "Посадіть її, щоб виростити ялину."
+        },
+        {
+          "name": "Льон",
+          "assetId": "8f6761a3308984cf89fcbf65dc3d206c",
+          "token": "$item_flax",
+          "englishName": "Flax",
+          "type": "Матеріал",
+          "description": "Непрядена волокна льонової рослини."
+        },
+        {
+          "name": "Кремінь",
+          "assetId": "5915af50ed981464a93e3ac7e89f25a8",
+          "token": "$item_flint",
+          "englishName": "Flint",
+          "type": "Матеріал",
+          "description": "Можна сформувати у гострі лези."
+        },
+        {
+          "name": "Слиз",
+          "assetId": "6100467d04fb24fa987be76420fb63fb",
+          "token": "$item_guck",
+          "englishName": "Guck",
+          "type": "Матеріал",
+          "description": "Пахне як ферментована риба."
+        },
+        {
+          "name": "ЗалізніЦвяхи",
+          "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b928d",
+          "token": "$item_ironnails",
+          "englishName": "Iron Nails",
+          "type": "Матеріал",
+          "description": "Використовуються в будівництві."
+        },
+        {
+          "name": "ЛлянаНитка",
+          "assetId": "9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b",
+          "token": "$item_linenthread",
+          "englishName": "Linen Thread",
+          "type": "Матеріал",
+          "description": "Міцна нитка з льону."
+        },
+        {
+          "name": "Обсидіан",
+          "assetId": "8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c",
+          "token": "$item_obsidian",
+          "englishName": "Obsidian",
+          "type": "Матеріал",
+          "description": "Вулканічне скло."
+        },
+        {
+          "name": "Смола",
+          "assetId": "9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f",
+          "token": "$item_resin",
+          "englishName": "Resin",
+          "type": "Матеріал",
+          "description": "Липка деревна смола."
+        },
+        {
+          "name": "КруглаКолода",
+          "assetId": "8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a",
+          "token": "$item_roundlog",
+          "englishName": "Round Log",
+          "type": "Матеріал",
+          "description": "Добротна деревина з серцевинного дерева."
+        },
+        {
+          "name": "Камінь",
+          "assetId": "1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d",
+          "token": "$item_stone",
+          "englishName": "Stone",
+          "type": "Матеріал",
+          "description": "Звичайний старий камінь."
+        },
+        {
+          "name": "Чортополох",
+          "assetId": "5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
+          "token": "$item_thistle",
+          "englishName": "Thistle",
+          "type": "Матеріал",
+          "description": "Колючий чортополох."
+        },
+        {
+          "name": "Деревина",
+          "assetId": "6b5c4d3e2f1a0b9c8d7e6f5a43322d1e",
+          "token": "$item_wood",
+          "englishName": "Wood",
+          "type": "Матеріал",
+          "description": "Хороша, міцна деревина."
+        },
+        {
+          "name": "РешткиІміра",
+          "assetId": "5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f",
+          "token": "$item_ymirremains",
+          "englishName": "Ymir Flesh",
+          "type": "Матеріал",
+          "description": "Земні рештки велетня Іміра."
+        }
+      ]
+    },
     "Trophy": [
       {
         "name": "TrophyAbomination",
@@ -2308,7 +2478,7 @@
       },
       {
         "name": "TrophyEikthyr",
-        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d",
+        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b938d",
         "token": "$item_trophy_eikthyr",
         "englishName": "Eikthyr Trophy",
         "type": "Trophy",
@@ -2430,11 +2600,29 @@
       },
       {
         "name": "Wisp",
-        "assetId": "2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e",
+        "assetId": "2b1c0d9e8f7a6b5c4d3e2f1a0b938d7e",
         "token": "$item_wisp",
         "englishName": "Wisp",
         "type": "Misc",
         "description": "A captured wisp."
+      }
+    ],
+    "Унікальні предмети": [
+      {
+        "name": "Мегінгьорн",
+        "assetId": "7690b97064b61444e80b63815cfae915",
+        "token": "$item_beltstrength",
+        "englishName": "Megingjord",
+        "type": "Утиліти",
+        "description": "Надає тому, хто його носить, надлюдську силу."
+      },
+      {
+        "name": "Світлячок",
+        "assetId": "aa3ae149fbf3709dfb2fefa4b11ecdf5",
+        "token": "$item_demister",
+        "englishName": "Wisplight",
+        "type": "Утиліти",
+        "description": "Прив'язаний вогник, що проведе вас крізь найгустіший туман."
       }
     ],
     "Customization": [

@@ -338,7 +338,9 @@
             <div class="set-items-list">
                 <h2>Предмети в комплекті:</h2>
 
-                {% for item in set.items %}
+                <!-- ДЕБАГ: Кількість предметів = {{ set.items_with_data|length }} -->
+                {% for item in set.items_with_data %}
+                <!-- ДЕБАГ: {{ item }} -->
                 <div class="item-in-set">
                     <div class="item-in-set-image">
                         {% if item.image_url %}
