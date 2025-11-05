@@ -136,7 +136,7 @@
     }
 
     .category-filters button {
-      background-color: #e0e7ff; /* Світло-синій фон */
+      background-color: #e0e7ff;
       color: var(--primary-color);
       border: 2px solid transparent;
       padding: 0.6rem 1.2rem;
@@ -159,7 +159,7 @@
 
     .items-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.5rem;
     }
 
@@ -179,6 +179,7 @@
 
     .item-card-link {
         text-decoration: none;
+        color: inherit;
     }
 
     .item-card {
@@ -188,11 +189,53 @@
       padding: 1.5rem;
       border: 1px solid rgba(0, 0, 0, 0.05);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .item-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Стилі для зображень предметів */
+    .item-image-container {
+      width: 100%;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      background-color: #f8fafc;
+      border-radius: var(--radius-sm);
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+    }
+
+    .item-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      padding: 0.5rem;
+    }
+
+    .item-image-placeholder {
+      width: 64px;
+      height: 64px;
+      background-color: #e5e7eb;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .item-info {
+      flex-grow: 1;
     }
 
     .item-card h3 {
@@ -201,6 +244,7 @@
       color: var(--primary-color);
       margin-top: 0;
       margin-bottom: 0.75rem;
+      line-height: 1.3;
     }
 
     .item-card p {
@@ -215,6 +259,17 @@
       display: inline-block;
     }
 
+    .item-type-badge {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
     .items-grid .empty-message,
     .empty-message {
         grid-column: 1 / -1;
@@ -225,6 +280,27 @@
         box-shadow: var(--shadow);
         color: var(--text-light);
         font-size: 1.1rem;
+    }
+
+    /* Стилі для сетів обладунків */
+    .set-image-container {
+      width: 100%;
+      height: 180px;
+      margin-bottom: 1rem;
+      background-color: #f8fafc;
+      border-radius: var(--radius-sm);
+      border: 1px solid #e5e7eb;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .set-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      padding: 1rem;
     }
 
     @media (max-width: 768px) {
@@ -243,6 +319,16 @@
       main { padding: 1rem; }
       .category-filters {
         padding: 1rem;
+      }
+      .items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .items-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -292,7 +378,7 @@
     <button type="button" data-category="Луки">Луки</button>
     <button type="button" data-category="Дворучна зброя">Дворучна зброя</button>
     <button type="button" data-category="Одноручна зброя">Одноручна зброя</button>
-    <button type="button" data-category="Левади">Левади</button>
+    <button type="button" data-category="Матеріали">Матеріали</button>
   </div>
 
   {% if error %}
@@ -301,26 +387,25 @@
     </div>
   {% else %}
     <div id="items-grid">
-      </div>
+      <!-- Тут будуть відображатись предмети -->
+    </div>
   {% endif %}
 
 </main>
 
 {{ items|json_script:"items-data" }}
 
-
 <script>
   document.addEventListener('DOMContentLoaded', () => {
 
-    let allCategoriesData; // Тут будемо зберігати об'єкт з категоріями
+    let allCategoriesData;
 
     const mainContainer = document.getElementById('items-grid');
     const filterContainer = document.getElementById('category-filters');
     const buttons = filterContainer.querySelectorAll('button');
 
-    // 1. Отримуємо дані з Django
+    // Отримуємо дані з Django
     try {
-      // 'items' - це об'єкт {"Обладунки": {...}, "Одноручна зброя": [...]}
       allCategoriesData = JSON.parse(document.getElementById('items-data').textContent);
 
       if (typeof allCategoriesData !== 'object' || Array.isArray(allCategoriesData) || allCategoriesData === null) {
@@ -335,31 +420,21 @@
       return;
     }
 
-    // 🔽 --- НОВА РЕКУРСИВНА ФУНКЦІЯ --- 🔽
-    /**
-     * Рекурсивно знаходить усі предмети (об'єкти з 'assetId')
-     * всередині будь-якої структури даних (масиву чи об'єкта).
-     */
+    // Рекурсивна функція для отримання всіх предметів
     function getAllItemsFrom(data) {
         if (Array.isArray(data)) {
-            // Якщо це масив, пробігаємо по ньому і збираємо результати
             return data.flatMap(item => getAllItemsFrom(item));
         }
         if (typeof data === 'object' && data !== null) {
-            // Якщо це об'єкт...
             if (data.assetId && data.name) {
-                // БАЗОВИЙ ВИПАДОК: Це об'єкт предмета, повертаємо його
                 return [data];
             }
-            // РЕКУРСИВНИЙ ВИПАДОК: Це об'єкт-категорія, провалюємось глибше
             return Object.values(data).flatMap(value => getAllItemsFrom(value));
         }
-        // Якщо це не масив, не об'єкт і не предмет (напр. рядок), повертаємо порожній масив
         return [];
     }
 
-
-    // --- Функція: Створює картки для ПРЕДМЕТІВ ---
+    // Функція для створення картки предмета з зображенням
     function renderItemCards(itemsArray) {
         mainContainer.innerHTML = '';
         mainContainer.className = 'items-grid';
@@ -378,12 +453,38 @@
             const englishName = item.englishName || item[' englishName'];
             const internalName = item.name || 'N/A';
             const itemType = item.type || 'N/A';
+            const imageUrl = item.image_url;
 
-            let cardHTML = `<h3>${internalName}</h3>`;
+            let cardHTML = `
+              <div class="item-image-container">
+            `;
+
+            if (imageUrl) {
+              cardHTML += `
+                <img src="${imageUrl}" alt="${internalName}" class="item-image" loading="lazy">
+              `;
+            } else {
+              cardHTML += `
+                <div class="item-image-placeholder">
+                  Немає зображення
+                </div>
+              `;
+            }
+
+            cardHTML += `
+              </div>
+              <div class="item-info">
+                <h3>${internalName}</h3>
+            `;
+
             if (englishName && englishName.trim() !== internalName) {
               cardHTML += `<p><strong>Англ. назва:</strong> ${englishName.trim()}</p>`;
             }
-            cardHTML += `<p><strong>Тип:</strong> ${itemType}</p>`;
+
+            cardHTML += `
+                <div class="item-type-badge">${itemType}</div>
+              </div>
+            `;
 
             card.innerHTML = cardHTML;
             mainContainer.appendChild(card);
@@ -391,7 +492,7 @@
         });
     }
 
-    // --- Функція: Створює картки для КОМПЛЕКТІВ з групами ---
+    // Функція для створення карток комплексів з групами
     function renderSetCards(setsArray) {
         mainContainer.innerHTML = '';
         mainContainer.className = '';
@@ -401,7 +502,6 @@
             return;
         }
 
-        // 1. Групуємо комплекти за 'setCategory' (напр. "Левади")
         const groups = {};
         setsArray.forEach(set => {
             const category = set.setCategory || 'Інше';
@@ -411,32 +511,38 @@
             groups[category].push(set);
         });
 
-        // 2. Рендеримо кожну групу
         for (const categoryName in groups) {
             const groupWrapper = document.createElement('div');
             groupWrapper.className = 'set-category-group';
 
             const title = document.createElement('h2');
             title.className = 'set-category-title';
-            title.textContent = categoryName; // "Левади"
+            title.textContent = categoryName;
             groupWrapper.appendChild(title);
 
             const groupGrid = document.createElement('div');
             groupGrid.className = 'items-grid';
 
-            // 3. Рендеримо картки для цієї групи
             groups[categoryName].forEach(set => {
                 if (set && set.setSlug) {
                     const card = document.createElement('a');
                     card.href = `/set/${set.setSlug}/`;
                     card.className = 'item-card item-card-link';
 
-                    let cardHTML = `<h3>${set.setName || 'N/A'}</h3>`; // "Ганчіркова броня"
+                    let cardHTML = `<h3>${set.setName || 'N/A'}</h3>`;
 
                     if (set.set_image_url) {
                         cardHTML += `
-                            <div style="background-color: #f9f9f9; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #eee;">
-                                <img src="${set.set_image_url}" alt="${set.setName}" style="width: 100%; height: 180px; object-fit: contain; padding: 10px;">
+                            <div class="set-image-container">
+                                <img src="${set.set_image_url}" alt="${set.setName}" class="set-image" loading="lazy">
+                            </div>
+                        `;
+                    } else {
+                        cardHTML += `
+                            <div class="set-image-container">
+                                <div class="item-image-placeholder">
+                                    Немає зображення комплекту
+                                </div>
                             </div>
                         `;
                     }
@@ -451,38 +557,26 @@
         }
     }
 
-
-    // 2. Функція-розподільник (ВИПРАВЛЕНА)
+    // Функція-розподільник для рендерингу контенту
     function renderContent(categoryKey) {
-
-      const categoryData = allCategoriesData[categoryKey]; // Отримуємо дані за ключем
+      const categoryData = allCategoriesData[categoryKey];
 
       if (categoryKey === 'Комплект обладунків') {
-          // *** ЯКЩО ЦЕ КОМПЛЕКТИ ***
           renderSetCards(categoryData || []);
-
       } else {
-          // *** ДЛЯ ВСІХ ІНШИХ (Предмети) ***
-          mainContainer.className = 'items-grid'; // Встановлюємо клас сітки
+          mainContainer.className = 'items-grid';
           let itemsToShow = [];
 
           if (categoryKey === 'Всі') {
-              // *** ЯКЩО "ВСІ" ***
               for (const key in allCategoriesData) {
-                  // Збираємо предмети з усіх категорій, КРІМ комплектів
                   if (key !== 'Комплект обладунків') {
-                      // Використовуємо рекурсивну функцію
                       itemsToShow = itemsToShow.concat(getAllItemsFrom(allCategoriesData[key]));
                   }
               }
           } else if (categoryKey === 'Нагрудні обладунки') {
-              // *** СПЕЦІАЛЬНА ЛОГІКА ДЛЯ "НАГРУДНІ ОБЛАДУНКИ" ***
               const chestData = allCategoriesData['Обладунки'] ? allCategoriesData['Обладунки']['Нагрудні обладунки'] : undefined;
               itemsToShow = getAllItemsFrom(chestData);
-          }
-          else {
-              // *** ДЛЯ КОНКРЕТНОЇ КАТЕГОРІЇ (напр. "Обладунки", "Одноручна зброя") ***
-              // Використовуємо рекурсивну функцію
+          } else {
               itemsToShow = getAllItemsFrom(categoryData);
           }
 
@@ -490,7 +584,7 @@
       }
     }
 
-    // 3. Обробник кліків на кнопки (без змін)
+    // Обробник кліків на кнопки фільтрів
     filterContainer.addEventListener('click', (event) => {
       if (event.target.tagName === 'BUTTON') {
         buttons.forEach(btn => btn.classList.remove('active'));
@@ -501,7 +595,7 @@
       }
     });
 
-    // 4. Завантажуємо всі предмети при першому відкритті сторінки
+    // Завантажуємо всі предмети при першому відкритті сторінки
     renderContent('Всі');
 
   });
