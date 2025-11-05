@@ -282,7 +282,7 @@
     <div class="user-info">
         <h1>Акаунт користувача: {{ user.username }}</h1>
         <p><strong>Email:</strong> {{ user.email }}</p>
-        <form action='/logout' method="post">
+        <form action='/logout/' method="post">
             {% csrf_token %}
             <button type="submit" class="logout-btn">Вийти з акаунту</button>
         </form>
