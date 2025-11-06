@@ -1,226 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>{% if item %}{{ item.name }}{% else %}Помилка{% endif %} - Valheimopedia</title>
-
-  <style>
-    :root {
-      --primary-color: #2563eb;
-      --primary-hover: #1d4ed8;
-      --secondary-color: #3b82f6;
-      --accent-color: #10b981;
-      --accent-hover: #0d9f6e;
-      --text-color: #1f2937;
-      --text-light: #6b7280;
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --radius: 12px;
-      --radius-sm: 8px;
-    }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      margin: 0; padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    header {
-      background-color: var(--primary-color); color: white;
-      padding: 1.5rem 2rem; text-align: center;
-      position: relative; box-shadow: var(--shadow);
-    }
-    .auth-buttons {
-      position: absolute; top: 50%; right: 2rem;
-      transform: translateY(-50%); display: flex; gap: 0.75rem;
-    }
-    .auth-buttons a {
-      background-color: white; color: var(--primary-color); border: none;
-      padding: 0.5rem 1rem; border-radius: var(--radius-sm);
-      text-decoration: none; font-weight: 600; font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-    .auth-buttons a:hover { background-color: #f0f4ff; }
-    nav {
-      background-color: var(--primary-color); display: flex;
-      justify-content: center; align-items: center;
-      gap: 1.5rem; padding: 1rem 2rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-    nav a {
-      color: white; padding: 0.5rem 1rem; text-decoration: none;
-      font-weight: 500; border-radius: var(--radius-sm);
-      transition: all 0.2s ease;
-    }
-    nav a:hover { background-color: rgba(255, 255, 255, 0.1); }
-    main { padding: 2rem; max-width: 1000px; margin: 0 auto; }
-
-    .error-message {
-        text-align: center; padding: 3rem; background-color: var(--card-bg);
-        border-radius: var(--radius); box-shadow: var(--shadow);
-        color: #ef4444; font-size: 1.2rem;
-    }
-    .back-link {
-        display: inline-block;
-        margin-bottom: 1.5rem;
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-    }
-    .back-link:hover {
-        text-decoration: underline;
-    }
-
-    /* ========================================
-    🔽 НОВІ СТИЛІ ДЛЯ ДВОКОЛОНКОВОГО МАКЕТУ 🔽
-    ========================================
-    */
-    .detail-container {
-        display: flex;
-        flex-direction: row; /* Дві колонки */
-        background-color: var(--card-bg);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        overflow: hidden; /* Щоб рамки були гарні */
-    }
-
-    /* --- Ліва колонка (Зображення) --- */
-    .detail-image-wrapper {
-        flex: 1; /* Займає 1 частину */
-        min-width: 300px;
-        padding: 2rem;
-        background-color: #f9f9f9; /* Світлий фон для зображення */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-right: 1px solid #e5e7eb;
-    }
-
-    /* Блок-заглушка, поки у вас немає зображень */
-    .detail-image-placeholder {
-        width: 100%;
-        aspect-ratio: 1 / 1; /* Робить блок квадратним */
-        background-color: var(--bg-color);
-        border: 2px dashed #d1d5db;
-        border-radius: var(--radius-sm);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: var(--text-light);
-        font-size: 1.1rem;
-        font-weight: 500;
-    }
-
-    /* Стиль для реального зображення (коли ви його додасте) */
-    .detail-image-wrapper img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-
-    /* --- Права колонка (Інформація) --- */
-    .detail-info {
-        flex: 2; /* Займає 2 частини (більша) */
-        padding: 2.5rem 3rem;
-    }
-
-    .detail-info h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--text-color);
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-    }
-
-    /* "Значок" для типу предмета (як на вашому фото) */
-    .item-type-badge {
-        display: inline-block;
-        background-color: var(--primary-color);
-        color: white;
-        padding: 0.3rem 0.8rem;
-        border-radius: 9999px; /* Робить його "таблеткою" */
-        font-weight: 600;
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-    }
-
-    .english-name {
-        font-style: italic;
-        color: var(--text-light);
-        margin-top: -0.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .description {
-        font-size: 1.1rem;
-        color: var(--text-color);
-        line-height: 1.7;
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #e5e7eb;
-    }
-
-    /* Секція для тех. інформації (assetId, token) */
-    .tech-info {
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #e5e7eb;
-    }
-    .tech-info h4 {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        color: var(--text-light);
-        font-weight: 500;
-        font-size: 1rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    .tech-info p {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 0.95rem;
-        color: var(--text-light);
-        margin: 0.5rem 0;
-    }
-    .tech-info p strong {
-        color: var(--text-color);
-    }
-    .tech-info p span {
-        color: var(--accent-color);
-        font-weight: 600;
-        background-color: #f0fdf4;
-        padding: 2px 6px;
-        border-radius: 4px;
-    }
-
-    /* Адаптивність для мобільних */
-    @media (max-width: 768px) {
-        .detail-container {
-            flex-direction: column; /* Колонки одна під одною */
-        }
-        .detail-image-wrapper {
-            border-right: none;
-            border-bottom: 1px solid #e5e7eb;
-            min-width: auto;
-        }
-        .detail-info {
-            padding: 2rem 1.5rem;
-        }
-        .detail-info h1 {
-            font-size: 2rem;
-        }
-    }
-  </style>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/item_detail.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
-  <h1>Valheimopedia</h1>
+  <h1 class="category-title">Valheimopedia</h1>
   <div class="auth-buttons">
     {% if user.is_authenticated %}
       <a href="/account">Акаунт</a>
@@ -230,6 +22,7 @@
     {% endif %}
   </div>
 </header>
+
 <nav>
   <a href="/">Головна</a>
   <a href="/all_news/">Усі новини</a>
@@ -246,26 +39,28 @@
 
     {% elif item %}
         <div class="detail-container">
-
             <div class="detail-image-wrapper">
-
                 {% if item.image_url %}
-                    <img src="{{ item.image_url }}" alt="{{ item.name }}">
+                    <img src="{{ item.image_url }}" alt="{{ item.name }}" class="item-detail-image">
                 {% else %}
                     <div class="detail-image-placeholder">
-                        Зображення відсутнє
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21,15 16,10 5,21"></polyline>
+                        </svg>
+                        <span>Зображення відсутнє</span>
                     </div>
                 {% endif %}
             </div>
 
             <div class="detail-info">
-
                 <span class="item-type-badge">{{ item.type }}</span>
 
-                <h1>{{ item.name }}</h1>
+                <h1 class="item-title">{{ item.name }}</h1>
 
                 {% if item.englishName and item.englishName != item.name %}
-                    <p class="english-name">({{ item.englishName }})</p>
+                    <p class="english-name">{{ item.englishName }}</p>
                 {% endif %}
 
                 {% if item.description and item.description != "NULL" %}
@@ -276,11 +71,10 @@
 
                 <div class="tech-info">
                     <h4>Технічна інформація</h4>
-                    <p><strong>Asset ID:</strong> <span>{{ item.assetId }}</span></p>
-                    <p><strong>Токен:</strong> <span>{{ item.token }}</span></p>
+                    <p><strong>Asset ID:</strong> <span class="tech-value">{{ item.assetId }}</span></p>
+                    <p><strong>Токен:</strong> <span class="tech-value">{{ item.token }}</span></p>
                 </div>
             </div>
-
         </div>
     {% else %}
         <div class="error-message">

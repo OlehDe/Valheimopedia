@@ -1,161 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Реєстрація</title>
+  <title>Реєстрація - Valheimopedia</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #2563eb;
-      --primary-hover: #1d4ed8;
-      --text-color: #1f2937;
-      --text-light: #6b7280;
-      --bg-color: #f8fafc;
-      --card-bg: #ffffff;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --radius: 12px;
-      --radius-sm: 8px;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
-
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 1.5rem 2rem;
-      text-align: center;
-      position: relative;
-      box-shadow: var(--shadow);
-    }
-
-    .auth-buttons {
-      position: absolute;
-      top: 50%;
-      right: 2rem;
-      transform: translateY(-50%);
-      display: flex;
-      gap: 0.75rem;
-    }
-
-    .auth-buttons a {
-      background-color: white;
-      color: var(--primary-color);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-
-    .auth-buttons a:hover {
-      background-color: #f0f4ff;
-      transform: translateY(-1px);
-    }
-
-    main {
-      max-width: 500px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: var(--card-bg);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    h2 {
-      text-align: center;
-      color: var(--primary-color);
-      margin-bottom: 1.5rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-
-    input {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid #d1d5db;
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-      box-sizing: border-box;
-      transition: border-color 0.2s ease;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-    }
-
-    button {
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      padding: 0.75rem;
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      margin-top: 1rem;
-    }
-
-    button:hover {
-      background-color: var(--primary-hover);
-      transform: translateY(-1px);
-    }
-
-    /* === Додано для повідомлень про помилки === */
-    .error-messages {
-      background-color: #fee2e2;
-      color: #b91c1c;
-      border: 1px solid #fca5a5;
-      border-radius: var(--radius-sm);
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .error-messages p {
-      margin: 0.25rem 0;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 1rem;
-      }
-
-      .auth-buttons {
-        position: static;
-        transform: none;
-        justify-content: center;
-        margin-top: 1rem;
-      }
-
-      main {
-        margin: 1.5rem 1rem;
-        padding: 1.5rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
 <header>
-  <h1>Valheimopedia</h1>
+  <h1 class="category-title">Valheimopedia</h1>
   <div class="auth-buttons">
     <a href="/">Головна</a>
     <a href="/login">Увійти</a>
@@ -164,27 +21,62 @@
 </header>
 
 <main>
-  <h2>Реєстрація</h2>
+  <div class="login-form">
+    <h2>Реєстрація</h2>
 
-  <!-- 🔴 Блок для відображення помилок -->
-  {% if form.errors %}
-  <div class="error-messages">
-    {% for field in form %}
-      {% for error in field.errors %}
-        <p><strong>{{ field.label }}:</strong> {{ error }}</p>
+    {% if form.errors %}
+    <div class="error-messages">
+      {% for field in form %}
+        {% for error in field.errors %}
+          <p><strong>{{ field.label }}:</strong> {{ error }}</p>
+        {% endfor %}
       {% endfor %}
-    {% endfor %}
-    {% for error in form.non_field_errors %}
-      <p>{{ error }}</p>
-    {% endfor %}
-  </div>
-  {% endif %}
+      {% for error in form.non_field_errors %}
+        <p>{{ error }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
 
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Зареєструватися</button>
-  </form>
+    <form method="post">
+      {% csrf_token %}
+
+      <!-- Username поле -->
+      <div class="form-group">
+        <label for="id_username">Ім'я користувача</label>
+        <input type="text" id="id_username" name="username" required>
+        <small class="form-help">Обов'язкове поле. Не більше 150 символів. Тільки букви, цифри та @/./+/-/_.</small>
+      </div>
+
+      <!-- Email поле -->
+      <div class="form-group">
+        <label for="id_email">Email</label>
+        <input type="email" id="id_email" name="email" required>
+      </div>
+
+      <!-- Password поле -->
+      <div class="form-group">
+        <label for="id_password1">Пароль</label>
+        <input type="password" id="id_password1" name="password1" required>
+        <div class="password-help">
+          <ul>
+            <li>Ваш пароль не повинен бути занадто схожим на іншу вашу особисту інформацію.</li>
+            <li>Ваш пароль повинен містити щонайменше 8 символів.</li>
+            <li>Ваш пароль не може бути поширеним паролем.</li>
+            <li>Ваш пароль не може складатися лише з цифр.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Password confirmation поле -->
+      <div class="form-group">
+        <label for="id_password2">Підтвердження пароля</label>
+        <input type="password" id="id_password2" name="password2" required>
+        <small class="form-help">Введіть той самий пароль, що й раніше, для підтвердження.</small>
+      </div>
+
+      <button type="submit">Зареєструватися</button>
+    </form>
+  </div>
 </main>
 
 </body>
