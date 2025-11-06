@@ -144,9 +144,7 @@ def set_detail_view(request, set_slug):
 # -----------------------------------------------------------------
 
 def home(request):
-    # Тимчасово перенаправляємо на сторінку предметів
-    return redirect('main_app:all_items')
-
+    return render(request, 'main_app/home.html')
 
 def register_view(request):
     if request.method == 'POST':
