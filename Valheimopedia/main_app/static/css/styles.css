@@ -245,27 +245,36 @@ main {
   margin-bottom: 2.5rem;
 }
 
+/* ===== Категорії (Левади, Чорнолісся) - Set Category Title Style ===== */
 .set-category-title {
   font-size: 1.8rem;
   font-weight: 700;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid rgba(59, 130, 246, 0.3);
-  position: relative;
+
+  /* Стиль бейджа */
+  color: var(--category-color-line);
+  background-color: var(--card-bg);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+
+  /* Центрування */
+  margin: 2.5rem auto 1.5rem auto;
+  display: block;
+  width: fit-content;
+  text-align: center;
+
+  /* Скидання старих градієнтних стилів */
+  background-image: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  border-bottom: none;
+  position: static;
 }
 
+/* Прибираємо ::after для заголовків категорій */
 .set-category-title::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background: var(--gradient);
+  content: none;
 }
 
 .item-card-link {
@@ -273,12 +282,14 @@ main {
   color: inherit;
 }
 
-/* ===== Item Card (Base style for individual items) ===== */
+/* ========================================================================= */
+/* ===== 1. General Item Card Styles (Болти, Стріли, Матеріали) ===== */
+/* ========================================================================= */
 .item-card {
   background-color: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 0.5rem; /* Стандартний padding для предметів */
+  padding: 0.5rem; /* Базовий, менший padding для звичайних предметів */
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
   height: 100%;
@@ -288,18 +299,6 @@ main {
   overflow: hidden;
 }
 
-.item-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--gradient);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .item-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
@@ -307,31 +306,7 @@ main {
   border-color: rgba(59, 130, 246, 0.2);
 }
 
-.item-card:hover::before {
-  opacity: 1;
-}
-
-/* ===== Set Card (Specific style for armor sets) ===== */
-.set-card {
-  /* Перевизначення стилів для карток комплектів */
-  padding: 1.5rem; /* Менший padding, як ви просили */
-  /* Можна додати інші унікальні стилі для комплектів тут */
-  /* наприклад, інший тінь або рамка */
-}
-
-/* Застосовуємо hover-ефект до обох класів (item-card та set-card),
-   якщо ви хочете однаковий ефект при наведенні */
-.set-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-  background-color: var(--card-hover);
-  border-color: rgba(59, 130, 246, 0.2);
-}
-
-
-/* ===== Image Containers - Base styles ===== */
-.item-image-container,
-.set-image-container {
+.item-image-container {
   width: 100%;
   display: flex;
   align-items: center;
@@ -341,20 +316,92 @@ main {
   overflow: hidden;
   border-radius: var(--radius-sm);
   transition: all 0.3s ease;
+  min-height: 120px; /* Стандартна висота для зображень Item */
 }
 
-/* Специфічні hover-ефекти для контейнерів зображень */
 .item-card:hover .item-image-container {
   border-color: rgba(59, 130, 246, 0.3);
   transform: scale(1.02);
 }
 
-.set-card:hover .set-image-container {
-  border-color: var(--accent-color); /* Приклад: інший колір рамки при наведенні для комплектів */
-  transform: scale(1.05); /* Приклад: більший масштаб при наведенні для комплектів */
+.item-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 0.75rem; /* Відступ після зображення */
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  text-align: left; /* Текст назви предмета зліва */
+}
+
+/* ===== Info для звичайних предметів ===== */
+.item-info {
+  flex-grow: 1;
+  padding: 0.5rem;
+  text-align: left; /* Вирівнюємо текст зліва */
 }
 
 
+/* ========================================================================= */
+/* ===== 2. Set Item Card Styles (Armor Sets) ===== */
+/* ========================================================================= */
+
+.set-card {
+  /* Set Card наслідує стилі .item-card, але ми їх перевизначаємо */
+  padding: 1.5rem; /* Більший padding для комплектів */
+  display: flex; /* Перевизначаємо, щоб бути впевненим */
+  flex-direction: column;
+}
+
+.set-image-container {
+  /* Перевизначаємо для set-card */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  min-height: 180px; /* Збільшена висота для зображень Set */
+}
+
+.set-card:hover .set-image-container {
+  border-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Стиль для назви Комплекту Броні (як бейдж) */
+.set-card h3 {
+  /* Назва комплекту як бейдж - світлий фон, темний текст */
+  color: var(--category-color);
+  background-color: var(--category-color-line);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  display: block;
+  width: fit-content; /* Ширина по контенту */
+  margin: 0.5rem auto 1rem auto; /* Центруємо бейдж і додаємо відступи */
+  line-height: 1.3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.set-card:hover h3 {
+  /* Ефект при наведенні на картку */
+  background-color: var(--category-hover);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+/* ========================================================================= */
+
+
+/* ===== Global Image Styles (Applied to both item and set images) ===== */
 .item-image,
 .set-image {
   display: block;
@@ -371,28 +418,8 @@ main {
   transform: scale(1.05);
 }
 
-.item-image-container {
-  min-height: 120px;
-}
 
-.set-image-container {
-  min-height: 180px;
-}
-
-/* ===== Info ===== */
-.item-info {
-  flex-grow: 1;
-  padding-top: 1rem;
-}
-
-.item-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-color);
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
+/* ===== Shared Paragraph and Badge Styles ===== */
 
 .item-card p {
   margin: 0.25rem 0;
@@ -437,7 +464,7 @@ main {
   color: #ef4444;
 }
 
-/* ===== Set Detail Styles ===== */
+/* ===== Set Detail Styles (Not modified) ===== */
 .back-link {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -660,7 +687,8 @@ main {
   font-size: 0.9rem;
 }
 
-/* ===== Responsive ===== */
+
+/* ===== Responsive (Not modified) ===== */
 @media (max-width: 768px) {
   header {
     padding: 1rem;
@@ -707,6 +735,7 @@ main {
     font-size: 1.25rem;
   }
 }
+
 
 @media (max-width: 480px) {
   .items-grid {
