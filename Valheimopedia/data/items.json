@@ -1022,16 +1022,19 @@
           "englishName": "Dverger Circlet",
           "type": "Шолом",
           "description": "Портативне вічне джерело світла для дослідників підземель.",
-          "image_url": "https://surl.li/bpjvfr",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/88/Dverger_circlet.png/revision/latest?cb=20210210033343",
           "stats": {
             "armor": "2/-/-/-",
             "weight": "1",
-            "special": "Cone shaped light source",
+            "special": "Конусоподібне джерело світла",
             "crafting": {
-              "materials": "Coins: 620",
-              "station": "Haldor"
+              "materials": "Монети: 620",
+              "station": "Халдор"
             }
-          }
+          },
+          "items": [
+          "38e3fc6e8552046979e13b7967e862e4"
+          ]
         },
         {
           "name": "Шкіряний шолом",
@@ -1040,14 +1043,18 @@
           "englishName": "Leather Helmet",
           "type": "Шолом",
           "description": "Каптур із міцної шкіри.",
-          "image_url": "https://surl.li/liwmyk",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e3/Leather_helmet.png/revision/latest?cb=20210209040310",
           "stats": {
             "armor": "2/4/6/8",
             "weight": "1",
+            "durability": "400/500/600/700",
             "special": "",
             "crafting": {
-              "materials": "Deer hide: 6/6/12/18, Bone fragments: -/5/10/15",
-              "station": "Workbench: 2/3/4/5"
+              "station": "Верстак: 2/3/4/5",
+              "materials": [
+                "e8781dc863b7c41a79681458607070c7",
+                "f2e435d4bef9a4c77bcc33e1081b226f"
+              ]
             }
           }
         },
@@ -1058,16 +1065,17 @@
           "englishName": "Troll Leather Hood",
           "type": "Шолом",
           "description": "Шкіра троля важко піддається обробці, але з неї виходить винятковий обладунок.",
-          "image_url": "https://surl.lu/ggjkdm",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b9/Troll_leather_helmet.png/revision/latest?cb=20210209145602",
           "stats": {
             "armor": "6/8/10/12",
             "weight": "1",
-            "special": "Troll Set bonus: +15 Sneak (Skill)",
+            "special": "Бонус комплекту Троля: +15 до Навичок скритності",
             "crafting": {
-              "materials": "Troll hide: 5/2/4/6, Bone fragments: 3/1/2/3",
-              "station": "Workbench: 2/3/4/5"
+              "materials": "Шкура троля: 5/2/4/6, Кістяні фрагменти: 3/1/2/3",
+              "station": "Верстак: 2/3/4/5"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Головний убір Ведмедя",
@@ -1076,16 +1084,17 @@
           "englishName": "Headdress of the Bear",
           "type": "Шолом",
           "description": "Нехай первісна лють могутнього ведмедя поглине тебе.",
-          "image_url": "https://surl.li/vbnkvp",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/f/f9/Headdress_of_the_Bear.png/revision/latest?cb=20250821174006",
           "stats": {
             "armor": "7/9/11/13",
             "weight": "1",
-            "special": "Berserk: +30% Health regen, +15% Stamina regen, Slightly weak (+25%) vs Blunt, Slash and Pierce, +10% Slash and Chop",
+            "special": "Берсерк: +30% відновлення здоров'я, +15% відновлення витривалості, Невелика слабкість (+25%) до Тупих, Ріжучих та Проникаючих пошкоджень, +10% Різання та Рубання",
             "crafting": {
-              "materials": "Bear hide: 5/2/4/6, Bear trophy: 1/-/-/-",
-              "station": "Workbench: 2/3/4/5"
+              "materials": "Ведмежа шкура: 5/2/4/6, Трофей ведмедя: 1/-/-/-",
+              "station": "Верстак: 2/3/4/5"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Бронзовий шолом",
@@ -1094,16 +1103,17 @@
           "englishName": "Bronze Helmet",
           "type": "Шолом",
           "description": "Це допоможе зберегти твої мізки всередині черепа.",
-          "image_url": "https://surl.li/dkjxff",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a9/Bronze_helmet.png/revision/latest?cb=20210210032807",
           "stats": {
             "armor": "8/10/12/14",
             "weight": "3",
             "special": "",
             "crafting": {
-              "materials": "Bronze: 5/3/6/9, Deer hide: 2/-/-/-",
-              "station": "Forge: 1/2/3/4"
+              "materials": "Бронза: 5/3/6/9, Оленяча шкіра: 2/-/-/-",
+              "station": "Кузня: 1/2/3/4"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Маска з кореню",
@@ -1112,16 +1122,17 @@
           "englishName": "Root mask",
           "type": "Шолом",
           "description": "Маска з великого кореню",
-          "image_url": "https://surl.li/bkgmdx",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a2/Root_mask.png/revision/latest?cb=20211208154547",
           "stats": {
             "armor": "8/10/12/14",
             "weight": "3",
-            "special": "Resistant(0.5x) VS Poison, Weak(1.5x) VS Fire, Root Set bonus: +15 Bows (Skill)",
+            "special": "Стійкість(0.5x) до Отрути, Слабкість(1.5x) до Вогню, Бонус комплекту Кореню: +15 до Навичок лука",
             "crafting": {
-              "materials": "Root: 10/2/4/6, Ancient bark: 10/5/10/15, Leather scraps: 4/-/-/-",
-              "station": "Workbench: 2/3/4/5"
+              "materials": "Корінь: 10/2/4/6, Стародавня кора: 10/5/10/15, Шкіряні клапті: 4/-/-/-",
+              "station": "Верстак: 2/3/4/5"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Залізний шолом",
@@ -1130,16 +1141,17 @@
           "englishName": "Iron Helmet",
           "type": "Шолом",
           "description": "Шолом із полірованого заліза, гідний героя.",
-          "image_url": "https://surl.li/kjbair",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/f/f7/Iron_Helmet.png/revision/latest?cb=20210209005556",
           "stats": {
             "armor": "14/16/18/20",
             "weight": "3",
             "special": "",
             "crafting": {
-              "materials": "Iron: 20/5/10/15, Deer hide: 2/-/-/-",
-              "station": "Forge: 1/2/3/4"
+              "materials": "Залізо: 20/5/10/15, Оленяча шкіра: 2/-/-/-",
+              "station": "Кузня: 1/2/3/4"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Каптур Фенріра",
@@ -1148,16 +1160,17 @@
           "englishName": "Fenris Hood",
           "type": "Шолом",
           "description": "Очі звіра були мудрими й проникливими, щоб за один погляд оцінити силу воїна.",
-          "image_url": "https://surl.li/tbrdma",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/1/15/Fenris_hood.png/revision/latest?cb=20220219144141",
           "stats": {
             "armor": "10/12/14/16",
             "weight": "1",
-            "special": "+3% Movement speed, Fenris Set bonus: +15 Fists (Skill), Resistant(0.5x) VS Fire",
+            "special": "+3% Швидкість пересування, Бонус комплекту Фенріра: +15 до Навичок кулачного бою, Стійкість(0.5x) до Вогню",
             "crafting": {
-              "materials": "Fenris hair: 20/5/10/15, Wolf pelt: 2/4/8/12, Cultist trophy: 1/-/-/-",
-              "station": "Workbench: 2/3/4/5"
+              "materials": "Шерсть Фенріра: 20/5/10/15, Шкура вовка: 2/4/8/12, Трофей культиста: 1/-/-/-",
+              "station": "Верстак: 2/3/4/5"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Шолом дракона",
@@ -1166,16 +1179,17 @@
           "englishName": "Drake Helmet",
           "type": "Шолом",
           "description": "Вишуканий і ретельно виготовлений шолом.",
-          "image_url": "https://surl.li/adhgzm",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/cb/Drake_helmet.png/revision/latest?cb=20210210033148",
           "stats": {
             "armor": "20/22/24/26",
             "weight": "3",
             "special": "",
             "crafting": {
-              "materials": "Silver: 20/5/10/15, Wolf pelt: 2/-/-/-, Drake trophy: 2/-/-/-",
-              "station": "Forge: 1/2/3/4"
+              "materials": "Срібло: 20/5/10/15, Шкура вовка: 2/-/-/-, Трофей дракона: 2/-/-/-",
+              "station": "Кузня: 1/2/3/4"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Обитий шолом",
@@ -1184,16 +1198,17 @@
           "englishName": "Padded Helmet",
           "type": "Шолом",
           "description": "Щільно прилягає, добре зроблений.",
-          "image_url": "https://surl.li/ugdilw",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/0e/Padded_helmet.png/revision/latest?cb=20210210033604",
           "stats": {
             "armor": "26/28/30/32",
             "weight": "3",
             "special": "",
             "crafting": {
-              "materials": "Iron: 10/5/10/15, Linen thread: 15/10/20/30",
-              "station": "Forge: 1/2/3/4"
+              "materials": "Залізо: 10/5/10/15, Лляна нитка: 15/10/20/30",
+              "station": "Кузня: 1/2/3/4"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Шолом з кісток",
@@ -1202,16 +1217,17 @@
           "englishName": "Vilebone visage",
           "type": "Шолом",
           "description": "Вишуканий із кісток шолом.",
-          "image_url": "https://surl.li/ftfdmj",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/54/Vilebone_visage.png/revision/latest?cb=20250821175416",
           "stats": {
             "armor": "12/14/16/18",
             "weight": "1",
             "special": "",
             "crafting": {
-              "materials": "",
-              "station": "Forge: 1/2/3/4"
+              "materials": "Трофей Скверни: 1, Ведмежа шкура: 5/2/4/6, Кіготь ведмедя: 1/-/-/-",
+              "station": "Кузня: 1/2/3/4"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Каптур Ейтру",
@@ -1220,16 +1236,17 @@
           "englishName": "Eitr-weave hood",
           "type": "Шолом",
           "description": "Eitr-weave.",
-          "image_url": "https://surli.cc/oiyvcj",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c9/Eitr-weave_hood.png/revision/latest?cb=20221129135726",
           "stats": {
             "armor": "16/18/20/22",
             "weight": "3",
             "special": "",
             "crafting": {
-              "materials": "",
-              "station": ""
+              "materials": "Лляна нитка: 16/8/16/24, Очищений Ейтр: 15/5/10/15, Залізо: 2/-/-/-",
+              "station": "Стіл Гальдра: 2/3/4/5"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Панцирний шолом",
@@ -1238,16 +1255,17 @@
           "englishName": "Carapace Helmet",
           "type": "Шолом",
           "description": "Люди можуть сказати, що ти схожий на гігантського мурашку. Але вони скажуть це лише один раз.",
-          "image_url": "https://surl.li/uwqvfa",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/27/Carapace_helmet.png/revision/latest?cb=20221126191255",
           "stats": {
             "armor": "32/34/36/38",
             "weight": "3",
             "special": "",
             "crafting": {
-              "materials": "Carapace: 16/8/16/24, Scale hide: 3/1/2/3, Mandible: 2/-/-/-, Refined eitr: 4/2/4/6",
-              "station": "Black forge: 1/2/3/4"
+              "materials": "Панцир: 16/8/16/24, Луската шкіра: 3/1/2/3, Щелепа: 2/-/-/-, Очищений Ейтр: 4/2/4/6",
+              "station": "Чорна кузня: 1/2/3/4"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Каптур Аска",
@@ -1256,16 +1274,17 @@
           "englishName": "Hood of Ask",
           "type": "Шолом",
           "description": "Як перший чоловік Мідгарду, Аск знав, що не варто привертати до себе надто багато уваги.",
-          "image_url": "https://surl.li/ayjtip",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/6/6a/Hood_of_Ask.png/revision/latest?cb=20240423150022",
           "stats": {
             "armor": "28/30/32/34",
             "weight": "1",
-            "special": "Ask's Endurance (full set)",
+            "special": "Витривалість Аска (повний комплект)",
             "crafting": {
-              "materials": "Linen thread: 15/10/20/30, Lox pelt: 4/2/4/6, Asksvin hide: 10/5/10/15",
-              "station": "Black forge: 3/4/5/6"
+              "materials": "Лляна нитка: 15/10/20/30, Шкура Локса: 4/2/4/6, Шкура Асксвіна: 10/5/10/15",
+              "station": "Чорна кузня: 3/4/5/6"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Каптур Ембела",
@@ -1274,16 +1293,17 @@
           "englishName": "Hood of Embla",
           "type": "Шолом",
           "description": "Як другий чоловік Мідгарду, Ембел знав, що не варто привертати до себе надто багато уваги.",
-          "image_url": "https://surl.lu/xkqzna",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/d/d7/Hood_of_Embla.png/revision/latest?cb=20240423150142",
           "stats": {
             "armor": "19/21/23/25",
             "weight": "1",
-            "special": "(full set)",
+            "special": "(повний комплект)",
             "crafting": {
-              "materials": "",
-              "station": ""
+              "materials": "Лляна нитка: 16/8/16/24, Очищений Ейтр: 15/5/10/15, Шкура Асксвіна: 2/-/-/-",
+              "station": "Стіл Гальдра: 2/3/4/5"
             }
-          }
+          },
+          "items": []
         },
         {
           "name": "Шолом з вогняного металу",
@@ -1292,16 +1312,17 @@
           "englishName": "Flametal Helmet",
           "type": "Шолом",
           "description": "Flametal Helmet",
-          "image_url": "https://surl.li/zbkxfw",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/bc/Flametal_Helmet.png/revision/latest?cb=20240423150103",
           "stats": {
             "armor": "38/40/42/44",
             "weight": "3",
-            "special": "(full set)",
+            "special": "(повний комплект)",
             "crafting": {
-              "materials": "",
-              "station": ""
+              "materials": "Вогняний метал: 16/8/16/24, Шкура Асксвіна: 3/1/2/3, Обпалена кістка: 2/-/-/-, Очищений Ейтр: 4/2/4/6",
+              "station": "Чорна кузня: 3/4/5/6"
             }
-          }
+          },
+          "items": []
         }
       ],
       "Нагрудні обладунки": [
@@ -1312,7 +1333,10 @@
           "englishName": "Rag Tunic",
           "type": "Нагрудник",
           "description": "Краще, ніж нічого.",
-          "image_url": "https://surl.li/autjbk"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/52/Rag_tunic.png/revision/latest?cb=20210209001200",
+          "items": [
+            "0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a"
+          ]
         },
         {
           "name": "Шкіряна туніка",
@@ -1321,7 +1345,8 @@
           "englishName": "Leather Tunic",
           "type": "Нагрудник",
           "description": "Туніка з тваринної шкіри.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/cb/Leather_tunic.png/revision/latest?cb=20210209042720"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/cb/Leather_tunic.png/revision/latest?cb=20210209042720",
+          "items": []
         },
         {
           "name": "Туніка З Шкіри Троля",
@@ -1330,7 +1355,8 @@
           "englishName": "Troll Leather Tunic",
           "type": "Нагрудник",
           "description": "Шкіру троля важко здерти, але вона міцна та тепла.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b4/Troll_leather_tunic.png/revision/latest?cb=20210209144905"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b4/Troll_leather_tunic.png/revision/latest?cb=20210209144905",
+          "items": []
         },
         {
           "name": "Кольє Берсерка",
@@ -1339,7 +1365,8 @@
           "englishName": "Patterns of the Bear",
           "type": "Нагрудник",
           "description": "Якщо ці складні візерунки можуть захищати воїнів з далеких країв, вони зможуть захистити і тебе.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/06/Patterns_of_the_Bear.png/revision/latest?cb=20250821173634"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/06/Patterns_of_the_Bear.png/revision/latest?cb=20250821173634",
+          "items": []
         },
         {
           "name": "Нагрудник Бронзовий",
@@ -1348,7 +1375,8 @@
           "englishName": "Bronze Plate Tunic",
           "type": "Нагрудник",
           "description": "Нагрудник з кованої бронзи.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/30/Bronze_plate_cuirass.png/revision/latest?cb=20210210033801"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/30/Bronze_plate_cuirass.png/revision/latest?cb=20210210033801",
+          "items": []
         },
         {
           "name": "Нагрудник З Коріння",
@@ -1357,7 +1385,8 @@
           "englishName": "Root Harnesk",
           "type": "Нагрудник",
           "description": "Мастеровий і міцний, здатний відбити навіть найгостріші леза.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/30/Root_harnesk.png/revision/latest?cb=20211208154501"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/30/Root_harnesk.png/revision/latest?cb=20211208154501",
+          "items": []
         },
         {
           "name": "Нагрудник Залізний",
@@ -1366,7 +1395,8 @@
           "englishName": "Iron Scale Mail",
           "type": "Нагрудник",
           "description": "Залізна кольчуга, яка відбиває всі удари, крім найсильніших.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/d/d3/Iron_scale_mail.png/revision/latest?cb=20210215131223"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/d/d3/Iron_scale_mail.png/revision/latest?cb=20210215131223",
+          "items": []
         },
         {
           "name": "Накидка Фенріра",
@@ -1375,7 +1405,8 @@
           "englishName": "Fenris coat",
           "type": "Нагрудник",
           "description": "Залізна кольчуга, яка відбиває всі удари, крім найсильніших.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/89/Fenris_coat.png/revision/latest?cb=20220219144142"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/89/Fenris_coat.png/revision/latest?cb=20220219144142",
+          "items": []
         },
         {
           "name": "Нагрудник З Вовчої Шкіри",
@@ -1384,7 +1415,8 @@
           "englishName": "Wolf Hide Chestpiece",
           "type": "Нагрудник",
           "description": "Куртка з вовчої шкіри, тепла і дикого вигляду. Захищає від холоду.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/55/Wolf_hide_chestpiece.png/revision/latest?cb=20210215131244"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/55/Wolf_hide_chestpiece.png/revision/latest?cb=20210215131244",
+          "items": []
         },
         {
           "name": "Нагрудник З Кісток",
@@ -1393,7 +1425,8 @@
           "englishName": "Vilebone cage",
           "type": "Нагрудник",
           "description": "З кісток",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/1/16/Vilebone_cage.png/revision/latest?cb=20250821175425"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/1/16/Vilebone_cage.png/revision/latest?cb=20250821175425",
+          "items": []
         },
         {
           "name": "Обитий Нагрудник",
@@ -1402,7 +1435,8 @@
           "englishName": "Padded Cuirass",
           "type": "Нагрудник",
           "description": "Мастеровий і міцний, здатний відбити навіть найгостріші леза.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/53/Padded_cuirass.png/revision/latest?cb=20210215131239"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/53/Padded_cuirass.png/revision/latest?cb=20210215131239",
+          "items": []
         },
         {
           "name": "Нагрудник Ейтру",
@@ -1411,7 +1445,8 @@
           "englishName": "Eitr-weave robe",
           "type": "Нагрудник",
           "description": "Eitr-weave",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c6/Eitr-weave_robe.png/revision/latest?cb=20221129135829"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c6/Eitr-weave_robe.png/revision/latest?cb=20221129135829",
+          "items": []
         },
         {
           "name": "Нагрудник Панцирний",
@@ -1420,7 +1455,8 @@
           "englishName": "Carapace Breastplate",
           "type": "Нагрудник",
           "description": "Нагрудник, виготовлений з відполірованого панцира гігантської комахи.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/21/Carapace_breastplate.png/revision/latest?cb=20221126191122"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/21/Carapace_breastplate.png/revision/latest?cb=20221126191122",
+          "items": []
         },
         {
           "name": "Нагрудник Аска",
@@ -1429,7 +1465,8 @@
           "englishName": "Breastplate of Ask",
           "type": "Нагрудник",
           "description": "Перша людина в Мідґарді знала, як захистити свої найважливіші органи, можливо, саме таким нагрудником.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/0d/Breastplate_of_Ask.png/revision/latest?cb=20240423144505"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/0d/Breastplate_of_Ask.png/revision/latest?cb=20240423144505",
+          "items": []
         },
         {
           "name": "Нагрудник Ембла",
@@ -1438,7 +1475,8 @@
           "englishName": "Robes of Embla",
           "type": "Нагрудник",
           "description": "Друга людина в Мідґарді знала, як захистити свої найважливіші органи, можливо, саме таким нагрудником.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/06/Robes_of_Embla.png/revision/latest?cb=20240423145011"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/06/Robes_of_Embla.png/revision/latest?cb=20240423145011",
+          "items": []
         },
         {
           "name": "Нагрудник з вогняного металу",
@@ -1447,7 +1485,8 @@
           "englishName": "Flametal Breastplate",
           "type": "Нагрудник",
           "description": "Flametal Breastplate",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/7/74/Flametal_Breastplate.png/revision/latest?cb=20240423144655"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/7/74/Flametal_Breastplate.png/revision/latest?cb=20240423144655",
+          "items": []
         }
       ],
       "Штани": [
@@ -1458,7 +1497,8 @@
           "englishName": "Rag Trousers",
           "type": "Штани",
           "description": "Простий засіб від наготи.",
-          "image_url": "https://surl.li/rfqhss"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b9/Rag_pants.png/revision/latest?cb=20210209001457",
+          "items": []
         },
         {
           "name": "Шкіряні штани",
@@ -1467,7 +1507,8 @@
           "englishName": "Leather Trousers",
           "type": "Штани",
           "description": "Вони трохи скриплять під час ходьби.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/82/Leather_pants.png/revision/latest?cb=20210209042343"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/82/Leather_pants.png/revision/latest?cb=20210209042343",
+          "items": []
         },
         {
           "name": "Штани З Шкіри Троля",
@@ -1476,7 +1517,8 @@
           "englishName": "Troll Leather Trousers",
           "type": "Штани",
           "description": "Штани з міцної тролевої шкіри.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3d/Troll_leather_pants.png/revision/latest?cb=20210209144501"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3d/Troll_leather_pants.png/revision/latest?cb=20210209144501",
+          "items": []
         },
         {
           "name": "Штани Берсерка",
@@ -1485,7 +1527,8 @@
           "englishName": "Loincloth of the Bear",
           "type": "Штани",
           "description": "Закриває все найважливіше, але не більше того.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/ab/Loincloth_of_the_Bear.png/revision/latest?cb=20250821173949"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/ab/Loincloth_of_the_Bear.png/revision/latest?cb=20250821173949",
+          "items": []
         },
         {
           "name": "Штани Бронзові",
@@ -1494,7 +1537,8 @@
           "englishName": "Bronze Plate Leggings",
           "type": "Штани",
           "description": "Бронзові поножи для захисту ваших ніг.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/4/42/Bronze_plate_leggings.png/revision/latest?cb=20210210033859"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/4/42/Bronze_plate_leggings.png/revision/latest?cb=20210210033859",
+          "items": []
         },
         {
           "name": "Штани З Коріння",
@@ -1503,7 +1547,8 @@
           "englishName": "Root Leggings",
           "type": "Штани",
           "description": "Легкі обладунки, дивним чином сплетені з древнього коріння та кори.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/88/Root_leggings.png/revision/latest?cb=20211208154805"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/88/Root_leggings.png/revision/latest?cb=20211208154805",
+          "items": []
         },
         {
           "name": "Штани Залізні",
@@ -1512,7 +1557,8 @@
           "englishName": "Iron Greaves",
           "type": "Штани",
           "description": "Залізні поножи для захисту ваших ніг.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/2e/Iron_greaves.png/revision/latest?cb=20210215131230"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/2e/Iron_greaves.png/revision/latest?cb=20210215131230",
+          "items": []
         },
         {
           "name": "Штани Фенріра",
@@ -1521,7 +1567,8 @@
           "englishName": "Fenris leggings",
           "type": "Штани",
           "description": "Залізні поножи для захисту ваших ніг.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/eb/Fenris_leggings.png/revision/latest?cb=20220219144142"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/eb/Fenris_leggings.png/revision/latest?cb=20220219144142",
+          "items": []
         },
         {
           "name": "Штани З Вовчої Шкіри",
@@ -1530,7 +1577,8 @@
           "englishName": "Wolf Hide Trousers",
           "type": "Штани",
           "description": "Косматі штани з вовчої шкіри.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/83/Wolf_hide_trousers.png/revision/latest?cb=20210215131246"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/83/Wolf_hide_trousers.png/revision/latest?cb=20210215131246",
+          "items": []
         },
         {
           "name": "Штани З Кісток",
@@ -1539,7 +1587,8 @@
           "englishName": "Vilebone drapes",
           "type": "Штани",
           "description": "Косматі штани з кісток.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c5/Vilebone_drapes.png/revision/latest?cb=20250821175437"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c5/Vilebone_drapes.png/revision/latest?cb=20250821175437",
+          "items": []
         },
         {
           "name": "Обиті Штани",
@@ -1548,7 +1597,8 @@
           "englishName": "Padded Greaves",
           "type": "Штани",
           "description": "Мастеровий захист для ніг.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c8/Padded_greaves.png/revision/latest?cb=20210215131240"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c8/Padded_greaves.png/revision/latest?cb=20210215131240",
+          "items": []
         },
         {
           "name": "Штани З Панцира",
@@ -1557,7 +1607,8 @@
           "englishName": "Carapace Greaves",
           "type": "Штани",
           "description": "Наголінники з твердого панцира.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b1/Carapace_greaves.png/revision/latest?cb=20221126191214"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b1/Carapace_greaves.png/revision/latest?cb=20221126191214",
+          "items": []
         },
         {
           "name": "Штани Ейтру",
@@ -1566,7 +1617,8 @@
           "englishName": "Eitr-weave trousers",
           "type": "Штани",
           "description": "Eitr-weave trousers",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/25/Eitr-weave_trousers.png/revision/latest?cb=20221129135838"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/25/Eitr-weave_trousers.png/revision/latest?cb=20221129135838",
+          "items": []
         },
         {
           "name": "Штани Аска",
@@ -1575,7 +1627,8 @@
           "englishName": "Trousers of Ask",
           "type": "Штани",
           "description": "Перша людина, що блукала Мідґардом, воліла ступати легко. Носії цих штанів могли б повчитися у нього.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a6/Trousers_of_Ask.png/revision/latest?cb=20240423144554"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a6/Trousers_of_Ask.png/revision/latest?cb=20240423144554",
+          "items": []
         },
         {
           "name": "Штани Ембла",
@@ -1584,7 +1637,8 @@
           "englishName": "Trousers of Embla",
           "type": "Штани",
           "description": "Trousers of Embla",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b2/Trousers_of_Embla.png/revision/latest?cb=20240423145048"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b2/Trousers_of_Embla.png/revision/latest?cb=20240423145048",
+          "items": []
         },
         {
           "name": "Штани з вогняного металу",
@@ -1593,7 +1647,8 @@
           "englishName": "Flametal Greaves",
           "type": "Штани",
           "description": "Trousers of Embla",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/9/92/Flametal_Greaves.png/revision/latest?cb=20240423144735"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/9/92/Flametal_Greaves.png/revision/latest?cb=20240423144735",
+          "items": []
         }
       ],
       "Плащ": [
@@ -1604,7 +1659,8 @@
           "englishName": "Cape of Odin",
           "type": "Плащ",
           "description": "Найкращі воїни Одіна заслуговують найкращої тканини.",
-          "image_url": ""
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/23/Cape_of_Odin.png/revision/latest?cb=20210215131437",
+          "items": []
         },
         {
           "name": "Накидка з оленячої шкури",
@@ -1613,7 +1669,8 @@
           "englishName": "Deer Hide Cape",
           "type": "Плащ",
           "description": "Сільський шик.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/38/Deer_hide_cape.png/revision/latest?cb=20210209041809"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/38/Deer_hide_cape.png/revision/latest?cb=20210209041809",
+          "items": []
         },
         {
           "name": "Плащ З Шкіри Троля",
@@ -1622,7 +1679,8 @@
           "englishName": "Troll Hide Cape",
           "type": "Плащ",
           "description": "Шкіра троля міцна та еластична.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/9/90/Troll_hide_cape.png/revision/latest?cb=20210209145246"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/9/90/Troll_hide_cape.png/revision/latest?cb=20210209145246",
+          "items": []
         },
         {
           "name": "Плащ з Вовка",
@@ -1631,7 +1689,8 @@
           "englishName": "Wolf Fur Cape",
           "type": "Плащ",
           "description": "Вовки - природні виживальники. Цьому просто не пощастило. Тепер його шкіра зігріватиме вас у снігу.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/7/72/Wolf_fur_cape.png/revision/latest?cb=20210215131439"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/7/72/Wolf_fur_cape.png/revision/latest?cb=20210215131439",
+          "items": []
         },
         {
           "name": "Плащ Локс",
@@ -1640,7 +1699,8 @@
           "englishName": "Lox Cape",
           "type": "Плащ",
           "description": "Шкура однієї з великих тварин, товста та тепла.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/ce/Lox_cape.png/revision/latest?cb=20210215131436"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/ce/Lox_cape.png/revision/latest?cb=20210215131436",
+          "items": []
         },
         {
           "name": "Плащ Лляний",
@@ -1649,7 +1709,8 @@
           "englishName": "Linen Cape",
           "type": "Плащ",
           "description": "Простий мандрівний плащ.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e3/Linen_cape.png/revision/latest?cb=20210215131429"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e3/Linen_cape.png/revision/latest?cb=20210215131429",
+          "items": []
         },
         {
           "name": "Плащ з пір'я",
@@ -1658,7 +1719,8 @@
           "englishName": "Feather Cape",
           "type": "Плащ",
           "description": "Надівання цього плаща змушує відчувати себе легшим, наче ви вмієте літати!",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/0e/Feather_cape.png/revision/latest?cb=20221127200910"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/0e/Feather_cape.png/revision/latest?cb=20221127200910",
+          "items": []
         },
         {
           "name": "Плащ Асквіна",
@@ -1667,7 +1729,8 @@
           "englishName": "Asksvin cloak",
           "type": "Плащ",
           "description": "AsksvinAsksvinAsksvin!",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/6/61/Asksvincape.png/revision/latest/scale-to-width-down/71?cb=20240511110834"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/6/61/Asksvincape.png/revision/latest/scale-to-width-down/71?cb=20240511110834",
+          "items": []
         },
         {
           "name": "Плащ Попелу",
@@ -1676,7 +1739,8 @@
           "englishName": "Ashen Cape",
           "type": "Плащ",
           "description": "Тонкі металеві нитки вплетені в цей плащ, створюючи складний візерунок, наче доля, ткана самими норнами.",
-          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/59/Ashen_cape.png/revision/latest?cb=20240423145845"
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/59/Ashen_cape.png/revision/latest?cb=20240423145845",
+          "items": []
         }
       ]
     },
@@ -1957,8 +2021,8 @@
       }
     ],
     "Матеріали": {
-      "Метали": {
-        "629fd54829a1d446d8905f0b0eac9982": {
+      "Метали": [
+        {
           "name": "Бронза",
           "assetId": "629fd54829a1d446d8905f0b0eac9982",
           "token": "$item_bronze",
@@ -1966,7 +2030,7 @@
           "type": "Матеріал",
           "description": "Міцний сплав міді та олова."
         },
-        "a780bd461780849a7afccc525f927e2d": {
+        {
           "name": "Мідь",
           "assetId": "a780bd461780849a7afccc525f927e2d",
           "token": "$item_copper",
@@ -1974,7 +2038,7 @@
           "type": "Матеріал",
           "description": "Злиток чистої міді, готовий до обробки."
         },
-        "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c": {
+        {
           "name": "Залізо",
           "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
           "token": "$item_iron",
@@ -1982,7 +2046,7 @@
           "type": "Матеріал",
           "description": "Злиток заліза."
         },
-        "6f5a4b3c2d1e0f9a8b7c6d5e42322b1c": {
+        {
           "name": "Срібло",
           "assetId": "6f5a4b3c2d1e0f9a8b7c6d5e42322b1c",
           "token": "$item_silver",
@@ -1990,7 +2054,7 @@
           "type": "Матеріал",
           "description": "Злиток срібла."
         },
-        "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e": {
+        {
           "name": "Олово",
           "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
           "token": "$item_tin",
@@ -1998,7 +2062,7 @@
           "type": "Матеріал",
           "description": "Злиток олова."
         },
-        "4deafc8c9808b40bf96b4c14cfbe99b5": {
+        {
           "name": "ЧорнийМетал",
           "assetId": "4deafc8c9808b40bf96b4c14cfbe99b5",
           "token": "$item_blackmetal",
@@ -2006,7 +2070,7 @@
           "type": "Матеріал",
           "description": "Важкий злиток темного металу."
         }
-      },
+      ],
       "Руди": [
         {
           "name": "МіднаРуда",
@@ -2049,7 +2113,6 @@
           "description": "Перекручений шматок темного металу."
         }
       ],
-
       "МатеріалиЗТварин": [
         {
           "name": "ШкіраАска",
@@ -2068,7 +2131,7 @@
           "description": "Вміст п'явки. Фу!"
         },
         {
-          "name": "УламкиКісток",
+          "name": "Уламки Кісток",
           "assetId": "f2e435d4bef9a4c77bcc33e1081b226f",
           "token": "$item_bonefragments",
           "englishName": "Bone Fragments",
@@ -2092,7 +2155,7 @@
           "description": "Уламок панцира ракоподібного."
         },
         {
-          "name": "ОленячаШкіра",
+          "name": "Оленяча Шкіра",
           "assetId": "e8781dc863b7c41a79681458607070c7",
           "token": "$item_deerhide",
           "englishName": "Deer Hide",
@@ -2140,7 +2203,7 @@
           "description": "Шматок дуже твердого рогу."
         },
         {
-          "name": "ШматкиШкіри",
+          "name": "Шматки Шкіри",
           "assetId": "0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a",
           "token": "$item_leatherscraps",
           "englishName": "Leather Scraps",
@@ -2172,7 +2235,6 @@
           "description": "Товста хутряна шкура."
         }
       ],
-
       "ГрошіТаЦінності": [
         {
           "name": "Бурштин",
@@ -2223,7 +2285,6 @@
           "description": "Воно дзижчить таємничою енергією."
         }
       ],
-
       "ІншіМатеріали": [
         {
           "name": "Жолудь",

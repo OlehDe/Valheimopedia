@@ -69,9 +69,41 @@
                     </div>
                 {% endif %}
 
+                {# --- ДОДАНО ВИВЕДЕННЯ СТАТИСТИКИ ТА КРАФТУ --- #}
+                {% if item.stats %}
+                    <div class="stats-crafting">
+                        <h2>Характеристики та Крафт</h2>
+
+                        <div class="stats-section">
+                            <h4>Характеристики</h4>
+                            {% if item.stats.armor %}
+                                <p><strong>Броня (Рівні 1-4):</strong> <span class="stat-value">{{ item.stats.armor }}</span></p>
+                            {% endif %}
+                            {% if item.stats.weight %}
+                                <p><strong>Вага:</strong> <span class="stat-value">{{ item.stats.weight }}</span></p>
+                            {% endif %}
+                            {% if item.stats.special and item.stats.special != "" %}
+                                <p><strong>Особливий ефект:</strong> <span class="stat-value special-effect">{{ item.stats.special }}</span></p>
+                            {% endif %}
+                        </div>
+
+                        {% if item.stats.crafting %}
+                            <div class="crafting-section">
+                                <h4>Виготовлення</h4>
+                                {% if item.stats.crafting.station and item.stats.crafting.station != "" %}
+                                    <p><strong>Станція:</strong> <span class="craft-value">{{ item.stats.crafting.station }}</span></p>
+                                {% endif %}
+                                {% if item.stats.crafting.materials and item.stats.crafting.materials != "" %}
+                                    <p><strong>Матеріали:</strong> <span class="craft-value">{{ item.stats.crafting.materials }}</span></p>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                {# ---------------------------------------------------- #}
+
                 <div class="tech-info">
                     <h4>Технічна інформація</h4>
-                    <p><strong>Asset ID:</strong> <span class="tech-value">{{ item.assetId }}</span></p>
                     <p><strong>Токен:</strong> <span class="tech-value">{{ item.token }}</span></p>
                 </div>
             </div>
