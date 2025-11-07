@@ -1,5 +1,4 @@
 # main_app/views.py
-#from _pytest.nodes import Item
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
@@ -12,18 +11,16 @@ from django.conf import settings
 
 
 # -----------------------------------------------------------------
-# ФУНКЦІЯ ДЛЯ ВІДОБРАЖЕННЯ ВСІХ ПРЕДМЕТІВ (ЯК У ВАС)
+# ФУНКЦІЯ ДЛЯ ВІДОБРАЖЕННЯ ВСІХ ПРЕДМЕТІВ (НЕ ЗМІНЮВАЛАСЬ)
 # -----------------------------------------------------------------
 def all_items_view(request):
     file_path = settings.BASE_DIR / 'data' / 'items.json'
-    items_data = {}  # За замовчуванням - порожній словник
+    items_data = {}
     error_message = None
 
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-            # Припускаємо, що ваш шаблон all_items.html вміє
-            # обробляти словник з категоріями
             items_data = data.get('items', {})
     except FileNotFoundError:
         error_message = f"Помилка: Файл не знайдено за шляхом {file_path}. Переконайтеся, що він існує."
@@ -32,7 +29,6 @@ def all_items_view(request):
     except Exception as e:
         error_message = f"Виникла неочікувана помилка: {e}"
 
-    # Передаємо дані та можливу помилку у шаблон
     return render(request, 'main_app/all_items.html', {
         'items': items_data,
         'error': error_message
@@ -40,40 +36,80 @@ def all_items_view(request):
 
 
 # -----------------------------------------------------------------
-# ФУНКЦІЯ ДЛЯ ДЕТАЛЕЙ ПРЕДМЕТА (ЯК У ВАС)
+# 🚀 ВИПРАВЛЕНА РЕКУРСИВНА ФУНКЦІЯ ПОШУКУ (ШУКАЄ ЗА ID АБО ТОКЕНОМ) 🚀
 # -----------------------------------------------------------------
-
-# Рекурсивна функція пошуку
-def find_item_in_data(data, asset_id):
+def find_item_in_data(data, identifier):
+    """Шукає предмет за 'assetId' або 'token'."""
     if isinstance(data, dict):
-        if data.get('assetId') == asset_id:
+        # Шукаємо збіг за assetId або token
+        if data.get('assetId') == identifier or data.get('token') == identifier:
             return data
         for key, value in data.items():
-            found = find_item_in_data(value, asset_id)
+            found = find_item_in_data(value, identifier)
             if found:
                 return found
     elif isinstance(data, list):
         for item in data:
-            found = find_item_in_data(item, asset_id)
+            found = find_item_in_data(item, identifier)
             if found:
                 return found
     return None
 
 
+# -----------------------------------------------------------------
+# ВИПРАВЛЕНА ФУНКЦІЯ ДЛЯ ДЕТАЛЕЙ ПРЕДМЕТА (ТЕПЕР ВИКОРИСТОВУЄ find_item_in_data
+# ДЛЯ ЗНАХОДЖЕННЯ ЯК САМОГО ПРЕДМЕТА, ТАК І ЙОГО МАТЕРІАЛІВ)
+# -----------------------------------------------------------------
 def item_detail_view(request, item_asset_id):
     file_path = settings.BASE_DIR / 'data' / 'items.json'
     found_item = None
     error_message = None
+
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-            all_categories = data.get('items', {})  # Починаємо пошук з "items"
+            all_categories = data.get('items', {})
 
-            # Використовуємо рекурсивну функцію
+            # 1. Знаходимо сам предмет за assetId або token
             found_item = find_item_in_data(all_categories, item_asset_id)
 
-        if not found_item:
-            error_message = "Предмет з таким ID не знайдено."
+            if found_item:
+                crafting_stats = found_item.get('stats', {}).get('crafting', {})
+                material_ids = crafting_stats.get('materials')
+
+                # Якщо materials - це список ID, збагачуємо його
+                if isinstance(material_ids, list):
+                    enriched_materials = []
+
+                    for identifier in material_ids:
+                        if isinstance(identifier, str):
+                            # Знаходимо повний об'єкт матеріалу за ID або Токеном
+                            material_data = find_item_in_data(all_categories, identifier)
+
+                            if material_data:
+                                # !!! ЗВЕРНІТЬ УВАГУ: КІЛЬКІСТЬ (quantity) ТУТ ВСЕ ЩЕ ЗАГЛУШКА !!!
+                                # Щоб отримати реальну кількість, вам потрібно знайти її у вашій JSON-структурі
+                                # і зіставити з 'identifier'
+                                quantity_value = 'Знайдено'
+
+                                enriched_materials.append({
+                                    'name': material_data.get('name', 'N/A'),
+                                    'token': material_data.get('token', ''),
+                                    'assetId': material_data.get('assetId', ''),
+                                    'quantity': quantity_value
+                                })
+                            else:
+                                # Якщо матеріал не знайдено (наприклад, ID є, а предмета немає)
+                                enriched_materials.append(
+                                    {'assetId': identifier, 'name': f"Не знайдено ({identifier})", 'quantity': 'N/A'})
+
+                        else:
+                            # Якщо елемент не рядок (можливо, це вже об'єкт)
+                            enriched_materials.append(identifier)
+
+                    crafting_stats['materials'] = enriched_materials
+            else:
+                error_message = "Предмет з таким ID або токеном не знайдено."
 
     except FileNotFoundError:
         error_message = "Помилка: Файл 'items.json' не знайдено."
@@ -89,14 +125,7 @@ def item_detail_view(request, item_asset_id):
 
 
 # -----------------------------------------------------------------
-# 🔽 ФУНКЦІЯ ДЛЯ КОМПЛЕКТІВ (ВИПРАВЛЕНО) 🔽
-# -----------------------------------------------------------------
-# main_app/views.py
-
-# ... (всі ваші import-и та інші функції) ...
-
-# -----------------------------------------------------------------
-# 🔽 ФУНКЦІЯ ДЛЯ КОМПЛЕКТІВ (ВИПРАВЛЕНО) 🔽
+# ФУНКЦІЯ ДЛЯ КОМПЛЕКТІВ (НЕ ЗМІНЮВАЛАСЬ)
 # -----------------------------------------------------------------
 def set_detail_view(request, set_slug):
     file_path = settings.BASE_DIR / 'data' / 'items.json'
@@ -112,14 +141,12 @@ def set_detail_view(request, set_slug):
                 if armor_set.get('setSlug') == set_slug:
                     found_set = armor_set
 
-                    # 🔽 ДОДАЄМО ЗАВАНТАЖЕННЯ ПОВНОЇ ІНФОРМАЦІЇ ПРО ПРЕДМЕТИ 🔽
                     items_with_data = []
                     for asset_id in found_set.get('items', []):
                         item_data = find_item_in_data(all_categories, asset_id)
                         if item_data:
                             items_with_data.append(item_data)
 
-                    # Додаємо список предметів з повною інформацією
                     found_set['items_with_data'] = items_with_data
                     break
 
@@ -138,13 +165,14 @@ def set_detail_view(request, set_slug):
         'error': error_message
     })
 
-# ... (решта вашого коду views.py) ...
+
 # -----------------------------------------------------------------
-# РЕШТА ФУНКЦІЙ
+# РЕШТА ФУНКЦІЙ (НЕ ЗМІНЮВАЛИСЬ)
 # -----------------------------------------------------------------
 
 def home(request):
     return render(request, 'main_app/home.html')
+
 
 def register_view(request):
     if request.method == 'POST':

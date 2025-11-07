@@ -69,7 +69,7 @@
                     </div>
                 {% endif %}
 
-                {# --- ДОДАНО ВИВЕДЕННЯ СТАТИСТИКИ ТА КРАФТУ --- #}
+                {# --- БЛОК СТАТИСТИКИ ТА КРАФТУ --- #}
                 {% if item.stats %}
                     <div class="stats-crafting">
                         <h2>Характеристики та Крафт</h2>
@@ -82,6 +82,9 @@
                             {% if item.stats.weight %}
                                 <p><strong>Вага:</strong> <span class="stat-value">{{ item.stats.weight }}</span></p>
                             {% endif %}
+                            {% if item.stats.durability %}
+                                <p><strong>Міцність:</strong> <span class="stat-value">{{ item.stats.durability }}</span></p>
+                            {% endif %}
                             {% if item.stats.special and item.stats.special != "" %}
                                 <p><strong>Особливий ефект:</strong> <span class="stat-value special-effect">{{ item.stats.special }}</span></p>
                             {% endif %}
@@ -93,8 +96,32 @@
                                 {% if item.stats.crafting.station and item.stats.crafting.station != "" %}
                                     <p><strong>Станція:</strong> <span class="craft-value">{{ item.stats.crafting.station }}</span></p>
                                 {% endif %}
-                                {% if item.stats.crafting.materials and item.stats.crafting.materials != "" %}
-                                    <p><strong>Матеріали:</strong> <span class="craft-value">{{ item.stats.crafting.materials }}</span></p>
+
+                                {% if item.stats.crafting.materials %}
+                                    <p><strong>Матеріали:</strong></p>
+                                    <div class="materials-list">
+
+                                        {% for material in item.stats.crafting.materials %}
+                                            <p class="material-item">
+
+                                                {# Тепер ми очікуємо, що material завжди буде словником з name і quantity #}
+                                                {% if material.name and material.quantity %}
+                                                    <a href="/item/{{ material.token|default:material.assetId }}/" title="{{ material.name }}" class="material-link">
+                                                        <strong>{{ material.name }}</strong>
+                                                    </a>
+                                                    <span class="craft-value">{{ material.quantity }}</span>
+                                                {% else %}
+                                                    {# Якщо бекенд не змінено, тут буде порожній блок. Це краще, ніж виводити ID. #}
+                                                    <p class="empty-message-small">Помилка: Неповні дані матеріалу (ID: {{ material|default:'N/A' }})</p>
+                                                {% endif %}
+
+                                            </p>
+                                        {% empty %}
+                                            {# Якщо materials є порожнім списком #}
+                                            <p><strong>Матеріали:</strong> <span class="craft-value">Необхідні матеріали не вказано.</span></p>
+                                        {% endfor %}
+
+                                    </div>
                                 {% endif %}
                             </div>
                         {% endif %}
@@ -105,6 +132,7 @@
                 <div class="tech-info">
                     <h4>Технічна інформація</h4>
                     <p><strong>Токен:</strong> <span class="tech-value">{{ item.token }}</span></p>
+                    <p><strong>Asset ID:</strong> <span class="tech-value">{{ item.assetId }}</span></p>
                 </div>
             </div>
         </div>
@@ -114,6 +142,9 @@
         </div>
     {% endif %}
 </main>
+
+{# Якщо потрібен окремий JS для логіки деталізації, додайте його тут #}
+{# <script src="{% static 'js/item_detail.js' %}"></script> #}
 
 </body>
 </html>
