@@ -518,3 +518,51 @@
 .level-requirements-list .total-materials-info.level-card:first-child {
     padding-top: 1rem;
 }
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom2: 0.5rem;
+    padding: 1.5rem 6rem;
+}
+
+.detail-text {
+    flex: 1;
+}
+
+.detail-image-small {
+    flex: 0 0 200px; /* ширина зображення */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-image-small img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.detail-image-small img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 768px) {
+    .detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detail-image-small {
+        align-self: center;
+        margin-top: 1rem;
+    }
+}

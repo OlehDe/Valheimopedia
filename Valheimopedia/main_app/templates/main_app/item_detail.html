@@ -30,174 +30,155 @@
 </nav>
 
 <main>
-    <a href="{% url 'main_app:all_items' %}" class="back-link">← Повернутися до списку предметів</a>
+  <a href="{% url 'main_app:all_items' %}" class="back-link">← Повернутися до списку предметів</a>
 
-    {% if error %}
-        <div class="error-message">
-          <p>{{ error }}</p>
+  {% if error %}
+    <div class="error-message">
+      <p>{{ error }}</p>
+    </div>
+
+  {% elif item %}
+    <div class="detail-container">
+
+      <!-- 🔹 НОВИЙ БЛОК: заголовок і зображення справа -->
+      <div class="detail-header">
+        <div class="detail-text">
+          <span class="item-type-badge">{{ item.type }}</span>
+          <h1 class="item-title">{{ item.name }}</h1>
+
+          {% if item.englishName and item.englishName != item.name %}
+            <p class="english-name">{{ item.englishName }}</p>
+          {% endif %}
+
+          {% if item.description and item.description != "NULL" %}
+            <div class="description">
+              <p>{{ item.description }}</p>
+            </div>
+          {% endif %}
         </div>
 
-    {% elif item %}
-        <div class="detail-container">
-            <div class="detail-image-wrapper">
-                {% if item.image_url %}
-                    <img src="{{ item.image_url }}" alt="{{ item.name }}" class="item-detail-image">
-                {% else %}
-                    <div class="detail-image-placeholder">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                            <polyline points="21,15 16,10 5,21"></polyline>
-                        </svg>
-                        <span>Зображення відсутнє</span>
-                    </div>
-                {% endif %}
+        <div class="detail-image-small">
+          {% if item.image_url %}
+            <img src="{{ item.image_url }}" alt="{{ item.name }}">
+          {% else %}
+            <div class="detail-image-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21,15 16,10 5,21"></polyline>
+              </svg>
+              <span>Зображення відсутнє</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <!-- 🔹 КІНЕЦЬ БЛОКУ -->
+
+      <div class="detail-info">
+
+        {% if item.stats %}
+          <div class="stats-crafting">
+            <h2>Характеристики та Крафт</h2>
+
+            <div class="stats-section">
+              <h4>Характеристики</h4>
+              {% if item.stats.armor %}
+                <p><strong>Броня (Рівні 1-4):</strong> <span class="stat-value">{{ item.stats.armor }}</span></p>
+              {% endif %}
+              {% if item.stats.weight %}
+                <p><strong>Вага:</strong> <span class="stat-value">{{ item.stats.weight }}</span></p>
+              {% endif %}
+              {% if item.stats.durability %}
+                <p><strong>Міцність:</strong> <span class="stat-value">{{ item.stats.durability }}</span></p>
+              {% endif %}
+              {% if item.stats.special and item.stats.special != "" %}
+                <p><strong>Особливий ефект:</strong> <span class="stat-value special-effect">{{ item.stats.special }}</span></p>
+              {% endif %}
             </div>
 
-            <div class="detail-info">
-                <span class="item-type-badge">{{ item.type }}</span>
+            {% if item.stats.crafting %}
+              <div class="crafting-section">
+                <h4>Виготовлення та Покращення</h4>
 
-                <h1 class="item-title">{{ item.name }}</h1>
-
-                {% if item.englishName and item.englishName != item.name %}
-                    <p class="english-name">{{ item.englishName }}</p>
+                {% if item.stats.crafting.station and item.stats.crafting.station != "" %}
+                  <p><strong>Станція:</strong> <span class="craft-value">{{ item.stats.crafting.station }}</span></p>
                 {% endif %}
 
-                {% if item.description and item.description != "NULL" %}
-                    <div class="description">
-                        <p>{{ item.description }}</p>
-                    </div>
-                {% endif %}
+                {% if item.level_requirements %}
+                  <div class="level-requirements-list">
+                    {% for requirement in item.level_requirements %}
+                      <div class="level-card {% if requirement.is_craft %}level-card-craft{% endif %}">
+                        <h5>
+                          {% if requirement.is_craft %}
+                            Крафт (Рівень 1)
+                          {% else %}
+                            Покращення до Рівня {{ requirement.level }}
+                          {% endif %}
+                        </h5>
 
-                {# --- БЛОК СТАТИСТИКИ ТА КРАФТУ --- #}
-                {% if item.stats %}
-                    <div class="stats-crafting">
-                        <h2>Характеристики та Крафт</h2>
-
-                        <div class="stats-section">
-                            <h4>Характеристики</h4>
-                            {% if item.stats.armor %}
-                                <p><strong>Броня (Рівні 1-4):</strong> <span class="stat-value">{{ item.stats.armor }}</span></p>
-                            {% endif %}
-                            {% if item.stats.weight %}
-                                <p><strong>Вага:</strong> <span class="stat-value">{{ item.stats.weight }}</span></p>
-                            {% endif %}
-                            {% if item.stats.durability %}
-                                <p><strong>Міцність:</strong> <span class="stat-value">{{ item.stats.durability }}</span></p>
-                            {% endif %}
-                            {% if item.stats.special and item.stats.special != "" %}
-                                <p><strong>Особливий ефект:</strong> <span class="stat-value special-effect">{{ item.stats.special }}</span></p>
-                            {% endif %}
-                        </div>
-
-                        {# ОНОВЛЕНИЙ БЛОК ВИГОТОВЛЕННЯ ТА ПОКРАЩЕННЯ #}
-                        {% if item.stats.crafting %}
-                            <div class="crafting-section">
-                                <h4>Виготовлення та Покращення</h4>
-
-                                {% if item.stats.crafting.station and item.stats.crafting.station != "" %}
-                                    <p><strong>Станція:</strong> <span class="craft-value">{{ item.stats.crafting.station }}</span></p>
-                                {% endif %}
-
-                                {# СПИСОК ВИМОГ ДО РІВНЯ #}
-                                {% if item.level_requirements %}
-                                    <div class="level-requirements-list">
-                                        {% for requirement in item.level_requirements %}
-                                            <div class="level-card {% if requirement.is_craft %}level-card-craft{% endif %}">
-
-                                                <h5>
-                                                    {% if requirement.is_craft %}
-                                                        Крафт (Рівень 1)
-                                                    {% else %}
-                                                        Покращення до Рівня {{ requirement.level }}
-                                                    {% endif %}
-                                                </h5>
-
-                                                {% if requirement.materials %}
-                                                    <div class="materials-for-level">
-                                                        {% for material in requirement.materials %}
-                                                            <p class="material-item">
-                                                                {# Ліва частина: ЗОБРАЖЕННЯ + Посилання на матеріал #}
-                                                                <span class="material-name-link">
-                                                                    {% if material.image_url %}
-                                                                        <img src="{{ material.image_url }}" alt="{{ material.name }}" class="material-icon">
-                                                                    {% endif %}
-
-                                                                    <a href="/item/{{ material.token|default:material.assetId }}/" title="{{ material.name }}" class="material-link">
-                                                                        <strong>{{ material.name }}</strong>
-                                                                    </a>
-                                                                </span>
-
-                                                                {# Права частина: Кількість #}
-                                                                <span class="craft-value">{{ material.quantity }} шт.</span>
-                                                            </p>
-                                                        {% endfor %}
-                                                    </div>
-                                                {% else %}
-                                                    <p class="no-materials">Матеріали не потрібні для цього рівня.</p>
-                                                {% endif %}
-
-                                            </div>
-                                        {% endfor %}
-
-                                    </div>
-                                {% else %}
-                                    <p>Інформація про матеріали для крафту/покращення відсутня.</p>
-                                {% endif %}
-
-                                {# 🔥 НОВИЙ БЛОК: Загальна Кількість Матеріалів 🔥 #}
-                                {% if total_materials %}
-                                    {# Використовуємо клас level-card для отримання роздільника перед цим блоком #}
-                                    <div class="level-card total-materials-info total-card-separator">
-
-                                        {# Використовуємо h5 для стилів заголовка картки рівня #}
-                                        <h5>
-                                            Загальна Кількість Матеріалів (Рівні 1-4)
-                                        </h5>
-
-                                        {# Використовуємо materials-for-level для стилізації списку #}
-                                        <div class="materials-for-level total-materials-list-wrapper">
-                                            {% for material in total_materials %}
-                                                <p class="material-item total-material-item">
-                                                    <span class="material-name-link">
-                                                        {# Відображення іконки, якщо доступна #}
-                                                        {% if material.image_url %}
-                                                            <img src="{{ material.image_url }}" alt="{{ material.name }}" class="material-icon">
-                                                        {% endif %}
-                                                        {# Посилання на матеріал (опціонально) #}
-                                                        <a href="/item/{{ material.token|default:material.assetId }}/" title="{{ material.name }}" class="material-link">
-                                                            <strong>{{ material.name }}</strong>
-                                                        </a>
-                                                    </span>
-                                                    {# Загальна кількість #}
-                                                    <span class="craft-value total-quantity">{{ material.quantity }} шт.</span>
-                                                </p>
-                                            {% endfor %}
-                                        </div>
-
-                                    </div>
-                                {% endif %}
-                                {# КІНЕЦЬ НОВОГО БЛОКУ #}
-
-
-                            </div>
+                        {% if requirement.materials %}
+                          <div class="materials-for-level">
+                            {% for material in requirement.materials %}
+                              <p class="material-item">
+                                <span class="material-name-link">
+                                  {% if material.image_url %}
+                                    <img src="{{ material.image_url }}" alt="{{ material.name }}" class="material-icon">
+                                  {% endif %}
+                                  <a href="/item/{{ material.token|default:material.assetId }}/" title="{{ material.name }}" class="material-link">
+                                    <strong>{{ material.name }}</strong>
+                                  </a>
+                                </span>
+                                <span class="craft-value">{{ material.quantity }} шт.</span>
+                              </p>
+                            {% endfor %}
+                          </div>
+                        {% else %}
+                          <p class="no-materials">Матеріали не потрібні для цього рівня.</p>
                         {% endif %}
-                    </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  <p>Інформація про матеріали для крафту/покращення відсутня.</p>
                 {% endif %}
-                {# ---------------------------------------------------- #}
 
-                <div class="tech-info">
-                    <h4>Технічна інформація</h4>
-                    <p><strong>Токен:</strong> <span class="tech-value">{{ item.token }}</span></p>
-                    <p><strong>Asset ID:</strong> <span class="tech-value">{{ item.assetId }}</span></p>
-                </div>
-            </div>
+                {% if total_materials %}
+                  <div class="level-card total-materials-info total-card-separator">
+                    <h5>Загальна Кількість Матеріалів (Рівні 1-4)</h5>
+                    <div class="materials-for-level total-materials-list-wrapper">
+                      {% for material in total_materials %}
+                        <p class="material-item total-material-item">
+                          <span class="material-name-link">
+                            {% if material.image_url %}
+                              <img src="{{ material.image_url }}" alt="{{ material.name }}" class="material-icon">
+                            {% endif %}
+                            <a href="/item/{{ material.token|default:material.assetId }}/" title="{{ material.name }}" class="material-link">
+                              <strong>{{ material.name }}</strong>
+                            </a>
+                          </span>
+                          <span class="craft-value total-quantity">{{ material.quantity }} шт.</span>
+                        </p>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <div class="tech-info">
+          <h4>Технічна інформація</h4>
+          <p><strong>Токен:</strong> <span class="tech-value">{{ item.token }}</span></p>
+          <p><strong>Asset ID:</strong> <span class="tech-value">{{ item.assetId }}</span></p>
         </div>
-    {% else %}
-        <div class="error-message">
-          <p>Предмет не знайдено.</p>
-        </div>
-    {% endif %}
+      </div>
+    </div>
+  {% else %}
+    <div class="error-message">
+      <p>Предмет не знайдено.</p>
+    </div>
+  {% endif %}
 </main>
 
 </body>
