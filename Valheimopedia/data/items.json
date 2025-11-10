@@ -1,441 +1,505 @@
 {
   "items": {
     "Левади": [],
-    "Одноручна зброя": [
-      {
-        "name": "Абомінація_атака1",
-        "assetId": "af1b6acaf8dc9c44990139ac4da5d579",
-        "token": "Swing attack",
-        "englishName": "Swing attack",
-        "type": "Одноручна зброя",
-        "description": "NULL"
-      },
-      {
-        "name": "Абомінація_атака2",
-        "assetId": "260873455cf3ad34b8e3e80394ad42d5",
-        "token": "Slam attack",
-        "englishName": "Slam attack",
-        "type": "Одноручна зброя",
-        "description": "NULL"
-      },
-      {
-        "name": "Абомінація_атака3",
-        "assetId": "00ede6082b8f6244c88ff154a267cdd7",
-        "token": "Stub to the ground",
-        "englishName": "Stub to the ground",
-        "type": "Одноручна зброя",
-        "description": "NULL"
-      },
-      {
-        "name": "Сокира Чорного Металу",
-        "assetId": "4a4b72e3bfc3c40b08d3ae37d7140468",
-        "token": "$item_axe_blackmetal",
-        "englishName": "Black Metal Axe",
-        "type": "Одноручна зброя",
-        "description": "Ідеально збалансована сокира, викувана з темного металу з смарагдовим відблиском."
-      },
-      {
-        "name": "Сокира Бронзова",
-        "assetId": "56812f11a8e904356a535bf3253afbbb",
-        "token": "$item_axe_bronze",
-        "englishName": "Bronze Axe",
-        "type": "Одноручна зброя",
-        "description": "Яскраве відполіроване лезо, вигнуте як посмішка."
-      },
-      {
-        "name": "Сокира Кремнева",
-        "assetId": "1c81915f9409743c2bfa81cc81337495",
-        "token": "$item_axe_flint",
-        "englishName": "Flint Axe",
-        "type": "Одноручна зброя",
-        "description": "Гостріша за камінь."
-      },
-      {
-        "name": "Сокира Залізна",
-        "assetId": "7b2067435f94d4aae9a5f01f78f2742a",
-        "token": "$item_axe_iron",
-        "englishName": "Iron Axe",
-        "type": "Одноручна зброя",
-        "description": "Гостра та міцна, друг дроворуба."
-      },
-      {
-        "name": "Загибель Йотуна",
-        "assetId": "6bbecce943fd39f47a985a4a7cfbe186",
-        "token": "$item_axe_jotunbane",
-        "englishName": "Jotun Bane",
-        "type": "Одноручна зброя",
-        "description": "Навіть древні велети не могли витримати отруйне жало цієї зброї."
-      },
-      {
-        "name": "Сокира Кам'яна",
-        "assetId": "2c7e1807d4065470aa59a90cb64eddff",
-        "token": "$item_axe_stone",
-        "englishName": "Stone Axe",
-        "type": "Одноручна зброя",
-        "description": "Примітивна сокира для рубання дерев."
-      },
-      {
-        "name": "Сокира Дерев'яна",
-        "assetId": "85d92cca1bf2f954db1af646618d90a6",
-        "token": "$item_axe_wood",
-        "englishName": "Wooden Axe",
-        "type": "Одноручна зброя",
-        "description": "Якби ця сокира могла рубати деревину, хіба це не було б дивно?"
-      },
-      {
-        "name": "Булава",
-        "assetId": "0942d0a620b2b4ba6b359495181c1f50",
-        "token": "$item_club",
-        "englishName": "Club",
-        "type": "Одноручна зброя",
-        "description": "Примітивна, але корисна зброя."
-      },
-      {
-        "name": "Меч Чорного Металу",
-        "assetId": "9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f",
-        "token": "$item_sword_blackmetal",
-        "englishName": "Black Metal Sword",
-        "type": "Одноручна зброя",
-        "description": "Гострий меч із чорного металу."
-      },
-      {
-        "name": "Меч Бронзовий",
-        "assetId": "8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a",
-        "token": "$item_sword_bronze",
-        "englishName": "Bronze Sword",
-        "type": "Одноручна зброя",
-        "description": "Міцний бронзовий меч."
-      },
-      {
-        "name": "Меч Залізний",
-        "assetId": "7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b",
-        "token": "$item_sword_iron",
-        "englishName": "Iron Sword",
-        "type": "Одноручна зброя",
-        "description": "Надійний залізний меч."
-      },
-      {
-        "name": "Меч Срібний",
-        "assetId": "6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c",
-        "token": "$item_sword_silver",
-        "englishName": "Silver Sword",
-        "type": "Одноручна зброя",
-        "description": "Блискучий срібний меч."
-      }
-    ],
-    "Дворучна зброя": [
-      {
-        "name": "Атґір із чорного металу",
-        "assetId": "cadb835c9eea4fc4590601cfc7177b38",
-        "token": "$item_atgeir_blackmetal",
-        "englishName": "Black Metal Atgeir",
-        "type": "Дворучна зброя",
-        "description": "Люте бойове списо-сокирище з майже незламного чорного металу."
-      },
-      {
-        "name": "Бронзовий атґір",
-        "assetId": "da4341e5dd54346eb930a52286fab683",
-        "token": "$item_atgeir_bronze",
-        "englishName": "Bronze Atgeir",
-        "type": "Дворучна зброя",
-        "description": "Справжній інструмент воїна."
-      },
-      {
-        "name": "Гіммінафль",
-        "assetId": "7c7e3b180b070eb4c8547c0fce72fbd8",
-        "token": "$item_atgeir_himminafl",
-        "englishName": "Himminafl",
-        "type": "Дворучна зброя",
-        "description": "Хай це й не молот, але сам Тор схвалив би цю зброю."
-      },
-      {
-        "name": "Залізний атґір",
-        "assetId": "eab62f3879789485283981a9ca1e7b3c",
-        "token": "$item_atgeir_iron",
-        "englishName": "Iron Atgeir",
-        "type": "Дворучна зброя",
-        "description": "П’є кров, трощить черепи, несе смерть."
-      },
-      {
-        "name": "Дерев’яний атґір",
-        "assetId": "699027b6a79064f4bb965fd7de5102d6",
-        "token": "$item_atgeir_wood",
-        "englishName": "Wooden Atgeir",
-        "type": "Дворучна зброя",
-        "description": "Може й не зашкодить скелету, але виглядає загрозливо."
-      },
-      {
-        "name": "Бойова сокира",
-        "assetId": "55bcbb51967006f469e6c53149d951fa",
-        "token": "$item_battleaxe",
-        "englishName": "Battleaxe",
-        "type": "Дворучна зброя",
-        "description": "Розколювач черепів — гордість воїна."
-      },
-      {
-        "name": "Бойова сокира з чорного металу",
-        "assetId": "1cfe9a1491bc846428ecb634ed49c93c",
-        "token": "$item_battleaxe_blackmetal",
-        "englishName": "Black Metal Battleaxe",
-        "type": "Дворучна зброя",
-        "description": "Зелений — останній колір, який побачать твої вороги, перш ніж ти розітнеш їх навпіл."
-      },
-      {
-        "name": "Кришталева бойова сокира",
-        "assetId": "635eb2beadfc0be408d2f797fde7f1f2",
-        "token": "$item_battleaxe_crystal",
-        "englishName": "Crystal Battleaxe",
-        "type": "Дворучна зброя",
-        "description": "Прозора на вигляд, але розтинає безжально."
-      },
-      {
-        "name": "Розколювач черепів",
-        "assetId": "131b6e64eaee51547a0b76f472190581",
-        "token": "$item_battleaxe_skullsplittur",
-        "englishName": "Skull Splittur",
-        "type": "Дворучна зброя",
-        "description": "Знайде череп для розколу навіть у найгустішому тумані."
-      },
-      {
-        "name": "Дерев’яна бойова сокира",
-        "assetId": "0563f9e625bbec944b636a042ccbd60c",
-        "token": "$item_battleaxe_wood",
-        "englishName": "Wooden Battleaxe",
-        "type": "Дворучна зброя",
-        "description": "Виглядає грізно, але не така страшна, як справжня."
-      },
-      {
-        "name": "Оленебій",
-        "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b999d",
-        "token": "$item_sledge_stagbreaker",
-        "englishName": "Stagbreaker",
-        "type": "Дворучна зброя",
-        "description": "Могутній бойовий молот."
-      },
-      {
-        "name": "Залізний молот",
-        "assetId": "2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e",
-        "token": "$item_sledge_iron",
-        "englishName": "Iron Sledge",
-        "type": "Дворучна зброя",
-        "description": "Важкий залізний кувалда-молот."
-      },
-      {
-        "name": "Руйнівник",
-        "assetId": "1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f",
-        "token": "$item_sledge_demolisher",
-        "englishName": "Demolisher",
-        "type": "Дворучна зброя",
-        "description": "Він ламає речі. І робить це чудово."
-      }
-    ],
 
-    "Луки": [
-      {
-        "name": "Примітивний лук",
-        "assetId": "10ef404d2efa74906adeafe7d433b347",
-        "token": "$item_bow",
-        "englishName": "Crude Bow",
-        "type": "Лук",
-        "description": "Грубий, але цілком придатний лук."
-      },
-      {
-        "name": "Попелястий ікло",
-        "assetId": "811f697b71a83ab4483c449e33f65516",
-        "token": "$item_bow_ashlands",
-        "englishName": "Ash Fang",
-        "type": "Лук",
-        "description": "Відроджений з попелу, цей лук зберігає непохитну силу."
-      },
-      {
-        "name": "Лук драугра",
-        "assetId": "f11393c8936ff3343a7057e99eca3a20",
-        "token": "$item_bow_draugrfang",
-        "englishName": "Draugr Fang",
-        "type": "Лук",
-        "description": "Темне дерево, натягнуте сяючими жилами. Жорстокий витвір."
-      },
-      {
-        "name": "Лук із доброго дерева",
-        "assetId": "64404a9b9aeb8495da8f72ba8ce744aa",
-        "token": "$item_bow_finewood",
-        "englishName": "Finewood Bow",
-        "type": "Лук",
-        "description": "Простий лук із міцного та гнучкого дерева."
-      },
-      {
-        "name": "Лук мисливця",
-        "assetId": "970acb6ea7b4b154287b57b80c1dea44",
-        "token": "$item_bow_huntsman",
-        "englishName": "Huntsman Bow",
-        "type": "Лук",
-        "description": "Тонко зроблений і натягнутий. Радість справжнього мисливця."
-      },
-      {
-        "name": "Ломач хребтів",
-        "assetId": "a5ab64bc00ff578458957e0ef037d244",
-        "token": "$item_bow_snipesnap",
-        "englishName": "Spinesnap",
-        "type": "Лук",
-        "description": "Користування цим луком — справжнє випробування для спини, але воно того варте."
-      },
-      {
-        "name": "Арбалет",
-        "assetId": "f094bf961f9064e6daaaf4008ff69639",
-        "token": "$item_crossbow_arbalest",
-        "englishName": "Arbalest",
-        "type": "Арбалет",
-        "description": "Повільна, але потужна зброя."
-      },
-      {
-        "name": "Різак",
-        "assetId": "4e37868b1c496a04f93c1ee12282e3a5",
-        "token": "$item_crossbow_ripper",
-        "englishName": "Ripper",
-        "type": "Арбалет",
-        "description": "Розриває ворогів на шматки — і все тут."
-      }
-    ],
-    "Стріли": [
-      {
-        "name": "Бронзова стріла",
-        "assetId": "8beb57971df834c7caabf0be6c847bb8",
-        "token": "$item_arrow_bronze",
-        "englishName": "Bronzehead Arrow",
-        "type": "Боєприпаси",
-        "description": "Гостріша за кремінь. Стрункий посланець смерті."
-      },
-      {
-        "name": "Стріла з панцира",
-        "assetId": "a64dfa84487f9f84fb07cd1ea8c6ee90",
-        "token": "$item_arrow_carapace",
-        "englishName": "Carapace Arrow",
-        "type": "Боєприпаси",
-        "description": "Важка й гостра — ця стріла справді боляче влучає."
-      },
-      {
-        "name": "Обвуглена стріла",
-        "assetId": "b169a52c199167b428c5608a687514f4",
-        "token": "$item_arrow_charred",
-        "englishName": "Charred Arrow",
-        "type": "Боєприпаси",
-        "description": "Вирізана з обвугленої кістки, ця стріла тверда, як метал."
-      },
-      {
-        "name": "Вогняна стріла",
-        "assetId": "6e0b443c9754043b193065c60a3a4d2f",
-        "token": "$item_arrow_fire",
-        "englishName": "Fire Arrow",
-        "type": "Боєприпаси",
-        "description": "Ця стріла підпалює все, у що влучає."
-      },
-      {
-        "name": "Крем’яна стріла",
-        "assetId": "069f2df2bd02d42a5a81997c5c8e0c46",
-        "token": "$item_arrow_flint",
-        "englishName": "Flinthead Arrow",
-        "type": "Боєприпаси",
-        "description": "Прорубує шкіру завдяки крем’яному наконечнику."
-      },
-      {
-        "name": "Крижана стріла",
-        "assetId": "8b1055a6e2e46234dabdbf32c6d4b78b",
-        "token": "$item_arrow_frost",
-        "englishName": "Frost Arrow",
-        "type": "Боєприпаси",
-        "description": "Уламок пронизуючого льоду."
-      },
-      {
-        "name": "Залізна стріла",
-        "assetId": "0f77c8bd38729482c8e915807fb94891",
-        "token": "$item_arrow_iron",
-        "englishName": "Ironhead Arrow",
-        "type": "Боєприпаси",
-        "description": "Обшита залізом і прикрашена темним оперенням."
-      },
-      {
-        "name": "Голкова стріла",
-        "assetId": "d40a210614586407989421b0e1d49dd6",
-        "token": "$item_arrow_needle",
-        "englishName": "Needle Arrow",
-        "type": "Боєприпаси",
-        "description": "Останній штрих смерті."
-      },
-      {
-        "name": "Обсидіанова стріла",
-        "assetId": "23db0c1d3c953da4f865af7f9fca8ed5",
-        "token": "$item_arrow_obsidian",
-        "englishName": "Obsidian Arrow",
-        "type": "Боєприпаси",
-        "description": "Уламок темряви."
-      },
-      {
-        "name": "Отруєна стріла",
-        "assetId": "500ef375ad2694c77ac18b27565a63eb",
-        "token": "$item_arrow_poison",
-        "englishName": "Poison Arrow",
-        "type": "Боєприпаси",
-        "description": "Гірке жало здалеку."
-      },
-      {
-        "name": "Срібна стріла",
-        "assetId": "82916d01f3d67374eb95ae6ab022065e",
-        "token": "$item_arrow_silver",
-        "englishName": "Silver Arrow",
-        "type": "Боєприпаси",
-        "description": "Голка, що заспокоює неспокійні душі."
-      },
-      {
-        "name": "Дерев’яна стріла",
-        "assetId": "bf013984a97904e9b90ae0df1deba39b",
-        "token": "$item_arrow_wood",
-        "englishName": "Wood Arrow",
-        "type": "Боєприпаси",
-        "description": "Стріла з загостреного дерева."
-      }
-    ],
-    "Болти": [
-      {
-        "name": "Болт із чорного металу",
-        "assetId": "ba50ac49b67505b4e823c7628b9866e6",
-        "token": "$item_bolt_blackmetal",
-        "englishName": "Black Metal Bolt",
-        "type": "Боєприпаси",
-        "description": "Стрункий болт із темного металу."
-      },
-      {
-        "name": "Кістяний болт",
-        "assetId": "992daff46ffea2046b811a9683a3dcde",
-        "token": "$item_bolt_bone",
-        "englishName": "Bone Bolt",
-        "type": "Боєприпаси",
-        "description": "Грубо вирізаний болт із пожовтілої кістки."
-      },
-      {
-        "name": "Болт із панцира",
-        "assetId": "2f32cf8f5b65863489192cd0b143c651",
-        "token": "$item_bolt_carapace",
-        "englishName": "Carapace Bolt",
-        "type": "Боєприпаси",
-        "description": "Важкий і міцний болт."
-      },
-      {
-        "name": "Обвуглений болт",
-        "assetId": "559edadb35a74d04394d8c9b6259ad0e",
-        "token": "$item_bolt_charred",
-        "englishName": "Charred Bolt",
-        "type": "Боєприпаси",
-        "description": "Міцна кістка передпліччя, оброблена у смертельний болт."
-      },
-      {
-        "name": "Залізний болт",
-        "assetId": "69e017212c834360f8f60a46f35a895e",
-        "token": "$item_bolt_iron",
-        "englishName": "Iron Bolt",
-        "type": "Боєприпаси",
-        "description": "Міцний залізний снаряд."
-      }
-    ],
+    "Зброя": {
+        "Одноручна зброя": {
+          "Сокири": [
+            {
+              "name": "Сокира Кам'яна",
+              "assetId": "2c7e1807d4065470aa59a90cb64eddff",
+              "token": "$item_axe_stone",
+              "englishName": "Stone Axe",
+              "type": "Сокира (Одноручна)",
+              "description": "Примітивна сокира для рубання дерев.",
+              "craft": "Камінь x5, Дерево x4",
+              "damage": "20 (Зріз.)",
+              "features": "Базова зброя/інструмент."
+            },
+            {
+              "name": "Сокира Кремнева",
+              "assetId": "1c81915f9409743c2bfa81cc81337495",
+              "token": "$item_axe_flint",
+              "englishName": "Flint Axe",
+              "type": "Сокира (Одноручна)",
+              "description": "Гостріша за камінь.",
+              "craft": "Кремінь x4, Дерево x5",
+              "damage": "20 (Зріз.)",
+              "features": "Базова зброя/інструмент."
+            },
+            {
+              "name": "Мідна сокира",
+              "assetId": "",
+              "token": "$item_axe_copper",
+              "englishName": "Copper Axe",
+              "type": "Сокира (Одноручна)",
+              "description": "Сокира з мідним лезом.",
+              "craft": "Мідь x5, Кожусіна x3, Дерево x10",
+              "damage": "25 (Зріз.)",
+              "features": "Рубає сосну."
+            },
+            {
+              "name": "Сокира Бронзова",
+              "assetId": "56812f11a8e904356a535bf3253afbbb",
+              "token": "$item_axe_bronze",
+              "englishName": "Bronze Axe",
+              "type": "Сокира (Одноручна)",
+              "description": "Яскраве відполіроване лезо, вигнуте як посмішка.",
+              "craft": "Бронза x8, Кожусіна x2",
+              "damage": "35 (Зріз.)",
+              "features": "Перша сокира, що рубає Сосну."
+            },
+            {
+              "name": "Сокира Залізна",
+              "assetId": "7b2067435f94d4aae9a5f01f78f2742a",
+              "token": "$item_axe_iron",
+              "englishName": "Iron Axe",
+              "type": "Сокира (Одноручна)",
+              "description": "Гостра та міцна, друг дроворуба.",
+              "craft": "Залізо x20, Кожусіна оленя x3",
+              "damage": "55 (Зріз.)",
+              "features": "Ефективна для рубки."
+            },
+            {
+              "name": "Сокира Чорного Металу",
+              "assetId": "4a4b72e3bfc3c40b08d3ae37d7140468",
+              "token": "$item_axe_blackmetal",
+              "englishName": "Black Metal Axe",
+              "type": "Сокира (Одноручна)",
+              "description": "Ідеально збалансована сокира, викувана з темного металу з смарагдовим відблиском.",
+              "craft": "Чорний метал x20, Нитки з льону x5",
+              "damage": "95 (Зріз.)",
+              "features": "Найкраща бойова сокира."
+            }
+          ],
+          "Булави": [
+            {
+              "name": "Дубина",
+              "assetId": "0942d0a620b2b4ba6b359495181c1f50",
+              "token": "$item_club",
+              "englishName": "Club",
+              "type": "Булава",
+              "description": "Примітивна, але корисна зброя.",
+              "craft": "Дерево x4",
+              "damage": "15 (Дроб.)",
+              "features": "Базова зброя."
+            },
+            {
+              "name": "Броньова булава",
+              "assetId": "",
+              "token": "$item_mace_bronze",
+              "englishName": "Bronze Mace",
+              "type": "Булава",
+              "description": "",
+              "craft": "Бронза x8, Кожусіна x2",
+              "damage": "35 (Дроб.)",
+              "features": "Надійна зброя на ранніх етапах."
+            },
+            {
+              "name": "Залізна булава",
+              "assetId": "",
+              "token": "$item_mace_iron",
+              "englishName": "Iron Mace",
+              "type": "Булава",
+              "description": "",
+              "craft": "Залізо x20, Кожусіна оленя x3",
+              "damage": "55 (Дроб.)",
+              "features": "Середній рівень булави."
+            },
+            {
+              "name": "Булава Морозника",
+              "assetId": "",
+              "token": "$item_mace_frostner",
+              "englishName": "Frostner",
+              "type": "Булава",
+              "description": "Покрита кригою булава.",
+              "craft": "Срібло x30, Древня щепа x10, Морозиво x5, Черені x4",
+              "damage": "35 (Дроб.) + 40 (Мороз) + 10 (Дух)",
+              "features": "Завдає морозної шкоди (сповільнює)."
+            },
+            {
+              "name": "Порцеляновий молот",
+              "assetId": "",
+              "token": "$item_mace_porcupine",
+              "englishName": "Porcupine",
+              "type": "Булава",
+              "description": "Булава, що колеться, як їжак.",
+              "craft": "Інфікована щепа x5, Залізо x10, Ікла смертеля x20, Черені x4",
+              "damage": "50 (Дроб.) + 22 (Колюча)",
+              "features": "Завдає змішаної шкоди. Найсильніша булава."
+            },
+            {
+              "name": "Булава Йотунів",
+              "assetId": "6bbecce943fd39f47a985a4a7cfbe186",
+              "token": "$item_axe_jotunbane",
+              "englishName": "Jotun Bane",
+              "type": "Спеціальна Булава",
+              "description": "Навіть древні велети не могли витримати отруйне жало цієї зброї.",
+              "craft": "Чорний метал x30, Інфікована щепа x5, Нитки з льону x2",
+              "damage": "120 (Дроб.) + 5 (Отрута) - *Оцінка*",
+              "features": "Завдає додаткової отруйної шкоди (перенесено з Axe/Mace)."
+            }
+          ],
+          "Ножі": [
+            {
+              "name": "Ніж з кремня",
+              "assetId": "",
+              "token": "$item_knife_flint",
+              "englishName": "Flint Knife",
+              "type": "Ніж",
+              "description": "",
+              "craft": "Кремінь x4, Дерево x2, Шкура оленя x2",
+              "damage": "12 (Зріз.)",
+              "features": "Дуже швидкий. Бонус до удару зі спини (бекстеб)."
+            },
+            {
+              "name": "Залізний ніж",
+              "assetId": "",
+              "token": "$item_knife_iron",
+              "englishName": "Iron Knife",
+              "type": "Ніж",
+              "description": "",
+              "craft": "Залізо x8, Кожусіна оленя x2",
+              "damage": "28 (Зріз.)",
+              "features": "Хороший пошкодження/швидкість. Бонус до удару зі спини."
+            },
+            {
+              "name": "Ніж Чорного металу",
+              "assetId": "",
+              "token": "$item_knife_blackmetal",
+              "englishName": "Blackmetal Knife",
+              "type": "Ніж",
+              "description": "",
+              "craft": "Чорний метал x10, Нитки з льону x5",
+              "damage": "56 (Зріз.)",
+              "features": "Найсильніший ніж. Бонус до удару зі спини."
+            }
+          ],
+          "Мечі": [
+            {
+              "name": "Меч Бронзовий",
+              "assetId": "8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a",
+              "token": "$item_sword_bronze",
+              "englishName": "Bronze Sword",
+              "type": "Меч",
+              "description": "Міцний бронзовий меч.",
+              "craft": "Бронза x8, Кожусіна x2, Кожусіна оленя x2",
+              "damage": "49 (Зріз.)",
+              "features": "Перший меч."
+            },
+            {
+              "name": "Меч Залізний",
+              "assetId": "7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b",
+              "token": "$item_sword_iron",
+              "englishName": "Iron Sword",
+              "type": "Меч",
+              "description": "Надійний залізний меч.",
+              "craft": "Залізо x20, Кожусіна оленя x3, Кожусіна x2",
+              "damage": "78 (Зріз.)",
+              "features": "Надійний вибір для середньої гри."
+            },
+            {
+              "name": "Меч Чорного Металу",
+              "assetId": "9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f",
+              "token": "$item_sword_blackmetal",
+              "englishName": "Black Metal Sword",
+              "type": "Меч",
+              "description": "Гострий меч із чорного металу.",
+              "craft": "Чорний метал x20, Нитки з льону x5, Черені x3",
+              "damage": "113 (Зріз.)",
+              "features": "Найсильніший меч."
+            }
+          ]
+        },
+        "Дворучна зброя": {
+          "Списова зброя (Polearms / Atgeirs)": [
+            {
+              "name": "Списа-рогатина Бронзова",
+              "assetId": "da4341e5dd54346eb930a52286fab683",
+              "token": "$item_atgeir_bronze",
+              "englishName": "Bronze Atgeir",
+              "type": "Атґір",
+              "description": "Справжній інструмент воїна.",
+              "craft": "Бронза x8, Кожусіна оленя x2, Черені x2",
+              "damage": "40 (Колота)",
+              "features": "Дальні атаки, гарна для контролю дистанції."
+            },
+            {
+              "name": "Списа-рогатина Чорного металу",
+              "assetId": "cadb835c9eea4fc4590601cfc7177b38",
+              "token": "$item_atgeir_blackmetal",
+              "englishName": "Black Metal Atgeir",
+              "type": "Атґір",
+              "description": "Люте бойове списо-сокирище з майже незламного чорного металу.",
+              "craft": "Чорний метал x30, Нитки з льону x10, Черені x2",
+              "damage": "85 (Колота)",
+              "features": "Найсильніша списа. Спеціальна атака: круговий удар."
+            }
+          ],
+          "Сокири (Two-handed Axes)": [
+            {
+              "name": "Броньова сокира-двічіруч",
+              "assetId": "55bcbb51967006f469e6c53149d951fa",
+              "token": "$item_battleaxe",
+              "englishName": "Battleaxe",
+              "type": "Сокира (Дворучна)",
+              "description": "Розколювач черепів — гордість воїна.",
+              "craft": "Бронза x30, Кожусіна оленя x5, Дерево x15",
+              "damage": "80 (Зріз.)",
+              "features": "Дворучна зброя. Повільна, але потужна."
+            },
+            {
+              "name": "Сокира-двічіруч Чорного металу",
+              "assetId": "1cfe9a1491bc846428ecb634ed49c93c",
+              "token": "$item_battleaxe_blackmetal",
+              "englishName": "Black Metal Battleaxe",
+              "type": "Сокира (Дворучна)",
+              "description": "Зелений — останній колір, який побачать твої вороги, перш ніж ти розітнеш їх навпіл.",
+              "craft": "Чорний метал x30, Нитки з льону x5, Черені x10",
+              "damage": "120 (Зріз.)",
+              "features": "Найсильніша дворучна сокира."
+            }
+          ],
+          "Молоти (Two-handed Hammers)": [
+            {
+              "name": "Оленебій",
+              "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b999d",
+              "token": "$item_sledge_stagbreaker",
+              "englishName": "Stagbreaker",
+              "type": "Дворучний Молот",
+              "description": "Могутній бойовий молот.",
+              "craft": "Оленяча шкура x5, Ялина x20, Роги оленя x5",
+              "damage": "20 (Дроб.) + Шкода по площі",
+              "features": "Дворучна, завдає шкоди по площі."
+            },
+            {
+              "name": "Великий молот (Залізний)",
+              "assetId": "2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e",
+              "token": "$item_sledge_iron",
+              "englishName": "Iron Sledge",
+              "type": "Дворучний Молот",
+              "description": "Важкий залізний кувалда-молот.",
+              "craft": "Залізо x30, Древня щепа x10, Кожусіна оленя x4",
+              "damage": "70 (Дроб.) + Шкода по площі",
+              "features": "Дворучний. Висока шкода по площі."
+            }
+          ]
+        },
+        "Далекобійна зброя": {
+          "Луки": [
+            {
+              "name": "Примітивний лук",
+              "assetId": "10ef404d2efa74906adeafe7d433b347",
+              "token": "$item_bow",
+              "englishName": "Crude Bow",
+              "type": "Лук",
+              "description": "Грубий, але цілком придатний лук.",
+              "craft": "Дерево x10, Шкура оленя x8",
+              "damage": "15 (Колота)",
+              "features": "Базовий лук."
+            },
+            {
+              "name": "Лук із доброго дерева",
+              "assetId": "64404a9b9aeb8495da8f72ba8ce744aa",
+              "token": "$item_bow_finewood",
+              "englishName": "Finewood Bow",
+              "type": "Лук",
+              "description": "Простий лук із міцного та гнучкого дерева.",
+              "craft": "Добре дерево x10, Шкура оленя x10, Пір'я x2",
+              "damage": "22 (Колота)",
+              "features": "Перший хороший лук."
+            },
+            {
+              "name": "Лук мисливця",
+              "assetId": "970acb6ea7b4b154287b57b80c1dea44",
+              "token": "$item_bow_huntsman",
+              "englishName": "Huntsman Bow",
+              "type": "Лук",
+              "description": "Тонко зроблений і натягнутий. Радість справжнього мисливця.",
+              "craft": "Дерево дракону x10, Кожусіна оленя x2, Кремінь x4",
+              "damage": "42 (Колота)",
+              "features": "Гарна точність."
+            },
+            {
+              "name": "Лук драугра",
+              "assetId": "f11393c8936ff3343a7057e99eca3a20",
+              "token": "$item_bow_draugrfang",
+              "englishName": "Draugr Fang",
+              "type": "Лук",
+              "description": "Темне дерево, натягнуте сяючими жилами. Жорстокий витвір.",
+              "craft": "Древня щепа x10, Срібло x20, Гниль x10, Круглий шовк нитки x2",
+              "damage": "47 (Колота) + 26 (Отрута)",
+              "features": "Завдає додаткової отруйної шкоди."
+            },
+            {
+              "name": "Ломач хребтів",
+              "assetId": "a5ab64bc00ff578458957e0ef037d244",
+              "token": "$item_bow_snipesnap",
+              "englishName": "Spinesnap",
+              "type": "Лук",
+              "description": "Користування цим луком — справжнє випробування для спини, але воно того варте.",
+              "craft": "Дерево дракону x10, Коріння x20, Самоцвіт x10",
+              "damage": "62 (Колота)",
+              "features": "Найсильніший лук у базовій грі."
+            }
+          ],
+          "Арбалети (Crossbows)": [
+            {
+              "name": "Арбалет",
+              "assetId": "f094bf961f9064e6daaaf4008ff69639",
+              "token": "$item_crossbow_arbalest",
+              "englishName": "Arbalest",
+              "type": "Арбалет",
+              "description": "Повільна, але потужна зброя.",
+              "craft": "Залізо x10, Добре дерево x10, Нитки з льону x6",
+              "damage": "90 (Колота)",
+              "features": "Повільна швидкість перезарядки, висока разова шкода."
+            }
+          ],
+          "Боєприпаси (Ammunition)": {
+            "Стріли (Arrows)": [
+              {
+                "name": "Стріла з обсидіану",
+                "assetId": "23db0c1d3c953da4f865af7f9fca8ed5",
+                "token": "$item_arrow_obsidian",
+                "englishName": "Obsidian Arrow",
+                "type": "Стріла",
+                "description": "Уламок темряви.",
+                "craft": "Обсидіан x4, Перо x2 (набір 20 шт.)",
+                "damage": "27 (Колота)"
+              },
+              {
+                "name": "Крижана стріла",
+                "assetId": "8b1055a6e2e46234dabdbf32c6d4b78b",
+                "token": "$item_arrow_frost",
+                "englishName": "Frost Arrow",
+                "type": "Стріла",
+                "description": "Уламок пронизуючого льоду.",
+                "craft": "Обсидіан x4, Перо x2, Морозиво x1 (набір 20 шт.)",
+                "damage": "26 (Мороз)"
+              },
+              {
+                "name": "Отруєна стріла",
+                "assetId": "500ef375ad2694c77ac18b27565a63eb",
+                "token": "$item_arrow_poison",
+                "englishName": "Poison Arrow",
+                "type": "Стріла",
+                "description": "Гірке жало здалеку.",
+                "craft": "Обсидіан x4, Перо x2, Хвощ жовтий x2 (набір 20 шт.)",
+                "damage": "26 (Отрута)"
+              },
+              {
+                "name": "Голкова стріла",
+                "assetId": "d40a210614586407989421b0e1d49dd6",
+                "token": "$item_arrow_needle",
+                "englishName": "Needle Arrow",
+                "type": "Стріла",
+                "description": "Останній штрих смерті.",
+                "craft": "Шип смертеля x4, Перо x2 (набір 20 шт.)",
+                "damage": "62 (Колота)"
+              }
+            ],
+            "Болти (Bolts)": [
+              {
+                "name": "Болт із чорного металу",
+                "assetId": "ba50ac49b67505b4e823c7628b9866e6",
+                "token": "$item_bolt_blackmetal",
+                "englishName": "Black Metal Bolt",
+                "type": "Болт",
+                "description": "Стрункий болт із темного металу.",
+                "craft": "Чорний метал x4, Перо x2 (набір 20 шт.)",
+                "damage": "70 (Колота)"
+              },
+              {
+                "name": "Залізний болт",
+                "assetId": "69e017212c834360f8f60a46f35a895e",
+                "token": "$item_bolt_iron",
+                "englishName": "Iron Bolt",
+                "type": "Болт",
+                "description": "Міцний залізний снаряд.",
+                "craft": "Залізо x4, Перо x2 (набір 20 шт.)",
+                "damage": "62 (Колота)"
+              }
+            ]
+          }
+        },
+        "Захисне спорядження": {
+          "Щити": {
+            "Круглі щити (Round Shields)": [
+              {
+                "name": "Круглий щит з рогу",
+                "assetId": "",
+                "token": "$item_shield_banded",
+                "englishName": "Banded Shield",
+                "type": "Круглий Щит",
+                "description": "",
+                "craft": "Залізо x8, Кожусіна оленя x2",
+                "блок": "36",
+                "парирування": "50"
+              },
+              {
+                "name": "Круглий щит Чорного металу",
+                "assetId": "",
+                "token": "$item_shield_blackmetal",
+                "englishName": "Blackmetal Shield",
+                "type": "Круглий Щит",
+                "description": "",
+                "craft": "Чорний метал x10, Нитки з льону x5",
+                "блок": "78",
+                "парирування": "100"
+              }
+            ],
+            "Вежові щити (Tower Shields)": [
+              {
+                "name": "Залізний вежовий щит",
+                "assetId": "",
+                "token": "$item_shield_irontower",
+                "englishName": "Iron Tower Shield",
+                "type": "Вежовий Щит",
+                "description": "",
+                "craft": "Залізо x10, Кожусіна оленя x4",
+                "блок": "72",
+                "парирування": "10"
+              },
+              {
+                "name": "Вежовий щит Чорного металу",
+                "assetId": "",
+                "token": "$item_shield_blackmetaltower",
+                "englishName": "Blackmetal Tower Shield",
+                "type": "Вежовий Щит",
+                "description": "",
+                "craft": "Чорний метал x15, Нитки з льону x10",
+                "блок": "104",
+                "парирування": "20"
+              }
+            ]
+          }
+        },
+        "Унікальна/особлива зброя": [
+          {
+            "name": "Примара",
+            "assetId": "7c7e3b180b070eb4c8547c0fce72fbd8",
+            "token": "$item_atgeir_himminafl",
+            "englishName": "Himminafl",
+            "type": "Унікальна зброя",
+            "description": "Хай це й не молот, але сам Тор схвалив би цю зброю (створений з ресурсів Міста-саду).",
+            "craft": "Унікальні матеріали",
+            "damage": "Електрична + Колота",
+            "features": "Блискавична шкода, як у Молота Тора (Mjolnir)."
+          },
+          {
+            "name": "Молот Тора",
+            "assetId": "",
+            "token": "$item_sledge_mjolnir",
+            "englishName": "Mjolnir",
+            "type": "Унікальна зброя",
+            "description": "Легендарний молот, який можна отримати після перемоги над королевою.",
+            "craft": "Трофей королеви + Унікальні ресурси",
+            "damage": "120 (Дроб.) + Блискавична шкода",
+            "features": "Легка дворучна зброя (може бути використана однією рукою), масове ураження."
+          }
+        ]
+    },
 
     "Комплект обладунків": [
     {
@@ -1054,7 +1118,11 @@
               "materials": [
                 "e8781dc863b7c41a79681458607070c7",
                 "f2e435d4bef9a4c77bcc33e1081b226f"
-              ]
+              ],
+              "material_quantities": {
+                "e8781dc863b7c41a79681458607070c7": ["6", "6", "12", "18"],
+                "f2e435d4bef9a4c77bcc33e1081b226f": ["0", "5", "10", "15"]
+              }
             }
           }
         },
@@ -1751,7 +1819,8 @@
         "token": "$item_cultivator",
         "englishName": "Cultivator",
         "type": "Інструмент",
-        "description": "Сільськогосподарський інструмент для обробки ґрунту."
+        "description": "Сільськогосподарський інструмент для обробки ґрунту.",
+        "image_url": ""
       },
       {
         "name": "Молот",
@@ -1759,7 +1828,8 @@
         "token": "$item_hammer",
         "englishName": "Hammer",
         "type": "Інструмент",
-        "description": "З цим інструментом у руці ви зможете зводити високі зали та могутні укріплення."
+        "description": "З цим інструментом у руці ви зможете зводити високі зали та могутні укріплення.",
+        "image_url": ""
       },
       {
         "name": "Вудка",
@@ -1767,7 +1837,8 @@
         "token": "$item_fishingrod",
         "englishName": "Fishing Rod",
         "type": "Інструмент",
-        "description": "Стандартна вудка двергрів."
+        "description": "Стандартна вудка двергрів.",
+        "image_url": ""
       },
       {
         "name": "Рогове кайло",
@@ -1775,7 +1846,8 @@
         "token": "$item_pickaxe_antler",
         "englishName": "Antler Pickaxe",
         "type": "Інструмент",
-        "description": "Кирка, зроблена з твердого рогу."
+        "description": "Кирка, зроблена з твердого рогу.",
+        "image_url": ""
       },
       {
         "name": "Бронзове кайло",
@@ -1783,7 +1855,8 @@
         "token": "$item_pickaxe_bronze",
         "englishName": "Bronze Pickaxe",
         "type": "Інструмент",
-        "description": "Міцна бронзова кирка."
+        "description": "Міцна бронзова кирка.",
+        "image_url": ""
       },
       {
         "name": "Залізне кайло",
@@ -1791,7 +1864,8 @@
         "token": "$item_pickaxe_iron",
         "englishName": "Iron Pickaxe",
         "type": "Інструмент",
-        "description": "Надійна залізна кирка."
+        "description": "Надійна залізна кирка.",
+        "image_url": ""
       }
     ],
     "Consumable": [
@@ -1801,7 +1875,8 @@
         "token": "$item_barleywine",
         "englishName": "Fire Resistance Barley Wine",
         "type": "Consumable",
-        "description": "Fortifies you against fire."
+        "description": "Fortifies you against fire.",
+        "image_url": ""
       },
       {
         "name": "BlackSoup",
@@ -1809,7 +1884,8 @@
         "token": "$item_blacksoup",
         "englishName": "Black Soup",
         "type": "Consumable",
-        "description": "A perfect balance of sweetness and acidity."
+        "description": "A perfect balance of sweetness and acidity.",
+        "image_url": ""
       },
       {
         "name": "BloodPudding",
@@ -1817,7 +1893,8 @@
         "token": "$item_bloodpudding",
         "englishName": "Blood Pudding",
         "type": "Consumable",
-        "description": "It's bloody tasty."
+        "description": "It's bloody tasty.",
+        "image_url": ""
       },
       {
         "name": "Blueberries",
@@ -1825,7 +1902,8 @@
         "token": "$item_blueberries",
         "englishName": "Blueberries",
         "type": "Consumable",
-        "description": "Tiny but tasty."
+        "description": "Tiny but tasty.",
+        "image_url": ""
       },
       {
         "name": "Bread",
@@ -1833,7 +1911,8 @@
         "token": "$item_bread",
         "englishName": "Bread",
         "type": "Consumable",
-        "description": "A tasty loaf of bread."
+        "description": "A tasty loaf of bread.",
+        "image_url": ""
       },
       {
         "name": "Carrot",
@@ -1841,7 +1920,8 @@
         "token": "$item_carrot",
         "englishName": "Carrot",
         "type": "Consumable",
-        "description": "An orange treat."
+        "description": "An orange treat.",
+        "image_url": ""
       },
       {
         "name": "CarrotSoup",
@@ -1849,7 +1929,8 @@
         "token": "$item_carrotsoup",
         "englishName": "Carrot Soup",
         "type": "Consumable",
-        "description": "A warm tasty soup made of mostly carrots."
+        "description": "A warm tasty soup made of mostly carrots.",
+        "image_url": ""
       },
       {
         "name": "Cloudberry",
@@ -1857,7 +1938,8 @@
         "token": "$item_cloudberries",
         "englishName": "Cloudberries",
         "type": "Consumable",
-        "description": "The gold of the forest."
+        "description": "The gold of the forest.",
+        "image_url": ""
       },
       {
         "name": "CookedBjornMeat",
@@ -1865,7 +1947,8 @@
         "token": "$item_bjorn_meat_cooked",
         "englishName": "Cooked Bear Meat",
         "type": "Consumable",
-        "description": "Tastes like victory."
+        "description": "Tastes like victory.",
+        "image_url": ""
       },
       {
         "name": "CookedDeerMeat",
@@ -1873,7 +1956,8 @@
         "token": "$item_deer_meat_cooked",
         "englishName": "Cooked Deer Meat",
         "type": "Consumable",
-        "description": "All that running paid off."
+        "description": "All that running paid off.",
+        "image_url": ""
       },
       {
         "name": "CookedLoxMeat",
@@ -1881,7 +1965,8 @@
         "token": "$item_loxmeat_cooked",
         "englishName": "Cooked Lox Meat",
         "type": "Consumable",
-        "description": "A great hunk of tender meat, food fit for Valhalla!"
+        "description": "A great hunk of tender meat, food fit for Valhalla!",
+        "image_url": ""
       },
       {
         "name": "CookedMeat",
@@ -1889,7 +1974,8 @@
         "token": "$item_boar_meat_cooked",
         "englishName": "Cooked Boar Meat",
         "type": "Consumable",
-        "description": "An earthly taste."
+        "description": "An earthly taste.",
+        "image_url": ""
       },
       {
         "name": "CookedWolfMeat",
@@ -1897,7 +1983,8 @@
         "token": "$item_wolf_meat_cooked",
         "englishName": "Cooked Wolf Meat",
         "type": "Consumable",
-        "description": "A wild taste."
+        "description": "A wild taste.",
+        "image_url": ""
       },
       {
         "name": "DeerStew",
@@ -1905,7 +1992,8 @@
         "token": "$item_deerstew",
         "englishName": "Deer Stew",
         "type": "Consumable",
-        "description": "Fall-apart tender."
+        "description": "Fall-apart tender.",
+        "image_url": ""
       },
       {
         "name": "Eyescream",
@@ -1913,7 +2001,8 @@
         "token": "$item_eyescream",
         "englishName": "Eyescream",
         "type": "Consumable",
-        "description": "Crispy cool and creamy."
+        "description": "Crispy cool and creamy.",
+        "image_url": ""
       },
       {
         "name": "FishAndBread",
@@ -1921,7 +2010,8 @@
         "token": "$item_fishandbread",
         "englishName": "Fish 'n' Bread",
         "type": "Consumable",
-        "description": "Bounty from both land and sea."
+        "description": "Bounty from both land and sea.",
+        "image_url": ""
       },
       {
         "name": "FishCooked",
@@ -1929,7 +2019,8 @@
         "token": "$item_fish_cooked",
         "englishName": "Cooked Fish",
         "type": "Consumable",
-        "description": "A tasty side of smoked fish."
+        "description": "A tasty side of smoked fish.",
+        "image_url": ""
       },
       {
         "name": "FishWraps",
@@ -1937,7 +2028,8 @@
         "token": "$item_fishwraps",
         "englishName": "Fish Wraps",
         "type": "Consumable",
-        "description": "Bread and fish, what more to wish?"
+        "description": "Bread and fish, what more to wish?",
+        "image_url": ""
       },
       {
         "name": "HealthPotion",
@@ -1945,7 +2037,8 @@
         "token": "$item_healthpotion",
         "englishName": "Health Potion",
         "type": "Consumable",
-        "description": "Restores health over time."
+        "description": "Restores health over time.",
+        "image_url": ""
       },
       {
         "name": "Honey",
@@ -1953,7 +2046,8 @@
         "token": "$item_honey",
         "englishName": "Honey",
         "type": "Consumable",
-        "description": "Sweet and sticky honey."
+        "description": "Sweet and sticky honey.",
+        "image_url": ""
       },
       {
         "name": "MeadFrostResist",
@@ -1961,7 +2055,8 @@
         "token": "$item_meadfrostresist",
         "englishName": "Frost Resistance Mead",
         "type": "Consumable",
-        "description": "Protects against the cold."
+        "description": "Protects against the cold.",
+        "image_url": ""
       },
       {
         "name": "MeadHealthMajor",
@@ -1969,7 +2064,8 @@
         "token": "$item_meadhealthmajor",
         "englishName": "Major Healing Mead",
         "type": "Consumable",
-        "description": "Restores a large amount of health over time."
+        "description": "Restores a large amount of health over time.",
+        "image_url": ""
       },
       {
         "name": "MeadTasty",
@@ -1977,7 +2073,8 @@
         "token": "$item_meadtasty",
         "englishName": "Tasty Mead",
         "type": "Consumable",
-        "description": "It tastes great!"
+        "description": "It tastes great!",
+        "image_url": ""
       },
       {
         "name": "Mushroom",
@@ -1985,7 +2082,8 @@
         "token": "$item_mushroom",
         "englishName": "Mushroom",
         "type": "Consumable",
-        "description": "A tasty forest mushroom."
+        "description": "A tasty forest mushroom.",
+        "image_url": ""
       },
       {
         "name": "Raspberry",
@@ -1993,7 +2091,8 @@
         "token": "$item_raspberry",
         "englishName": "Raspberry",
         "type": "Consumable",
-        "description": "Sweet and delicious."
+        "description": "Sweet and delicious.",
+        "image_url": ""
       },
       {
         "name": "SerpentStew",
@@ -2001,7 +2100,8 @@
         "token": "$item_serpentstew",
         "englishName": "Serpent Stew",
         "type": "Consumable",
-        "description": "A stew made from serpent meat."
+        "description": "A stew made from serpent meat.",
+        "image_url": ""
       },
       {
         "name": "StaminaPotion",
@@ -2009,7 +2109,8 @@
         "token": "$item_staminapotion",
         "englishName": "Stamina Potion",
         "type": "Consumable",
-        "description": "Restores stamina over time."
+        "description": "Restores stamina over time.",
+        "image_url": ""
       },
       {
         "name": "TurnipStew",
@@ -2017,7 +2118,8 @@
         "token": "$item_turnipstew",
         "englishName": "Turnip Stew",
         "type": "Consumable",
-        "description": "Hearty and warming."
+        "description": "Hearty and warming.",
+        "image_url": ""
       }
     ],
     "Матеріали": {
@@ -2028,7 +2130,8 @@
           "token": "$item_bronze",
           "englishName": "Bronze",
           "type": "Матеріал",
-          "description": "Міцний сплав міді та олова."
+          "description": "Міцний сплав міді та олова.",
+          "image_url": ""
         },
         {
           "name": "Мідь",
@@ -2036,7 +2139,8 @@
           "token": "$item_copper",
           "englishName": "Copper",
           "type": "Матеріал",
-          "description": "Злиток чистої міді, готовий до обробки."
+          "description": "Злиток чистої міді, готовий до обробки.",
+          "image_url": ""
         },
         {
           "name": "Залізо",
@@ -2044,7 +2148,8 @@
           "token": "$item_iron",
           "englishName": "Iron",
           "type": "Матеріал",
-          "description": "Злиток заліза."
+          "description": "Злиток заліза.",
+          "image_url": ""
         },
         {
           "name": "Срібло",
@@ -2052,7 +2157,8 @@
           "token": "$item_silver",
           "englishName": "Silver",
           "type": "Матеріал",
-          "description": "Злиток срібла."
+          "description": "Злиток срібла.",
+          "image_url": ""
         },
         {
           "name": "Олово",
@@ -2060,7 +2166,8 @@
           "token": "$item_tin",
           "englishName": "Tin",
           "type": "Матеріал",
-          "description": "Злиток олова."
+          "description": "Злиток олова.",
+          "image_url": ""
         },
         {
           "name": "ЧорнийМетал",
@@ -2068,7 +2175,8 @@
           "token": "$item_blackmetal",
           "englishName": "Black Metal",
           "type": "Матеріал",
-          "description": "Важкий злиток темного металу."
+          "description": "Важкий злиток темного металу.",
+          "image_url": ""
         }
       ],
       "Руди": [
@@ -2078,7 +2186,8 @@
           "token": "$item_copperore",
           "englishName": "Copper Ore",
           "type": "Матеріал",
-          "description": "Неочищена мідь. Потрібно переплавити у плавильні."
+          "description": "Неочищена мідь. Потрібно переплавити у плавильні.",
+          "image_url": ""
         },
         {
           "name": "ЗалізнаРуда",
@@ -2086,7 +2195,8 @@
           "token": "$item_ironore",
           "englishName": "Iron Ore",
           "type": "Матеріал",
-          "description": "Сира залізна руда."
+          "description": "Сира залізна руда.",
+          "image_url": ""
         },
         {
           "name": "СрібнаРуда",
@@ -2094,7 +2204,8 @@
           "token": "$item_silverore",
           "englishName": "Silver Ore",
           "type": "Матеріал",
-          "description": "Сира срібна руда."
+          "description": "Сира срібна руда.",
+          "image_url": ""
         },
         {
           "name": "Олов'янаРуда",
@@ -2102,7 +2213,8 @@
           "token": "$item_tinore",
           "englishName": "Tin Ore",
           "type": "Матеріал",
-          "description": "Сира олов'яна руда."
+          "description": "Сира олов'яна руда.",
+          "image_url": ""
         },
         {
           "name": "УламокЧорногоМеталу",
@@ -2110,25 +2222,28 @@
           "token": "$item_blackmetalscrap",
           "englishName": "Black Metal Scrap",
           "type": "Матеріал",
-          "description": "Перекручений шматок темного металу."
+          "description": "Перекручений шматок темного металу.",
+          "image_url": ""
         }
       ],
-      "МатеріалиЗТварин": [
+      "Матеріали З Тварин": [
         {
-          "name": "ШкіраАска",
+          "name": "Шкіра Аска",
           "assetId": "f3a80b05846da25418e883bd19ef7ccd",
           "token": "$item_askhide",
           "englishName": "Asksvin Hide",
           "type": "Матеріал",
-          "description": "Ця міцна шкіра товста і все ще тепла на дотик."
+          "description": "Ця міцна шкіра товста і все ще тепла на дотик.",
+          "image_url": ""
         },
         {
-          "name": "Кров'янийМішок",
+          "name": "Кров'яний Мішок",
           "assetId": "bb5b960fe2536af4c8e22eb71e1079ca",
           "token": "$item_bloodbag",
           "englishName": "Bloodbag",
           "type": "Матеріал",
-          "description": "Вміст п'явки. Фу!"
+          "description": "Вміст п'явки. Фу!",
+          "image_url": ""
         },
         {
           "name": "Уламки Кісток",
@@ -2136,7 +2251,8 @@
           "token": "$item_bonefragments",
           "englishName": "Bone Fragments",
           "type": "Матеріал",
-          "description": "Купа розбитих кісток."
+          "description": "Купа розбитих кісток.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/d/dd/Bone_fragments.png/revision/latest?cb=20210215131409"
         },
         {
           "name": "Карапакс",
@@ -2144,7 +2260,8 @@
           "token": "$item_carapace",
           "englishName": "Carapace",
           "type": "Матеріал",
-          "description": "Пластина хітинового обладунку."
+          "description": "Пластина хітинового обладунку.",
+          "image_url": ""
         },
         {
           "name": "Хітин",
@@ -2152,7 +2269,8 @@
           "token": "$item_chitin",
           "englishName": "Chitin",
           "type": "Матеріал",
-          "description": "Уламок панцира ракоподібного."
+          "description": "Уламок панцира ракоподібного.",
+          "image_url": ""
         },
         {
           "name": "Оленяча Шкіра",
@@ -2160,7 +2278,8 @@
           "token": "$item_deerhide",
           "englishName": "Deer Hide",
           "type": "Матеріал",
-          "description": "Очищена шкіра оленя."
+          "description": "Очищена шкіра оленя.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/1/17/Deer_hide.png/revision/latest?cb=20210215131542"
         },
         {
           "name": "Нутрощі",
@@ -2168,7 +2287,8 @@
           "token": "$item_entrails",
           "englishName": "Entrails",
           "type": "Матеріал",
-          "description": "Слизька частина чиїхось внутрішностей."
+          "description": "Слизька частина чиїхось внутрішностей.",
+          "image_url": ""
         },
         {
           "name": "Пір'я",
@@ -2176,31 +2296,35 @@
           "token": "$item_feathers",
           "englishName": "Feathers",
           "type": "Матеріал",
-          "description": "Невелика купка пір'я."
+          "description": "Невелика купка пір'я.",
+          "image_url": ""
         },
         {
-          "name": "МорознаЗалоза",
+          "name": "Морозна Залоза",
           "assetId": "0aab05dfb872994408ca4f1bed05351a",
           "token": "$item_freezegland",
           "englishName": "Freeze Gland",
           "type": "Матеріал",
-          "description": "Цей таємничий орган підтримує ідеальну температуру."
+          "description": "Цей таємничий орган підтримує ідеальну температуру.",
+          "image_url": ""
         },
         {
-          "name": "ОкоГрейдворфа",
+          "name": "Око Грейдворфа",
           "assetId": "afeb72fbcd0a14c8989e204ad0ddd331",
           "token": "$item_greydwarfeye",
           "englishName": "Greydwarf Eye",
           "type": "Матеріал",
-          "description": "Молочне око Грейдворфа."
+          "description": "Молочне око Грейдворфа.",
+          "image_url": ""
         },
         {
-          "name": "ТвердийРіг",
+          "name": "Твердий Ріг",
           "assetId": "387f1ff8c82f149af84e133e431d41a3",
           "token": "$item_hardantler",
           "englishName": "Hard Antler",
           "type": "Матеріал",
-          "description": "Шматок дуже твердого рогу."
+          "description": "Шматок дуже твердого рогу.",
+          "image_url": ""
         },
         {
           "name": "Шматки Шкіри",
@@ -2208,49 +2332,55 @@
           "token": "$item_leatherscraps",
           "englishName": "Leather Scraps",
           "type": "Матеріал",
-          "description": "Купка шматків шкіри."
+          "description": "Купка шматків шкіри.",
+          "image_url": ""
         },
         {
-          "name": "ТроловаШкіра",
+          "name": "Тролова Шкіра",
           "assetId": "2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a",
           "token": "$item_trollhide",
           "englishName": "Troll Hide",
           "type": "Матеріал",
-          "description": "Міцна тролова шкіра."
+          "description": "Міцна тролова шкіра.",
+          "image_url": ""
         },
         {
-          "name": "ВовчийІкло",
+          "name": "Вовчий Ікло",
           "assetId": "0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a",
           "token": "$item_wolffang",
           "englishName": "Wolf Fang",
           "type": "Матеріал",
-          "description": "Гострий ікло."
+          "description": "Гострий ікло.",
+          "image_url": ""
         },
         {
-          "name": "ВовчаШкура",
+          "name": "Вовча Шкура",
           "assetId": "7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d",
           "token": "$item_wolfpelt",
           "englishName": "Wolf Pelt",
           "type": "Матеріал",
-          "description": "Товста хутряна шкура."
+          "description": "Товста хутряна шкура.",
+          "image_url": ""
         }
       ],
-      "ГрошіТаЦінності": [
+      "Гроші Та Цінності": [
         {
           "name": "Бурштин",
           "assetId": "f7b1daf6a623b4e7eaefbc3a58cde866",
           "token": "$item_amber",
           "englishName": "Amber",
           "type": "Матеріал",
-          "description": "<color=yellow>Цінний</color>"
+          "description": "<color=yellow>Цінний</color>",
+          "image_url": ""
         },
         {
-          "name": "БурштиноваПерлина",
+          "name": "Бурштинова Перлина",
           "assetId": "4dc179674a53ef84298539d805f7d690",
           "token": "$item_amberpearl",
           "englishName": "Amber Pearl",
           "type": "Матеріал",
-          "description": "<color=yellow>Цінний</color>"
+          "description": "<color=yellow>Цінний</color>",
+          "image_url": ""
         },
         {
           "name": "Монети",
@@ -2258,7 +2388,8 @@
           "token": "$item_coins",
           "englishName": "Coins",
           "type": "Матеріал",
-          "description": "<color=yellow>Цінний</color>"
+          "description": "<color=yellow>Цінний</color>",
+          "image_url": ""
         },
         {
           "name": "Кристал",
@@ -2266,7 +2397,8 @@
           "token": "$item_crystal",
           "englishName": "Crystal",
           "type": "Матеріал",
-          "description": "Уламок кристалу з глибин землі."
+          "description": "Уламок кристалу з глибин землі.",
+          "image_url": ""
         },
         {
           "name": "Рубін",
@@ -2274,25 +2406,28 @@
           "token": "$item_ruby",
           "englishName": "Ruby",
           "type": "Матеріал",
-          "description": "Дорогоцінний червоний камінь."
+          "description": "Дорогоцінний червоний камінь.",
+          "image_url": ""
         },
         {
-          "name": "СерцевинаСуртлінга",
+          "name": "Серцевина Суртлінга",
           "assetId": "0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e",
           "token": "$item_surtlingcore",
           "englishName": "Surtling Core",
           "type": "Матеріал",
-          "description": "Воно дзижчить таємничою енергією."
+          "description": "Воно дзижчить таємничою енергією.",
+          "image_url": ""
         }
       ],
-      "ІншіМатеріали": [
+      "Інші Матеріали": [
         {
           "name": "Жолудь",
           "assetId": "44cca2d8936df8c428f5d72af9e35379",
           "token": "$item_oakseeds",
           "englishName": "Acorns",
           "type": "Матеріал",
-          "description": "Посадіть їх, щоб виростити дуб."
+          "description": "Посадіть їх, щоб виростити дуб.",
+          "image_url": ""
         },
         {
           "name": "Ячмінь",
@@ -2300,47 +2435,53 @@
           "token": "$item_barley",
           "englishName": "Barley",
           "type": "Матеріал",
-          "description": "Зв'язка ячменю."
+          "description": "Зв'язка ячменю.",
+          "image_url": ""
         },
         {
-          "name": "ЯчміннеБорошно",
+          "name": "Ячмінне Борошно",
           "assetId": "8dac1e340a1874ce6acc249c3fcbe3d6",
           "token": "$item_barleyflour",
           "englishName": "Barley Flour",
           "type": "Матеріал",
-          "description": "Чудово підходить для випічки хліба."
+          "description": "Чудово підходить для випічки хліба.",
+          "image_url": ""
         },
         {
-          "name": "НасінняБука",
+          "name": "Насіння Бука",
           "assetId": "d04c1f943742a4d8988c883b061bf668",
           "token": "$item_beechseeds",
           "englishName": "Beech Seeds",
           "type": "Матеріал",
-          "description": "Посадіть їх, щоб виростити бук."
+          "description": "Посадіть їх, щоб виростити бук.",
+          "image_url": ""
         },
         {
-          "name": "НасінняБерези",
+          "name": "Насіння Берези",
           "assetId": "0ac7df79464d86a4480969ba2136bfbe",
           "token": "$item_birchseeds",
           "englishName": "Birch Seeds",
           "type": "Матеріал",
-          "description": "Посадіть їх, щоб виростити березу."
+          "description": "Посадіть їх, щоб виростити березу.",
+          "image_url": ""
         },
         {
-          "name": "БронзовіЦвяхи",
+          "name": "Бронзові Цвяхи",
           "assetId": "c939491e12ed84c48b8085edc1559a75",
           "token": "$item_bronzenails",
           "englishName": "Bronze Nails",
           "type": "Матеріал",
-          "description": "Використовуються для будівництва кораблів та меблів."
+          "description": "Використовуються для будівництва кораблів та меблів.",
+          "image_url": ""
         },
         {
-          "name": "НасінняМоркви",
+          "name": "Насіння Моркви",
           "assetId": "faa8a6334d1fa4632accbd46705df2f9",
           "token": "$item_carrotseeds",
           "englishName": "Carrot Seeds",
           "type": "Матеріал",
-          "description": "Посадіть їх, якщо ви любите моркву..."
+          "description": "Посадіть їх, якщо ви любите моркву...",
+          "image_url": ""
         },
         {
           "name": "Ланцюг",
@@ -2348,7 +2489,8 @@
           "token": "$item_chain",
           "englishName": "Chain",
           "type": "Матеріал",
-          "description": "Ланка залізного ланцюга."
+          "description": "Ланка залізного ланцюга.",
+          "image_url": ""
         },
         {
           "name": "Вугілля",
@@ -2356,39 +2498,44 @@
           "token": "$item_coal",
           "englishName": "Coal",
           "type": "Матеріал",
-          "description": "Шматок вугілля."
+          "description": "Шматок вугілля.",
+          "image_url": ""
         },
         {
-          "name": "ДраконоваСльоза",
+          "name": "Драконова Сльоза",
           "assetId": "04c891adfbe3841a2bb528e1af63d626",
           "token": "$item_dragontear",
           "englishName": "Dragon Tear",
           "type": "Матеріал",
-          "description": "Остання замерзла сльоза дракона, що пульсує таємничою енергією."
+          "description": "Остання замерзла сльоза дракона, що пульсує таємничою енергією.",
+          "image_url": ""
         },
         {
-          "name": "СтародавняКора",
+          "name": "Стародавня Кора",
           "assetId": "cc0a7835a9cb7451bbe7c069a6cfe712",
           "token": "$item_elderbark",
           "englishName": "Ancient Bark",
           "type": "Матеріал",
-          "description": "Стародавній і міцний матеріал."
+          "description": "Стародавній і міцний матеріал.",
+          "image_url": ""
         },
         {
-          "name": "ДобротнаДеревина",
+          "name": "Добротна Деревина",
           "assetId": "cdeae9814f3c8444da7fec7f99379fb6",
           "token": "$item_finewood",
           "englishName": "Finewood",
           "type": "Матеріал",
-          "description": "Високоякісна деревина для тонкої столярної роботи."
+          "description": "Високоякісна деревина для тонкої столярної роботи.",
+          "image_url": ""
         },
         {
-          "name": "ЯлиноваШишка",
+          "name": "Ялинова Шишка",
           "assetId": "5b42e2dd2a7b5476e9c5d5e08d46d00c",
           "token": "$item_fircone",
           "englishName": "Fir Cone",
           "type": "Матеріал",
-          "description": "Посадіть її, щоб виростити ялину."
+          "description": "Посадіть її, щоб виростити ялину.",
+          "image_url": ""
         },
         {
           "name": "Льон",
@@ -2396,7 +2543,8 @@
           "token": "$item_flax",
           "englishName": "Flax",
           "type": "Матеріал",
-          "description": "Непрядена волокна льонової рослини."
+          "description": "Непрядена волокна льонової рослини.",
+          "image_url": ""
         },
         {
           "name": "Кремінь",
@@ -2404,7 +2552,8 @@
           "token": "$item_flint",
           "englishName": "Flint",
           "type": "Матеріал",
-          "description": "Можна сформувати у гострі лези."
+          "description": "Можна сформувати у гострі лези.",
+          "image_url": ""
         },
         {
           "name": "Слиз",
@@ -2412,23 +2561,26 @@
           "token": "$item_guck",
           "englishName": "Guck",
           "type": "Матеріал",
-          "description": "Пахне як ферментована риба."
+          "description": "Пахне як ферментована риба.",
+          "image_url": ""
         },
         {
-          "name": "ЗалізніЦвяхи",
+          "name": "Залізні Цвяхи",
           "assetId": "3a2b1c0d9e8f7a6b5c4d3e2f1a0b928d",
           "token": "$item_ironnails",
           "englishName": "Iron Nails",
           "type": "Матеріал",
-          "description": "Використовуються в будівництві."
+          "description": "Використовуються в будівництві.",
+          "image_url": ""
         },
         {
-          "name": "ЛлянаНитка",
+          "name": "Лляна Нитка",
           "assetId": "9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b",
           "token": "$item_linenthread",
           "englishName": "Linen Thread",
           "type": "Матеріал",
-          "description": "Міцна нитка з льону."
+          "description": "Міцна нитка з льону.",
+          "image_url": ""
         },
         {
           "name": "Обсидіан",
@@ -2436,7 +2588,8 @@
           "token": "$item_obsidian",
           "englishName": "Obsidian",
           "type": "Матеріал",
-          "description": "Вулканічне скло."
+          "description": "Вулканічне скло.",
+          "image_url": ""
         },
         {
           "name": "Смола",
@@ -2444,15 +2597,17 @@
           "token": "$item_resin",
           "englishName": "Resin",
           "type": "Матеріал",
-          "description": "Липка деревна смола."
+          "description": "Липка деревна смола.",
+          "image_url": ""
         },
         {
-          "name": "КруглаКолода",
+          "name": "Кругла Колода",
           "assetId": "8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a",
           "token": "$item_roundlog",
           "englishName": "Round Log",
           "type": "Матеріал",
-          "description": "Добротна деревина з серцевинного дерева."
+          "description": "Добротна деревина з серцевинного дерева.",
+          "image_url": ""
         },
         {
           "name": "Камінь",
@@ -2460,7 +2615,8 @@
           "token": "$item_stone",
           "englishName": "Stone",
           "type": "Матеріал",
-          "description": "Звичайний старий камінь."
+          "description": "Звичайний старий камінь.",
+          "image_url": ""
         },
         {
           "name": "Чортополох",
@@ -2468,7 +2624,8 @@
           "token": "$item_thistle",
           "englishName": "Thistle",
           "type": "Матеріал",
-          "description": "Колючий чортополох."
+          "description": "Колючий чортополох.",
+          "image_url": ""
         },
         {
           "name": "Деревина",
@@ -2476,15 +2633,17 @@
           "token": "$item_wood",
           "englishName": "Wood",
           "type": "Матеріал",
-          "description": "Хороша, міцна деревина."
+          "description": "Хороша, міцна деревина.",
+          "image_url": ""
         },
         {
-          "name": "РешткиІміра",
+          "name": "Рештки Іміра",
           "assetId": "5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f",
           "token": "$item_ymirremains",
           "englishName": "Ymir Flesh",
           "type": "Матеріал",
-          "description": "Земні рештки велетня Іміра."
+          "description": "Земні рештки велетня Іміра.",
+          "image_url": ""
         }
       ]
     },
@@ -2495,7 +2654,8 @@
         "token": "$item_trophy_abomination",
         "englishName": "Abomination Trophy",
         "type": "Trophy",
-        "description": "It still twitches occasionally."
+        "description": "It still twitches occasionally.",
+        "image_url": ""
       },
       {
         "name": "TrophyBlob",
@@ -2503,7 +2663,8 @@
         "token": "$item_trophy_blob",
         "englishName": "Blob Trophy",
         "type": "Trophy",
-        "description": "A green, slimy blob."
+        "description": "A green, slimy blob.",
+        "image_url": ""
       },
       {
         "name": "TrophyBoar",
@@ -2511,7 +2672,8 @@
         "token": "$item_trophy_boar",
         "englishName": "Boar Trophy",
         "type": "Trophy",
-        "description": "A boar's head."
+        "description": "A boar's head.",
+        "image_url": ""
       },
       {
         "name": "TrophyBonemass",
@@ -2519,7 +2681,8 @@
         "token": "$item_trophy_bonemass",
         "englishName": "Bonemass Trophy",
         "type": "Trophy",
-        "description": "It drips with a foul substance."
+        "description": "It drips with a foul substance.",
+        "image_url": ""
       },
       {
         "name": "TrophyDeer",
@@ -2527,7 +2690,8 @@
         "token": "$item_trophy_deer",
         "englishName": "Deer Trophy",
         "type": "Trophy",
-        "description": "A deer's head."
+        "description": "A deer's head.",
+        "image_url": ""
       },
       {
         "name": "TrophyDraugr",
@@ -2535,7 +2699,8 @@
         "token": "$item_trophy_draugr",
         "englishName": "Draugr Trophy",
         "type": "Trophy",
-        "description": "The desiccated head of a Draugr."
+        "description": "The desiccated head of a Draugr.",
+        "image_url": ""
       },
       {
         "name": "TrophyEikthyr",
@@ -2543,7 +2708,8 @@
         "token": "$item_trophy_eikthyr",
         "englishName": "Eikthyr Trophy",
         "type": "Trophy",
-        "description": "The head of Eikthyr, still buzzing with power."
+        "description": "The head of Eikthyr, still buzzing with power.",
+        "image_url": ""
       },
       {
         "name": "TrophyGreydwarf",
@@ -2551,7 +2717,8 @@
         "token": "$item_trophy_greydwarf",
         "englishName": "Greydwarf Trophy",
         "type": "Trophy",
-        "description": "A gnarled, mossy head."
+        "description": "A gnarled, mossy head.",
+        "image_url": ""
       },
       {
         "name": "TrophyNeck",
@@ -2559,7 +2726,8 @@
         "token": "$item_trophy_neck",
         "englishName": "Neck Trophy",
         "type": "Trophy",
-        "description": "A slimy, lizard-like head."
+        "description": "A slimy, lizard-like head.",
+        "image_url": ""
       },
       {
         "name": "TrophySkeleton",
@@ -2567,7 +2735,8 @@
         "token": "$item_trophy_skeleton",
         "englishName": "Skeleton Trophy",
         "type": "Trophy",
-        "description": "The grinning skull of a skeleton."
+        "description": "The grinning skull of a skeleton.",
+        "image_url": ""
       },
       {
         "name": "TrophySurtling",
@@ -2575,7 +2744,8 @@
         "token": "$item_trophy_surtling",
         "englishName": "Surtling Trophy",
         "type": "Trophy",
-        "description": "Composed of glowing embers, it still feels warm."
+        "description": "Composed of glowing embers, it still feels warm.",
+        "image_url": ""
       },
       {
         "name": "TrophyTheElder",
@@ -2583,7 +2753,8 @@
         "token": "$item_trophy_theelder",
         "englishName": "The Elder Trophy",
         "type": "Trophy",
-        "description": "It whispers of ancient things."
+        "description": "It whispers of ancient things.",
+        "image_url": ""
       },
       {
         "name": "TrophyWolf",
@@ -2591,7 +2762,8 @@
         "token": "$item_trophy_wolf",
         "englishName": "Wolf Trophy",
         "type": "Trophy",
-        "description": "A wolf's head, frozen in a snarl."
+        "description": "A wolf's head, frozen in a snarl.",
+        "image_url": ""
       }
     ],
     "Misc": [
@@ -2601,7 +2773,8 @@
         "token": "$item_ancientseed",
         "englishName": "Ancient Seed",
         "type": "Misc",
-        "description": "Held against your ear, you hear tiny whisperings within..."
+        "description": "Held against your ear, you hear tiny whisperings within...",
+        "image_url": ""
       },
       {
         "name": "AsksvinEgg",
@@ -2609,7 +2782,8 @@
         "token": "$item_asksvin_egg",
         "englishName": "Asksvin Egg",
         "type": "Misc",
-        "description": "Hard as rock, yet you can sense the presence of something inside. This should be kept warm."
+        "description": "Hard as rock, yet you can sense the presence of something inside. This should be kept warm.",
+        "image_url": ""
       },
       {
         "name": "BarberKit",
@@ -2617,7 +2791,8 @@
         "token": "$item_barberkit",
         "englishName": "Barber Kit",
         "type": "Misc",
-        "description": "A kit fit for the finest of barbers."
+        "description": "A kit fit for the finest of barbers.",
+        "image_url": ""
       },
       {
         "name": "Bell",
@@ -2625,7 +2800,8 @@
         "token": "$item_bell",
         "englishName": "Bell",
         "type": "Misc",
-        "description": "For whom does the bell toll?"
+        "description": "For whom does the bell toll?",
+        "image_url": ""
       },
       {
         "name": "CryptKey",
@@ -2633,7 +2809,8 @@
         "token": "$item_cryptkey",
         "englishName": "Swamp Key",
         "type": "Misc",
-        "description": "Partly covered in caked mud, it smells foetid."
+        "description": "Partly covered in caked mud, it smells foetid.",
+        "image_url": ""
       },
       {
         "name": "DragonEgg",
@@ -2641,7 +2818,8 @@
         "token": "$item_dragonegg",
         "englishName": "Dragon Egg",
         "type": "Misc",
-        "description": "Far heavier than it looks, with a faint humming sound from within."
+        "description": "Far heavier than it looks, with a faint humming sound from within.",
+        "image_url": ""
       },
       {
         "name": "GoblinTotem",
@@ -2649,7 +2827,8 @@
         "token": "$item_goblintotem",
         "englishName": "Fuling Totem",
         "type": "Misc",
-        "description": "Channels the ancient power of Yagluth."
+        "description": "Channels the ancient power of Yagluth.",
+        "image_url": ""
       },
       {
         "name": "Vegvisir",
@@ -2657,7 +2836,8 @@
         "token": "$item_vegvisir",
         "englishName": "Vegvisir",
         "type": "Misc",
-        "description": "Shows the location of a boss."
+        "description": "Shows the location of a boss.",
+        "image_url": ""
       },
       {
         "name": "Wisp",
@@ -2665,7 +2845,8 @@
         "token": "$item_wisp",
         "englishName": "Wisp",
         "type": "Misc",
-        "description": "A captured wisp."
+        "description": "A captured wisp.",
+        "image_url": ""
       }
     ],
     "Унікальні предмети": [
@@ -2675,7 +2856,8 @@
         "token": "$item_beltstrength",
         "englishName": "Megingjord",
         "type": "Утиліти",
-        "description": "Надає тому, хто його носить, надлюдську силу."
+        "description": "Надає тому, хто його носить, надлюдську силу.",
+        "image_url": ""
       },
       {
         "name": "Світлячок",
@@ -2683,7 +2865,8 @@
         "token": "$item_demister",
         "englishName": "Wisplight",
         "type": "Утиліти",
-        "description": "Прив'язаний вогник, що проведе вас крізь найгустіший туман."
+        "description": "Прив'язаний вогник, що проведе вас крізь найгустіший туман.",
+        "image_url": ""
       }
     ],
     "Customization": [
@@ -2693,7 +2876,8 @@
         "token": "$customization_beard01",
         "englishName": "Majestic",
         "type": "Customization",
-        "description": "NULL"
+        "description": "NULL",
+        "image_url": ""
       },
       {
         "name": "Beard2",
@@ -2701,7 +2885,8 @@
         "token": "$customization_beard02",
         "englishName": "Twin Braids",
         "type": "Customization",
-        "description": "NULL"
+        "description": "NULL",
+        "image_url": ""
       },
       {
         "name": "Hair1",
@@ -2709,7 +2894,8 @@
         "token": "$customization_hair01",
         "englishName": "Windswept",
         "type": "Customization",
-        "description": "NULL"
+        "description": "NULL",
+        "image_url": ""
       },
       {
         "name": "Hair2",
@@ -2717,7 +2903,8 @@
         "token": "$customization_hair02",
         "englishName": "High Ponytail",
         "type": "Customization",
-        "description": "NULL"
+        "description": "NULL",
+        "image_url": ""
       }
     ]
   }

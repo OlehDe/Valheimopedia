@@ -14,7 +14,7 @@
 .back-link {
     display: inline-block;
     margin-bottom: 1.5rem;
-    color: var(--text-color); /* 🎯 БІЛИЙ КОЛІР */
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -25,7 +25,7 @@
 }
 
 .back-link:hover {
-    color: var(--primary-color); /* 🎯 Синій при наведенні */
+    color: var(--primary-color);
     text-decoration: underline;
     transform: translateX(-5px);
 }
@@ -271,7 +271,7 @@
 .stats-crafting {
     margin-top: 2.5rem;
     padding-top: 2rem;
-    border-top: 2px solid var(--primary-color); /* Жирна розділювальна лінія */
+    border-top: 2px solid var(--primary-color);
 }
 
 .stats-crafting h2 {
@@ -285,22 +285,22 @@
 }
 
 /* Загальні стилі для секцій (Характеристики, Виготовлення) */
-.stats-section, .crafting-section {
-    background-color: var(--card-bg-light); /* Легший фон */
+.stats-section {
+    background-color: var(--card-bg-light);
     padding: 1.5rem;
     border-radius: var(--radius);
     margin-bottom: 2rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ffffff; /* Рамка для статистики */
 }
 
-/* Спеціальний стиль для секції характеристик (Армор, Вага) */
-.stats-section {
-    border: 2px solid #ffffff; /* Зелена рамка */
-}
-
-/* Спеціальний стиль для секції крафту (Матеріали, Станція) */
+/* !!! ВИПРАВЛЕННЯ ДЛЯ CRAFTING-SECTION - БЕЗ РАМОК !!! */
 .crafting-section {
-    border: 2px solid var(--primary-color); /* Синя рамка */
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 2rem;
 }
 
 .stats-section h4, .crafting-section h4 {
@@ -315,9 +315,14 @@
     padding-bottom: 0.5rem;
 }
 
+/* Стиль для заголовка Виготовлення та Покращення */
+.crafting-section h4 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 1.5rem;
+}
 
 /* Стилі для рядків статистики */
-.stats-section p, .crafting-section p {
+.stats-section p, .crafting-section > p {
     font-size: 1rem;
     color: var(--text-light);
     margin: 0;
@@ -328,12 +333,12 @@
     border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
 }
 
-.stats-section p:last-child, .crafting-section p:last-child {
-    border-bottom: none; /* Прибрати лінію в останньому елементі */
+.stats-section p:last-child, .crafting-section > p:last-child {
+    border-bottom: none;
     padding-bottom: 0;
 }
 
-.stats-section p strong, .crafting-section p strong {
+.stats-section p strong, .crafting-section > p strong {
     color: var(--text-color);
     font-weight: 600;
     min-width: 150px;
@@ -341,7 +346,7 @@
     text-align: left;
 }
 
-/* Стилі для значень (Броня, Вага, Станція) */
+/* Стилі для значень */
 .stat-value, .craft-value {
     font-weight: 700;
     color: var(--primary-color);
@@ -353,71 +358,99 @@
     flex-grow: 1;
 }
 
-/* Стиль для ОСОБЛИВОГО ЕФЕКТУ (тепер виділений у рядку) */
-.special-effect {
-    background: rgba(16, 185, 129, 0.15); /* Зелений фон */
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    border-radius: var(--radius-sm);
-    padding: 0.5rem 1rem;
-    text-align: left;
-    font-weight: 500;
-    line-height: 1.4;
-    font-size: 0.95rem;
-    flex-grow: 1;
-    white-space: normal;
+/* --- СТИЛІ ДЛЯ ВИМОГ ЗА РІВНЯМИ --- */
+
+.level-requirements-list {
+    display: block;
+    margin-top: 0;
 }
 
-/* Адаптивність для секцій статистики */
-@media (max-width: 480px) {
-    .stats-section, .crafting-section {
-        padding: 1rem;
-    }
+/* Картка для кожного рівня */
+.level-card {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 1rem 0;
+    border: none;
+    box-shadow: none;
 
-    .stats-section p, .crafting-section p {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .stat-value, .craft-value, .special-effect {
-        width: 100%;
-        text-align: left;
-    }
+    /* 🚀 ГОРИЗОНТАЛЬНА ГРУБА РИСКА МІЖ РІВНЯМИ (3px) 🚀 */
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Додаткові стилі для списку матеріалів */
-.materials-list {
-    margin-top: 1rem;
-    padding: 0 0.5rem;
+/* Прибираємо риску в останньому елементі */
+.level-requirements-list .level-card:first-child {
+    padding-top: 0.5rem;
 }
-
-.materials-list .material-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.05); /* Легший поділ */
-}
-
-.materials-list .material-item:last-child {
+.level-requirements-list .level-card:last-child {
     border-bottom: none;
     padding-bottom: 0;
 }
 
-.material-link {
-    color: var(--text-color); /* Колір посилання */
+/* Стиль для заголовка рівня */
+.level-card h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Стилі для рядків матеріалів всередині рівня */
+.materials-for-level {
+    display: flex;
+    flex-direction: column;
+    /* 🚀 ЗМЕНШЕНО ВЕРТИКАЛЬНИЙ ГЕП МІЖ МАТЕРІАЛАМИ 🚀 */
+    gap: 0.2rem;
+}
+
+.materials-for-level .material-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* 🚀 ЗМЕНШЕНО ВЕРТИКАЛЬНИЙ PADDING МІЖ МАТЕРІАЛАМИ 🚀 */
+    padding: 0.1rem 0;
+    font-size: 1rem;
+}
+
+/* 🚀 КОНТЕЙНЕР ДЛЯ ІКОНКИ ТА НАЗВИ 🚀 */
+.materials-for-level .material-name-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 🚀 СТИЛІ ДЛЯ ІКОНКИ МАТЕРІАЛУ 🚀 */
+.materials-for-level .material-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2px;
+}
+
+.materials-for-level .material-link {
+    font-weight: 500;
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.material-link:hover {
-    color: var(--primary-color); /* Синій при наведенні */
+.materials-for-level .material-link:hover {
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
-.materials-list .craft-value {
-    /* Значення кількості матеріалу */
-    font-weight: 600;
+.materials-for-level .craft-value {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.no-materials {
     color: var(--text-light);
+    font-style: italic;
+    font-size: 0.95rem;
 }

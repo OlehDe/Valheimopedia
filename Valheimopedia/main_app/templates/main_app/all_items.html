@@ -43,10 +43,21 @@
     <button type="button" data-category="Болти">Болти</button>
     <button type="button" data-category="Стріли">Стріли</button>
     <button type="button" data-category="Луки">Луки</button>
-    <button type="button" data-category="Дворучна зброя">Дворучна зброя</button>
-    <button type="button" data-category="Одноручна зброя">Одноручна зброя</button>
+    <button type="button" data-category="Зброя">Зброя</button>
     <button type="button" data-category="Матеріали">Матеріали</button>
   </div>
+  <div class="sort-controls">
+    <label for="sort-select">Сортувати за:</label>
+    <select id="sort-select">
+      <option value="name-asc">Назвою (A–Z)</option>
+      <option value="name-desc">Назвою (Z–A)</option>
+      <option value="rarity-desc">Рідкістю (спочатку найрідкісніші)</option>
+      <option value="Сокира (Одноручна)">Сокира (Одноручна)</option>
+      <option value="Меч (Одноручний)">Меч (Одноручний)</option>
+      <option value="rarity-asc">Рідкістю (спочатку звичайні)</option>
+    </select>
+  </div>
+
 
   {% if error %}
     <div>

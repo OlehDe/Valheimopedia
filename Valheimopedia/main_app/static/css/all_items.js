@@ -199,5 +199,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Завантажуємо всі предмети при першому відкритті сторінки
     renderContent('Всі');
+    // Додайте цей код до вашого існуючого JavaScript
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Обробка кліків по підкатегоріях зброї
+      const weaponSubButtons = document.querySelectorAll('.weapon-subcategories button');
+      weaponSubButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const category = this.getAttribute('data-category');
+          filterItems(category);
+
+          // Оновлення активного стану
+          document.querySelectorAll('.category-filters button').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          this.classList.add('active');
+        });
+      });
+
+      // Функція фільтрації предметів (ваша існуюча функція)
+      function filterItems(category) {
+        // Ваша існуюча логіка фільтрації
+        const itemsGrid = document.getElementById('items-grid');
+        // ... ваш код фільтрації
+      }
+    });
+    const itemsData = JSON.parse(document.getElementById("items-data").textContent);
+    const itemsGrid = document.getElementById("items-grid");
+    const filterButtons = document.querySelectorAll("#category-filters button");
+    const typeSelect = document.getElementById("type-select");
+
+     function displayItems(items) {
+       itemsGrid.innerHTML = "";
+
+        if (items.length === 0) {
+          itemsGrid.innerHTML = `<p class="empty-message">Немає предметів у цій категорії.</p>`;
+          return;
+        }
+
+        items.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "item-card";
+          card.innerHTML = `
+            <img src="${item.image_url}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>${item.category}</p>
+            <p>${item.type}</p>
+          `;
+          itemsGrid.appendChild(card);
+        });
+      }
+
+      // поточні фільтри
+      let selectedCategory = "Всі";
+      let selectedType = "Всі";
+
+      function applyFilters() {
+        let filtered = [...itemsData];
+
+        if (selectedCategory !== "Всі") {
+          filtered = filtered.filter(item => item.category === selectedCategory);
+        }
+
+        if (selectedType !== "Всі") {
+          filtered = filtered.filter(item => item.type === selectedType);
+        }
+
+        displayItems(filtered);
+      }
+
+      // натискання кнопок категорій
+      filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+          selectedCategory = button.dataset.category;
+          applyFilters();
+        });
+      });
+
+      // вибір типу зі списку
+      typeSelect.addEventListener("change", () => {
+        selectedType = typeSelect.value;
+        applyFilters();
+      });
+
+      displayItems(itemsData);
+
 
   });

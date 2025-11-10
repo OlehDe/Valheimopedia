@@ -11,7 +11,7 @@ from django.conf import settings
 
 
 # -----------------------------------------------------------------
-# ФУНКЦІЯ ДЛЯ ВІДОБРАЖЕННЯ ВСІХ ПРЕДМЕТІВ (НЕ ЗМІНЮВАЛАСЬ)
+# ФУНКЦІЯ ДЛЯ ВІДОБРАЖЕННЯ ВСІХ ПРЕДМЕТІВ
 # -----------------------------------------------------------------
 def all_items_view(request):
     file_path = settings.BASE_DIR / 'data' / 'items.json'
@@ -56,9 +56,25 @@ def find_item_in_data(data, identifier):
     return None
 
 
+def find_item_in_data(data, identifier):
+    """Шукає предмет за 'assetId' або 'token'."""
+    if isinstance(data, dict):
+        if data.get('assetId') == identifier or data.get('token') == identifier:
+            return data
+        for key, value in data.items():
+            found = find_item_in_data(value, identifier)
+            if found:
+                return found
+    elif isinstance(data, list):
+        for item in data:
+            found = find_item_in_data(item, identifier)
+            if found:
+                return found
+    return None
+
+
 # -----------------------------------------------------------------
-# ВИПРАВЛЕНА ФУНКЦІЯ ДЛЯ ДЕТАЛЕЙ ПРЕДМЕТА (ТЕПЕР ВИКОРИСТОВУЄ find_item_in_data
-# ДЛЯ ЗНАХОДЖЕННЯ ЯК САМОГО ПРЕДМЕТА, ТАК І ЙОГО МАТЕРІАЛІВ)
+# 🚀 ВИПРАВЛЕНА ФУНКЦІЯ ДЛЯ ДЕТАЛЕЙ ПРЕДМЕТА (З ФОТО МАТЕРІАЛІВ) 🚀
 # -----------------------------------------------------------------
 def item_detail_view(request, item_asset_id):
     file_path = settings.BASE_DIR / 'data' / 'items.json'
@@ -70,44 +86,52 @@ def item_detail_view(request, item_asset_id):
             data = json.load(f)
             all_categories = data.get('items', {})
 
-            # 1. Знаходимо сам предмет за assetId або token
             found_item = find_item_in_data(all_categories, item_asset_id)
 
             if found_item:
                 crafting_stats = found_item.get('stats', {}).get('crafting', {})
                 material_ids = crafting_stats.get('materials')
+                quantities = crafting_stats.get('material_quantities', {})
 
-                # Якщо materials - це список ID, збагачуємо його
-                if isinstance(material_ids, list):
-                    enriched_materials = []
+                level_requirements = []
 
-                    for identifier in material_ids:
-                        if isinstance(identifier, str):
-                            # Знаходимо повний об'єкт матеріалу за ID або Токеном
+                if material_ids and quantities:
+
+                    max_levels = 0
+                    for q_list in quantities.values():
+                        max_levels = max(max_levels, len(q_list))
+
+                    for i in range(max_levels):
+                        level = i + 1
+                        required_materials_for_level = []
+
+                        for identifier in material_ids:
                             material_data = find_item_in_data(all_categories, identifier)
 
-                            if material_data:
-                                # !!! ЗВЕРНІТЬ УВАГУ: КІЛЬКІСТЬ (quantity) ТУТ ВСЕ ЩЕ ЗАГЛУШКА !!!
-                                # Щоб отримати реальну кількість, вам потрібно знайти її у вашій JSON-структурі
-                                # і зіставити з 'identifier'
-                                quantity_value = 'Знайдено'
+                            quantity_list = quantities.get(identifier, [])
+                            quantity_needed = int(quantity_list[i]) if i < len(quantity_list) else 0
 
-                                enriched_materials.append({
-                                    'name': material_data.get('name', 'N/A'),
-                                    'token': material_data.get('token', ''),
-                                    'assetId': material_data.get('assetId', ''),
-                                    'quantity': quantity_value
+                            if quantity_needed > 0:
+                                material_name = material_data.get('name',
+                                                                  f"Не знайдено ({identifier})") if material_data else f"Не знайдено ({identifier})"
+
+                                required_materials_for_level.append({
+                                    'name': material_name,
+                                    'quantity': quantity_needed,
+                                    'token': material_data.get('token', '') if material_data else identifier,
+                                    'assetId': material_data.get('assetId', '') if material_data else identifier,
+                                    # 🚀 ДОДАЄМО URL ЗОБРАЖЕННЯ 🚀
+                                    'image_url': material_data.get('image_url', '') if material_data else ''
                                 })
-                            else:
-                                # Якщо матеріал не знайдено (наприклад, ID є, а предмета немає)
-                                enriched_materials.append(
-                                    {'assetId': identifier, 'name': f"Не знайдено ({identifier})", 'quantity': 'N/A'})
 
-                        else:
-                            # Якщо елемент не рядок (можливо, це вже об'єкт)
-                            enriched_materials.append(identifier)
+                        if required_materials_for_level or level == 1:
+                            level_requirements.append({
+                                'level': level,
+                                'is_craft': (level == 1),
+                                'materials': required_materials_for_level
+                            })
 
-                    crafting_stats['materials'] = enriched_materials
+                found_item['level_requirements'] = level_requirements
             else:
                 error_message = "Предмет з таким ID або токеном не знайдено."
 
@@ -124,6 +148,9 @@ def item_detail_view(request, item_asset_id):
     })
 
 
+# -----------------------------------------------------------------
+# ... (set_detail_view та інші функції - БЕЗ ЗМІН) ...
+# -----------------------------------------------------------------
 # -----------------------------------------------------------------
 # ФУНКЦІЯ ДЛЯ КОМПЛЕКТІВ (НЕ ЗМІНЮВАЛАСЬ)
 # -----------------------------------------------------------------
@@ -167,7 +194,7 @@ def set_detail_view(request, set_slug):
 
 
 # -----------------------------------------------------------------
-# РЕШТА ФУНКЦІЙ (НЕ ЗМІНЮВАЛИСЬ)
+# РЕШТА ФУНКЦІЙ
 # -----------------------------------------------------------------
 
 def home(request):
