@@ -99,17 +99,17 @@
                                     <p><strong>Станція:</strong> <span class="craft-value">{{ item.stats.crafting.station }}</span></p>
                                 {% endif %}
 
+                                {# СПИСОК ВИМОГ ДО РІВНЯ #}
                                 {% if item.level_requirements %}
                                     <div class="level-requirements-list">
-
                                         {% for requirement in item.level_requirements %}
                                             <div class="level-card {% if requirement.is_craft %}level-card-craft{% endif %}">
 
                                                 <h5>
                                                     {% if requirement.is_craft %}
-                                                        🛠️ Крафт (Рівень 1)
+                                                        Крафт (Рівень 1)
                                                     {% else %}
-                                                        ⭐ Покращення до Рівня {{ requirement.level }}
+                                                        Покращення до Рівня {{ requirement.level }}
                                                     {% endif %}
                                                 </h5>
 
@@ -119,7 +119,6 @@
                                                             <p class="material-item">
                                                                 {# Ліва частина: ЗОБРАЖЕННЯ + Посилання на матеріал #}
                                                                 <span class="material-name-link">
-                                                                    {# 🚀 ВИВОДИМО МАЛЕНЬКЕ ФОТО 🚀 #}
                                                                     {% if material.image_url %}
                                                                         <img src="{{ material.image_url }}" alt="{{ material.name }}" class="material-icon">
                                                                     {% endif %}
@@ -145,6 +144,42 @@
                                 {% else %}
                                     <p>Інформація про матеріали для крафту/покращення відсутня.</p>
                                 {% endif %}
+
+                                {# 🔥 НОВИЙ БЛОК: Загальна Кількість Матеріалів 🔥 #}
+                                {% if total_materials %}
+                                    {# Використовуємо клас level-card для отримання роздільника перед цим блоком #}
+                                    <div class="level-card total-materials-info total-card-separator">
+
+                                        {# Використовуємо h5 для стилів заголовка картки рівня #}
+                                        <h5>
+                                            Загальна Кількість Матеріалів (Рівні 1-4)
+                                        </h5>
+
+                                        {# Використовуємо materials-for-level для стилізації списку #}
+                                        <div class="materials-for-level total-materials-list-wrapper">
+                                            {% for material in total_materials %}
+                                                <p class="material-item total-material-item">
+                                                    <span class="material-name-link">
+                                                        {# Відображення іконки, якщо доступна #}
+                                                        {% if material.image_url %}
+                                                            <img src="{{ material.image_url }}" alt="{{ material.name }}" class="material-icon">
+                                                        {% endif %}
+                                                        {# Посилання на матеріал (опціонально) #}
+                                                        <a href="/item/{{ material.token|default:material.assetId }}/" title="{{ material.name }}" class="material-link">
+                                                            <strong>{{ material.name }}</strong>
+                                                        </a>
+                                                    </span>
+                                                    {# Загальна кількість #}
+                                                    <span class="craft-value total-quantity">{{ material.quantity }} шт.</span>
+                                                </p>
+                                            {% endfor %}
+                                        </div>
+
+                                    </div>
+                                {% endif %}
+                                {# КІНЕЦЬ НОВОГО БЛОКУ #}
+
+
                             </div>
                         {% endif %}
                     </div>

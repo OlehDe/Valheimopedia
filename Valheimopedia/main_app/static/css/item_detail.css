@@ -30,10 +30,10 @@
     transform: translateX(-5px);
 }
 
-/* Контейнер для деталей предмету */
+/* КОНТЕЙНЕР ДЛЯ ДЕТАЛЕЙ ПРЕДМЕТУ - тепер він буде вертикальним, щоб розмістити "верхній блок" і "нижні блоки" */
 .detail-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* ⬅️ Знову встановлюємо на column, щоб верхня частина була над нижньою */
     background-color: var(--card-bg);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -58,16 +58,30 @@
     opacity: 1;
 }
 
-/* Ліва колонка (Зображення) */
+/* НОВИЙ КОНТЕЙНЕР для верхньої частини: Зображення + Заголовок/Опис */
+.detail-main-content {
+    display: flex;
+    flex-direction: row-reverse; /* 🔁 міняє місцями колонки — тепер зображення справа */
+    align-items: center;         /* 🟰 вирівнює заголовок і зображення по вертикалі */
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 2rem;
+}
+
+
+/* Ліва колонка (Зображення) - тепер всередині detail-main-content */
 .detail-image-wrapper {
-    flex: 1;
-    min-width: 300px;
+    flex: 1; /* Зображення займатиме 1 частку */
+    min-width: 250px; /* Мінімальна ширина для зображення */
+    max-width: 300px; /* Обмежуємо максимальну ширину зображення */
     padding: 2rem;
     background: rgba(30, 41, 59, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Межа справа від зображення */
+    border-bottom: none; /* Прибираємо нижню межу, вона вже на detail-main-content */
 }
 
 .detail-image-placeholder {
@@ -110,10 +124,14 @@
     transform: scale(1.02);
 }
 
-/* Права колонка (Інформація) */
+/* Права колонка (Інформація) - тепер всередині detail-main-content */
 .detail-info {
-    flex: 2;
+    flex: 2; /* Інформація займатиме 2 частки */
     padding: 2.5rem 3rem;
+    /* Прибираємо border-top звідси, оскільки detail-main-content має спільну нижню межу */
+    border-top: none;
+    margin-top: 0;
+    padding-top: 2.5rem; /* Компенсуємо, якщо потрібно */
 }
 
 .item-type-badge {
@@ -153,18 +171,19 @@
     line-height: 1.7;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Прибираємо border-top, оскільки detail-main-content має спільну нижню межу */
+    border-top: none;
 }
 
 .description p {
     margin: 0;
 }
 
-/* Секція технічної інформації */
+/* Секція технічної інформації - тепер не належить до detail-info */
 .tech-info {
     margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 3rem; /* Додаємо padding, оскільки це тепер окремий блок */
+    border-top: none; /* Прибираємо border-top, оскільки detail-main-content вже має межу */
 }
 
 .tech-info h4 {
@@ -216,17 +235,22 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Адаптивність */
+/* Адаптивність (СКОРИГОВАНО) */
 @media (max-width: 768px) {
-    .detail-container {
-        flex-direction: column;
+    .detail-main-content {
+        flex-direction: column; /* На малих екранах верхній блок також стає вертикальним */
     }
 
     .detail-image-wrapper {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: none; /* Прибираємо праву межу */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Додаємо нижню межу */
         min-width: auto;
+        max-width: 100%; /* Зображення на всю ширину на мобільних */
         padding: 1.5rem;
+    }
+
+    .detail-image-placeholder {
+        max-width: 250px; /* Зменшуємо max-width зображення на мобільних, щоб не було занадто великим */
     }
 
     .detail-info {
@@ -235,6 +259,10 @@
 
     .item-title {
         font-size: 2rem;
+    }
+
+    .tech-info {
+        padding: 2rem 1.5rem; /* Адаптуємо padding для tech-info на мобільних */
     }
 
     .tech-info p {
@@ -249,6 +277,10 @@
 }
 
 @media (max-width: 480px) {
+    .detail-image-wrapper {
+        padding: 1.5rem 1rem;
+    }
+
     .detail-info {
         padding: 1.5rem 1rem;
     }
@@ -264,14 +296,21 @@
     .description {
         font-size: 1rem;
     }
+
+    .tech-info {
+        padding: 1.5rem 1rem; /* Адаптуємо padding для tech-info на ще менших екранах */
+    }
 }
 
 /* --- ОНОВЛЕНІ СТИЛІ ДЛЯ РОЗДІЛУ: СТАТИСТИКА ТА КРАФТ --- */
+/* Цей блок залишається без змін у своєму розташуванні відносно головного контейнера */
 
 .stats-crafting {
     margin-top: 2.5rem;
     padding-top: 2rem;
     border-top: 2px solid var(--primary-color);
+    padding-left: 3rem; /* Додаємо відступи, щоб відповідало detail-info */
+    padding-right: 3rem; /* Додаємо відступи, щоб відповідало detail-info */
 }
 
 .stats-crafting h2 {
@@ -377,14 +416,11 @@
     border-bottom: 3px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Прибираємо риску в останньому елементі */
+/* Прибираємо риску в першому елементі (для візуального відступу, якщо потрібно) */
 .level-requirements-list .level-card:first-child {
     padding-top: 0.5rem;
 }
-.level-requirements-list .level-card:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
+/* ❌ ВИДАЛЕНО: Правило level-requirements-list .level-card:last-child (щоб лінія Рівня 4 була активною) */
 
 /* Стиль для заголовка рівня */
 .level-card h5 {
@@ -453,4 +489,32 @@
     color: var(--text-light);
     font-style: italic;
     font-size: 0.95rem;
+}
+
+/* --- СТИЛІ ДЛЯ ЗАГАЛЬНОЇ КІЛЬКОСТІ МАТЕРІАЛІВ (ВИПРАВЛЕНО) --- */
+
+/* Цей клас (total-materials-info) тепер є останнім у списку.
+   Він скасовує border-bottom, щоб лінія не відображалася перед ТЕХНІЧНОЮ ІНФОРМАЦІЄЮ. */
+.total-materials-info.level-card {
+    /* 💥 СКАНДОВУЄМО ЛІНІЮ ПІСЛЯ ЦЬОГО БЛОКУ 💥 */
+    border-bottom: none !important;
+    padding-bottom: 0;
+    margin-bottom: 1.5rem; /* Додаємо відступ перед Технічною інформацією */
+
+    /* Скасовуємо спеціальне оформлення, щоб виглядати як звичайний рівень */
+    background-color: transparent;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Щоб прибрати нижній роздільник під останнім матеріалом у цьому блоці (якщо він є) */
+.total-materials-info .materials-for-level .material-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Вирівнювання відступу, якщо потрібно */
+.level-requirements-list .total-materials-info.level-card:first-child {
+    padding-top: 1rem;
 }

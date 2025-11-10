@@ -1,4 +1,5 @@
 # main_app/views.py
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
@@ -36,26 +37,8 @@ def all_items_view(request):
 
 
 # -----------------------------------------------------------------
-# 🚀 ВИПРАВЛЕНА РЕКУРСИВНА ФУНКЦІЯ ПОШУКУ (ШУКАЄ ЗА ID АБО ТОКЕНОМ) 🚀
+# 🚀 РЕКУРСИВНА ФУНКЦІЯ ПОШУКУ (ШУКАЄ ЗА ID АБО ТОКЕНОМ) 🚀
 # -----------------------------------------------------------------
-def find_item_in_data(data, identifier):
-    """Шукає предмет за 'assetId' або 'token'."""
-    if isinstance(data, dict):
-        # Шукаємо збіг за assetId або token
-        if data.get('assetId') == identifier or data.get('token') == identifier:
-            return data
-        for key, value in data.items():
-            found = find_item_in_data(value, identifier)
-            if found:
-                return found
-    elif isinstance(data, list):
-        for item in data:
-            found = find_item_in_data(item, identifier)
-            if found:
-                return found
-    return None
-
-
 def find_item_in_data(data, identifier):
     """Шукає предмет за 'assetId' або 'token'."""
     if isinstance(data, dict):
@@ -74,12 +57,13 @@ def find_item_in_data(data, identifier):
 
 
 # -----------------------------------------------------------------
-# 🚀 ВИПРАВЛЕНА ФУНКЦІЯ ДЛЯ ДЕТАЛЕЙ ПРЕДМЕТА (З ФОТО МАТЕРІАЛІВ) 🚀
+# 🚀 ВИПРАВЛЕНА ФУНКЦІЯ ДЛЯ ДЕТАЛЕЙ ПРЕДМЕТА (З РОЗРАХУНКОМ МАТЕРІАЛІВ) 🚀
 # -----------------------------------------------------------------
 def item_detail_view(request, item_asset_id):
     file_path = settings.BASE_DIR / 'data' / 'items.json'
     found_item = None
     error_message = None
+    total_materials_list = []  # Ініціалізація змінної
 
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -96,7 +80,6 @@ def item_detail_view(request, item_asset_id):
                 level_requirements = []
 
                 if material_ids and quantities:
-
                     max_levels = 0
                     for q_list in quantities.values():
                         max_levels = max(max_levels, len(q_list))
@@ -132,6 +115,35 @@ def item_detail_view(request, item_asset_id):
                             })
 
                 found_item['level_requirements'] = level_requirements
+
+                # -----------------------------------------------------------
+                # 🔥 ЛОГІКА РОЗРАХУНКУ ЗАГАЛЬНИХ МАТЕРІАЛІВ (ПЕРЕНЕСЕНО СЮДИ) 🔥
+                # -----------------------------------------------------------
+                total_materials_map = {}
+
+                # Використовуємо обчислений level_requirements
+                if found_item.get('level_requirements'):
+                    for requirement in found_item['level_requirements']:
+                        if requirement.get('materials'):
+                            for material in requirement['materials']:
+                                # Використовуємо токен або assetId як унікальний ключ
+                                key = material.get('token') or material.get('assetId') or material.get('name')
+
+                                if key not in total_materials_map:
+                                    total_materials_map[key] = {
+                                        'name': material['name'],
+                                        'quantity': 0,
+                                        'image_url': material.get('image_url'),
+                                        'token': material.get('token'),
+                                        'assetId': material.get('assetId')
+                                    }
+
+                                total_materials_map[key]['quantity'] += material['quantity']
+
+                # Перетворюємо карту назад у список для зручності шаблону
+                total_materials_list = list(total_materials_map.values())
+                # -----------------------------------------------------------
+
             else:
                 error_message = "Предмет з таким ID або токеном не знайдено."
 
@@ -142,15 +154,14 @@ def item_detail_view(request, item_asset_id):
     except Exception as e:
         error_message = f"Виникла неочікувана помилка: {e}"
 
+    # Передача даних до шаблону
     return render(request, 'main_app/item_detail.html', {
         'item': found_item,
-        'error': error_message
+        'error': error_message,
+        'total_materials': total_materials_list  # 🔥 ТЕПЕР ДОСТУПНО В ШАБЛОНІ 🔥
     })
 
 
-# -----------------------------------------------------------------
-# ... (set_detail_view та інші функції - БЕЗ ЗМІН) ...
-# -----------------------------------------------------------------
 # -----------------------------------------------------------------
 # ФУНКЦІЯ ДЛЯ КОМПЛЕКТІВ (НЕ ЗМІНЮВАЛАСЬ)
 # -----------------------------------------------------------------
