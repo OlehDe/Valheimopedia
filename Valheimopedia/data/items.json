@@ -423,7 +423,7 @@
         },
         "Захисне спорядження": {
           "Щити": {
-            "Круглі щити (Round Shields)": [
+            "Круглі щити": [
               {
                 "name": "Круглий щит з рогу",
                 "assetId": "",
@@ -449,7 +449,7 @@
                 "image_url": "https://static.wikia.nocookie.net/valheim/images/4/4d/Black_metal_shield.png/revision/latest?cb=20210215131854"
               }
             ],
-            "Вежові щити (Tower Shields)": [
+            "Вежові щити": [
               {
                 "name": "Залізний вежовий щит",
                 "assetId": "",
@@ -1881,260 +1881,261 @@
         "image_url": "https://static.wikia.nocookie.net/valheim/images/1/1b/Black_metal_pickaxe.png/revision/latest?cb=20221125173025"
       }
     ],
-    "Consumable": [
-      {
-        "name": "BarleyWine",
-        "assetId": "eaef91dd432704e439143fae9f798069",
-        "token": "$item_barleywine",
-        "englishName": "Fire Resistance Barley Wine",
-        "type": "Consumable",
-        "description": "Fortifies you against fire.",
-        "image_url": ""
-      },
-      {
-        "name": "BlackSoup",
-        "assetId": "ed5ebb1d6549d0846a49f710bdac90e1",
-        "token": "$item_blacksoup",
-        "englishName": "Black Soup",
-        "type": "Consumable",
-        "description": "A perfect balance of sweetness and acidity.",
-        "image_url": ""
-      },
-      {
-        "name": "BloodPudding",
-        "assetId": "7ab61fd34cba3429083bb343cbaa9cd0",
-        "token": "$item_bloodpudding",
-        "englishName": "Blood Pudding",
-        "type": "Consumable",
-        "description": "It's bloody tasty.",
-        "image_url": ""
-      },
-      {
-        "name": "Blueberries",
-        "assetId": "329ca5791daef48e08f8dc65a15c737a",
-        "token": "$item_blueberries",
-        "englishName": "Blueberries",
-        "type": "Consumable",
-        "description": "Tiny but tasty.",
-        "image_url": ""
-      },
-      {
-        "name": "Bread",
-        "assetId": "2fee923e08bd4408b81e6a502d2cad16",
-        "token": "$item_bread",
-        "englishName": "Bread",
-        "type": "Consumable",
-        "description": "A tasty loaf of bread.",
-        "image_url": ""
-      },
-      {
-        "name": "Carrot",
-        "assetId": "f0d153fe9fad5419c8e5171d9e866947",
-        "token": "$item_carrot",
-        "englishName": "Carrot",
-        "type": "Consumable",
-        "description": "An orange treat.",
-        "image_url": ""
-      },
-      {
-        "name": "CarrotSoup",
-        "assetId": "70c6897b051694e299261a1bf2b79bf6",
-        "token": "$item_carrotsoup",
-        "englishName": "Carrot Soup",
-        "type": "Consumable",
-        "description": "A warm tasty soup made of mostly carrots.",
-        "image_url": ""
-      },
-      {
-        "name": "Cloudberry",
-        "assetId": "e5976e7a821df4b60ae18f2609a42ba3",
-        "token": "$item_cloudberries",
-        "englishName": "Cloudberries",
-        "type": "Consumable",
-        "description": "The gold of the forest.",
-        "image_url": ""
-      },
-      {
-        "name": "CookedBjornMeat",
-        "assetId": "7c20744dc11660245b6eef46f60d9363",
-        "token": "$item_bjorn_meat_cooked",
-        "englishName": "Cooked Bear Meat",
-        "type": "Consumable",
-        "description": "Tastes like victory.",
-        "image_url": ""
-      },
-      {
-        "name": "CookedDeerMeat",
-        "assetId": "ac9b056b94d63ae41b4c50e49ba9d676",
-        "token": "$item_deer_meat_cooked",
-        "englishName": "Cooked Deer Meat",
-        "type": "Consumable",
-        "description": "All that running paid off.",
-        "image_url": ""
-      },
-      {
-        "name": "CookedLoxMeat",
-        "assetId": "d884967160e5046df8721d20c4456c81",
-        "token": "$item_loxmeat_cooked",
-        "englishName": "Cooked Lox Meat",
-        "type": "Consumable",
-        "description": "A great hunk of tender meat, food fit for Valhalla!",
-        "image_url": ""
-      },
-      {
-        "name": "CookedMeat",
-        "assetId": "36aa14c035121460384c93ff52b04f01",
-        "token": "$item_boar_meat_cooked",
-        "englishName": "Cooked Boar Meat",
-        "type": "Consumable",
-        "description": "An earthly taste.",
-        "image_url": ""
-      },
-      {
-        "name": "CookedWolfMeat",
-        "assetId": "899ba48391c77a140b1db11142d19593",
-        "token": "$item_wolf_meat_cooked",
-        "englishName": "Cooked Wolf Meat",
-        "type": "Consumable",
-        "description": "A wild taste.",
-        "image_url": ""
-      },
-      {
-        "name": "DeerStew",
-        "assetId": "dcfe096cbabc3c54589b7b1cee57d67a",
-        "token": "$item_deerstew",
-        "englishName": "Deer Stew",
-        "type": "Consumable",
-        "description": "Fall-apart tender.",
-        "image_url": ""
-      },
-      {
-        "name": "Eyescream",
-        "assetId": "56e913dddff620242a75fd1f9d0305f6",
-        "token": "$item_eyescream",
-        "englishName": "Eyescream",
-        "type": "Consumable",
-        "description": "Crispy cool and creamy.",
-        "image_url": ""
-      },
-      {
-        "name": "FishAndBread",
-        "assetId": "1ca0dc7c08027624cba437830b37dd2c",
-        "token": "$item_fishandbread",
-        "englishName": "Fish 'n' Bread",
-        "type": "Consumable",
-        "description": "Bounty from both land and sea.",
-        "image_url": ""
-      },
-      {
-        "name": "FishCooked",
-        "assetId": "db3e079e90c464ee697420d194ce86e1",
-        "token": "$item_fish_cooked",
-        "englishName": "Cooked Fish",
-        "type": "Consumable",
-        "description": "A tasty side of smoked fish.",
-        "image_url": ""
-      },
-      {
-        "name": "FishWraps",
-        "assetId": "8f6025ebc8a304607b7992ccbb0863cb",
-        "token": "$item_fishwraps",
-        "englishName": "Fish Wraps",
-        "type": "Consumable",
-        "description": "Bread and fish, what more to wish?",
-        "image_url": ""
-      },
-      {
-        "name": "HealthPotion",
-        "assetId": "6d5e4f3a2b1c0d9e8f7a6b544d322f1a",
-        "token": "$item_healthpotion",
-        "englishName": "Health Potion",
-        "type": "Consumable",
-        "description": "Restores health over time.",
-        "image_url": ""
-      },
-      {
-        "name": "Honey",
-        "assetId": "5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
-        "token": "$item_honey",
-        "englishName": "Honey",
-        "type": "Consumable",
-        "description": "Sweet and sticky honey.",
-        "image_url": ""
-      },
-      {
-        "name": "MeadFrostResist",
-        "assetId": "5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
-        "token": "$item_meadfrostresist",
-        "englishName": "Frost Resistance Mead",
-        "type": "Consumable",
-        "description": "Protects against the cold.",
-        "image_url": ""
-      },
-      {
-        "name": "MeadHealthMajor",
-        "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
-        "token": "$item_meadhealthmajor",
-        "englishName": "Major Healing Mead",
-        "type": "Consumable",
-        "description": "Restores a large amount of health over time.",
-        "image_url": ""
-      },
-      {
-        "name": "MeadTasty",
-        "assetId": "7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f",
-        "token": "$item_meadtasty",
-        "englishName": "Tasty Mead",
-        "type": "Consumable",
-        "description": "It tastes great!",
-        "image_url": ""
-      },
-      {
-        "name": "Mushroom",
-        "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
-        "token": "$item_mushroom",
-        "englishName": "Mushroom",
-        "type": "Consumable",
-        "description": "A tasty forest mushroom.",
-        "image_url": ""
-      },
-      {
-        "name": "Raspberry",
-        "assetId": "1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d",
-        "token": "$item_raspberry",
-        "englishName": "Raspberry",
-        "type": "Consumable",
-        "description": "Sweet and delicious.",
-        "image_url": ""
-      },
-      {
-        "name": "SerpentStew",
-        "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
-        "token": "$item_serpentstew",
-        "englishName": "Serpent Stew",
-        "type": "Consumable",
-        "description": "A stew made from serpent meat.",
-        "image_url": ""
-      },
-      {
-        "name": "StaminaPotion",
-        "assetId": "2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c",
-        "token": "$item_staminapotion",
-        "englishName": "Stamina Potion",
-        "type": "Consumable",
-        "description": "Restores stamina over time.",
-        "image_url": ""
-      },
-      {
-        "name": "TurnipStew",
-        "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
-        "token": "$item_turnipstew",
-        "englishName": "Turnip Stew",
-        "type": "Consumable",
-        "description": "Hearty and warming.",
-        "image_url": ""
-      }
-    ],
+      "Витратні матеріали": [
+        {
+          "name": "Ячмінне вино",
+          "assetId": "eaef91dd432704e439143fae9f798069",
+          "token": "$item_barleywine",
+          "englishName": "Fire Resistance Barley Wine",
+          "type": "Витратні матеріали",
+          "description": "Зміцнює вас проти вогню.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/88/Fire_resistance_barley_wine.png/revision/latest?cb=20210215131341"
+        },
+        {
+          "name": "Чорний суп",
+          "assetId": "ed5ebb1d6549d0846a49f710bdac90e1",
+          "token": "$item_blacksoup",
+          "englishName": "Black Soup",
+          "type": "Витратні матеріали",
+          "description": "Ідеальний баланс солодкості та кислотності.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e6/BlackSoup.png/revision/latest?cb=20210922034152"
+        },
+        {
+          "name": "Кров'яний пудинг",
+          "assetId": "7ab61fd34cba3429083bb343cbaa9cd0",
+          "token": "$item_bloodpudding",
+          "englishName": "Blood Pudding",
+          "type": "Витратні матеріали",
+          "description": "Він до біса смачний.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/2/28/Blood_pudding.png/revision/latest?cb=20210215131359"
+        },
+        {
+          "name": "Чорниці",
+          "assetId": "329ca5791daef48e08f8dc65a15c737a",
+          "token": "$item_blueberries",
+          "englishName": "Blueberries",
+          "type": "Витратні матеріали",
+          "description": "Маленькі, але смачні.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/af/Blueberries.png/revision/latest?cb=20210215131400"
+        },
+        {
+          "name": "Хліб",
+          "assetId": "2fee923e08bd4408b81e6a502d2cad16",
+          "token": "$item_bread",
+          "englishName": "Bread",
+          "type": "Витратні матеріали",
+          "description": "Смачний хліб.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e1/Bread.png/revision/latest?cb=20210215131421"
+        },
+        {
+          "name": "Морква",
+          "assetId": "f0d153fe9fad5419c8e5171d9e866947",
+          "token": "$item_carrot",
+          "englishName": "Carrot",
+          "type": "Витратні матеріали",
+          "description": "Помаранчеві ласощі.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c3/Carrot.png/revision/latest?cb=20210215131441"
+        },
+        {
+          "name": "Морквяний суп",
+          "assetId": "70c6897b051694e299261a1bf2b79bf6",
+          "token": "$item_carrotsoup",
+          "englishName": "Carrot Soup",
+          "type": "Витратні матеріали",
+          "description": "Теплий смачний суп, виготовлений переважно з моркви.",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/0/00/Carrot_soup.png/revision/latest?cb=20210215131443"
+        },
+        {
+          "name": "Морошка",
+          "assetId": "e5976e7a821df4b60ae18f2609a42ba3",
+          "token": "$item_cloudberries",
+          "englishName": "Cloudberries",
+          "type": "Витратні матеріали",
+          "description": "Золото лісу.",
+          "image_url": ""
+        },
+        {
+          "name": "Приготоване м'ясо ведмедя",
+          "assetId": "7c20744dc11660245b6eef46f60d9363",
+          "token": "$item_bjorn_meat_cooked",
+          "englishName": "Cooked Bear Meat",
+          "type": "Витратні матеріали",
+          "description": "Смакує як перемога.",
+          "image_url": ""
+        },
+        {
+          "name": "Приготоване м'ясо оленя",
+          "assetId": "ac9b056b94d63ae41b4c50e49ba9d676",
+          "token": "$item_deer_meat_cooked",
+          "englishName": "Cooked Deer Meat",
+          "type": "Витратні матеріали",
+          "description": "Весь цей біг окупився.",
+          "image_url": ""
+        },
+        {
+          "name": "Приготоване м'ясо локса",
+          "assetId": "d884967160e5046df8721d20c4456c81",
+          "token": "$item_loxmeat_cooked",
+          "englishName": "Cooked Lox Meat",
+          "type": "Витратні матеріали",
+          "description": "Великий шматок ніжного м'яса, їжа, гідна Вальгалли!",
+          "image_url": ""
+        },
+        {
+          "name": "Приготоване м'ясо дикого кабана",
+          "assetId": "36aa14c035121460384c93ff52b04f01",
+          "token": "$item_boar_meat_cooked",
+          "englishName": "Cooked Boar Meat",
+          "type": "Витратні матеріали",
+          "description": "Земний смак.",
+          "image_url": ""
+        },
+        {
+          "name": "Приготоване м'ясо вовка",
+          "assetId": "899ba48391c77a140b1db11142d19593",
+          "token": "$item_wolf_meat_cooked",
+          "englishName": "Cooked Wolf Meat",
+          "type": "Витратні матеріали",
+          "description": "Дикий смак.",
+          "image_url": ""
+        },
+        {
+          "name": "Рагу з оленини",
+          "assetId": "dcfe096cbabc3c54589b7b1cee57d67a",
+          "token": "$item_deerstew",
+          "englishName": "Deer Stew",
+          "type": "Витратні матеріали",
+          "description": "Ніжне, аж розпадається.",
+          "image_url": ""
+        },
+        {
+          "name": "Очі-морозиво",
+          "assetId": "56e913dddff620242a75fd1f9d0305f6",
+          "token": "$item_eyescream",
+          "englishName": "Eyescream",
+          "type": "Витратні матеріали",
+          "description": "Хрустке, прохолодне та вершкове.",
+          "image_url": ""
+        },
+        {
+          "name": "Риба та хліб",
+          "assetId": "1ca0dc7c08027624cba437830b37dd2c",
+          "token": "$item_fishandbread",
+          "englishName": "Fish 'n' Bread",
+          "type": "Витратні матеріали",
+          "description": "Багатство як із землі, так і з моря.",
+          "image_url": ""
+        },
+        {
+          "name": "Приготована риба",
+          "assetId": "db3e079e90c464ee697420d194ce86e1",
+          "token": "$item_fish_cooked",
+          "englishName": "Cooked Fish",
+          "type": "Витратні матеріали",
+          "description": "Смачна порція копченої риби.",
+          "image_url": ""
+        },
+        {
+          "name": "Рибні роли",
+          "assetId": "8f6025ebc8a304607b7992ccbb0863cb",
+          "token": "$item_fishwraps",
+          "englishName": "Fish Wraps",
+          "type": "Витратні матеріали",
+          "description": "Хліб та риба, чого ще бажати?",
+          "image_url": ""
+        },
+        {
+          "name": "Зілля здоров'я",
+          "assetId": "6d5e4f3a2b1c0d9e8f7a6b544d322f1a",
+          "token": "$item_healthpotion",
+          "englishName": "Health Potion",
+          "type": "Витратні матеріали",
+          "description": "Відновлює здоров'я з часом.",
+          "image_url": ""
+        },
+        {
+          "name": "Мед",
+          "assetId": "5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+          "token": "$item_honey",
+          "englishName": "Honey",
+          "type": "Витратні матеріали",
+          "description": "Солодкий та липкий мед.",
+          "image_url": ""
+        },
+        {
+          "name": "Медовуха стійкості до морозу",
+          "assetId": "5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d",
+          "token": "$item_meadfrostresist",
+          "englishName": "Frost Resistance Mead",
+          "type": "Витратні матеріали",
+          "description": "Захищає від холоду.",
+          "image_url": ""
+        },
+        {
+          "name": "Медовуха сильного зцілення",
+          "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
+          "token": "$item_meadhealthmajor",
+          "englishName": "Major Healing Mead",
+          "type": "Витратні матеріали",
+          "description": "Відновлює велику кількість здоров'я з часом.",
+          "image_url": ""
+        },
+        {
+          "name": "Смачна медовуха",
+          "assetId": "7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f",
+          "token": "$item_meadtasty",
+          "englishName": "Tasty Mead",
+          "type": "Витратні матеріали",
+          "description": "Вона чудова на смак!",
+          "image_url": ""
+        },
+        {
+          "name": "Гриб",
+          "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
+          "token": "$item_mushroom",
+          "englishName": "Mushroom",
+          "type": "Витратні матеріали",
+          "description": "Смачний лісовий гриб.",
+          "image_url": ""
+        },
+        {
+          "name": "Малина",
+          "assetId": "1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d",
+          "token": "$item_raspberry",
+          "englishName": "Raspberry",
+          "type": "Витратні матеріали",
+          "description": "Солодка та смачна.",
+          "image_url": ""
+        },
+        {
+          "name": "Рагу зі змії",
+          "assetId": "4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e",
+          "token": "$item_serpentstew",
+          "englishName": "Serpent Stew",
+          "type": "Витратні матеріали",
+          "description": "Рагу, приготоване з м'яса змії.",
+          "image_url": ""
+        },
+        {
+          "name": "Зілля витривалості",
+          "assetId": "2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c",
+          "token": "$item_staminapotion",
+          "englishName": "Stamina Potion",
+          "type": "Витратні матеріали",
+          "description": "Відновлює витривалість з часом.",
+          "image_url": ""
+        },
+        {
+          "name": "Тушкована ріпа",
+          "assetId": "4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c",
+          "token": "$item_turnipstew",
+          "englishName": "Turnip Stew",
+          "type": "Витратні матеріали",
+          "description": "Ситно та зігріває. Тушкована ріпа— це їжа болотного рівня",
+          "image_url": ""
+        }
+      ]
+    },
     "Матеріали": {
       "Метали": [
         {
