@@ -1,157 +1,141 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    let allCategoriesData;
-
     const mainContainer = document.getElementById('items-grid');
     const filterContainer = document.getElementById('category-filters');
-    const buttons = filterContainer.querySelectorAll('button');
+    const filterButtons = filterContainer.querySelectorAll('button');
+    const itemsDataElement = document.getElementById('items-data');
+    const searchInput = document.getElementById('search-input');
+    const sortSelect = document.getElementById('sort-select');
 
-    // Отримуємо дані з Django
+    if (!mainContainer || !filterContainer || !itemsDataElement) {
+        console.error('Потрібні елементи DOM не знайдено');
+        return;
+    }
+
+    let allCategoriesData;
     try {
-      allCategoriesData = JSON.parse(document.getElementById('items-data').textContent);
-
-      if (typeof allCategoriesData !== 'object' || Array.isArray(allCategoriesData) || allCategoriesData === null) {
-           throw new Error("Очікувана структура даних - об'єкт (словник) категорій.");
-      }
-
+        allCategoriesData = JSON.parse(itemsDataElement.textContent);
+        if (typeof allCategoriesData !== 'object' || Array.isArray(allCategoriesData) || allCategoriesData === null) {
+            throw new Error('Дані мають бути об\'єктом категорій');
+        }
     } catch (e) {
-      console.error("Не вдалося завантажити дані предметів:", e);
-      if(mainContainer) {
-          mainContainer.innerHTML = `<p class="empty-message">Помилка завантаження даних.</p>`;
-      }
-      return;
+        console.error('Помилка парсингу items-data:', e);
+        mainContainer.innerHTML = '<p class="empty-message">Помилка завантаження даних</p>';
+        return;
     }
 
-    // Рекурсивна функція для отримання всіх предметів
-    function getAllItemsFrom(data) {
-        if (Array.isArray(data)) {
-            return data.flatMap(item => getAllItemsFrom(item));
-        }
-        if (typeof data === 'object' && data !== null) {
-            if (data.assetId && data.name) {
-                return [data];
+    // Зберігаємо окремо комплекти обладунків
+    const armorSets = allCategoriesData['Комплект обладунків'] || [];
+
+    // --- Допоміжні функції ---
+    function collectAllItems(data) {
+        const items = [];
+        function traverse(obj) {
+            if (Array.isArray(obj)) {
+                obj.forEach(traverse);
+            } else if (obj && typeof obj === 'object') {
+                if ((obj.token || obj.assetId) && obj.name) {
+                    items.push(obj);
+                } else {
+                    Object.values(obj).forEach(traverse);
+                }
             }
-            return Object.values(data).flatMap(value => getAllItemsFrom(value));
         }
-        return [];
+        traverse(data);
+        return items;
     }
 
-    // Функція для створення картки предмета з зображенням
-    function renderItemCards(itemsArray) {
+    // Функція рендерингу предметів (картки)
+    function renderItemCards(items) {
         mainContainer.innerHTML = '';
         mainContainer.className = 'items-grid';
 
-        if (!itemsArray || itemsArray.length === 0) {
-            mainContainer.innerHTML = `<p class="empty-message">Предмети відсутні.</p>`;
+        if (!items.length) {
+            mainContainer.innerHTML = '<p class="empty-message">Предмети відсутні</p>';
             return;
         }
 
-        itemsArray.forEach(item => {
-          if (item && item.assetId) {
+        items.forEach(item => {
             const card = document.createElement('a');
-            card.href = `/item/${item.assetId}/`;
+            const id = item.token || item.assetId;
+            if (!id) return;
+            card.href = `/item/${id}/`;
             card.className = 'item-card item-card-link';
 
-            const englishName = item.englishName || item[' englishName'];
-            const internalName = item.name || 'N/A';
-            const itemType = item.type || 'N/A';
-            const imageUrl = item.image_url;
+            const name = item.name || 'Без назви';
+            const englishName = item.englishName || '';
+            const type = item.type || '—';
+            const imageUrl = item.image_url || '';
 
-            let cardHTML = `
-              <div class="item-image-container">
+            let html = `
+                <div class="item-image-container">
             `;
 
             if (imageUrl) {
-              cardHTML += `
-                <img src="${imageUrl}" alt="${internalName}" class="item-image" loading="lazy">
-              `;
+                html += `<img src="${imageUrl}" alt="${name}" class="item-image" loading="lazy">`;
             } else {
-              cardHTML += `
-                <div class="item-image-placeholder">
-                  Немає зображення
-                </div>
-              `;
+                html += `<div class="item-image-placeholder">Немає зображення</div>`;
             }
 
-            cardHTML += `
-              </div>
-              <div class="item-info">
-                <h3>${internalName}</h3>
-            `;
+            html += `</div><div class="item-info"><h3>${name}</h3>`;
 
-            if (englishName && englishName.trim() !== internalName) {
-              cardHTML += `<p><strong>Англ. назва:</strong> ${englishName.trim()}</p>`;
+            if (englishName && englishName.trim() !== name) {
+                html += `<p><strong>Англ.:</strong> ${englishName.trim()}</p>`;
             }
 
-            cardHTML += `
-                <div class="item-type-badge">${itemType}</div>
-              </div>
-            `;
-
-            card.innerHTML = cardHTML;
+            html += `<div class="item-type-badge">${type}</div></div>`;
+            card.innerHTML = html;
             mainContainer.appendChild(card);
-          }
         });
     }
 
-    // Функція для створення карток комплексів з групами
-    function renderSetCards(setsArray) {
+    // Рендеринг комплектів (без змін)
+    function renderSetCards(sets) {
         mainContainer.innerHTML = '';
         mainContainer.className = '';
 
-        if (!setsArray || setsArray.length === 0) {
-            mainContainer.innerHTML = `<p class="empty-message">Комплекти відсутні.</p>`;
+        if (!sets.length) {
+            mainContainer.innerHTML = '<p class="empty-message">Комплекти відсутні</p>';
             return;
         }
 
         const groups = {};
-        setsArray.forEach(set => {
-            const category = set.setCategory || 'Інше';
-            if (!groups[category]) {
-                groups[category] = [];
-            }
-            groups[category].push(set);
+        sets.forEach(set => {
+            const cat = set.setCategory || 'Інше';
+            if (!groups[cat]) groups[cat] = [];
+            groups[cat].push(set);
         });
 
-        for (const categoryName in groups) {
+        for (const [catName, catSets] of Object.entries(groups)) {
             const groupWrapper = document.createElement('div');
             groupWrapper.className = 'set-category-group';
 
             const title = document.createElement('h2');
             title.className = 'set-category-title';
-            title.textContent = categoryName;
+            title.textContent = catName;
             groupWrapper.appendChild(title);
 
             const groupGrid = document.createElement('div');
             groupGrid.className = 'items-grid';
 
-            groups[categoryName].forEach(set => {
-                if (set && set.setSlug) {
-                    const card = document.createElement('a');
-                    card.href = `/set/${set.setSlug}/`;
-                    card.className = 'item-card item-card-link';
+            catSets.forEach(set => {
+                const slug = set.setSlug;
+                if (!slug) return;
+                const card = document.createElement('a');
+                card.href = `/set/${slug}/`;
+                card.className = 'item-card item-card-link';
 
-                    let cardHTML = `<h3>${set.setName || 'N/A'}</h3>`;
+                const setName = set.setName || 'Без назви';
+                const imageUrl = set.set_image_url || '';
 
-                    if (set.set_image_url) {
-                        cardHTML += `
-                            <div class="set-image-container">
-                                <img src="${set.set_image_url}" alt="${set.setName}" class="set-image" loading="lazy">
-                            </div>
-                        `;
-                    } else {
-                        cardHTML += `
-                            <div class="set-image-container">
-                                <div class="item-image-placeholder">
-                                    Немає зображення комплекту
-                                </div>
-                            </div>
-                        `;
-                    }
-
-                    card.innerHTML = cardHTML;
-                    groupGrid.appendChild(card);
+                let html = `<h3>${setName}</h3><div class="set-image-container">`;
+                if (imageUrl) {
+                    html += `<img src="${imageUrl}" alt="${setName}" class="set-image" loading="lazy">`;
+                } else {
+                    html += `<div class="item-image-placeholder">Немає зображення комплекту</div>`;
                 }
+                html += '</div>';
+                card.innerHTML = html;
+                groupGrid.appendChild(card);
             });
 
             groupWrapper.appendChild(groupGrid);
@@ -159,132 +143,92 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Функція-розподільник для рендерингу контенту
-    function renderContent(categoryKey) {
-      const categoryData = allCategoriesData[categoryKey];
+    // --- Логіка фільтрації та сортування ---
+    let currentCategory = 'Всі';          // активна категорія
+    let currentItems = [];                // "сирі" предмети для поточної категорії (без фільтрів)
+    let searchTerm = '';
+    let sortOrder = 'name-asc';
 
-      if (categoryKey === 'Комплект обладунків') {
-          renderSetCards(categoryData || []);
-      } else {
-          mainContainer.className = 'items-grid';
-          let itemsToShow = [];
-
-          if (categoryKey === 'Всі') {
-              for (const key in allCategoriesData) {
-                  if (key !== 'Комплект обладунків') {
-                      itemsToShow = itemsToShow.concat(getAllItemsFrom(allCategoriesData[key]));
-                  }
-              }
-          } else if (categoryKey === 'Нагрудні обладунки') {
-              const chestData = allCategoriesData['Обладунки'] ? allCategoriesData['Обладунки']['Нагрудні обладунки'] : undefined;
-              itemsToShow = getAllItemsFrom(chestData);
-          } else {
-              itemsToShow = getAllItemsFrom(categoryData);
-          }
-
-          renderItemCards(itemsToShow);
-      }
+    // Отримати "сирі" предмети для категорії (крім комплектів)
+    function getRawItemsForCategory(categoryKey) {
+        if (categoryKey === 'Всі') {
+            let all = [];
+            for (const [key, data] of Object.entries(allCategoriesData)) {
+                if (key !== 'Комплект обладунків') {
+                    all = all.concat(collectAllItems(data));
+                }
+            }
+            return all;
+        } else if (categoryKey === 'Нагрудні обладунки') {
+            const chestData = allCategoriesData['Обладунки']?.['Нагрудні обладунки'];
+            return collectAllItems(chestData);
+        } else {
+            return collectAllItems(allCategoriesData[categoryKey]);
+        }
     }
 
-    // Обробник кліків на кнопки фільтрів
-    filterContainer.addEventListener('click', (event) => {
-      if (event.target.tagName === 'BUTTON') {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        const clickedButton = event.target;
-        clickedButton.classList.add('active');
-        const category = clickedButton.dataset.category;
-        renderContent(category);
-      }
+    // Застосувати пошук і сортування до поточного набору
+// Застосувати пошук і сортування до поточного набору
+function filterAndSortItems() {
+    if (!currentItems) return [];
+
+    let filtered = currentItems.filter(item => {
+        const name = (item.name || '').toLowerCase();
+        const engName = (item.englishName || '').toLowerCase();
+        const search = searchTerm.toLowerCase();
+        return name.includes(search) || engName.includes(search);
     });
 
-    // Завантажуємо всі предмети при першому відкритті сторінки
-    renderContent('Всі');
-    // Додайте цей код до вашого існуючого JavaScript
+    if (sortOrder === 'name-asc') {
+        filtered.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'uk'));
+    } else if (sortOrder === 'name-desc') {
+        filtered.sort((a, b) => (b.name || '').localeCompare(a.name || '', 'uk'));
+    }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      // Обробка кліків по підкатегоріях зброї
-      const weaponSubButtons = document.querySelectorAll('.weapon-subcategories button');
-      weaponSubButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const category = this.getAttribute('data-category');
-          filterItems(category);
+    return filtered;
+}
 
-          // Оновлення активного стану
-          document.querySelectorAll('.category-filters button').forEach(btn => {
-            btn.classList.remove('active');
-          });
-          this.classList.add('active');
-        });
-      });
+    // Оновити відображення з поточними фільтрами
+    function refreshDisplay() {
+        if (currentCategory === 'Комплект обладунків') {
+            renderSetCards(armorSets);
+        } else {
+            const filteredSorted = filterAndSortItems();
+            renderItemCards(filteredSorted);
+        }
+    }
 
-      // Функція фільтрації предметів (ваша існуюча функція)
-      function filterItems(category) {
-        // Ваша існуюча логіка фільтрації
-        const itemsGrid = document.getElementById('items-grid');
-        // ... ваш код фільтрації
-      }
+    // Зміна категорії
+    function changeCategory(categoryKey) {
+        currentCategory = categoryKey;
+        if (categoryKey !== 'Комплект обладунків') {
+            currentItems = getRawItemsForCategory(categoryKey);
+        }
+        refreshDisplay();
+    }
+
+    // --- Обробники подій ---
+    filterContainer.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'BUTTON') return;
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        changeCategory(e.target.dataset.category);
     });
-    const itemsData = JSON.parse(document.getElementById("items-data").textContent);
-    const itemsGrid = document.getElementById("items-grid");
-    const filterButtons = document.querySelectorAll("#category-filters button");
-    const typeSelect = document.getElementById("type-select");
 
-     function displayItems(items) {
-       itemsGrid.innerHTML = "";
-
-        if (items.length === 0) {
-          itemsGrid.innerHTML = `<p class="empty-message">Немає предметів у цій категорії.</p>`;
-          return;
-        }
-
-        items.forEach(item => {
-          const card = document.createElement("div");
-          card.className = "item-card";
-          card.innerHTML = `
-            <img src="${item.image_url}" alt="${item.name}">
-            <h3>${item.name}</h3>
-            <p>${item.category}</p>
-            <p>${item.type}</p>
-          `;
-          itemsGrid.appendChild(card);
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            searchTerm = e.target.value;
+            refreshDisplay();
         });
-      }
+    }
 
-      // поточні фільтри
-      let selectedCategory = "Всі";
-      let selectedType = "Всі";
-
-      function applyFilters() {
-        let filtered = [...itemsData];
-
-        if (selectedCategory !== "Всі") {
-          filtered = filtered.filter(item => item.category === selectedCategory);
-        }
-
-        if (selectedType !== "Всі") {
-          filtered = filtered.filter(item => item.type === selectedType);
-        }
-
-        displayItems(filtered);
-      }
-
-      // натискання кнопок категорій
-      filterButtons.forEach(button => {
-        button.addEventListener("click", () => {
-          filterButtons.forEach(btn => btn.classList.remove("active"));
-          button.classList.add("active");
-          selectedCategory = button.dataset.category;
-          applyFilters();
+    if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+            sortOrder = e.target.value;
+            refreshDisplay();
         });
-      });
+    }
 
-      // вибір типу зі списку
-      typeSelect.addEventListener("change", () => {
-        selectedType = typeSelect.value;
-        applyFilters();
-      });
-
-      displayItems(itemsData);
-
-
-  });
+    // Ініціалізація
+    changeCategory('Всі');
+});

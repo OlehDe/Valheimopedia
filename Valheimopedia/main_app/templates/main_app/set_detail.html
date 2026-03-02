@@ -82,9 +82,10 @@
                     </div>
                     <div class="item-in-set-info">
                         <h3>
-                           <a href="{% url 'main_app:item_detail' item.assetId %}">
+                            <!-- 🔹 ЗАМІНА: assetId на token -->
+                            <a href="{% url 'main_app:item_detail' item.token %}">
                                {{ item.name }}
-                           </a>
+                            </a>
                         </h3>
                         <p>Тип: {{ item.type }}</p>
                         <p>{{ item.description }}</p>

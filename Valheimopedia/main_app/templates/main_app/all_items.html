@@ -46,18 +46,19 @@
     <button type="button" data-category="Зброя">Зброя</button>
     <button type="button" data-category="Матеріали">Матеріали</button>
   </div>
+
+  <!-- Додане поле пошуку -->
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="Пошук предметів..." />
+  </div>
+
   <div class="sort-controls">
     <label for="sort-select">Сортувати за:</label>
     <select id="sort-select">
       <option value="name-asc">Назвою (A–Z)</option>
       <option value="name-desc">Назвою (Z–A)</option>
-      <option value="rarity-desc">Рідкістю (спочатку найрідкісніші)</option>
-      <option value="Сокира (Одноручна)">Сокира (Одноручна)</option>
-      <option value="Меч (Одноручний)">Меч (Одноручний)</option>
-      <option value="rarity-asc">Рідкістю (спочатку звичайні)</option>
     </select>
   </div>
-
 
   {% if error %}
     <div>

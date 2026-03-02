@@ -1,0 +1,463 @@
+{
+  "Одноручна зброя": {
+    "Сокири": [
+      {
+        "name": "Сокира Кам'яна",
+        "token": "$item_axe_stone",
+        "englishName": "Stone Axe",
+        "type": "Сокира (Одноручна)",
+        "description": "Примітивна сокира для рубання дерев.",
+        "craft": "Камінь x5, Дерево x4",
+        "damage": "20 (Зріз.)",
+        "features": "Базова зброя/інструмент.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/c/ca/Stone_axe.png/revision/latest?cb=20210215131326"
+      },
+      {
+        "name": "Сокира Кремнева",
+        "token": "$item_axe_flint",
+        "englishName": "Flint Axe",
+        "type": "Сокира (Одноручна)",
+        "description": "Гостріша за камінь.",
+        "craft": "Кремінь x4, Дерево x5",
+        "damage": "20 (Зріз.)",
+        "features": "Базова зброя/інструмент.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/0/0b/Flint_axe.png/revision/latest?cb=20230101110252"
+      },
+      {
+        "name": "Сокира Бронзова",
+        "token": "$item_axe_bronze",
+        "englishName": "Bronze Axe",
+        "type": "Сокира (Одноручна)",
+        "description": "Яскраве відполіроване лезо, вигнуте як посмішка.",
+        "craft": "Бронза x8, Кожусіна x2",
+        "damage": "35 (Зріз.)",
+        "features": "Перша сокира, що рубає Сосну.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/0/09/BronzeAxeIcon.png/revision/latest?cb=20210205025539"
+      },
+      {
+        "name": "Сокира Залізна",
+        "token": "$item_axe_iron",
+        "englishName": "Iron Axe",
+        "type": "Сокира (Одноручна)",
+        "description": "Гостра та міцна, друг дроворуба.",
+        "craft": "Залізо x20, Кожусіна оленя x3",
+        "damage": "55 (Зріз.)",
+        "features": "Ефективна для рубки.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b3/Iron_axe.png/revision/latest?cb=20210215131323"
+      },
+      {
+        "name": "Сокира Чорного Металу",
+        "token": "$item_axe_blackmetal",
+        "englishName": "Black Metal Axe",
+        "type": "Сокира (Одноручна)",
+        "description": "Ідеально збалансована сокира, викувана з темного металу з смарагдовим відблиском.",
+        "craft": "Чорний метал x20, Нитки з льону x5",
+        "damage": "95 (Зріз.)",
+        "features": "Найкраща бойова сокира.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/6/6e/Black_metal_axe.png/revision/latest?cb=20210215131319"
+      }
+    ],
+    "Булави": [
+      {
+        "name": "Дубина",
+        "token": "$item_club",
+        "englishName": "Club",
+        "type": "Булава",
+        "description": "Примітивна, але корисна зброя.",
+        "craft": "Дерево x4",
+        "damage": "15 (Дроб.)",
+        "features": "Базова зброя.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/5/50/Club.png/revision/latest/scale-to-width-down/50?cb=20210215131512"
+      },
+      {
+        "name": "Броньова булава",
+        "token": "$item_mace_bronze",
+        "englishName": "Bronze Mace",
+        "type": "Булава",
+        "description": "",
+        "craft": "Бронза x8, Кожусіна x2",
+        "damage": "35 (Дроб.)",
+        "features": "Надійна зброя на ранніх етапах.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/5/51/Bronze_mace.png/revision/latest/scale-to-width-down/50?cb=20210214053814"
+      },
+      {
+        "name": "Залізна булава",
+        "token": "$item_mace_iron",
+        "englishName": "Iron Mace",
+        "type": "Булава",
+        "description": "",
+        "craft": "Залізо x20, Кожусіна оленя x3",
+        "damage": "55 (Дроб.)",
+        "features": "Середній рівень булави.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c9/Iron_mace.png/revision/latest/scale-to-width-down/50?cb=20210213023958"
+      },
+      {
+        "name": "Булава Морозника",
+        "token": "$item_mace_frostner",
+        "englishName": "Frostner",
+        "type": "Булава",
+        "description": "Покрита кригою булава.",
+        "craft": "Срібло x30, Древня щепа x10, Морозиво x5, Черені x4",
+        "damage": "35 (Дроб.) + 40 (Мороз) + 10 (Дух)",
+        "features": "Завдає морозної шкоди (сповільнює).",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/7/71/Frostner.png/revision/latest/scale-to-width-down/50?cb=20210215131728"
+      },
+      {
+        "name": "Порцеляновий молот",
+        "token": "$item_mace_porcupine",
+        "englishName": "Porcupine",
+        "type": "Булава",
+        "description": "Булава, що колеться, як їжак.",
+        "craft": "Інфікована щепа x5, Залізо x10, Ікла смертеля x20, Черені x4",
+        "damage": "50 (Дроб.) + 22 (Колюча)",
+        "features": "Завдає змішаної шкоди. Найсильніша булава.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/1/1c/Porcupine.png/revision/latest/scale-to-width-down/50?cb=20210215131727"
+      },
+      {
+        "name": "Булава Йотунів",
+        "token": "$item_axe_jotunbane",
+        "englishName": "Jotun Bane",
+        "type": "Спеціальна Булава",
+        "description": "Навіть древні велети не могли витримати отруйне жало цієї зброї.",
+        "craft": "Чорний метал x30, Інфікована щепа x5, Нитки з льону x2",
+        "damage": "120 (Дроб.) + 5 (Отрута) - *Оцінка*",
+        "features": "Завдає додаткової отруйної шкоди (перенесено з Axe/Mace).",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/6/6b/Jotun_Bane.png/revision/latest?cb=20221129135932"
+      }
+    ],
+    "Ножі": [
+      {
+        "name": "Ніж з кремня",
+        "token": "$item_knife_flint",
+        "englishName": "Flint Knife",
+        "type": "Ніж",
+        "description": "",
+        "craft": "Кремінь x4, Дерево x2, Шкура оленя x2",
+        "damage": "12 (Зріз.)",
+        "features": "Дуже швидкий. Бонус до удару зі спини (бекстеб).",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/d/d3/Flint_knife.png/revision/latest?cb=20210209001832"
+      },
+      {
+        "name": "Ніж Чорного металу",
+        "token": "$item_knife_blackmetal",
+        "englishName": "Blackmetal Knife",
+        "type": "Ніж",
+        "description": "",
+        "craft": "Чорний метал x10, Нитки з льону x5",
+        "damage": "56 (Зріз.)",
+        "features": "Найсильніший ніж. Бонус до удару зі спини.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/b/bd/Black_metal_knife.png/revision/latest?cb=20210215131713"
+      }
+    ],
+    "Мечі": [
+      {
+        "name": "Меч Бронзовий",
+        "token": "$item_sword_bronze",
+        "englishName": "Bronze Sword",
+        "type": "Меч",
+        "description": "Міцний бронзовий меч.",
+        "craft": "Бронза x8, Кожусіна x2, Кожусіна оленя x2",
+        "damage": "49 (Зріз.)",
+        "features": "Перший меч.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b8/Bronze_sword.png/revision/latest?cb=20210209165118"
+      },
+      {
+        "name": "Меч Залізний",
+        "token": "$item_sword_iron",
+        "englishName": "Iron Sword",
+        "type": "Меч",
+        "description": "Надійний залізний меч.",
+        "craft": "Залізо x20, Кожусіна оленя x3, Кожусіна x2",
+        "damage": "78 (Зріз.)",
+        "features": "Надійний вибір для середньої гри.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3c/Iron_sword.png/revision/latest?cb=20210215132020"
+      },
+      {
+        "name": "Меч Чорного Металу",
+        "token": "$item_sword_blackmetal",
+        "englishName": "Black Metal Sword",
+        "type": "Меч",
+        "description": "Гострий меч із чорного металу.",
+        "craft": "Чорний метал x20, Нитки з льону x5, Черені x3",
+        "damage": "113 (Зріз.)",
+        "features": "Найсильніший меч.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/8/82/Black_metal_sword.png/revision/latest?cb=20210215132015"
+      }
+    ]
+  },
+  "Дворучна зброя": {
+    "Сокири (Two-handed Axes)": [
+      {
+        "name": "Броньова сокира-двічіруч",
+        "token": "$item_battleaxe",
+        "englishName": "Battleaxe",
+        "type": "Сокира (Дворучна)",
+        "description": "Розколювач черепів — гордість воїна.",
+        "craft": "Бронза x30, Кожусіна оленя x5, Дерево x15",
+        "damage": "80 (Зріз.)",
+        "features": "Дворучна зброя. Повільна, але потужна.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/6/63/BattleAxe.png/revision/latest?cb=20210215131342"
+      },
+      {
+        "name": "Сокира-двічіруч Чорного металу",
+        "token": "$item_battleaxe_blackmetal",
+        "englishName": "Black Metal Battleaxe",
+        "type": "Сокира (Дворучна)",
+        "description": "Зелений — останній колір, який побачать твої вороги, перш ніж ти розітнеш їх навпіл.",
+        "craft": "Чорний метал x30, Нитки з льону x5, Черені x10",
+        "damage": "120 (Зріз.)",
+        "features": "Найсильніша дворучна сокира.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/9/98/Black_metal_battleaxe.png/revision/latest?cb=20250821211530"
+      }
+    ],
+    "Молоти (Two-handed Hammers)": [
+      {
+        "name": "Оленебій",
+        "token": "$item_sledge_stagbreaker",
+        "englishName": "Stagbreaker",
+        "type": "Дворучний Молот",
+        "description": "Могутній бойовий молот.",
+        "craft": "Оленяча шкура x5, Ялина x20, Роги оленя x5",
+        "damage": "20 (Дроб.) + Шкода по площі",
+        "features": "Дворучна, завдає шкоди по площі.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/7/73/Stagbreaker.png/revision/latest/scale-to-width-down/50?cb=20210214051616"
+      },
+      {
+        "name": "Великий молот (Залізний)",
+        "token": "$item_sledge_iron",
+        "englishName": "Iron Sledge",
+        "type": "Дворучний Молот",
+        "description": "Важкий залізний кувалда-молот.",
+        "craft": "Залізо x30, Древня щепа x10, Кожусіна оленя x4",
+        "damage": "70 (Дроб.) + Шкода по площі",
+        "features": "Дворучний. Висока шкода по площі.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/7/78/Iron_sledge.png/revision/latest/scale-to-width-down/50?cb=20210215131947"
+      }
+    ]
+  },
+  "Далекобійна зброя": {
+    "Луки": [
+      {
+        "name": "Примітивний лук",
+        "token": "$item_bow",
+        "englishName": "Crude Bow",
+        "type": "Лук",
+        "description": "Грубий, але цілком придатний лук.",
+        "craft": "Дерево x10, Шкура оленя x8",
+        "damage": "15 (Колота)",
+        "features": "Базовий лук.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a6/Crude_bow.png/revision/latest?cb=20210208233336"
+      },
+      {
+        "name": "Лук із доброго дерева",
+        "token": "$item_bow_finewood",
+        "englishName": "Finewood Bow",
+        "type": "Лук",
+        "description": "Простий лук із міцного та гнучкого дерева.",
+        "craft": "Добре дерево x10, Шкура оленя x10, Пір'я x2",
+        "damage": "22 (Колота)",
+        "features": "Перший хороший лук.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/5/5b/Finewood_bow.png/revision/latest?cb=20210214051911"
+      },
+      {
+        "name": "Лук мисливця",
+        "token": "$item_bow_huntsman",
+        "englishName": "Huntsman Bow",
+        "type": "Лук",
+        "description": "Тонко зроблений і натягнутий. Радість справжнього мисливця.",
+        "craft": "Дерево дракону x10, Кожусіна оленя x2, Кремінь x4",
+        "damage": "42 (Колота)",
+        "features": "Гарна точність.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/5/53/Huntsman_bow.png/revision/latest?cb=20210215131418"
+      },
+      {
+        "name": "Лук драугра",
+        "token": "$item_bow_draugrfang",
+        "englishName": "Draugr Fang",
+        "type": "Лук",
+        "description": "Темне дерево, натягнуте сяючими жилами. Жорстокий витвір.",
+        "craft": "Древня щепа x10, Срібло x20, Гниль x10, Круглий шовк нитки x2",
+        "damage": "47 (Колота) + 26 (Отрута)",
+        "features": "Завдає додаткової отруйної шкоди.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/7/78/Draugr_Fang.png/revision/latest?cb=20210215131416"
+      },
+      {
+        "name": "Хребетолом",
+        "token": "$item_bow_snipesnap",
+        "englishName": "Spinesnap",
+        "type": "Лук",
+        "description": "Користування цим луком — справжнє випробування для спини, але воно того варте.",
+        "craft": "Дерево дракону x10, Коріння x20, Самоцвіт x10",
+        "damage": "62 (Колота)",
+        "features": "Найсильніший лук у базовій грі.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/b/bd/Spinesnap.png/revision/latest?cb=20221126192021"
+      }
+    ],
+    "Арбалети (Crossbows)": [
+      {
+        "name": "Арбалет",
+        "token": "$item_crossbow_arbalest",
+        "englishName": "Arbalest",
+        "type": "Арбалет",
+        "description": "Повільна, але потужна зброя.",
+        "craft": "Залізо x10, Добре дерево x10, Нитки з льону x6",
+        "damage": "90 (Колота)",
+        "features": "Повільна швидкість перезарядки, висока разова шкода.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/f/ff/Arbalest.png/revision/latest?cb=20221126192112"
+      },
+      {
+        "name": "Ріппер",
+        "token": "$item_crossbow_Ripper",
+        "englishName": "Ripper",
+        "type": "Арбалет",
+        "description": "Потужна зброя.",
+        "craft": "",
+        "damage": "210",
+        "features": "Повільна швидкість перезарядки, висока разова шкода.",
+        "image_url": "https://static.wikia.nocookie.net/valheim/images/f/ff/Arbalest.png/revision/latest?cb=20221126192112"
+      }
+    ],
+    "Боєприпаси (Ammunition)": {
+      "Стріли (Arrows)": [
+        {
+          "name": "Стріла з обсидіану",
+          "token": "$item_arrow_obsidian",
+          "englishName": "Obsidian Arrow",
+          "type": "Стріла",
+          "description": "Уламок темряви.",
+          "craft": "Обсидіан x4, Перо x2 (набір 20 шт.)",
+          "damage": "27 (Колота)",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/4/46/Obsidian_arrow.png/revision/latest?cb=20210215131305"
+        },
+        {
+          "name": "Крижана стріла",
+          "token": "$item_arrow_frost",
+          "englishName": "Frost Arrow",
+          "type": "Стріла",
+          "description": "Уламок пронизуючого льоду.",
+          "craft": "Обсидіан x4, Перо x2, Морозиво x1 (набір 20 шт.)",
+          "damage": "26 (Мороз)",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/5/5d/Frost_arrow.png/revision/latest?cb=20210215131303сссссссссссссссссссссссссссссссссссссссссссссссссссссссссссс"
+        },
+        {
+          "name": "Отруєна стріла",
+          "token": "$item_arrow_poison",
+          "englishName": "Poison Arrow",
+          "type": "Стріла",
+          "description": "Гірке жало здалеку.",
+          "craft": "Обсидіан x4, Перо x2, Хвощ жовтий x2 (набір 20 шт.)",
+          "damage": "26 (Отрута)",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/80/Poison_arrow.png/revision/latest?cb=20210215131307"
+        },
+        {
+          "name": "Голкова стріла",
+          "token": "$item_arrow_needle",
+          "englishName": "Needle Arrow",
+          "type": "Стріла",
+          "description": "Останній штрих смерті.",
+          "craft": "Шип смертеля x4, Перо x2 (набір 20 шт.)",
+          "damage": "62 (Колота)",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/3/34/Needle_arrow.png/revision/latest?cb=20210215131304"
+        }
+      ],
+      "Болти (Bolts)": [
+        {
+          "name": "Болт із чорного металу",
+          "token": "$item_bolt_blackmetal",
+          "englishName": "Black Metal Bolt",
+          "type": "Болт",
+          "description": "Стрункий болт із темного металу.",
+          "craft": "Чорний метал x4, Перо x2 (набір 20 шт.)",
+          "damage": "70 (Колота)",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a2/Black_metal_bolt.png/revision/latest?cb=20221126191823"
+        },
+        {
+          "name": "Залізний болт",
+          "token": "$item_bolt_iron",
+          "englishName": "Iron Bolt",
+          "type": "Болт",
+          "description": "Міцний залізний снаряд.",
+          "craft": "Залізо x4, Перо x2 (набір 20 шт.)",
+          "damage": "62 (Колота)",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/4/48/Iron_bolt.png/revision/latest?cb=20221130073318"
+        }
+      ]
+    }
+  },
+  "Захисне спорядження": {
+    "Щити": {
+      "Круглі щити": [
+        {
+          "name": "Круглий щит з рогу",
+          "token": "$item_shield_banded",
+          "englishName": "Banded Shield",
+          "type": "Круглий Щит",
+          "description": "",
+          "craft": "Залізо x8, Кожусіна оленя x2",
+          "блок": "36",
+          "парирування": "50",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/d/d8/Banded_shield.png/revision/latest?cb=20210215131850"
+        },
+        {
+          "name": "Круглий щит Чорного металу",
+          "token": "$item_shield_blackmetal",
+          "englishName": "Blackmetal Shield",
+          "type": "Круглий Щит",
+          "description": "",
+          "craft": "Чорний метал x10, Нитки з льону x5",
+          "блок": "78",
+          "парирування": "100",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/4/4d/Black_metal_shield.png/revision/latest?cb=20210215131854"
+        }
+      ],
+      "Вежові щити": [
+        {
+          "name": "Залізний вежовий щит",
+          "token": "$item_shield_irontower",
+          "englishName": "Iron Tower Shield",
+          "type": "Вежовий Щит",
+          "description": "",
+          "craft": "Залізо x10, Кожусіна оленя x4",
+          "блок": "72",
+          "парирування": "10",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c7/Iron_tower_shield.png/revision/latest?cb=20210215131910"
+        },
+        {
+          "name": "Вежовий щит Чорного металу",
+          "token": "$item_shield_blackmetaltower",
+          "englishName": "Blackmetal Tower Shield",
+          "type": "Вежовий Щит",
+          "description": "",
+          "craft": "Чорний метал x15, Нитки з льону x10",
+          "блок": "104",
+          "парирування": "20",
+          "image_url": "https://static.wikia.nocookie.net/valheim/images/8/83/Black_metal_tower_shield.png/revision/latest?cb=20210215131902"
+        }
+      ]
+    }
+  },
+  "Унікальна/особлива зброя": [
+    {
+      "name": "Примара",
+      "token": "$item_atgeir_himminafl",
+      "englishName": "Himminafl",
+      "type": "Унікальна зброя",
+      "description": "Хай це й не молот, але сам Тор схвалив би цю зброю (створений з ресурсів Міста-саду).",
+      "craft": "Унікальні матеріали",
+      "damage": "Електрична + Колота",
+      "features": "Блискавична шкода, як у Молота Тора (Mjolnir).",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3c/Himminafl.png/revision/latest?cb=20221126191602"
+    },
+    {
+      "name": "Молот Тора",
+      "token": "$item_sledge_mjolnir",
+      "englishName": "Mjolnir",
+      "type": "Унікальна зброя",
+      "description": "Легендарний молот, який можна отримати після перемоги над королевою.",
+      "craft": "Трофей королеви + Унікальні ресурси",
+      "damage": "120 (Дроб.) + Блискавична шкода",
+      "features": "Легка дворучна зброя (може бути використана однією рукою), масове ураження.",
+      "image_url": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-Mjolnir-1.5.5.png.128x128_q95.png"
+    }
+  ]
+}

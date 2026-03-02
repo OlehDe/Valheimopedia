@@ -9,42 +9,58 @@ from .models import Comment
 
 import json
 from django.conf import settings
+from pathlib import Path
 
 
 # -----------------------------------------------------------------
-# ФУНКЦІЯ ДЛЯ ВІДОБРАЖЕННЯ ВСІХ ПРЕДМЕТІВ
+# ДОПОМІЖНА ФУНКЦІЯ – ЗАВАНТАЖЕННЯ ВСІХ JSON-ФАЙЛІВ
 # -----------------------------------------------------------------
-def all_items_view(request):
-    file_path = settings.BASE_DIR / 'data' / 'items.json'
-    items_data = {}
-    error_message = None
-
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            items_data = data.get('items', {})
-    except FileNotFoundError:
-        error_message = f"Помилка: Файл не знайдено за шляхом {file_path}. Переконайтеся, що він існує."
-    except json.JSONDecodeError:
-        error_message = "Помилка: Файл 'items.json' пошкоджений або має невірний формат JSON."
-    except Exception as e:
-        error_message = f"Виникла неочікувана помилка: {e}"
-
-    return render(request, 'main_app/all_items.html', {
-        'items': items_data,
-        'error': error_message
-    })
+def load_all_items_data():
+    """
+    Завантажує всі JSON-файли з папки data/ і повертає словник,
+    де ключі – назви категорій (українською), значення – їхній вміст.
+    """
+    data_folder = settings.BASE_DIR / 'data'
+    file_to_key = {
+        'weapons.json': 'Зброя',
+        'armor_sets.json': 'Комплект обладунків',
+        'armor_pieces.json': 'Обладунки',
+        'tools.json': 'Інструменти',
+        'consumables.json': 'Витратні матеріали',
+        'materials.json': 'Матеріали',
+        'trophies.json': 'Trophy',
+        'misc.json': 'Misc',
+        'unique_items.json': 'Унікальні предмети',
+        'customization.json': 'Customization',
+    }
+    combined = {}
+    for filename, key in file_to_key.items():
+        file_path = data_folder / filename
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                combined[key] = json.load(f)
+        except FileNotFoundError:
+            # Якщо файлу немає – просто пропускаємо (або можна кинути помилку)
+            combined[key] = {}
+        except json.JSONDecodeError:
+            combined[key] = {}
+    return combined
 
 
 # -----------------------------------------------------------------
-# 🚀 РЕКУРСИВНА ФУНКЦІЯ ПОШУКУ (ШУКАЄ ЗА ID АБО ТОКЕНОМ) 🚀
+# РЕКУРСИВНИЙ ПОШУК ПРЕДМЕТА ЗА ТОКЕНОМ (АБО assetId)
 # -----------------------------------------------------------------
 def find_item_in_data(data, identifier):
-    """Шукає предмет за 'assetId' або 'token'."""
+    """
+    Шукає предмет за 'token' або 'assetId' (якщо останній ще десь присутній).
+    Повертає знайдений словник або None.
+    """
     if isinstance(data, dict):
-        if data.get('assetId') == identifier or data.get('token') == identifier:
+        # Перевіряємо чи сам словник є шуканим предметом
+        if data.get('token') == identifier or data.get('assetId') == identifier:
             return data
-        for key, value in data.items():
+        # Рекурсивно обходимо всі значення
+        for value in data.values():
             found = find_item_in_data(value, identifier)
             if found:
                 return found
@@ -57,146 +73,136 @@ def find_item_in_data(data, identifier):
 
 
 # -----------------------------------------------------------------
-# 🚀 ВИПРАВЛЕНА ФУНКЦІЯ ДЛЯ ДЕТАЛЕЙ ПРЕДМЕТА (З РОЗРАХУНКОМ МАТЕРІАЛІВ) 🚀
+# ГОЛОВНА СТОРІНКА З УСІМА ПРЕДМЕТАМИ
 # -----------------------------------------------------------------
-def item_detail_view(request, item_asset_id):
-    file_path = settings.BASE_DIR / 'data' / 'items.json'
-    found_item = None
+def all_items_view(request):
+    items_data = {}
     error_message = None
-    total_materials_list = []  # Ініціалізація змінної
-
     try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            all_categories = data.get('items', {})
-
-            found_item = find_item_in_data(all_categories, item_asset_id)
-
-            if found_item:
-                crafting_stats = found_item.get('stats', {}).get('crafting', {})
-                material_ids = crafting_stats.get('materials')
-                quantities = crafting_stats.get('material_quantities', {})
-
-                level_requirements = []
-
-                if material_ids and quantities:
-                    max_levels = 0
-                    for q_list in quantities.values():
-                        max_levels = max(max_levels, len(q_list))
-
-                    for i in range(max_levels):
-                        level = i + 1
-                        required_materials_for_level = []
-
-                        for identifier in material_ids:
-                            material_data = find_item_in_data(all_categories, identifier)
-
-                            quantity_list = quantities.get(identifier, [])
-                            quantity_needed = int(quantity_list[i]) if i < len(quantity_list) else 0
-
-                            if quantity_needed > 0:
-                                material_name = material_data.get('name',
-                                                                  f"Не знайдено ({identifier})") if material_data else f"Не знайдено ({identifier})"
-
-                                required_materials_for_level.append({
-                                    'name': material_name,
-                                    'quantity': quantity_needed,
-                                    'token': material_data.get('token', '') if material_data else identifier,
-                                    'assetId': material_data.get('assetId', '') if material_data else identifier,
-                                    # 🚀 ДОДАЄМО URL ЗОБРАЖЕННЯ 🚀
-                                    'image_url': material_data.get('image_url', '') if material_data else ''
-                                })
-
-                        if required_materials_for_level or level == 1:
-                            level_requirements.append({
-                                'level': level,
-                                'is_craft': (level == 1),
-                                'materials': required_materials_for_level
-                            })
-
-                found_item['level_requirements'] = level_requirements
-
-                # -----------------------------------------------------------
-                # 🔥 ЛОГІКА РОЗРАХУНКУ ЗАГАЛЬНИХ МАТЕРІАЛІВ (ПЕРЕНЕСЕНО СЮДИ) 🔥
-                # -----------------------------------------------------------
-                total_materials_map = {}
-
-                # Використовуємо обчислений level_requirements
-                if found_item.get('level_requirements'):
-                    for requirement in found_item['level_requirements']:
-                        if requirement.get('materials'):
-                            for material in requirement['materials']:
-                                # Використовуємо токен або assetId як унікальний ключ
-                                key = material.get('token') or material.get('assetId') or material.get('name')
-
-                                if key not in total_materials_map:
-                                    total_materials_map[key] = {
-                                        'name': material['name'],
-                                        'quantity': 0,
-                                        'image_url': material.get('image_url'),
-                                        'token': material.get('token'),
-                                        'assetId': material.get('assetId')
-                                    }
-
-                                total_materials_map[key]['quantity'] += material['quantity']
-
-                # Перетворюємо карту назад у список для зручності шаблону
-                total_materials_list = list(total_materials_map.values())
-                # -----------------------------------------------------------
-
-            else:
-                error_message = "Предмет з таким ID або токеном не знайдено."
-
-    except FileNotFoundError:
-        error_message = "Помилка: Файл 'items.json' не знайдено."
-    except json.JSONDecodeError:
-        error_message = "Помилка: Файл 'items.json' пошкоджений."
+        items_data = load_all_items_data()
     except Exception as e:
-        error_message = f"Виникла неочікувана помилка: {e}"
+        error_message = f"Помилка завантаження даних: {e}"
 
-    # Передача даних до шаблону
-    return render(request, 'main_app/item_detail.html', {
-        'item': found_item,
-        'error': error_message,
-        'total_materials': total_materials_list  # 🔥 ТЕПЕР ДОСТУПНО В ШАБЛОНІ 🔥
+    return render(request, 'main_app/all_items.html', {
+        'items': items_data,
+        'error': error_message
     })
 
 
 # -----------------------------------------------------------------
-# ФУНКЦІЯ ДЛЯ КОМПЛЕКТІВ (НЕ ЗМІНЮВАЛАСЬ)
+# ДЕТАЛЬНА СТОРІНКА ПРЕДМЕТА (ЗА ТОКЕНОМ)
+# -----------------------------------------------------------------
+def item_detail_view(request, item_token):
+    """
+    Очікує, що в URL передається токен предмета (наприклад, '$item_helmet_padded').
+    """
+    all_data = load_all_items_data()
+    found_item = None
+    error_message = None
+    total_materials_list = []
+
+    try:
+        # Шукаємо предмет за токеном у всіх категоріях
+        found_item = find_item_in_data(all_data, item_token)
+
+        if found_item:
+            # Обробка матеріалів для крафту (аналогічно до попередньої логіки)
+            crafting_stats = found_item.get('stats', {}).get('crafting', {})
+            material_ids = crafting_stats.get('materials')          # список токенів або assetId
+            quantities = crafting_stats.get('material_quantities', {})
+
+            level_requirements = []
+
+            if material_ids and quantities:
+                max_levels = 0
+                for q_list in quantities.values():
+                    max_levels = max(max_levels, len(q_list))
+
+                for i in range(max_levels):
+                    level = i + 1
+                    required_materials_for_level = []
+
+                    for identifier in material_ids:
+                        material_data = find_item_in_data(all_data, identifier)
+                        quantity_list = quantities.get(identifier, [])
+                        quantity_needed = int(quantity_list[i]) if i < len(quantity_list) else 0
+
+                        if quantity_needed > 0:
+                            material_name = material_data.get('name', f"Невідомий матеріал ({identifier})") if material_data else f"Невідомий матеріал ({identifier})"
+
+                            required_materials_for_level.append({
+                                'name': material_name,
+                                'quantity': quantity_needed,
+                                'token': material_data.get('token', '') if material_data else identifier,
+                                'assetId': material_data.get('assetId', '') if material_data else identifier,
+                                'image_url': material_data.get('image_url', '') if material_data else ''
+                            })
+
+                    if required_materials_for_level or level == 1:
+                        level_requirements.append({
+                            'level': level,
+                            'is_craft': (level == 1),
+                            'materials': required_materials_for_level
+                        })
+
+            found_item['level_requirements'] = level_requirements
+
+            # Підрахунок загальної кількості матеріалів на всі рівні
+            total_map = {}
+            for req in level_requirements:
+                for mat in req.get('materials', []):
+                    key = mat.get('token') or mat.get('assetId') or mat['name']
+                    if key not in total_map:
+                        total_map[key] = {
+                            'name': mat['name'],
+                            'quantity': 0,
+                            'image_url': mat.get('image_url'),
+                            'token': mat.get('token'),
+                            'assetId': mat.get('assetId')
+                        }
+                    total_map[key]['quantity'] += mat['quantity']
+            total_materials_list = list(total_map.values())
+
+        else:
+            error_message = f"Предмет з токеном '{item_token}' не знайдено."
+
+    except Exception as e:
+        error_message = f"Помилка при обробці даних: {e}"
+
+    return render(request, 'main_app/item_detail.html', {
+        'item': found_item,
+        'error': error_message,
+        'total_materials': total_materials_list
+    })
+
+
+# -----------------------------------------------------------------
+# ДЕТАЛЬНА СТОРІНКА КОМПЛЕКТУ БРОНІ (ЗА setSlug)
 # -----------------------------------------------------------------
 def set_detail_view(request, set_slug):
-    file_path = settings.BASE_DIR / 'data' / 'items.json'
+    all_data = load_all_items_data()
     found_set = None
     error_message = None
+
     try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            all_categories = data.get('items', {})
-            sets_list = data.get('items', {}).get('Комплект обладунків', [])
+        sets_list = all_data.get('Комплект обладунків', [])
+        for armor_set in sets_list:
+            if armor_set.get('setSlug') == set_slug:
+                found_set = armor_set
+                # Завантажуємо повні дані кожного предмета з комплекту за токеном
+                items_with_data = []
+                for token in found_set.get('items', []):
+                    item_data = find_item_in_data(all_data, token)
+                    if item_data:
+                        items_with_data.append(item_data)
+                found_set['items_with_data'] = items_with_data
+                break
 
-            for armor_set in sets_list:
-                if armor_set.get('setSlug') == set_slug:
-                    found_set = armor_set
+        if not found_set:
+            error_message = f"Комплект броні '{set_slug}' не знайдено."
 
-                    items_with_data = []
-                    for asset_id in found_set.get('items', []):
-                        item_data = find_item_in_data(all_categories, asset_id)
-                        if item_data:
-                            items_with_data.append(item_data)
-
-                    found_set['items_with_data'] = items_with_data
-                    break
-
-    except FileNotFoundError:
-        error_message = "Помилка: Файл 'items.json' не знайдено."
-    except json.JSONDecodeError:
-        error_message = "Помилка: Файл 'items.json' пошкоджений."
     except Exception as e:
-        error_message = f"Виникла неочікувана помилка: {e}"
-
-    if not found_set:
-        error_message = f"Комплект броні '{set_slug}' не знайдено."
+        error_message = f"Помилка при завантаженні даних: {e}"
 
     return render(request, 'main_app/set_detail.html', {
         'set': found_set,
@@ -205,9 +211,8 @@ def set_detail_view(request, set_slug):
 
 
 # -----------------------------------------------------------------
-# РЕШТА ФУНКЦІЙ
+# РЕШТА ФУНКЦІЙ (НЕ ЗМІНЮВАЛИСЬ)
 # -----------------------------------------------------------------
-
 def home(request):
     return render(request, 'main_app/home.html')
 

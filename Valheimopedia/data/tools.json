@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Сапка",
+    "token": "$item_cultivator",
+    "englishName": "Cultivator",
+    "type": "Інструмент",
+    "description": "Сільськогосподарський інструмент для обробки ґрунту.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/8/87/Hoe.png/revision/latest?cb=20210208193853"
+  },
+  {
+    "name": "Молот",
+    "token": "$item_hammer",
+    "englishName": "Hammer",
+    "type": "Інструмент",
+    "description": "З цим інструментом у руці ви зможете зводити високі зали та могутні укріплення.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/8/81/Hammer.png/revision/latest?cb=20210208235106"
+  },
+  {
+    "name": "Вудка",
+    "token": "$item_fishingrod",
+    "englishName": "Fishing Rod",
+    "type": "Інструмент",
+    "description": "Стандартна вудка двергрів.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/e/ed/Fishing_rod.png/revision/latest?cb=20210215131606"
+  },
+  {
+    "name": "Рогове кайло",
+    "token": "$item_pickaxe_antler",
+    "englishName": "Antler Pickaxe",
+    "type": "Інструмент",
+    "description": "Кирка, зроблена з твердого рогу.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3a/Antler_pickaxe.png/revision/latest?cb=20210209150946"
+  },
+  {
+    "name": "Бронзове кайло",
+    "token": "$item_pickaxe_bronze",
+    "englishName": "Bronze Pickaxe",
+    "type": "Інструмент",
+    "description": "Міцна бронзова кирка.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/9/99/Bronze_pickaxe.png/revision/latest?cb=20210214053954"
+  },
+  {
+    "name": "Залізне кайло",
+    "token": "$item_pickaxe_iron",
+    "englishName": "Iron Pickaxe",
+    "type": "Інструмент",
+    "description": "Надійна залізна кирка.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/3/39/Iron_pickaxe.png/revision/latest?cb=20210215131752"
+  },
+  {
+    "name": "Кайло з чорного металу",
+    "token": "$item_pickaxe_Blackmetal",
+    "englishName": "Black metal pickaxe",
+    "type": "Інструмент",
+    "description": "Надійна чорна кирка.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/1/1b/Black_metal_pickaxe.png/revision/latest?cb=20221125173025"
+  }
+]

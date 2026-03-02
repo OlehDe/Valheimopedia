@@ -1,0 +1,226 @@
+[
+  {
+    "name": "Ячмінне вино",
+    "token": "$item_barleywine",
+    "englishName": "Fire Resistance Barley Wine",
+    "type": "Витратні матеріали",
+    "description": "Зміцнює вас проти вогню.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/8/88/Fire_resistance_barley_wine.png/revision/latest?cb=20210215131341"
+  },
+  {
+    "name": "Чорний суп",
+    "token": "$item_blacksoup",
+    "englishName": "Black Soup",
+    "type": "Витратні матеріали",
+    "description": "Ідеальний баланс солодкості та кислотності.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e6/BlackSoup.png/revision/latest?cb=20210922034152"
+  },
+  {
+    "name": "Кров'яний пудинг",
+    "token": "$item_bloodpudding",
+    "englishName": "Blood Pudding",
+    "type": "Витратні матеріали",
+    "description": "Він до біса смачний.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/2/28/Blood_pudding.png/revision/latest?cb=20210215131359"
+  },
+  {
+    "name": "Чорниці",
+    "token": "$item_blueberries",
+    "englishName": "Blueberries",
+    "type": "Витратні матеріали",
+    "description": "Маленькі, але смачні.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/a/af/Blueberries.png/revision/latest?cb=20210215131400"
+  },
+  {
+    "name": "Хліб",
+    "token": "$item_bread",
+    "englishName": "Bread",
+    "type": "Витратні матеріали",
+    "description": "Смачний хліб.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e1/Bread.png/revision/latest?cb=20210215131421"
+  },
+  {
+    "name": "Морква",
+    "token": "$item_carrot",
+    "englishName": "Carrot",
+    "type": "Витратні матеріали",
+    "description": "Помаранчеві ласощі.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c3/Carrot.png/revision/latest?cb=20210215131441"
+  },
+  {
+    "name": "Морквяний суп",
+    "token": "$item_carrotsoup",
+    "englishName": "Carrot Soup",
+    "type": "Витратні матеріали",
+    "description": "Теплий смачний суп, виготовлений переважно з моркви.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/0/00/Carrot_soup.png/revision/latest?cb=20210215131443"
+  },
+  {
+    "name": "Морошка",
+    "token": "$item_cloudberries",
+    "englishName": "Cloudberries",
+    "type": "Витратні матеріали",
+    "description": "Золото лісу.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e4/Cloudberries.png/revision/latest?cb=20210215131511"
+  },
+  {
+    "name": "Приготоване м'ясо ведмедя",
+    "token": "$item_bjorn_meat_cooked",
+    "englishName": "Cooked Bear Meat",
+    "type": "Витратні матеріали",
+    "description": "Смакує як перемога.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/8/8b/Bear_meat.png/revision/latest?cb=20250821122515"
+  },
+  {
+    "name": "Приготоване м'ясо оленя",
+    "token": "$item_deer_meat_cooked",
+    "englishName": "Cooked Deer Meat",
+    "type": "Витратні матеріали",
+    "description": "Весь цей біг окупився.",
+    "image_url": "/images/b/bc/Cooked_deer_meat.png"
+  },
+  {
+    "name": "Приготоване м'ясо локса",
+    "token": "$item_loxmeat_cooked",
+    "englishName": "Cooked Lox Meat",
+    "type": "Витратні матеріали",
+    "description": "Великий шматок ніжного м'яса, їжа, гідна Вальгалли!",
+    "image_url": "https://eip.gg/wp-content/uploads/2025/02/valheim-cooked-lox-meat-loxmeat_cooked.png"
+  },
+  {
+    "name": "Приготоване м'ясо дикого кабана",
+    "token": "$item_boar_meat_cooked",
+    "englishName": "Cooked Boar Meat",
+    "type": "Витратні матеріали",
+    "description": "Земний смак.",
+    "image_url": "https://eip.gg/wp-content/uploads/2025/02/valheim-cooked-boar-meat-meat_cooked.png"
+  },
+  {
+    "name": "Приготоване м'ясо вовка",
+    "token": "$item_wolf_meat_cooked",
+    "englishName": "Cooked Wolf Meat",
+    "type": "Витратні матеріали",
+    "description": "Дикий смак.",
+    "image_url": "https://eip.gg/wp-content/uploads/2025/02/valheim-cooked-wolf-meat-wolf_meat_cooked.png"
+  },
+  {
+    "name": "Рагу з оленини",
+    "token": "$item_deerstew",
+    "englishName": "Deer Stew",
+    "type": "Витратні матеріали",
+    "description": "Ніжне, аж розпадається.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/0/02/Deer_stew.png/revision/latest?cb=20210927004723"
+  },
+  {
+    "name": "Очі морозиво",
+    "token": "$item_eyescream",
+    "englishName": "Eyescream",
+    "type": "Витратні матеріали",
+    "description": "Хрустке, прохолодне та вершкове.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/9/90/Eyescream.png/revision/latest?cb=20210922034153"
+  },
+  {
+    "name": "Риба хліб",
+    "token": "$item_fishandbread",
+    "englishName": "Fish 'n' Bread",
+    "type": "Витратні матеріали",
+    "description": "Багатство як із землі, так і з моря.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/2/2c/Fish_%27n%27_bread.png/revision/latest?cb=20221130101653"
+  },
+  {
+    "name": "Приготована риба",
+    "token": "$item_fish_cooked",
+    "englishName": "Cooked Fish",
+    "type": "Витратні матеріали",
+    "description": "Смачна порція копченої риби.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/1/16/Cooked_fish.png/revision/latest?cb=20210215131603"
+  },
+  {
+    "name": "Рибні роли",
+    "token": "$item_fishwraps",
+    "englishName": "Fish Wraps",
+    "type": "Витратні матеріали",
+    "description": "Хліб та риба, чого ще бажати?",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b5/Fish_wraps.png/revision/latest?cb=20210215131607"
+  },
+  {
+    "name": "Зілля здоров'я",
+    "token": "$item_healthpotion",
+    "englishName": "Health Potion",
+    "type": "Витратні матеріали",
+    "description": "Відновлює здоров'я з часом.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b4/Medium_healing_mead.png/revision/latest?cb=20210210002001"
+  },
+  {
+    "name": "Мед",
+    "token": "$item_honey",
+    "englishName": "Honey",
+    "type": "Витратні матеріали",
+    "description": "Солодкий та липкий мед.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c6/Honey.png/revision/latest?cb=20210215131700"
+  },
+  {
+    "name": "Медовуха стійкості до морозу",
+    "token": "$item_meadfrostresist",
+    "englishName": "Frost Resistance Mead",
+    "type": "Витратні матеріали",
+    "description": "Захищає від холоду.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/5/51/Frost_resistance_mead.png/revision/latest?cb=20210215131803"
+  },
+  {
+    "name": "Медовуха сильного зцілення",
+    "token": "$item_meadhealthmajor",
+    "englishName": "Major Healing Mead",
+    "type": "Витратні матеріали",
+    "description": "Відновлює велику кількість здоров'я з часом.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/5…ealing_mead.png/revision/latest?cb=20230102181054"
+  },
+  {
+    "name": "Смачна медовуха",
+    "token": "$item_meadtasty",
+    "englishName": "Tasty Mead",
+    "type": "Витратні матеріали",
+    "description": "Вона чудова на смак!",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/7…/Tasty_mead.png/revision/latest?cb=20210215131810"
+  },
+  {
+    "name": "Гриб",
+    "token": "$item_mushroom",
+    "englishName": "Mushroom",
+    "type": "Витратні матеріали",
+    "description": "Смачний лісовий гриб.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/8/8c/Mushroom.png/revision/latest?cb=20210215131734"
+  },
+  {
+    "name": "Малина",
+    "token": "$item_raspberry",
+    "englishName": "Raspberry",
+    "type": "Витратні матеріали",
+    "description": "Солодка та смачна.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/7/7e/Raspberries.png/revision/latest?cb=20210215131817"
+  },
+  {
+    "name": "Рагу зі змії",
+    "token": "$item_serpentstew",
+    "englishName": "Serpent Stew",
+    "type": "Витратні матеріали",
+    "description": "Рагу, приготоване з м'яса змії.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/5/55/Serpent_stew.png/revision/latest?cb=20210215131844"
+  },
+  {
+    "name": "Зілля витривалості",
+    "token": "$item_staminapotion",
+    "englishName": "Stamina Potion",
+    "type": "Витратні матеріали",
+    "description": "Відновлює витривалість з часом.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/2/29/Medium_stamina_mead.png/revision/latest?cb=20210215131808"
+  },
+  {
+    "name": "Тушкована ріпа",
+    "token": "$item_turnipstew",
+    "englishName": "Turnip Stew",
+    "type": "Витратні матеріали",
+    "description": "Ситно та зігріває. Тушкована ріпа— це їжа болотного рівня",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/f/fd/Turnip_stew.png/revision/latest?cb=20210212175937"
+  }
+]
