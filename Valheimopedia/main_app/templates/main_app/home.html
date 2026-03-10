@@ -18,29 +18,26 @@
 <body>
 
 <header>
-  <h1 class="category-title">Valheimopedia</h1>
+  <h1>Valheimopedia</h1>
   <div class="auth-buttons">
     {% if user.is_authenticated %}
-      <a href="/account">Акаунт</a>
+      <a href="{% url 'main_app:account' %}">Акаунт</a>
+      <a href="{% url 'main_app:logout' %}">Вийти</a>
     {% else %}
-      <a href="/login">Увійти</a>
-      <a href="/register">Зареєструватися</a>
+      <a href="{% url 'main_app:login' %}">Увійти</a>
+      <a href="{% url 'main_app:register' %}">Зареєструватися</a>
     {% endif %}
   </div>
 </header>
 
 <nav>
-  <div class="nav-button">
-    <a href="/">Головна</a>
-  </div>
-  <div class="nav-button">
-    <a href="/all_items/">Усі предмети</a>
-  </div>
+  <a href="{% url 'main_app:home' %}">Головна</a>
+  <a href="{% url 'main_app:all_items' %}">Усі предмети</a>
 </nav>
 
 <main>
   <section id="home">
-    <!-- Вся інформація про гру прямо тут -->
+    <!-- Інформація про гру -->
     <div class="valheim-info">
       <h2>{{ valheim_info.title }}</h2>
 
@@ -71,6 +68,31 @@
                 <div class="biome-card">
                   <h4>{{ item.title }}</h4>
                   <p>{{ item.description }}</p>
+                </div>
+              {% endfor %}
+            </div>
+
+          {% elif section.type == "boss_cards" %}
+            <div class="boss-grid">
+              {% for boss in section.bosses %}
+                <div class="boss-card">
+                  <div class="boss-icon">{{ boss.icon|default:"👑" }}</div>
+                  <h4 class="boss-name">{{ boss.name }}</h4>
+                  <div class="boss-description">{{ boss.description }}</div>
+                  <div class="boss-info">
+                    <div class="boss-info-item">
+                      <span class="boss-info-icon">🌍</span>
+                      <span class="boss-info-text"><strong>Біом:</strong> {{ boss.biome }}</span>
+                    </div>
+                    <div class="boss-info-item">
+                      <span class="boss-info-icon">🎁</span>
+                      <span class="boss-info-text"><strong>Нагорода:</strong> {{ boss.reward }}</span>
+                    </div>
+                  </div>
+                  <div class="boss-difficulty">
+                    <span class="difficulty-label">Складність:</span>
+                    <span class="difficulty-stars">{{ boss.difficulty }}</span>
+                  </div>
                 </div>
               {% endfor %}
             </div>

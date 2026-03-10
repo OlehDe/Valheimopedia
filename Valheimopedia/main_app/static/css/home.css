@@ -617,3 +617,152 @@
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent-color), transparent); /* Синій градієнт */
 }
+
+/* Сітка карток босів */
+.boss-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+/* Картка боса */
+.boss-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 25px;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.boss-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-hover);
+    background: var(--card-hover);
+}
+
+/* Іконка боса */
+.boss-icon {
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+    animation: boss-float 3s infinite ease-in-out;
+}
+
+@keyframes boss-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Назва боса */
+.boss-name {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+    padding-bottom: 10px;
+}
+
+/* Опис боса */
+.boss-description {
+    font-size: 1.1em;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+    padding-bottom: 15px;
+}
+
+/* Інформація про боса */
+.boss-info {
+    margin: 15px 0;
+    flex-grow: 1;
+}
+
+.boss-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.boss-info-item:hover {
+    background: rgba(59, 130, 246, 0.3);
+    transform: translateX(5px);
+}
+
+.boss-info-icon {
+    font-size: 1.5em;
+    min-width: 30px;
+}
+
+.boss-info-text {
+    color: var(--text-light);
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.boss-info-text strong {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+/* Складність */
+.boss-difficulty {
+    margin-top: 20px;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.difficulty-label {
+    color: var(--text-light);
+    margin-right: 10px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.difficulty-stars {
+    color: var(--accent-color);
+    font-size: 1.2em;
+    letter-spacing: 2px;
+}
+
+/* Адаптивність для карток босів */
+@media (max-width: 768px) {
+    .boss-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .boss-card {
+        padding: 20px;
+    }
+
+    .boss-name {
+        font-size: 1.6em;
+    }
+
+    .boss-icon {
+        font-size: 3em;
+    }
+
+    .boss-info-item {
+        padding: 8px 12px;
+    }
+}
