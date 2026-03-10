@@ -5,18 +5,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Valheimopedia</title>
+  <title>Valheimopedia - Головна</title>
 
-  <!-- Підключення зовнішнього CSS -->
+  <!-- Спочатку основний CSS -->
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
-  <!-- Шрифт -->
+  <!-- Потім специфічний CSS для головної сторінки -->
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header>
-  <h1>Valheimopedia</h1>
+  <h1 class="category-title">Valheimopedia</h1>
   <div class="auth-buttons">
     {% if user.is_authenticated %}
       <a href="/account">Акаунт</a>
@@ -28,28 +30,78 @@
 </header>
 
 <nav>
-  <a href="/">Головна</a>
-  <a href="/">Усі новини</a>
-  <a href="/all_items/">Усі предмети</a>
-
-  {% if user.is_authenticated %}
-    <div class="add-button">
-      <a href="/add_news/">Додати новину</a>
-    </div>
-  {% else %}
-    <div class="add-button disabled-button">
-      <a href="#">Додати новину</a>
-    </div>
-  {% endif %}
+  <div class="nav-button">
+    <a href="/">Головна</a>
+  </div>
+  <div class="nav-button">
+    <a href="/all_items/">Усі предмети</a>
+  </div>
 </nav>
 
 <main>
   <section id="home">
+    <!-- Вся інформація про гру прямо тут -->
+    <div class="valheim-info">
+      <h2>{{ valheim_info.title }}</h2>
 
+      {% for section in valheim_info.sections %}
+        <div class="info-section">
+          <h3>{{ section.title }}</h3>
+
+          {% if section.type == "paragraph" %}
+            <p>{{ section.content }}</p>
+
+          {% elif section.type == "list" %}
+            <ul>
+              {% for item in section.items %}
+                <li>{{ item|safe }}</li>
+              {% endfor %}
+            </ul>
+
+          {% elif section.type == "ordered_list" %}
+            <ol>
+              {% for item in section.items %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ol>
+
+          {% elif section.type == "grid" %}
+            <div class="biomes-grid">
+              {% for item in section.items %}
+                <div class="biome-card">
+                  <h4>{{ item.title }}</h4>
+                  <p>{{ item.description }}</p>
+                </div>
+              {% endfor %}
+            </div>
+
+          {% elif section.type == "table" %}
+            <table class="info-table">
+              <thead>
+                <tr>
+                  {% for header in section.headers %}
+                    <th>{{ header }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in section.rows %}
+                  <tr>
+                    {% for cell in row %}
+                      <td>{{ cell }}</td>
+                    {% endfor %}
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
   </section>
 
-  <section id="all-news">
-    <h2> </h2>
+  <section id="latest-news">
+    <h2>Останні новини</h2>
     <div id="newsContainer">
       {% for item in news_list %}
         <div class="news">
@@ -59,39 +111,15 @@
             <span>|</span>
             <span>Автор: <a href="/user_news/{{ item.author.username }}" class="author-btn">{{ item.author.username }}</a></span>
           </div>
-          <p>
-            {% with words=item.content.split %}
-              {% if words|length > 50 %}
-                {{ words|slice:":50"|join:" " }}...
-                <a href="/news_detail/{{ item.id }}" class="read-more">Читати далі</a>
-              {% else %}
-                {{ item.content }}
-              {% endif %}
-            {% endwith %}
-          </p>
-
-          {% if user == item.author or user.is_staff %}
-            <div class="news-actions">
-              <a href='/edit_news/{{ item.id }}'>Редагувати</a>
-              <a href='/delete_news/{{ item.id }}'>Видалити</a>
-            </div>
-          {% endif %}
-
-          <div class="comments-section">
-            <h4>Останній коментар:</h4>
-            {% if item.comments.last %}
-              <div class="comment">
-                <p><strong>{{ item.comments.last.author.username }}:</strong> {{ item.comments.last.content }}</p>
-              </div>
-              <p><a href='/comments/{{ item.id }}' class="read-more">Всі коментарі ({{ item.comments.count }})</a></p>
-            {% else %}
-              <p><a href='/comments/{{ item.id }}' class="read-more">Додати коментар</a></p>
-            {% endif %}
-          </div>
+          <p>{{ item.content|truncatewords:50 }}</p>
+          <a href="/news_detail/{{ item.id }}" class="read-more">Читати далі</a>
         </div>
       {% empty %}
         <div class="news">
-          <p> </p>
+          <p>Новин поки немає. Будьте першим, хто поділиться новиною!</p>
+          {% if user.is_authenticated %}
+            <a href="/add_news/" class="btn">Додати новину</a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>

@@ -213,8 +213,51 @@ def set_detail_view(request, set_slug):
 # -----------------------------------------------------------------
 # РЕШТА ФУНКЦІЙ (НЕ ЗМІНЮВАЛИСЬ)
 # -----------------------------------------------------------------
+# -----------------------------------------------------------------
+# ГОЛОВНА СТОРІНКА З ІНФОРМАЦІЄЮ ПРО ГРУ
+# -----------------------------------------------------------------
 def home(request):
-    return render(request, 'main_app/home.html')
+    """
+    Головна сторінка з інформацією про гру Valheim
+    """
+    # Завантаження даних про гру з JSON файлу
+    valheim_info_path = settings.BASE_DIR / 'data' / 'valheim_info.json'
+
+    try:
+        with open(valheim_info_path, 'r', encoding='utf-8') as f:
+            valheim_info = json.load(f)
+    except FileNotFoundError:
+        # Якщо файл не знайдено, створюємо базову структуру
+        valheim_info = {
+            "title": "Про гру Valheim",
+            "sections": [
+                {
+                    "title": "Ласкаво просимо до Valheimopedia!",
+                    "type": "paragraph",
+                    "content": "Тут ви знайдете всю необхідну інформацію про гру Valheim: предмети, рецепти, босів, біоми та багато іншого."
+                }
+            ]
+        }
+    except json.JSONDecodeError:
+        valheim_info = {
+            "title": "Помилка завантаження",
+            "sections": [
+                {
+                    "title": "Помилка",
+                    "type": "paragraph",
+                    "content": "Не вдалося завантажити інформацію про гру. Спробуйте пізніше."
+                }
+            ]
+        }
+
+    # Отримання останніх новин (якщо у вас є модель News)
+    # news_list = News.objects.all().order_by('-created_at')[:5]
+    news_list = []  # Поки що пустий список
+
+    return render(request, 'main_app/home.html', {
+        'valheim_info': valheim_info,
+        'news_list': news_list
+    })
 
 
 def register_view(request):
