@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof allCategoriesData !== 'object' || Array.isArray(allCategoriesData) || allCategoriesData === null) {
             throw new Error('Дані мають бути об\'єктом категорій');
         }
+        console.log('Завантажені дані:', allCategoriesData);
     } catch (e) {
         console.error('Помилка парсингу items-data:', e);
         mainContainer.innerHTML = '<p class="empty-message">Помилка завантаження даних</p>';
         return;
     }
 
-    // Зберігаємо окремо комплекти обладунків
     const armorSets = allCategoriesData['Комплект обладунків'] || [];
 
     // --- Допоміжні функції ---
@@ -31,7 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const items = [];
         function traverse(obj) {
             if (Array.isArray(obj)) {
-                obj.forEach(traverse);
+                obj.forEach(item => {
+                    if (item && typeof item === 'object') {
+                        if (item.name || item.token || item.assetId) {
+                            items.push(item);
+                        } else {
+                            traverse(item);
+                        }
+                    }
+                });
             } else if (obj && typeof obj === 'object') {
                 if ((obj.token || obj.assetId) && obj.name) {
                     items.push(obj);
@@ -44,89 +52,104 @@ document.addEventListener('DOMContentLoaded', () => {
         return items;
     }
 
-    // Функція рендерингу предметів (картки)
+    // Отримання луків з правильного шляху: Зброя -> Далекобійна зброя -> Луки
+    function getBowsFromRangedWeapons() {
+        const bows = [];
+        const weapons = allCategoriesData['Зброя'];
+        const ranged = weapons?.['Далекобійна зброя'];
+        if (ranged && Array.isArray(ranged['Луки'])) {
+            ranged['Луки'].forEach(bow => {
+                if (bow && bow.name) bows.push(bow);
+            });
+        }
+        return bows;
+    }
+
+    // Отримання стріл: Зброя -> Далекобійна зброя -> Боєприпаси (Ammunition) -> Стріли (Arrows)
+    function getArrowsFromAmmunition() {
+        const arrows = [];
+        const weapons = allCategoriesData['Зброя'];
+        const ranged = weapons?.['Далекобійна зброя'];
+        const ammo = ranged?.['Боєприпаси (Ammunition)'];
+        if (ammo && Array.isArray(ammo['Стріли (Arrows)'])) {
+            ammo['Стріли (Arrows)'].forEach(arrow => {
+                if (arrow && arrow.name) arrows.push(arrow);
+            });
+        }
+        return arrows;
+    }
+
+    // Отримання всієї далекобійної зброї (включно з луками, арбалетами тощо)
+    function getAllRangedWeapons() {
+        const weapons = allCategoriesData['Зброя'];
+        const ranged = weapons?.['Далекобійна зброя'];
+        return ranged ? collectAllItems(ranged) : [];
+    }
+
+    // --- Рендеринг (без змін) ---
     function renderItemCards(items) {
         mainContainer.innerHTML = '';
         mainContainer.className = 'items-grid';
-
         if (!items.length) {
             mainContainer.innerHTML = '<p class="empty-message">Предмети відсутні</p>';
             return;
         }
-
         items.forEach(item => {
             const card = document.createElement('a');
             const id = item.token || item.assetId;
             if (!id) return;
             card.href = `/item/${id}/`;
             card.className = 'item-card item-card-link';
-
             const name = item.name || 'Без назви';
             const englishName = item.englishName || '';
             const type = item.type || '—';
             const imageUrl = item.image_url || '';
-
-            let html = `
-                <div class="item-image-container">
-            `;
-
+            let html = `<div class="item-image-container">`;
             if (imageUrl) {
                 html += `<img src="${imageUrl}" alt="${name}" class="item-image" loading="lazy">`;
             } else {
                 html += `<div class="item-image-placeholder">Немає зображення</div>`;
             }
-
             html += `</div><div class="item-info"><h3>${name}</h3>`;
-
             if (englishName && englishName.trim() !== name) {
                 html += `<p><strong>Англ.:</strong> ${englishName.trim()}</p>`;
             }
-
             html += `<div class="item-type-badge">${type}</div></div>`;
             card.innerHTML = html;
             mainContainer.appendChild(card);
         });
     }
 
-    // Рендеринг комплектів (без змін)
     function renderSetCards(sets) {
         mainContainer.innerHTML = '';
         mainContainer.className = '';
-
         if (!sets.length) {
             mainContainer.innerHTML = '<p class="empty-message">Комплекти відсутні</p>';
             return;
         }
-
         const groups = {};
         sets.forEach(set => {
             const cat = set.setCategory || 'Інше';
             if (!groups[cat]) groups[cat] = [];
             groups[cat].push(set);
         });
-
         for (const [catName, catSets] of Object.entries(groups)) {
             const groupWrapper = document.createElement('div');
             groupWrapper.className = 'set-category-group';
-
             const title = document.createElement('h2');
             title.className = 'set-category-title';
             title.textContent = catName;
             groupWrapper.appendChild(title);
-
             const groupGrid = document.createElement('div');
             groupGrid.className = 'items-grid';
-
             catSets.forEach(set => {
                 const slug = set.setSlug;
                 if (!slug) return;
                 const card = document.createElement('a');
                 card.href = `/set/${slug}/`;
                 card.className = 'item-card item-card-link';
-
                 const setName = set.setName || 'Без назви';
                 const imageUrl = set.set_image_url || '';
-
                 let html = `<h3>${setName}</h3><div class="set-image-container">`;
                 if (imageUrl) {
                     html += `<img src="${imageUrl}" alt="${setName}" class="set-image" loading="lazy">`;
@@ -137,20 +160,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.innerHTML = html;
                 groupGrid.appendChild(card);
             });
-
             groupWrapper.appendChild(groupGrid);
             mainContainer.appendChild(groupWrapper);
         }
     }
 
     // --- Логіка фільтрації та сортування ---
-    let currentCategory = 'Всі';          // активна категорія
-    let currentItems = [];                // "сирі" предмети для поточної категорії (без фільтрів)
+    let currentCategory = 'Всі';
+    let currentItems = [];
     let searchTerm = '';
     let sortOrder = 'name-asc';
 
-    // Отримати "сирі" предмети для категорії (крім комплектів)
-    function getRawItemsForCategory(categoryKey) {
+    function getItemsForCategory(categoryKey) {
+        console.log('Отримання предметів для категорії:', categoryKey);
+
         if (categoryKey === 'Всі') {
             let all = [];
             for (const [key, data] of Object.entries(allCategoriesData)) {
@@ -159,37 +182,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             return all;
-        } else if (categoryKey === 'Нагрудні обладунки') {
+        }
+        else if (categoryKey === 'Луки') {
+            return getBowsFromRangedWeapons();
+        }
+        else if (categoryKey === 'Стріли') {
+            return getArrowsFromAmmunition();
+        }
+        else if (categoryKey === 'Нагрудні обладунки') {
             const chestData = allCategoriesData['Обладунки']?.['Нагрудні обладунки'];
-            return collectAllItems(chestData);
-        } else {
+            return chestData ? collectAllItems(chestData) : [];
+        }
+        else if (categoryKey === 'Далекобійна зброя') {
+            return getAllRangedWeapons();
+        }
+        else if (categoryKey === 'Зброя') {
+            // Збираємо всю зброю з усіх підкатегорій всередині allCategoriesData['Зброя']
+            // а також додаємо унікальну зброю, якщо вона зберігається окремо
+            let allWeapons = [];
+            if (allCategoriesData['Зброя']) {
+                allWeapons = allWeapons.concat(collectAllItems(allCategoriesData['Зброя']));
+            }
+            // Якщо унікальна зброя лежить в окремій категорії (наприклад, 'Унікальні предмети')
+            if (allCategoriesData['Унікальні предмети']) {
+                allWeapons = allWeapons.concat(collectAllItems(allCategoriesData['Унікальні предмети']));
+            }
+            return allWeapons;
+        }
+        else {
+            // Для решти категорій (Обладунки, Матеріали тощо) – беремо як є
             return collectAllItems(allCategoriesData[categoryKey]);
         }
     }
 
-    // Застосувати пошук і сортування до поточного набору
-// Застосувати пошук і сортування до поточного набору
-function filterAndSortItems() {
-    if (!currentItems) return [];
-
-    let filtered = currentItems.filter(item => {
-        const name = (item.name || '').toLowerCase();
-        const engName = (item.englishName || '').toLowerCase();
-        const search = searchTerm.toLowerCase();
-        return name.includes(search) || engName.includes(search);
-    });
-
-    if (sortOrder === 'name-asc') {
-        filtered.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'uk'));
-    } else if (sortOrder === 'name-desc') {
-        filtered.sort((a, b) => (b.name || '').localeCompare(a.name || '', 'uk'));
+    function filterAndSortItems() {
+        if (!currentItems) return [];
+        let filtered = currentItems.filter(item => {
+            const name = (item.name || '').toLowerCase();
+            const engName = (item.englishName || '').toLowerCase();
+            const search = searchTerm.toLowerCase();
+            return name.includes(search) || engName.includes(search);
+        });
+        if (sortOrder === 'name-asc') {
+            filtered.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'uk'));
+        } else if (sortOrder === 'name-desc') {
+            filtered.sort((a, b) => (b.name || '').localeCompare(a.name || '', 'uk'));
+        }
+        return filtered;
     }
 
-    return filtered;
-}
-
-    // Оновити відображення з поточними фільтрами
     function refreshDisplay() {
+        console.log('Оновлення відображення для категорії:', currentCategory);
         if (currentCategory === 'Комплект обладунків') {
             renderSetCards(armorSets);
         } else {
@@ -198,11 +241,11 @@ function filterAndSortItems() {
         }
     }
 
-    // Зміна категорії
     function changeCategory(categoryKey) {
+        console.log('Зміна категорії на:', categoryKey);
         currentCategory = categoryKey;
         if (categoryKey !== 'Комплект обладунків') {
-            currentItems = getRawItemsForCategory(categoryKey);
+            currentItems = getItemsForCategory(categoryKey);
         }
         refreshDisplay();
     }
@@ -210,9 +253,10 @@ function filterAndSortItems() {
     // --- Обробники подій ---
     filterContainer.addEventListener('click', (e) => {
         if (e.target.tagName !== 'BUTTON') return;
+        const category = e.target.dataset.category;
         filterButtons.forEach(btn => btn.classList.remove('active'));
         e.target.classList.add('active');
-        changeCategory(e.target.dataset.category);
+        changeCategory(category);
     });
 
     if (searchInput) {
