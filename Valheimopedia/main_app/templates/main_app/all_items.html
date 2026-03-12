@@ -35,31 +35,50 @@
 
   <h1 class="category-title" style="text-align: center;">Усі предмети</h1>
 
+  <!-- Фільтри категорій (залишаємо без змін) -->
   <div class="category-filters" id="category-filters">
     <button type="button" class="active" data-category="Всі">Всі</button>
-    <button type="button" data-category="Обладунки">Обладунки</button>
+
+    <!-- Випадаючий список для Обладунків -->
+    <div class="dropdown">
+        <button class="dropbtn" data-category="Обладунки">Обладунки  </button>
+        <div class="dropdown-content">
+            <a href="#" data-category="Шоломи">Шоломи</a>
+            <a href="#" data-category="Нагрудні обладунки">Нагрудники</a>
+            <a href="#" data-category="Штани">Штани</a>
+            <a href="#" data-category="Плащі">Плащі</a>
+        </div>
+    </div>
+
     <button type="button" data-category="Комплект обладунків">Комплект обладунків</button>
-    <button type="button" data-category="Нагрудні обладунки">Нагрудні обладунки</button>
-    <button type="button" data-category="Одноручна зброя">Одноручна зброя</button>
-    <button type="button" data-category="Дворучна зброя">Дворучна зброя</button>
-    <button type="button" data-category="Далекобійна зброя">Далекобійна зброя</button>
+    <div class="dropdown">
+        <button class="dropbtn" data-category="Зброя">Зброя  </button>
+        <div class="dropdown-content">
+            <a href="#" data-category="Одноручна зброя">Одноручна зброя</a>
+            <a href="#" data-category="Дворучна зброя">Дворучна зброя</a>
+            <a href="#" data-category="Далекобійна зброя">Далекобійна зброя</a>
+        </div>
+    </div>
+
     <button type="button" data-category="Стріли">Стріли</button>
     <button type="button" data-category="Луки">Луки</button>
-    <button type="button" data-category="Зброя">Зброя</button>
     <button type="button" data-category="Матеріали">Матеріали</button>
   </div>
 
-  <!-- Додане поле пошуку -->
-  <div class="search-bar">
-    <input type="text" id="search-input" placeholder="Пошук предметів..." />
-  </div>
+  <!-- ===== Оновлений блок пошуку та сортування ===== -->
+  <div class="search-section">
+    <div class="search-wrapper">
+      <!-- Іконка не використовується (як на зображенні) -->
+      <input type="text" id="search-input" class="search-input" placeholder="Пошук предметів...">
+    </div>
 
-  <div class="sort-controls">
-    <label for="sort-select">Сортувати за:</label>
-    <select id="sort-select">
-      <option value="name-asc">Назвою (A–Z)</option>
-      <option value="name-desc">Назвою (Z–A)</option>
-    </select>
+    <div class="sort-wrapper">
+      <span class="sort-label">Сортувати за:</span>
+      <select id="sort-select" class="sort-select">
+        <option value="name-asc" selected>Назвою (A–Z)</option>
+        <option value="name-desc">Назвою (Z–A)</option>
+      </select>
+    </div>
   </div>
 
   {% if error %}
@@ -68,7 +87,8 @@
     </div>
   {% else %}
     <div id="items-grid">
-      </div>
+      <!-- Сюди динамічно додаються картки предметів -->
+    </div>
   {% endif %}
 
 </main>

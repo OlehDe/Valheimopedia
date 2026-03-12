@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return ranged ? collectAllItems(ranged) : [];
     }
 
-    // --- Рендеринг (без змін) ---
+    // --- Рендеринг ---
     function renderItemCards(items) {
         mainContainer.innerHTML = '';
         mainContainer.className = 'items-grid';
@@ -197,20 +197,36 @@ document.addEventListener('DOMContentLoaded', () => {
             return getAllRangedWeapons();
         }
         else if (categoryKey === 'Зброя') {
-            // Збираємо всю зброю з усіх підкатегорій всередині allCategoriesData['Зброя']
-            // а також додаємо унікальну зброю, якщо вона зберігається окремо
             let allWeapons = [];
             if (allCategoriesData['Зброя']) {
                 allWeapons = allWeapons.concat(collectAllItems(allCategoriesData['Зброя']));
             }
-            // Якщо унікальна зброя лежить в окремій категорії (наприклад, 'Унікальні предмети')
             if (allCategoriesData['Унікальні предмети']) {
                 allWeapons = allWeapons.concat(collectAllItems(allCategoriesData['Унікальні предмети']));
             }
             return allWeapons;
         }
+        // --- ПІДКАТЕГОРІЇ ЗБРОЇ: ОДНОРУЧНА ТА ДВОРУЧНА ---
+        else if (categoryKey === 'Одноручна зброя') {
+            const oneHandData = allCategoriesData['Зброя']?.['Одноручна зброя'];
+            return oneHandData ? collectAllItems(oneHandData) : [];
+        }
+        else if (categoryKey === 'Дворучна зброя') {
+            const twoHandData = allCategoriesData['Зброя']?.['Дворучна зброя'];
+            return twoHandData ? collectAllItems(twoHandData) : [];
+        }
+        // --- ПІДКАТЕГОРІЇ ОБЛАДУНКІВ ---
+        else if (categoryKey === 'Шоломи') {
+            return allCategoriesData['Обладунки']?.['Шоломи'] || [];
+        }
+        else if (categoryKey === 'Штани') {
+            return allCategoriesData['Обладунки']?.['Штани'] || [];
+        }
+        else if (categoryKey === 'Плащі') {
+            return allCategoriesData['Обладунки']?.['Плащі'] || [];
+        }
+        // --- ІНШІ КАТЕГОРІЇ ---
         else {
-            // Для решти категорій (Обладунки, Матеріали тощо) – беремо як є
             return collectAllItems(allCategoriesData[categoryKey]);
         }
     }
@@ -251,14 +267,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Обробники подій ---
+
+    // Обробник для основних кнопок фільтрів (включаючи кнопку "Обладунки")
     filterContainer.addEventListener('click', (e) => {
         if (e.target.tagName !== 'BUTTON') return;
+
         const category = e.target.dataset.category;
+
+        // Видаляємо активний клас з усіх кнопок
         filterButtons.forEach(btn => btn.classList.remove('active'));
+
+        // Додаємо активний клас натиснутій кнопці
         e.target.classList.add('active');
+
+        // Видаляємо активний клас з усіх пунктів випадаючого меню
+        document.querySelectorAll('.dropdown-content a.active').forEach(a => a.classList.remove('active'));
+
+        // Змінюємо категорію
         changeCategory(category);
     });
 
+    // Обробник для пунктів випадаючого меню
+    const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const category = link.dataset.category;
+
+            // Видаляємо активний клас з усіх основних кнопок
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Видаляємо активний клас з усіх пунктів випадаючого меню
+            dropdownLinks.forEach(l => l.classList.remove('active'));
+
+            // Додаємо активний клас натиснутому пункту
+            link.classList.add('active');
+
+            // Змінюємо категорію
+            changeCategory(category);
+        });
+    });
+
+    // Пошук
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             searchTerm = e.target.value;
@@ -266,6 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Сортування
     if (sortSelect) {
         sortSelect.addEventListener('change', (e) => {
             sortOrder = e.target.value;
