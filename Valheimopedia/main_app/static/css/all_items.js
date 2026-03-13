@@ -52,34 +52,52 @@ document.addEventListener('DOMContentLoaded', () => {
         return items;
     }
 
-    // Отримання луків з правильного шляху: Зброя -> Далекобійна зброя -> Луки
+    // --- Функції для отримання специфічних категорій зброї ---
     function getBowsFromRangedWeapons() {
-        const bows = [];
         const weapons = allCategoriesData['Зброя'];
         const ranged = weapons?.['Далекобійна зброя'];
         if (ranged && Array.isArray(ranged['Луки'])) {
-            ranged['Луки'].forEach(bow => {
-                if (bow && bow.name) bows.push(bow);
-            });
+            return ranged['Луки'];
         }
-        return bows;
+        return [];
     }
 
-    // Отримання стріл: Зброя -> Далекобійна зброя -> Боєприпаси (Ammunition) -> Стріли (Arrows)
-    function getArrowsFromAmmunition() {
-        const arrows = [];
+    function getCrossbowsFromRanged() {
         const weapons = allCategoriesData['Зброя'];
         const ranged = weapons?.['Далекобійна зброя'];
-        const ammo = ranged?.['Боєприпаси (Ammunition)'];
-        if (ammo && Array.isArray(ammo['Стріли (Arrows)'])) {
-            ammo['Стріли (Arrows)'].forEach(arrow => {
-                if (arrow && arrow.name) arrows.push(arrow);
-            });
+        if (ranged && Array.isArray(ranged['Арбалети'])) {
+            return ranged['Арбалети'];
         }
-        return arrows;
+        return [];
     }
 
-    // Отримання всієї далекобійної зброї (включно з луками, арбалетами тощо)
+    function getArrowsFromAmmunition() {
+        const weapons = allCategoriesData['Зброя'];
+        const ranged = weapons?.['Далекобійна зброя'];
+        const ammo = ranged?.['Боєприпаси'];
+        // Увага: ключ у JSON – "Стріли (Arrows)"
+        if (ammo && Array.isArray(ammo['Стріли (Arrows)'])) {
+            return ammo['Стріли (Arrows)'];
+        }
+        return [];
+    }
+
+    function getBoltsFromAmmunition() {
+        const weapons = allCategoriesData['Зброя'];
+        const ranged = weapons?.['Далекобійна зброя'];
+        const ammo = ranged?.['Боєприпаси'];
+        // Ключ у JSON – "Болти (Bolts)"
+        if (ammo && Array.isArray(ammo['Болти (Bolts)'])) {
+            return ammo['Болти (Bolts)'];
+        }
+        return [];
+    }
+
+    function getAmmunition() {
+        // об'єднує стріли та болти
+        return [...getArrowsFromAmmunition(), ...getBoltsFromAmmunition()];
+    }
+
     function getAllRangedWeapons() {
         const weapons = allCategoriesData['Зброя'];
         const ranged = weapons?.['Далекобійна зброя'];
@@ -186,8 +204,17 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (categoryKey === 'Луки') {
             return getBowsFromRangedWeapons();
         }
+        else if (categoryKey === 'Арбалети') {
+            return getCrossbowsFromRanged();
+        }
         else if (categoryKey === 'Стріли') {
             return getArrowsFromAmmunition();
+        }
+        else if (categoryKey === 'Болти') {
+            return getBoltsFromAmmunition();
+        }
+        else if (categoryKey === 'Боєприпаси') {
+            return getAmmunition();
         }
         else if (categoryKey === 'Нагрудні обладунки') {
             const chestData = allCategoriesData['Обладунки']?.['Нагрудні обладунки'];
@@ -201,12 +228,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (allCategoriesData['Зброя']) {
                 allWeapons = allWeapons.concat(collectAllItems(allCategoriesData['Зброя']));
             }
-            if (allCategoriesData['Унікальні предмети']) {
-                allWeapons = allWeapons.concat(collectAllItems(allCategoriesData['Унікальні предмети']));
+            if (allCategoriesData['Унікальна/особлива зброя']) {
+                allWeapons = allWeapons.concat(collectAllItems(allCategoriesData['Унікальна/особлива зброя']));
             }
             return allWeapons;
         }
-        // --- ПІДКАТЕГОРІЇ ЗБРОЇ: ОДНОРУЧНА ТА ДВОРУЧНА ---
+        // Підкатегорії зброї: одноручна та дворучна
         else if (categoryKey === 'Одноручна зброя') {
             const oneHandData = allCategoriesData['Зброя']?.['Одноручна зброя'];
             return oneHandData ? collectAllItems(oneHandData) : [];
@@ -215,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const twoHandData = allCategoriesData['Зброя']?.['Дворучна зброя'];
             return twoHandData ? collectAllItems(twoHandData) : [];
         }
-        // --- ПІДКАТЕГОРІЇ ОБЛАДУНКІВ ---
+        // Підкатегорії обладунків
         else if (categoryKey === 'Шоломи') {
             return allCategoriesData['Обладунки']?.['Шоломи'] || [];
         }
@@ -225,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (categoryKey === 'Плащі') {
             return allCategoriesData['Обладунки']?.['Плащі'] || [];
         }
-        // --- ІНШІ КАТЕГОРІЇ ---
+        // Інші категорії (наприклад, Матеріали)
         else {
             return collectAllItems(allCategoriesData[categoryKey]);
         }
@@ -268,22 +295,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Обробники подій ---
 
-    // Обробник для основних кнопок фільтрів (включаючи кнопку "Обладунки")
+    // Обробник для основних кнопок фільтрів (крім випадаючих)
     filterContainer.addEventListener('click', (e) => {
         if (e.target.tagName !== 'BUTTON') return;
-
         const category = e.target.dataset.category;
+        if (!category) return; // кнопка може бути без data-category (наприклад, кнопка випадаючого меню)
 
         // Видаляємо активний клас з усіх кнопок
         filterButtons.forEach(btn => btn.classList.remove('active'));
-
-        // Додаємо активний клас натиснутій кнопці
         e.target.classList.add('active');
 
         // Видаляємо активний клас з усіх пунктів випадаючого меню
         document.querySelectorAll('.dropdown-content a.active').forEach(a => a.classList.remove('active'));
 
-        // Змінюємо категорію
         changeCategory(category);
     });
 
@@ -305,7 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Додаємо активний клас натиснутому пункту
             link.classList.add('active');
 
-            // Змінюємо категорію
             changeCategory(category);
         });
     });

@@ -293,7 +293,7 @@
         "image_url": "https://static.wikia.nocookie.net/valheim/images/b/bd/Spinesnap.png/revision/latest?cb=20221126192021"
       }
     ],
-    "Арбалети (Crossbows)": [
+    "Арбалети": [
       {
         "name": "Арбалет",
         "token": "$item_crossbow_arbalest",
@@ -317,7 +317,7 @@
         "image_url": "https://static.wikia.nocookie.net/valheim/images/f/ff/Arbalest.png/revision/latest?cb=20221126192112"
       }
     ],
-    "Боєприпаси (Ammunition)": {
+    "Боєприпаси": {
       "Стріли (Arrows)": [
         {
           "name": "Стріла з обсидіану",

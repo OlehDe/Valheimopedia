@@ -56,13 +56,18 @@
         <div class="dropdown-content">
             <a href="#" data-category="Одноручна зброя">Одноручна зброя</a>
             <a href="#" data-category="Дворучна зброя">Дворучна зброя</a>
-            <a href="#" data-category="Далекобійна зброя">Далекобійна зброя</a>
         </div>
     </div>
-
-    <button type="button" data-category="Стріли">Стріли</button>
-    <button type="button" data-category="Луки">Луки</button>
     <button type="button" data-category="Матеріали">Матеріали</button>
+
+    <div class="dropdown">
+        <button class="dropbtn" data-category="Далекобійна зброя">Далекобійна зброя  </button>
+        <div class="dropdown-content">
+            <a href="#" data-category="Луки">Луки</a>
+            <a href="#" data-category="Арбалети">Арбалети</a>
+            <a href="#" data-category="Боєприпаси">Боєприпаси</a>
+        </div>
+    </div>
   </div>
 
   <!-- ===== Оновлений блок пошуку та сортування ===== -->
@@ -75,8 +80,8 @@
     <div class="sort-wrapper">
       <span class="sort-label">Сортувати за:</span>
       <select id="sort-select" class="sort-select">
-        <option value="name-asc" selected>Назвою (A–Z)</option>
-        <option value="name-desc">Назвою (Z–A)</option>
+        <option value="name-asc" selected>Назвою (А–я)</option>
+        <option value="name-desc">Назвою (Я–а)</option>
       </select>
     </div>
   </div>
