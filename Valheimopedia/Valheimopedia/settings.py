@@ -38,7 +38,47 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # обов’язково для allauth
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',  # Google провайдер
+
+    # ваші застосунки
+    'items',  # наприклад, 'items' або 'core'
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',                # стандартний
+    'allauth.account.auth_backends.AuthenticationBackend',      # allauth
+]
+SITE_ID = 1
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()   # якщо використовуєте .env файл
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'APP': {
+            'client_id': os.environ.get('GOOGLE_CLIENT_ID'),
+            'secret': os.environ.get('GOOGLE_CLIENT_SECRET'),
+            'key': ''
+        }
+    }
+}
+LOGIN_REDIRECT_URL = '/'          # куди перекидати після успішного входу
+LOGOUT_REDIRECT_URL = '/'          # куди після виходу
+ACCOUNT_LOGOUT_ON_GET = True       # дозволяє виходити за GET-запитом (опціонально)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +88,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'allauth.account.middleware.AccountMiddleware',  # додати цей рядок
 ]
 
 ROOT_URLCONF = 'Valheimopedia.urls'
@@ -63,6 +105,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'django.template.context_processors.request',   # обов’язково для allauth
             ],
         },
     },

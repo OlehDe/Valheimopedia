@@ -3,6 +3,9 @@ from django.urls import path
 from . import views  # Використовуйте відносний імпорт
 from .views import register_view, login_view, all_items_view # Використовуйте відносний імпорт
 
+from django.contrib import admin
+from django.urls import path, include
+
 app_name = "main_app"
 
 urlpatterns = [
@@ -16,4 +19,7 @@ urlpatterns = [
 
     path('all_items/', all_items_view, name='all_items'),
     path('item/<str:item_token>/', views.item_detail_view, name='item_detail'),    path('set/<str:set_slug>/', views.set_detail_view, name='set_detail'),
+
+    path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),   # усі маршрути для входу/реєстрації
 ]
