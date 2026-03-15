@@ -21,5 +21,5 @@ urlpatterns = [
     path('item/<str:item_token>/', views.item_detail_view, name='item_detail'),    path('set/<str:set_slug>/', views.set_detail_view, name='set_detail'),
 
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),   # усі маршрути для входу/реєстрації
+    path('accounts/', include('allauth.urls')),
 ]
