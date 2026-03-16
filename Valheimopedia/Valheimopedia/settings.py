@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
     'django.contrib.sites',  # обов’язково для allauth
 
     'allauth',
@@ -49,10 +51,7 @@ INSTALLED_APPS = [
     'items',  # наприклад, 'items' або 'core'
 ]
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',                # стандартний
-    'allauth.account.auth_backends.AuthenticationBackend',      # allauth
-]
+
 SITE_ID = 1
 
 import os
@@ -69,11 +68,6 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {
             'access_type': 'online',
         },
-        'APP': {
-            'client_id': os.environ.get('GOOGLE_CLIENT_ID'),
-            'secret': os.environ.get('GOOGLE_CLIENT_SECRET'),
-            'key': ''
-        }
     }
 }
 LOGIN_REDIRECT_URL = '/'          # куди перекидати після успішного входу
@@ -125,7 +119,10 @@ DATABASES = {
     }
 }
 
-
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',                # стандартний
+    'allauth.account.auth_backends.AuthenticationBackend',      # allauth
+]
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
