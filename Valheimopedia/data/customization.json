@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Beard1",
+    "token": "$customization_beard01",
+    "englishName": "Majestic",
+    "type": "Customization",
+    "description": "NULL",
+    "image_url": ""
+  },
+  {
+    "name": "Beard2",
+    "token": "$customization_beard02",
+    "englishName": "Twin Braids",
+    "type": "Customization",
+    "description": "NULL",
+    "image_url": ""
+  },
+  {
+    "name": "Hair1",
+    "token": "$customization_hair01",
+    "englishName": "Windswept",
+    "type": "Customization",
+    "description": "NULL",
+    "image_url": ""
+  },
+  {
+    "name": "Hair2",
+    "token": "$customization_hair02",
+    "englishName": "High Ponytail",
+    "type": "Customization",
+    "description": "NULL",
+    "image_url": ""
+  }
+]

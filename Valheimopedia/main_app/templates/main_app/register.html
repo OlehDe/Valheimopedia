@@ -14,9 +14,14 @@
 <header>
   <h1 class="category-title">Valheimopedia</h1>
   <div class="auth-buttons">
-    <a href="/">Головна</a>
-    <a href="/login">Увійти</a>
-    <a href="/register">Реєстрація</a>
+    {% load socialaccount %}   <!-- обов’язково завантажити теги socialaccount -->
+    {% if user.is_authenticated %}
+      <span>Вітаємо, {{ user.username }}</span>
+      <a href="/accounts/logout/">Вийти</a>
+    {% else %}
+      <a href="/login">Увійти</a>
+      <a href="/register">Зареєструватися</a>
+    {% endif %}
   </div>
 </header>
 
@@ -75,6 +80,30 @@
       </div>
 
       <button type="submit">Зареєструватися</button>
+
+            <div class="login-card">
+        <div id="g_id_onload"
+             data-client_id="98752258613-fknakg3i31mlup5brk50coigelbf0bnri.apps.googleusercontent.com"
+             data-context="signin"
+             data-ux_mode="popup"
+             data-callback="handleCredentialResponse"
+             data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin"
+             data-type="standard"
+             data-shape="rectangular"
+             data-theme="outline"
+             data-text="signin_with"
+             data-size="large"
+             data-logo_alignment="left">
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+            Натисніть кнопку, щоб увійти через Google
+        </p>
+    </div>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     </form>
   </div>
 </main>

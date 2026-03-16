@@ -14,7 +14,7 @@
 .back-link {
     display: inline-block;
     margin-bottom: 1.5rem;
-    color: var(--text-color); /* 🎯 БІЛИЙ КОЛІР */
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
@@ -25,15 +25,15 @@
 }
 
 .back-link:hover {
-    color: var(--primary-color); /* 🎯 Синій при наведенні */
+    color: var(--primary-color);
     text-decoration: underline;
     transform: translateX(-5px);
 }
 
-/* Контейнер для деталей предмету */
+/* КОНТЕЙНЕР ДЛЯ ДЕТАЛЕЙ ПРЕДМЕТУ - тепер він буде вертикальним, щоб розмістити "верхній блок" і "нижні блоки" */
 .detail-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* ⬅️ Знову встановлюємо на column, щоб верхня частина була над нижньою */
     background-color: var(--card-bg);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -58,16 +58,30 @@
     opacity: 1;
 }
 
-/* Ліва колонка (Зображення) */
+/* НОВИЙ КОНТЕЙНЕР для верхньої частини: Зображення + Заголовок/Опис */
+.detail-main-content {
+    display: flex;
+    flex-direction: row-reverse; /* 🔁 міняє місцями колонки — тепер зображення справа */
+    align-items: center;         /* 🟰 вирівнює заголовок і зображення по вертикалі */
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 2rem;
+}
+
+
+/* Ліва колонка (Зображення) - тепер всередині detail-main-content */
 .detail-image-wrapper {
-    flex: 1;
-    min-width: 300px;
+    flex: 1; /* Зображення займатиме 1 частку */
+    min-width: 250px; /* Мінімальна ширина для зображення */
+    max-width: 300px; /* Обмежуємо максимальну ширину зображення */
     padding: 2rem;
     background: rgba(30, 41, 59, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Межа справа від зображення */
+    border-bottom: none; /* Прибираємо нижню межу, вона вже на detail-main-content */
 }
 
 .detail-image-placeholder {
@@ -110,10 +124,14 @@
     transform: scale(1.02);
 }
 
-/* Права колонка (Інформація) */
+/* Права колонка (Інформація) - тепер всередині detail-main-content */
 .detail-info {
-    flex: 2;
+    flex: 2; /* Інформація займатиме 2 частки */
     padding: 2.5rem 3rem;
+    /* Прибираємо border-top звідси, оскільки detail-main-content має спільну нижню межу */
+    border-top: none;
+    margin-top: 0;
+    padding-top: 2.5rem; /* Компенсуємо, якщо потрібно */
 }
 
 .item-type-badge {
@@ -153,18 +171,19 @@
     line-height: 1.7;
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Прибираємо border-top, оскільки detail-main-content має спільну нижню межу */
+    border-top: none;
 }
 
 .description p {
     margin: 0;
 }
 
-/* Секція технічної інформації */
+/* Секція технічної інформації - тепер не належить до detail-info */
 .tech-info {
     margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 3rem; /* Додаємо padding, оскільки це тепер окремий блок */
+    border-top: none; /* Прибираємо border-top, оскільки detail-main-content вже має межу */
 }
 
 .tech-info h4 {
@@ -216,17 +235,22 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* Адаптивність */
+/* Адаптивність (СКОРИГОВАНО) */
 @media (max-width: 768px) {
-    .detail-container {
-        flex-direction: column;
+    .detail-main-content {
+        flex-direction: column; /* На малих екранах верхній блок також стає вертикальним */
     }
 
     .detail-image-wrapper {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: none; /* Прибираємо праву межу */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Додаємо нижню межу */
         min-width: auto;
+        max-width: 100%; /* Зображення на всю ширину на мобільних */
         padding: 1.5rem;
+    }
+
+    .detail-image-placeholder {
+        max-width: 250px; /* Зменшуємо max-width зображення на мобільних, щоб не було занадто великим */
     }
 
     .detail-info {
@@ -235,6 +259,10 @@
 
     .item-title {
         font-size: 2rem;
+    }
+
+    .tech-info {
+        padding: 2rem 1.5rem; /* Адаптуємо padding для tech-info на мобільних */
     }
 
     .tech-info p {
@@ -249,6 +277,10 @@
 }
 
 @media (max-width: 480px) {
+    .detail-image-wrapper {
+        padding: 1.5rem 1rem;
+    }
+
     .detail-info {
         padding: 1.5rem 1rem;
     }
@@ -263,5 +295,274 @@
 
     .description {
         font-size: 1rem;
+    }
+
+    .tech-info {
+        padding: 1.5rem 1rem; /* Адаптуємо padding для tech-info на ще менших екранах */
+    }
+}
+
+/* --- ОНОВЛЕНІ СТИЛІ ДЛЯ РОЗДІЛУ: СТАТИСТИКА ТА КРАФТ --- */
+/* Цей блок залишається без змін у своєму розташуванні відносно головного контейнера */
+
+.stats-crafting {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--primary-color);
+    padding-left: 3rem; /* Додаємо відступи, щоб відповідало detail-info */
+    padding-right: 3rem; /* Додаємо відступи, щоб відповідало detail-info */
+}
+
+.stats-crafting h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Загальні стилі для секцій (Характеристики, Виготовлення) */
+.stats-section {
+    background-color: var(--card-bg-light);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ffffff; /* Рамка для статистики */
+}
+
+/* !!! ВИПРАВЛЕННЯ ДЛЯ CRAFTING-SECTION - БЕЗ РАМОК !!! */
+.crafting-section {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 2rem;
+}
+
+.stats-section h4, .crafting-section h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+/* Стиль для заголовка Виготовлення та Покращення */
+.crafting-section h4 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+/* Стилі для рядків статистики */
+.stats-section p, .crafting-section > p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin: 0;
+    padding: 0.75rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}
+
+.stats-section p:last-child, .crafting-section > p:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.stats-section p strong, .crafting-section > p strong {
+    color: var(--text-color);
+    font-weight: 600;
+    min-width: 150px;
+    flex-shrink: 0;
+    text-align: left;
+}
+
+/* Стилі для значень */
+.stat-value, .craft-value {
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: right;
+    background: transparent;
+    padding: 0;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    flex-grow: 1;
+}
+
+/* --- СТИЛІ ДЛЯ ВИМОГ ЗА РІВНЯМИ --- */
+
+.level-requirements-list {
+    display: block;
+    margin-top: 0;
+}
+
+/* Картка для кожного рівня */
+.level-card {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 1rem 0;
+    border: none;
+    box-shadow: none;
+
+    /* 🚀 ГОРИЗОНТАЛЬНА ГРУБА РИСКА МІЖ РІВНЯМИ (3px) 🚀 */
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Прибираємо риску в першому елементі (для візуального відступу, якщо потрібно) */
+.level-requirements-list .level-card:first-child {
+    padding-top: 0.5rem;
+}
+/* ❌ ВИДАЛЕНО: Правило level-requirements-list .level-card:last-child (щоб лінія Рівня 4 була активною) */
+
+/* Стиль для заголовка рівня */
+.level-card h5 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Стилі для рядків матеріалів всередині рівня */
+.materials-for-level {
+    display: flex;
+    flex-direction: column;
+    /* 🚀 ЗМЕНШЕНО ВЕРТИКАЛЬНИЙ ГЕП МІЖ МАТЕРІАЛАМИ 🚀 */
+    gap: 0.2rem;
+}
+
+.materials-for-level .material-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* 🚀 ЗМЕНШЕНО ВЕРТИКАЛЬНИЙ PADDING МІЖ МАТЕРІАЛАМИ 🚀 */
+    padding: 0.1rem 0;
+    font-size: 1rem;
+}
+
+/* 🚀 КОНТЕЙНЕР ДЛЯ ІКОНКИ ТА НАЗВИ 🚀 */
+.materials-for-level .material-name-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 🚀 СТИЛІ ДЛЯ ІКОНКИ МАТЕРІАЛУ 🚀 */
+.materials-for-level .material-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2px;
+}
+
+.materials-for-level .material-link {
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.materials-for-level .material-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.materials-for-level .craft-value {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.no-materials {
+    color: var(--text-light);
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* --- СТИЛІ ДЛЯ ЗАГАЛЬНОЇ КІЛЬКОСТІ МАТЕРІАЛІВ (ВИПРАВЛЕНО) --- */
+
+/* Цей клас (total-materials-info) тепер є останнім у списку.
+   Він скасовує border-bottom, щоб лінія не відображалася перед ТЕХНІЧНОЮ ІНФОРМАЦІЄЮ. */
+.total-materials-info.level-card {
+    /* 💥 СКАНДОВУЄМО ЛІНІЮ ПІСЛЯ ЦЬОГО БЛОКУ 💥 */
+    border-bottom: none !important;
+    padding-bottom: 0;
+    margin-bottom: 1.5rem; /* Додаємо відступ перед Технічною інформацією */
+
+    /* Скасовуємо спеціальне оформлення, щоб виглядати як звичайний рівень */
+    background-color: transparent;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Щоб прибрати нижній роздільник під останнім матеріалом у цьому блоці (якщо він є) */
+.total-materials-info .materials-for-level .material-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Вирівнювання відступу, якщо потрібно */
+.level-requirements-list .total-materials-info.level-card:first-child {
+    padding-top: 1rem;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom2: 0.5rem;
+    padding: 1.5rem 6rem;
+}
+
+.detail-text {
+    flex: 1;
+}
+
+.detail-image-small {
+    flex: 0 0 200px; /* ширина зображення */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-image-small img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.detail-image-small img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 768px) {
+    .detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detail-image-small {
+        align-self: center;
+        margin-top: 1rem;
     }
 }

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-occ66j-&fmvc$_my+gvd^nnw95j@-u@3a%j=(*0-mo_d0(yxw1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,41 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
+    'django.contrib.sites',  # обов’язково для allauth
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',  # Google провайдер
+
+    # ваші застосунки
+    'items',  # наприклад, 'items' або 'core'
 ]
+
+
+SITE_ID = 1
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()   # якщо використовуєте .env файл
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+    }
+}
+LOGIN_REDIRECT_URL = '/'          # куди перекидати після успішного входу
+LOGOUT_REDIRECT_URL = '/'          # куди після виходу
+ACCOUNT_LOGOUT_ON_GET = True       # дозволяє виходити за GET-запитом (опціонально)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +82,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'allauth.account.middleware.AccountMiddleware',  # додати цей рядок
 ]
 
 ROOT_URLCONF = 'Valheimopedia.urls'
@@ -63,6 +99,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'django.template.context_processors.request',   # обов’язково для allauth
             ],
         },
     },
@@ -81,7 +119,10 @@ DATABASES = {
     }
 }
 
-
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',                # стандартний
+    'allauth.account.auth_backends.AuthenticationBackend',      # allauth
+]
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -116,8 +157,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

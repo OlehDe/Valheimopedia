@@ -1,0 +1,74 @@
+[
+  {
+    "name": "AncientSeed",
+    "token": "$item_ancientseed",
+    "englishName": "Ancient Seed",
+    "type": "Misc",
+    "description": "Held against your ear, you hear tiny whisperings within...",
+    "image_url": ""
+  },
+  {
+    "name": "AsksvinEgg",
+    "token": "$item_asksvin_egg",
+    "englishName": "Asksvin Egg",
+    "type": "Misc",
+    "description": "Hard as rock, yet you can sense the presence of something inside. This should be kept warm.",
+    "image_url": ""
+  },
+  {
+    "name": "BarberKit",
+    "token": "$item_barberkit",
+    "englishName": "Barber Kit",
+    "type": "Misc",
+    "description": "A kit fit for the finest of barbers.",
+    "image_url": ""
+  },
+  {
+    "name": "Bell",
+    "token": "$item_bell",
+    "englishName": "Bell",
+    "type": "Misc",
+    "description": "For whom does the bell toll?",
+    "image_url": ""
+  },
+  {
+    "name": "CryptKey",
+    "token": "$item_cryptkey",
+    "englishName": "Swamp Key",
+    "type": "Misc",
+    "description": "Partly covered in caked mud, it smells foetid.",
+    "image_url": ""
+  },
+  {
+    "name": "DragonEgg",
+    "token": "$item_dragonegg",
+    "englishName": "Dragon Egg",
+    "type": "Misc",
+    "description": "Far heavier than it looks, with a faint humming sound from within.",
+    "image_url": ""
+  },
+  {
+    "name": "GoblinTotem",
+    "token": "$item_goblintotem",
+    "englishName": "Fuling Totem",
+    "type": "Misc",
+    "description": "Channels the ancient power of Yagluth.",
+    "image_url": ""
+  },
+  {
+    "name": "Vegvisir",
+    "token": "$item_vegvisir",
+    "englishName": "Vegvisir",
+    "type": "Misc",
+    "description": "Shows the location of a boss.",
+    "image_url": ""
+  },
+  {
+    "name": "Wisp",
+    "token": "$item_wisp",
+    "englishName": "Wisp",
+    "type": "Misc",
+    "description": "A captured wisp.",
+    "image_url": ""
+  }
+]

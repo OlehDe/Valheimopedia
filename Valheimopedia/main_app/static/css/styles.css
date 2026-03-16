@@ -2,8 +2,8 @@
   --primary-color: #ffffff;
   --primary-hover: #2563eb;
   --secondary-color: #6366f1;
-  --accent-color: #10b981;
-  --accent-hover: #0d9f6e;
+  --accent-color: #668ada;
+  --accent-hover: #668ada;
   --text-color: #ffffff;
   --text-light: #cbd5e1;
   --header-text-color: #e2e8f0;
@@ -20,8 +20,6 @@
   --gradient: linear-gradient(135deg, #000000 0%, #00437d 100%);
 }
 
-
-
 /* ===== Base ===== */
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -29,19 +27,14 @@ body {
   padding: 0;
   color: var(--text-color);
   line-height: 1.6;
-
-  /* 🔹 ТУТ встав своє фото */
-  /* Приклад: url("images/background.jpg") або url("/static/images/background.jpg") */
   background-image: url("../images/background2.jpg"),
     radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 20%),
     radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 20%);
-
-  background-size: cover;          /* зображення розтягується на весь екран */
-  background-position: center;     /* вирівнюється по центру */
-  background-repeat: no-repeat;    /* не повторюється */
-  background-attachment: fixed;    /* залишається на місці при скролі */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
 
 /* ===== Header ===== */
 header {
@@ -176,7 +169,6 @@ main {
   width: fit-content;
 }
 
-
 .subcategory-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -245,27 +237,29 @@ main {
   margin-bottom: 2.5rem;
 }
 
+/* ===== Категорії (Левади, Чорнолісся) - Set Category Title Style ===== */
 .set-category-title {
   font-size: 1.8rem;
   font-weight: 700;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid rgba(59, 130, 246, 0.3);
-  position: relative;
+  color: var(--category-color-line);
+  background-color: var(--card-bg);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  margin: 2.5rem auto 1.5rem auto;
+  display: block;
+  width: fit-content;
+  text-align: center;
+  background-image: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  border-bottom: none;
+  position: static;
 }
 
 .set-category-title::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 60px;
-  height: 2px;
-  background: var(--gradient);
+  content: none;
 }
 
 .item-card-link {
@@ -273,12 +267,12 @@ main {
   color: inherit;
 }
 
-/* ===== Item Card (Base style for individual items) ===== */
+/* ===== 1. General Item Card Styles ===== */
 .item-card {
   background-color: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 0.5rem; /* Стандартний padding для предметів */
+  padding: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
   height: 100%;
@@ -288,18 +282,6 @@ main {
   overflow: hidden;
 }
 
-.item-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--gradient);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .item-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
@@ -307,30 +289,47 @@ main {
   border-color: rgba(59, 130, 246, 0.2);
 }
 
-.item-card:hover::before {
-  opacity: 1;
+.item-image-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  min-height: 120px;
 }
 
-/* ===== Set Card (Specific style for armor sets) ===== */
+.item-card:hover .item-image-container {
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: scale(1.02);
+}
+
+.item-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.item-info {
+  flex-grow: 1;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* ===== 2. Set Item Card Styles (Armor Sets) ===== */
 .set-card {
-  /* Перевизначення стилів для карток комплектів */
-  padding: 1.5rem; /* Менший padding, як ви просили */
-  /* Можна додати інші унікальні стилі для комплектів тут */
-  /* наприклад, інший тінь або рамка */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Застосовуємо hover-ефект до обох класів (item-card та set-card),
-   якщо ви хочете однаковий ефект при наведенні */
-.set-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-  background-color: var(--card-hover);
-  border-color: rgba(59, 130, 246, 0.2);
-}
-
-
-/* ===== Image Containers - Base styles ===== */
-.item-image-container,
 .set-image-container {
   width: 100%;
   display: flex;
@@ -341,20 +340,38 @@ main {
   overflow: hidden;
   border-radius: var(--radius-sm);
   transition: all 0.3s ease;
-}
-
-/* Специфічні hover-ефекти для контейнерів зображень */
-.item-card:hover .item-image-container {
-  border-color: rgba(59, 130, 246, 0.3);
-  transform: scale(1.02);
+  min-height: 180px;
 }
 
 .set-card:hover .set-image-container {
-  border-color: var(--accent-color); /* Приклад: інший колір рамки при наведенні для комплектів */
-  transform: scale(1.05); /* Приклад: більший масштаб при наведенні для комплектів */
+  border-color: var(--accent-color);
+  transform: scale(1.05);
 }
 
+.set-card h3 {
+  color: var(--category-color);
+  background-color: var(--category-color-line);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  display: block;
+  width: fit-content;
+  margin: 0.5rem auto 1rem auto;
+  line-height: 1.3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 
+.set-card:hover h3 {
+  background-color: var(--category-hover);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+/* ===== Global Image Styles ===== */
 .item-image,
 .set-image {
   display: block;
@@ -371,29 +388,7 @@ main {
   transform: scale(1.05);
 }
 
-.item-image-container {
-  min-height: 120px;
-}
-
-.set-image-container {
-  min-height: 180px;
-}
-
-/* ===== Info ===== */
-.item-info {
-  flex-grow: 1;
-  padding-top: 1rem;
-}
-
-.item-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-color);
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-}
-
+/* ===== Shared Paragraph and Badge Styles ===== */
 .item-card p {
   margin: 0.25rem 0;
   font-size: 0.9rem;
@@ -437,7 +432,7 @@ main {
   color: #ef4444;
 }
 
-/* ===== Set Detail Styles ===== */
+/* ===== Set Detail Styles (unchanged) ===== */
 .back-link {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -720,7 +715,241 @@ main {
   }
 }
 
-/* Для груп категорій (якщо використовуєте set-category-group) */
+/* Для груп категорій */
 .set-category-group {
-  margin-bottom: 4rem !important; /* Відступ між категоріями */
+  margin-bottom: 4rem !important;
+}
+
+/* ===== Dropdown (Обладунки, Зброя) ===== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: rgba(30, 41, 59, 0.8);
+  color: var(--text-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding-right: 2.2rem;
+  position: relative;
+}
+
+.dropbtn::after {
+  content: "▼";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  opacity: 0.8;
+  transition: transform 0.3s;
+}
+
+.dropbtn:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: var(--text-color);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.dropbtn.active {
+  background: var(--gradient);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.dropbtn.active::after {
+  color: white;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  overflow: hidden;
+  margin-top: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown:not(:hover) .dropdown-content {
+  transition-delay: 0.1s;
+}
+
+.dropdown-content a {
+  color: var(--text-light);
+  padding: 0.7rem 1.2rem;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--card-hover);
+  color: var(--text-color);
+}
+
+.dropdown-content a.active {
+  background: var(--gradient);
+  color: white;
+}
+
+.dropdown:hover .dropbtn::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* ===== Search and Sort Bar ===== */
+.search-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--card-bg);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+.search-wrapper {
+  flex: 1 1 250px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Стилі для самого поля пошуку (основа) */
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.8rem; /* стандартний з іконкою, але ми приберемо лівий падінг через #search-input */
+  background-color: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: var(--text-light);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-hover);
+  background-color: var(--card-hover);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Перевизначення для точного розміру, як на зображенні (177×21, падінг 1px 2px) */
+#search-input {
+  width: 220px;
+  padding: 4px 6px; 
+  box-sizing: border-box;
+  height: auto;
+  font-size: 0.9rem;
+}
+
+/* Адаптація для мобільних */
+@media (max-width: 600px) {
+  #search-input {
+    width: 100%;
+  }
+}
+
+/* Блок сортування */
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sort-label {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sort-select {
+  background-color: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--text-color);
+  padding: 0.7rem 2.2rem 0.7rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 1rem;
+  transition: all 0.3s ease;
+  min-width: 160px;
+}
+
+.sort-select:hover {
+  background-color: var(--card-hover);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--primary-hover);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.sort-select option {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+  .search-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sort-wrapper {
+    justify-content: space-between;
+  }
+  .sort-select {
+    width: 100%;
+  }
 }

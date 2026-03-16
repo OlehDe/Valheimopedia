@@ -1,0 +1,468 @@
+{
+  "Метали": [
+    {
+      "name": "Бронза",
+      "token": "$item_bronze",
+      "englishName": "Bronze",
+      "type": "Матеріал",
+      "description": "Міцний сплав міді та олова.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/4/4b/%D0%91%D1%80%D0%BE%D0%BD%D0%B7%D0%B0.png/revision/latest?cb=20210223153331&path-prefix=ru"
+    },
+    {
+      "name": "Мідь",
+      "token": "$item_copper",
+      "englishName": "Copper",
+      "type": "Матеріал",
+      "description": "Злиток чистої міді, готовий до обробки.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/1/12/Copper.png/revision/latest?cb=20210215131526"
+    },
+    {
+      "name": "Залізо",
+      "token": "$item_iron",
+      "englishName": "Iron",
+      "type": "Матеріал",
+      "description": "Злиток заліза.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/4/45/Iron.png/revision/latest?cb=20210215131701"
+    },
+    {
+      "name": "Срібло",
+      "token": "$item_silver",
+      "englishName": "Silver",
+      "type": "Матеріал",
+      "description": "Злиток срібла.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/0/0b/Silver.png/revision/latest?cb=20210210054201"
+    },
+    {
+      "name": "Олово",
+      "token": "$item_tin",
+      "englishName": "Tin",
+      "type": "Матеріал",
+      "description": "Злиток олова.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/8/80/Tin.png/revision/latest?cb=20210215132029"
+    },
+    {
+      "name": "ЧорнийМетал",
+      "token": "$item_blackmetal",
+      "englishName": "Black Metal",
+      "type": "Матеріал",
+      "description": "Важкий злиток темного металу.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/1/16/Black_metal.png/revision/latest?cb=20210215131353"
+    }
+  ],
+  "Руди": [
+    {
+      "name": "Мідна Руда",
+      "token": "$item_copperore",
+      "englishName": "Copper Ore",
+      "type": "Матеріал",
+      "description": "Неочищена мідь. Потрібно переплавити у плавильні.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/c/c3/Copper_ore.png/revision/latest?cb=20210209172033"
+    },
+    {
+      "name": "Залізна Руда",
+      "token": "$item_ironore",
+      "englishName": "Iron Ore",
+      "type": "Матеріал",
+      "description": "Сира залізна руда.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e7/Iron_ore.png/revision/latest?cb=20210215131705"
+    },
+    {
+      "name": "Срібна Руда",
+      "token": "$item_silverore",
+      "englishName": "Silver Ore",
+      "type": "Матеріал",
+      "description": "Сира срібна руда.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/3/34/Silver_ore.png/revision/latest?cb=20210210054134"
+    },
+    {
+      "name": "Олов'яна Руда",
+      "token": "$item_tinore",
+      "englishName": "Tin Ore",
+      "type": "Матеріал",
+      "description": "Сира олов'яна руда.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e0/Tin_ore.png/revision/latest?cb=20210209182506"
+    },
+    {
+      "name": "Уламок Чорного Металу",
+      "token": "$item_blackmetalscrap",
+      "englishName": "Black Metal Scrap",
+      "type": "Матеріал",
+      "description": "Перекручений шматок темного металу.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/6/6f/Black_metal_scrap.png/revision/latest?cb=20210215131354"
+    }
+  ],
+  "Матеріали З Тварин": [
+    {
+      "name": "Шкіра Аска",
+      "token": "$item_askhide",
+      "englishName": "Asksvin Hide",
+      "type": "Матеріал",
+      "description": "Ця міцна шкіра товста і все ще тепла на дотик.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/b/bd/Asksvin_hide.png/revision/latest?cb=20240423095614"
+    },
+    {
+      "name": "Кров'яний Мішок",
+      "token": "$item_bloodbag",
+      "englishName": "Bloodbag",
+      "type": "Матеріал",
+      "description": "Вміст п'явки. Фу!",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3d/Bloodbag.png/revision/latest?cb=20210215131357"
+    },
+    {
+      "name": "Уламки Кісток",
+      "token": "$item_bonefragments",
+      "englishName": "Bone Fragments",
+      "type": "Матеріал",
+      "description": "Купа розбитих кісток.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/d/dd/Bone_fragments.png/revision/latest?cb=20210215131409"
+    },
+    {
+      "name": "Панцир",
+      "token": "$item_carapace",
+      "englishName": "Carapace",
+      "type": "Матеріал",
+      "description": "Пластина хітинового обладунку.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/4/45/Carapace.png/revision/latest?cb=20221130100851"
+    },
+    {
+      "name": "Хітин",
+      "token": "$item_chitin",
+      "englishName": "Chitin",
+      "type": "Матеріал",
+      "description": "Уламок панцира ракоподібного.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a1/Chitin.png/revision/latest?cb=20210215131510"
+    },
+    {
+      "name": "Оленяча Шкіра",
+      "token": "$item_deerhide",
+      "englishName": "Deer Hide",
+      "type": "Матеріал",
+      "description": "Очищена шкіра оленя.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/1/17/Deer_hide.png/revision/latest?cb=20210215131542"
+    },
+    {
+      "name": "Нутрощі",
+      "token": "$item_entrails",
+      "englishName": "Entrails",
+      "type": "Матеріал",
+      "description": "Слизька частина чиїхось внутрішностей.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a8/Entrails.png/revision/latest?cb=20210215131549"
+    },
+    {
+      "name": "Пір'я",
+      "token": "$item_feathers",
+      "englishName": "Feathers",
+      "type": "Матеріал",
+      "description": "Невелика купка пір'я.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a9/Feathers.png/revision/latest?cb=20210215131551"
+    },
+    {
+      "name": "Морозна Залоза",
+      "token": "$item_freezegland",
+      "englishName": "Freeze Gland",
+      "type": "Матеріал",
+      "description": "Цей таємничий орган підтримує ідеальну температуру.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/2/2d/Freeze_gland.png/revision/latest?cb=20210215131624"
+    },
+    {
+      "name": "Око Грейдворфа",
+      "token": "$item_greydwarfeye",
+      "englishName": "Greydwarf Eye",
+      "type": "Матеріал",
+      "description": "Молочне око Грейдворфа.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/9/90/Greydwarf_eye.png/revision/latest?cb=20210215131630"
+    },
+    {
+      "name": "Твердий Ріг",
+      "token": "$item_hardantler",
+      "englishName": "Hard Antler",
+      "type": "Матеріал",
+      "description": "Шматок дуже твердого рогу.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/a/ad/Hard_antler.png/revision/latest?cb=20210215131639"
+    },
+    {
+      "name": "Шматки Шкіри",
+      "token": "$item_leatherscraps",
+      "englishName": "Leather Scraps",
+      "type": "Матеріал",
+      "description": "Купка шматків шкіри.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/a/ab/Leather_scraps.png/revision/latest?cb=20210208222814"
+    },
+    {
+      "name": "Тролова Шкіра",
+      "token": "$item_trollhide",
+      "englishName": "Troll Hide",
+      "type": "Матеріал",
+      "description": "Міцна тролова шкіра.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/f/f2/Troll_hide.png/revision/latest?cb=20210215132034"
+    },
+    {
+      "name": "Вовчий Ікло",
+      "token": "$item_wolffang",
+      "englishName": "Wolf Fang",
+      "type": "Матеріал",
+      "description": "Гострий ікло.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/5/5a/Wolf_fang.png/revision/latest?cb=20210215132122"
+    },
+    {
+      "name": "Вовча Шкура",
+      "token": "$item_wolfpelt",
+      "englishName": "Wolf Pelt",
+      "type": "Матеріал",
+      "description": "Товста хутряна шкура.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/e/ee/Wolf_pelt.png/revision/latest?cb=20210210053944"
+    }
+  ],
+  "Гроші Та Цінності": [
+    {
+      "name": "Бурштин",
+      "token": "$item_amber",
+      "englishName": "Amber",
+      "type": "Матеріал",
+      "description": "<color=yellow>Цінний</color>",
+      "image_url": ""
+    },
+    {
+      "name": "Бурштинова Перлина",
+      "token": "$item_amberpearl",
+      "englishName": "Amber Pearl",
+      "type": "Матеріал",
+      "description": "<color=yellow>Цінний</color>",
+      "image_url": ""
+    },
+    {
+      "name": "Монети",
+      "token": "$item_coins",
+      "englishName": "Coins",
+      "type": "Матеріал",
+      "description": "<color=yellow>Цінний</color>",
+      "image_url": ""
+    },
+    {
+      "name": "Кристал",
+      "token": "$item_crystal",
+      "englishName": "Crystal",
+      "type": "Матеріал",
+      "description": "Уламок кристалу з глибин землі.",
+      "image_url": ""
+    },
+    {
+      "name": "Рубін",
+      "token": "$item_ruby",
+      "englishName": "Ruby",
+      "type": "Матеріал",
+      "description": "Дорогоцінний червоний камінь.",
+      "image_url": ""
+    },
+    {
+      "name": "Серцевина Суртлінга",
+      "token": "$item_surtlingcore",
+      "englishName": "Surtling Core",
+      "type": "Матеріал",
+      "description": "Воно дзижчить таємничою енергією.",
+      "image_url": ""
+    }
+  ],
+  "Інші Матеріали": [
+    {
+      "name": "Жолудь",
+      "token": "$item_oakseeds",
+      "englishName": "Acorns",
+      "type": "Матеріал",
+      "description": "Посадіть їх, щоб виростити дуб.",
+      "image_url": ""
+    },
+    {
+      "name": "Ячмінь",
+      "token": "$item_barley",
+      "englishName": "Barley",
+      "type": "Матеріал",
+      "description": "Зв'язка ячменю.",
+      "image_url": ""
+    },
+    {
+      "name": "Ячмінне Борошно",
+      "token": "$item_barleyflour",
+      "englishName": "Barley Flour",
+      "type": "Матеріал",
+      "description": "Чудово підходить для випічки хліба.",
+      "image_url": ""
+    },
+    {
+      "name": "Насіння Бука",
+      "token": "$item_beechseeds",
+      "englishName": "Beech Seeds",
+      "type": "Матеріал",
+      "description": "Посадіть їх, щоб виростити бук.",
+      "image_url": ""
+    },
+    {
+      "name": "Насіння Берези",
+      "token": "$item_birchseeds",
+      "englishName": "Birch Seeds",
+      "type": "Матеріал",
+      "description": "Посадіть їх, щоб виростити березу.",
+      "image_url": ""
+    },
+    {
+      "name": "Бронзові Цвяхи",
+      "token": "$item_bronzenails",
+      "englishName": "Bronze Nails",
+      "type": "Матеріал",
+      "description": "Використовуються для будівництва кораблів та меблів.",
+      "image_url": ""
+    },
+    {
+      "name": "Насіння Моркви",
+      "token": "$item_carrotseeds",
+      "englishName": "Carrot Seeds",
+      "type": "Матеріал",
+      "description": "Посадіть їх, якщо ви любите моркву...",
+      "image_url": ""
+    },
+    {
+      "name": "Ланцюг",
+      "token": "$item_chain",
+      "englishName": "Chain",
+      "type": "Матеріал",
+      "description": "Ланка залізного ланцюга.",
+      "image_url": ""
+    },
+    {
+      "name": "Вугілля",
+      "token": "$item_coal",
+      "englishName": "Coal",
+      "type": "Матеріал",
+      "description": "Шматок вугілля.",
+      "image_url": ""
+    },
+    {
+      "name": "Драконова Сльоза",
+      "token": "$item_dragontear",
+      "englishName": "Dragon Tear",
+      "type": "Матеріал",
+      "description": "Остання замерзла сльоза дракона, що пульсує таємничою енергією.",
+      "image_url": ""
+    },
+    {
+      "name": "Стародавня Кора",
+      "token": "$item_elderbark",
+      "englishName": "Ancient Bark",
+      "type": "Матеріал",
+      "description": "Стародавній і міцний матеріал.",
+      "image_url": ""
+    },
+    {
+      "name": "Добротна Деревина",
+      "token": "$item_finewood",
+      "englishName": "Finewood",
+      "type": "Матеріал",
+      "description": "Високоякісна деревина для тонкої столярної роботи.",
+      "image_url": ""
+    },
+    {
+      "name": "Ялинова Шишка",
+      "token": "$item_fircone",
+      "englishName": "Fir Cone",
+      "type": "Матеріал",
+      "description": "Посадіть її, щоб виростити ялину.",
+      "image_url": ""
+    },
+    {
+      "name": "Льон",
+      "token": "$item_flax",
+      "englishName": "Flax",
+      "type": "Матеріал",
+      "description": "Непрядена волокна льонової рослини.",
+      "image_url": ""
+    },
+    {
+      "name": "Кремінь",
+      "token": "$item_flint",
+      "englishName": "Flint",
+      "type": "Матеріал",
+      "description": "Можна сформувати у гострі лези.",
+      "image_url": ""
+    },
+    {
+      "name": "Слиз",
+      "token": "$item_guck",
+      "englishName": "Guck",
+      "type": "Матеріал",
+      "description": "Пахне як ферментована риба.",
+      "image_url": ""
+    },
+    {
+      "name": "Залізні Цвяхи",
+      "token": "$item_ironnails",
+      "englishName": "Iron Nails",
+      "type": "Матеріал",
+      "description": "Використовуються в будівництві.",
+      "image_url": ""
+    },
+    {
+      "name": "Лляна Нитка",
+      "token": "$item_linenthread",
+      "englishName": "Linen Thread",
+      "type": "Матеріал",
+      "description": "Міцна нитка з льону.",
+      "image_url": ""
+    },
+    {
+      "name": "Обсидіан",
+      "token": "$item_obsidian",
+      "englishName": "Obsidian",
+      "type": "Матеріал",
+      "description": "Вулканічне скло.",
+      "image_url": ""
+    },
+    {
+      "name": "Смола",
+      "token": "$item_resin",
+      "englishName": "Resin",
+      "type": "Матеріал",
+      "description": "Липка деревна смола.",
+      "image_url": ""
+    },
+    {
+      "name": "Кругла Колода",
+      "token": "$item_roundlog",
+      "englishName": "Round Log",
+      "type": "Матеріал",
+      "description": "Добротна деревина з серцевинного дерева.",
+      "image_url": ""
+    },
+    {
+      "name": "Камінь",
+      "token": "$item_stone",
+      "englishName": "Stone",
+      "type": "Матеріал",
+      "description": "Звичайний старий камінь.",
+      "image_url": ""
+    },
+    {
+      "name": "Чортополох",
+      "token": "$item_thistle",
+      "englishName": "Thistle",
+      "type": "Матеріал",
+      "description": "Колючий чортополох.",
+      "image_url": ""
+    },
+    {
+      "name": "Деревина",
+      "token": "$item_wood",
+      "englishName": "Wood",
+      "type": "Матеріал",
+      "description": "Хороша, міцна деревина.",
+      "image_url": ""
+    },
+    {
+      "name": "Рештки Іміра",
+      "token": "$item_ymirremains",
+      "englishName": "Ymir Flesh",
+      "type": "Матеріал",
+      "description": "Земні рештки велетня Іміра.",
+      "image_url": ""
+    }
+  ]
+}

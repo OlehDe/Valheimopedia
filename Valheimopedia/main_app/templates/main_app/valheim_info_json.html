@@ -1,0 +1,39 @@
+{% load static %}
+
+<div class="valheim-info" id="valheimInfo">
+  <h2>{{ info_data.title }}</h2>
+
+  {% for section in info_data.sections %}
+    <div class="info-section">
+      <h3>{{ section.title }}</h3>
+
+      {% if section.type == "paragraph" %}
+        <p>{{ section.content }}</p>
+
+      {% elif section.type == "list" %}
+        <ul>
+          {% for item in section.items %}
+            <li>{{ item|safe }}</li>
+          {% endfor %}
+        </ul>
+
+      {% elif section.type == "ordered_list" %}
+        <ol>
+          {% for item in section.items %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ol>
+
+      {% elif section.type == "grid" %}
+        <div class="biomes-grid">
+          {% for item in section.items %}
+            <div class="biome">
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.description }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>

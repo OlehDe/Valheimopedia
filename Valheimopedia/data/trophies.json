@@ -1,0 +1,106 @@
+[
+  {
+    "name": "TrophyAbomination",
+    "token": "$item_trophy_abomination",
+    "englishName": "Abomination Trophy",
+    "type": "Trophy",
+    "description": "It still twitches occasionally.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyBlob",
+    "token": "$item_trophy_blob",
+    "englishName": "Blob Trophy",
+    "type": "Trophy",
+    "description": "A green, slimy blob.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyBoar",
+    "token": "$item_trophy_boar",
+    "englishName": "Boar Trophy",
+    "type": "Trophy",
+    "description": "A boar's head.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyBonemass",
+    "token": "$item_trophy_bonemass",
+    "englishName": "Bonemass Trophy",
+    "type": "Trophy",
+    "description": "It drips with a foul substance.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyDeer",
+    "token": "$item_trophy_deer",
+    "englishName": "Deer Trophy",
+    "type": "Trophy",
+    "description": "A deer's head.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyDraugr",
+    "token": "$item_trophy_draugr",
+    "englishName": "Draugr Trophy",
+    "type": "Trophy",
+    "description": "The desiccated head of a Draugr.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyEikthyr",
+    "token": "$item_trophy_eikthyr",
+    "englishName": "Eikthyr Trophy",
+    "type": "Trophy",
+    "description": "The head of Eikthyr, still buzzing with power.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyGreydwarf",
+    "token": "$item_trophy_greydwarf",
+    "englishName": "Greydwarf Trophy",
+    "type": "Trophy",
+    "description": "A gnarled, mossy head.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyNeck",
+    "token": "$item_trophy_neck",
+    "englishName": "Neck Trophy",
+    "type": "Trophy",
+    "description": "A slimy, lizard-like head.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophySkeleton",
+    "token": "$item_trophy_skeleton",
+    "englishName": "Skeleton Trophy",
+    "type": "Trophy",
+    "description": "The grinning skull of a skeleton.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophySurtling",
+    "token": "$item_trophy_surtling",
+    "englishName": "Surtling Trophy",
+    "type": "Trophy",
+    "description": "Composed of glowing embers, it still feels warm.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyTheElder",
+    "token": "$item_trophy_theelder",
+    "englishName": "The Elder Trophy",
+    "type": "Trophy",
+    "description": "It whispers of ancient things.",
+    "image_url": ""
+  },
+  {
+    "name": "TrophyWolf",
+    "token": "$item_trophy_wolf",
+    "englishName": "Wolf Trophy",
+    "type": "Trophy",
+    "description": "A wolf's head, frozen in a snarl.",
+    "image_url": ""
+  }
+]
