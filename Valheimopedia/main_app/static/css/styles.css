@@ -953,3 +953,19 @@ main {
     width: 100%;
   }
 }
+
+.btn-github {
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #24292e;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.btn-github:hover {
+    background-color: #2c3e50;
+}
