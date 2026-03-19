@@ -200,3 +200,56 @@ button[type="submit"]:hover {
   color: var(--text-color);
   font-size: 0.95rem;
 }
+
+
+.btn-google {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.btn-google::before {
+    content: "G";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
+    background-size: 200% 200%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 8px;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+}
+
+.btn-google:hover {
+    background: white;
+    color: black;
+    border-color: white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+.btn-google:hover::before {
+    transform: rotate(360deg);
+    background-position: 100% 100%;
+}

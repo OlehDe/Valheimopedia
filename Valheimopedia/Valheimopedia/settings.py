@@ -143,3 +143,68 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Login redirect settings
+LOGIN_REDIRECT_URL = '/account/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
+
+# AllAuth settings
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # Або 'mandatory' якщо потрібна верифікація
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_USERNAME_REQUIRED = True
+
+# Social account settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
+SOCIALACCOUNT_ADAPTER = 'main_app.adapters.CustomSocialAccountAdapter'
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # Це налаштування ще працює
+ACCOUNT_LOGIN_METHODS = {'username', 'email'}  # Замість ACCOUNT_AUTHENTICATION_METHOD
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']  # Замість ACCOUNT_EMAIL_REQUIRED та ACCOUNT_USERNAME_REQUIRED
+ACCOUNT_LOGOUT_ON_GET = True  # Дозволяє вихід по GET запиту
+
+# Social account settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+    }
+}
+
+# Login redirect settings
+LOGIN_REDIRECT_URL = '/account/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
+
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'       # вхід за email замість username
+ACCOUNT_EMAIL_REQUIRED = True                 # email обов'язковий
+ACCOUNT_EMAIL_VERIFICATION = 'none'           # не вимагати підтвердження email
+ACCOUNT_USERNAME_REQUIRED = False             # не вимагати username
+
+# ----- Налаштування для соціальних акаунтів (Google) -----
+SOCIALACCOUNT_AUTO_SIGNUP = True              # автоматична реєстрація без форми
+SOCIALACCOUNT_EMAIL_REQUIRED = True           # вимагати email від Google
+SOCIALACCOUNT_QUERY_EMAIL = True              # запитувати email у Google
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+
+SOCIALACCOUNT_EMAIL_AUTHENTICATION = True
