@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Ейктюр",
+    "englishName": "Eikthyr",
+    "token": "$item_boss_eikthyr",
+    "assetId": "TrophyEikthyr",
+    "type": "Бос",
+    "description": "Перший бос Valheim. Велетенський олень, який використовує блискавки.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b3/%D0%AD%D0%B9%D0%BA%D1%82%D1%8E%D1%80.png",
+    "stats": {
+      "health": 500,
+      "damage": "20-30",
+      "weakness": "Стріли з вогнем"
+    }
+  },
+  {
+    "name": "Прадавній",
+    "englishName": "The Elder",
+    "token": "$item_boss_elder",
+    "assetId": "TrophyElder",
+    "type": "Бос",
+    "description": "Другий бос. Велетенське дерево, що атакує корінням і стрілами.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/6/6e/The_Elder.png",
+    "stats": {
+      "health": 2000,
+      "damage": "50-70",
+      "weakness": "Вогонь"
+    }
+  },
+  {
+    "name": "Кістянка",
+    "englishName": "Bonemass",
+    "token": "$item_boss_bonemass",
+    "assetId": "TrophyBonemass",
+    "type": "Бос",
+    "description": "Третій бос. Величезна купа кісток, що кидає отруйні сфери.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/f/fb/Bonemass.png",
+    "stats": {
+      "health": 5000,
+      "damage": "40-60",
+      "weakness": "Дробляча зброя"
+    }
+  },
+  {
+    "name": "Мати",
+    "englishName": "Moder",
+    "token": "$item_boss_moder",
+    "assetId": "TrophyModer",
+    "type": "Бос",
+    "description": "Четвертий бос. Дракон, що атакує крижаним подихом.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/5/5b/Moder.png",
+    "stats": {
+      "health": 7500,
+      "damage": "60-80",
+      "weakness": "Стріли з вогнем"
+    }
+  },
+  {
+    "name": "Яглут",
+    "englishName": "Yagluth",
+    "token": "$item_boss_yagluth",
+    "assetId": "TrophyYagluth",
+    "type": "Бос",
+    "description": "П'ятий бос. Король фулінгів, що володіє вогняною магією.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3e/Yagluth.png",
+    "stats": {
+      "health": 10000,
+      "damage": "80-100",
+      "weakness": "Срібна зброя"
+    }
+  },
+  {
+    "name": "Королева",
+    "englishName": "The Queen",
+    "token": "$item_boss_queen",
+    "assetId": "TrophyQueen",
+    "type": "Бос",
+    "description": "Шостий бос. Гігантський жук, що мешкає в туманних землях.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/9/98/The_Queen.png",
+    "stats": {
+      "health": 15000,
+      "damage": "90-120",
+      "weakness": "Дробляча зброя"
+    }
+  }
+]

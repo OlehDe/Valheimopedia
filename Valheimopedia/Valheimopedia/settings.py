@@ -145,3 +145,9 @@ SOCIALACCOUNT_ADAPTER = 'main_app.adapters.CustomSocialAccountAdapter'
 
 # Додатково: автентифікація за email (для сучасних версій allauth)
 SOCIALACCOUNT_EMAIL_AUTHENTICATION = True
+
+# Забезпечує унікальність email
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False  # Якщо хочете використовувати email як основний ідентифікатор
+ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Використовувати email для входу

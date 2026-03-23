@@ -32,6 +32,7 @@ def load_all_items_data():
         'misc.json': 'Misc',
         'unique_items.json': 'Унікальні предмети',
         'customization.json': 'Customization',
+        'bosses.json': 'Боси',
     }
     combined = {}
     for filename, key in file_to_key.items():

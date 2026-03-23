@@ -33,6 +33,39 @@
             </div>
           {% endfor %}
         </div>
+
+      {% elif section.type == "boss_cards" %}
+        <div class="boss-grid">
+          {% for boss in section.bosses %}
+            <a href="/item/{{ boss.token }}/" class="boss-card-link">
+              <div class="boss-card">
+                <div class="boss-icon">
+                  {% if boss.image_url %}
+                    <img src="{{ boss.image_url }}" alt="{{ boss.name }}" class="boss-image">
+                  {% else %}
+                    {{ boss.icon|default:"👑" }}
+                  {% endif %}
+                </div>
+                <h4 class="boss-name">{{ boss.name }}</h4>
+                <div class="boss-description">{{ boss.description }}</div>
+                <div class="boss-info">
+                  <div class="boss-info-item">
+                    <span class="boss-info-icon">🌍</span>
+                    <span class="boss-info-text"><strong>Біом:</strong> {{ boss.biome }}</span>
+                  </div>
+                  <div class="boss-info-item">
+                    <span class="boss-info-icon">🎁</span>
+                    <span class="boss-info-text"><strong>Нагорода:</strong> {{ boss.reward }}</span>
+                  </div>
+                </div>
+                <div class="boss-difficulty">
+                  <span class="difficulty-label">Складність:</span>
+                  <span class="difficulty-stars">{{ boss.difficulty }}</span>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
       {% endif %}
     </div>
   {% endfor %}
