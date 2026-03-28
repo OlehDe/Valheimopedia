@@ -7,12 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Valheimopedia - Головна</title>
 
-  <!-- Спочатку основний CSS -->
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
-  <!-- Потім специфічний CSS для головної сторінки -->
   <link rel="stylesheet" href="{% static 'css/home.css' %}">
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -38,10 +34,8 @@
   </div>
 </nav>
 
-
 <main>
   <section id="home">
-    <!-- Інформація про гру -->
     <div class="valheim-info">
       <h2>{{ valheim_info.title }}</h2>
 
@@ -79,28 +73,35 @@
           {% elif section.type == "boss_cards" %}
             <div class="boss-grid">
               {% for boss in section.bosses %}
-                <div class="boss-card">
-                  <div class="boss-icon">{{ boss.icon|default:"👑" }}</div>
-                  <h4 class="boss-name">{{ boss.name }}</h4>
-                  <div class="boss-description">{{ boss.description }}</div>
-                  <div class="boss-info">
-                    <div class="boss-info-item">
-                      <span class="boss-info-icon">🌍</span>
-                      <span class="boss-info-text"><strong>Біом:</strong> {{ boss.biome }}</span>
+                <a href="{% url 'main_app:item_detail' boss.token %}" class="boss-card-link">
+                  <div class="boss-card">
+                    <div class="boss-icon">
+                      {% if boss.image_url %}
+                        <img src="{{ boss.image_url }}" alt="{{ boss.name }}" class="boss-image">
+                      {% else %}
+                        {{ boss.icon|default:"👑" }}
+                      {% endif %}
                     </div>
-                    <div class="boss-info-item">
-                      <span class="boss-info-icon">🎁</span>
-                      <span class="boss-info-text"><strong>Нагорода:</strong> {{ boss.reward }}</span>
+                    <h4 class="boss-name">{{ boss.name }}</h4>
+                    <div class="boss-description">{{ boss.description }}</div>
+                    <div class="boss-info">
+                      <div class="boss-info-item">
+                        <span class="boss-info-icon">🌍</span>
+                        <span class="boss-info-text"><strong>Біом:</strong> {{ boss.biome }}</span>
+                      </div>
+                      <div class="boss-info-item">
+                        <span class="boss-info-icon">🎁</span>
+                        <span class="boss-info-text"><strong>Нагорода:</strong> {{ boss.reward }}</span>
+                      </div>
+                    </div>
+                    <div class="boss-difficulty">
+                      <span class="difficulty-label">Складність:</span>
+                      <span class="difficulty-stars">{{ boss.difficulty }}</span>
                     </div>
                   </div>
-                  <div class="boss-difficulty">
-                    <span class="difficulty-label">Складність:</span>
-                    <span class="difficulty-stars">{{ boss.difficulty }}</span>
-                  </div>
-                </div>
+                </a>
               {% endfor %}
             </div>
-
           {% elif section.type == "table" %}
             <table class="info-table">
               <thead>

@@ -767,3 +767,10 @@
     }
 }
 
+/* Стилі для клікабельних карток босів */
+.boss-card-link {
+    text-decoration: none;          /* прибирає підкреслення */
+    color: inherit;                /* успадковує колір тексту (не синій) */
+    display: block;
+    transition: transform 0.3s ease;
+}
