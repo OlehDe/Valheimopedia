@@ -63,10 +63,12 @@
           {% elif section.type == "grid" %}
             <div class="biomes-grid">
               {% for item in section.items %}
-                <div class="biome-card">
-                  <h4>{{ item.title }}</h4>
-                  <p>{{ item.description }}</p>
-                </div>
+                <a href="{% url 'main_app:biome_detail' item.slug %}" class="biome-card-link">
+                  <div class="biome-card">
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.description }}</p>
+                  </div>
+                </a>
               {% endfor %}
             </div>
 

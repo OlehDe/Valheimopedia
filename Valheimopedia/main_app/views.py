@@ -9,12 +9,12 @@ from .models import Comment
 
 import json
 from django.conf import settings
-from pathlib import Path
-
 
 # -----------------------------------------------------------------
 # ДОПОМІЖНА ФУНКЦІЯ – ЗАВАНТАЖЕННЯ ВСІХ JSON-ФАЙЛІВ
 # -----------------------------------------------------------------
+
+
 def load_all_items_data():
     """
     Завантажує всі JSON-файли з папки data/ і повертає словник,
@@ -33,6 +33,7 @@ def load_all_items_data():
         'unique_items.json': 'Унікальні предмети',
         'customization.json': 'Customization',
         'bosses.json': 'Боси',
+        'biomes.json': 'Біоми',
     }
     combined = {}
     for filename, key in file_to_key.items():
@@ -46,6 +47,27 @@ def load_all_items_data():
         except json.JSONDecodeError:
             combined[key] = {}
     return combined
+# -----------------------------------------------------------------
+
+
+def biome_detail_view(request, biome_slug):
+    all_data = load_all_items_data()
+    biomes_list = all_data.get('Біоми', [])
+    biome = None
+    for b in biomes_list:
+        if b.get('slug') == biome_slug:
+            biome = b
+            break
+    if not biome:
+        error_message = f"Біом '{biome_slug}' не знайдено."
+    else:
+        error_message = None
+    return render(request, 'main_app/biome_detail.html', {
+        'biome': biome,
+        'error': error_message
+    })
+# -----------------------------------------------------------------
+# ДОПОМІЖНА ФУНКЦІЯ – ЗАВАНТАЖЕННЯ ВСІХ JSON-ФАЙЛІВ
 
 
 # -----------------------------------------------------------------

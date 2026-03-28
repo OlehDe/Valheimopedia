@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "meadows",
+    "name": "🌳 Левади",
+    "englishName": "Meadows",
+    "description": "Початкова зона з оленями, вепрами, скелетами та сіролюдами. Багата на деревину, камінь.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/3/38/Meadows.jpg",
+    "mobs": ["Олень", "Вепр", "Скелет", "Сіролюд"],
+    "resources": ["Деревина", "Камінь", "Ягоди", "Гриби"],
+    "boss": "Ейктюр",
+    "danger_level": "Низький"
+  },
+  {
+    "slug": "black_forest",
+    "name": "🌲 Темнолісся",
+    "englishName": "Black Forest",
+    "description": "Зона з сіролюдами, тролями, грейдворфами. Багата на мідь, олово, бурштин.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/6/6c/Black_Forest.jpg",
+    "mobs": ["Сіролюд", "Троль", "Грейдворф"],
+    "resources": ["Деревина", "Камінь", "Мідь", "Олово", "Бурштин"],
+    "boss": "Прадавній",
+    "danger_level": "Середній"
+  },
+  {
+    "slug": "swamp",
+    "name": "🏞️ Болота",
+    "englishName": "Swamp",
+    "description": "Зона з драуграми, болотними слимаками. Багата на залізо та серця вогневика.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/5/5b/Swamp.jpg",
+    "mobs": ["Драугр", "Болотний слимак", "Вогневик"],
+    "resources": ["Залізна руда", "Серце вогневика", "Кров", "Гуано"],
+    "boss": "Кістянка",
+    "danger_level": "Високий"
+  },
+  {
+    "slug": "mountain",
+    "name": "⛰️ Гори",
+    "englishName": "Mountain",
+    "description": "Небезпечна зона з вовками, драконами та кам'яними големами. Багата на срібло.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/5/56/Mountain.jpg",
+    "mobs": ["Вовк", "Дракон", "Кам'яний голем"],
+    "resources": ["Срібна руда", "Камінь", "Обсидіан"],
+    "boss": "Мати",
+    "danger_level": "Дуже високий"
+  },
+  {
+    "slug": "plains",
+    "name": "🌾 Рівнини",
+    "englishName": "Plains",
+    "description": "Відкриті території з фулінгами, бикоящурами та комарами-смертевиками. Багата на льон та ячмінь.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/4/44/Plains.jpg",
+    "mobs": ["Фулінг", "Бикоящур", "Комар-смертевик"],
+    "resources": ["Льон", "Ячмінь", "Чорний метал"],
+    "boss": "Яглут",
+    "danger_level": "Екстремальний"
+  },
+  {
+    "slug": "mistlands",
+    "name": "🌫️ Імлисті землі",
+    "englishName": "Mistlands",
+    "description": "Найнебезпечніша зона з густим туманом, жуками та гігантами.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/4/44/Mistlands.jpg",
+    "mobs": ["Жук", "Гігант", "Ткач"],
+    "resources": ["Мінерал чорного металу", "М'ясо жука", "Королівський панцир"],
+    "boss": "Королева",
+    "danger_level": "Екстремальний"
+  },
+  {
+    "slug": "ocean",
+    "name": "🌊 Океан",
+    "englishName": "Ocean",
+    "description": "Морські простори з хвилями, зміями та затонулими кораблями.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/a/a9/Ocean.jpg",
+    "mobs": ["Змій", "Левіафан"],
+    "resources": ["Риба", "Зміїна луска", "Затонулий скарб"],
+    "boss": "Немає",
+    "danger_level": "Середній"
+  },
+  {
+    "slug": "ashlands",
+    "name": "🌋 Пекло",
+    "englishName": "Ashlands",
+    "description": "Попелясті землі, де неможливо дихати через надмірну температуру. Неймовірно небезпечні моби та спека.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/5/5a/Ashlands.jpg",
+    "mobs": ["Скелет", "Вогняний голем", "Дракон"],
+    "resources": ["Попіл", "Вогняний камінь"],
+    "boss": "Невідомо",
+    "danger_level": "Екстремальний"
+  }
+]

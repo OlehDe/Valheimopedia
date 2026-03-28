@@ -774,3 +774,22 @@
     display: block;
     transition: transform 0.3s ease;
 }
+
+.biome-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.boss-grid,
+.biomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: stretch;        /* усі елементи розтягуються на однакову висоту */
+}
+
+.biome-card {
+    display: flex;
+    flex-direction: column;
+    height: 80%;                /* займає всю доступну висоту комірки grid */
+}

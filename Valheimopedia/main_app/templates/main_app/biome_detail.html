@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if biome %}{{ biome.name }}{% else %}Помилка{% endif %} - Valheimopedia</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/item_detail.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1 class="category-title">Valheimopedia</h1>
+  <div class="auth-buttons">
+    {% if user.is_authenticated %}
+      <a href="/account">Акаунт</a>
+    {% else %}
+      <a href="/login">Увійти</a>
+      <a href="/register">Зареєструватися</a>
+    {% endif %}
+  </div>
+</header>
+
+<nav>
+  <div class="nav-button">
+    <a href="/">Головна</a>
+  </div>
+  <div class="nav-button">
+    <a href="/all_items/">Усі предмети</a>
+  </div>
+</nav>
+
+<main>
+  <a href="{% url 'main_app:home' %}" class="back-link">← Повернутися на головну</a>
+
+  {% if error %}
+    <div class="error-message">
+      <p>{{ error }}</p>
+    </div>
+  {% elif biome %}
+    <div class="detail-container">
+      <div class="detail-header">
+        <div class="detail-text">
+          <span class="item-type-badge">Біом</span>
+          <h1 class="item-title">{{ biome.name }}</h1>
+          {% if biome.englishName and biome.englishName != biome.name %}
+            <p class="english-name">{{ biome.englishName }}</p>
+          {% endif %}
+          <div class="description">
+            <p>{{ biome.description }}</p>
+          </div>
+        </div>
+        <div class="detail-image-small">
+          {% if biome.image_url %}
+            <img src="{{ biome.image_url }}" alt="{{ biome.name }}">
+          {% else %}
+            <div class="detail-image-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21,15 16,10 5,21"></polyline>
+              </svg>
+              <span>Зображення відсутнє</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="detail-info">
+        <div class="stats-crafting">
+          <h2>Детальна інформація</h2>
+
+          <div class="stats-section">
+            <h4>Моби</h4>
+            <ul>
+              {% for mob in biome.mobs %}
+                <li>{{ mob }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="stats-section">
+            <h4>Ресурси</h4>
+            <ul>
+              {% for resource in biome.resources %}
+                <li>{{ resource }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="stats-section">
+            <h4>Бос</h4>
+            <p>{{ biome.boss }}</p>
+          </div>
+
+          <div class="stats-section">
+            <h4>Рівень небезпеки</h4>
+            <p>{{ biome.danger_level }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="error-message">
+      <p>Біом не знайдено.</p>
+    </div>
+  {% endif %}
+</main>
+
+</body>
+</html>
