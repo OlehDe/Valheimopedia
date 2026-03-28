@@ -17,4 +17,6 @@ urlpatterns = [
     path('all_items/', all_items_view, name='all_items'),
     path('item/<str:item_token>/', views.item_detail_view, name='item_detail'),    path('set/<str:set_slug>/', views.set_detail_view, name='set_detail'),
     path('biome/<slug:biome_slug>/', views.biome_detail_view, name='biome_detail'),
+    path('building/', views.building_view, name='building'),
+    path('building/<str:building_token>/', views.building_detail_view, name='building_detail'),
 ]

@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Будівництво - Valheimopedia</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1 class="category-title">Valheimopedia</h1>
+  <div class="auth-buttons">
+    {% if user.is_authenticated %}
+      <a href="/account">Акаунт</a>
+    {% else %}
+      <a href="/login">Увійти</a>
+      <a href="/register">Зареєструватися</a>
+    {% endif %}
+  </div>
+</header>
+
+<nav>
+  <div class="nav-button">
+    <a href="/">Головна</a>
+  </div>
+  <div class="nav-button">
+    <a href="{% url 'main_app:all_items' %}">Усі предмети</a>
+  </div>
+  <div class="nav-button">
+    <a href="{% url 'main_app:building' %}">Будівництво</a>
+  </div>
+</nav>
+
+<main>
+
+  <h1 class="category-title" style="text-align: center;">Будівництво</h1>
+
+  <!-- Фільтри категорій – вони будуть заповнені JS -->
+  <div class="category-filters" id="category-filters">
+    <button type="button" class="active" data-category="Всі">Всі</button>
+  </div>
+
+  <!-- Пошук та сортування -->
+  <div class="search-section">
+    <div class="search-wrapper">
+      <input type="text" id="search-input" class="search-input" placeholder="Пошук предметів...">
+    </div>
+    <div class="sort-wrapper">
+      <span class="sort-label">Сортувати за:</span>
+      <select id="sort-select" class="sort-select">
+        <option value="name-asc" selected>Назвою (А–я)</option>
+        <option value="name-desc">Назвою (Я–а)</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="items-grid" class="items-grid">
+    <!-- Картки будуть додані JS -->
+  </div>
+
+</main>
+
+{{ building_items|json_script:"building-data" }}
+
+<script src="{% static 'css/building.js' %}"></script>
+
+</body>
+</html>

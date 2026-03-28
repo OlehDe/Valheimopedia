@@ -34,6 +34,7 @@ def load_all_items_data():
         'customization.json': 'Customization',
         'bosses.json': 'Боси',
         'biomes.json': 'Біоми',
+        'building.json': 'Будівництво',
     }
     combined = {}
     for filename, key in file_to_key.items():
@@ -49,6 +50,32 @@ def load_all_items_data():
     return combined
 # -----------------------------------------------------------------
 
+def building_detail_view(request, building_token):
+    """
+    Детальна сторінка будівельного елемента.
+    """
+    all_data = load_all_items_data()
+    building_items = all_data.get('Будівництво', [])
+    building = None
+    for item in building_items:
+        if item.get('token') == building_token:
+            building = item
+            break
+
+    if not building:
+        error_message = f"Будівельний елемент '{building_token}' не знайдено."
+    else:
+        error_message = None
+
+    return render(request, 'main_app/building_detail.html', {
+        'building': building,
+        'error': error_message
+    })
+
+def building_view(request):
+    all_data = load_all_items_data()
+    building_items = all_data.get('Будівництво', [])
+    return render(request, 'main_app/building.html', {'building_items': building_items})
 
 def biome_detail_view(request, biome_slug):
     all_data = load_all_items_data()

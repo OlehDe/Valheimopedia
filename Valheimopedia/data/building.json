@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Верстак",
+    "englishName": "Workbench",
+    "token": "$item_workbench",
+    "assetId": "Workbench",
+    "type": "Станція",
+    "description": "Основний робочий стіл для створення інструментів, зброї та будівельних елементів. Потрібен для більшості крафту.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/5/5c/Workbench.png",
+    "stats": {
+      "health": 500,
+      "size": "2x2",
+      "requirements": "Дерево x10"
+    }
+  },
+  {
+    "name": "Дерев'яна стіна",
+    "englishName": "Wood Wall",
+    "token": "$item_wood_wall",
+    "assetId": "WoodWall",
+    "type": "Стіна",
+    "description": "Базова дерев'яна стіна. Забезпечує захист від ворогів і погоди.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/8/87/Wood_wall.png",
+    "stats": {
+      "health": 300,
+      "size": "2x2",
+      "requirements": "Дерево x2"
+    }
+  },
+  {
+    "name": "Дерев'яний дах",
+    "englishName": "Wood Roof",
+    "token": "$item_wood_roof",
+    "assetId": "WoodRoof",
+    "type": "Дах",
+    "description": "Стандартний дах, захищає від дощу і снігу.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/0/04/Thatch_roof.png",
+    "stats": {
+      "health": 200,
+      "size": "2x2",
+      "requirements": "Дерево x4"
+    }
+  },
+  {
+    "name": "Ліжко",
+    "englishName": "Bed",
+    "token": "$item_bed",
+    "assetId": "Bed",
+    "type": "Меблі",
+    "description": "Місце відродження. Спати можна лише вночі.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/6/6c/Bed.png",
+    "stats": {
+      "health": 100,
+      "size": "2x3",
+      "requirements": "Дерево x8, Вовняна тканина x4"
+    }
+  },
+  {
+    "name": "Кузня",
+    "englishName": "Forge",
+    "token": "$item_forge",
+    "assetId": "Forge",
+    "type": "Станція",
+    "description": "Потрібна для створення металевої зброї, броні та інструментів.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/1/1f/Forge.png",
+    "stats": {
+      "health": 1000,
+      "size": "2x2",
+      "requirements": "Дерево x4, Камінь x4, Вугілля x4, Мідь x6"
+    }
+  },
+  {
+    "name": "Дубова балка",
+    "englishName": "Core Wood Beam",
+    "token": "$item_core_wood_beam",
+    "assetId": "CoreWoodBeam",
+    "type": "Конструкція",
+    "description": "Міцна балка з дуба. Використовується для високих споруд.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3c/Core_wood_beam.png",
+    "stats": {
+      "health": 500,
+      "size": "2x4",
+      "requirements": "Дуб x2"
+    }
+  }
+]
