@@ -1046,3 +1046,8 @@ main {
         min-width: 100px;
         color: var(--accent-color);
     }
+
+.building-page-title {
+    text-align: center;
+}
+

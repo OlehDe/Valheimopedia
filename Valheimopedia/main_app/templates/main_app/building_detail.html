@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if building %}{{ building.name }}{% else %}Помилка{% endif %} - Valheimopedia</title>
+  <title>{% if building %}{{ building.name }}{% else %}Будівельний елемент{% endif %} - Valheimopedia</title>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/item_detail.css' %}">
+  <link rel="stylesheet" href="{% static 'css/building_detail.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,12 +15,8 @@
 <header>
   <h1 class="category-title">Valheimopedia</h1>
   <div class="auth-buttons">
-    {% if user.is_authenticated %}
-      <a href="/account">Акаунт</a>
-    {% else %}
-      <a href="/login">Увійти</a>
-      <a href="/register">Зареєструватися</a>
-    {% endif %}
+    <a href="/login">Увійти</a>
+    <a href="/register">Зареєструватися</a>
   </div>
 </header>
 
@@ -31,11 +29,7 @@
 <main>
   <a href="{% url 'main_app:building' %}" class="back-link">← Повернутися до списку будівництва</a>
 
-  {% if error %}
-    <div class="error-message">
-      <p>{{ error }}</p>
-    </div>
-  {% elif building %}
+  {% if building %}
     <div class="detail-container">
       <div class="detail-header">
         <div class="detail-text">
@@ -45,7 +39,7 @@
             <p class="english-name">{{ building.englishName }}</p>
           {% endif %}
           <div class="description">
-            <p>{{ building.description }}</p>
+            <p>{{ building.description|default:"Опис відсутній" }}</p>
           </div>
         </div>
         <div class="detail-image-small">
@@ -65,29 +59,125 @@
       </div>
 
       <div class="detail-info">
-        {% if building.stats %}
-          <div class="stats-crafting">
-            <h2>Характеристики</h2>
-            <div class="building-stats">
-              {% if building.stats.health %}
-                <p><strong>Міцність:</strong> <span>{{ building.stats.health }}</span></p>
+        <div class="stats-crafting">
+          <h2>Характеристики</h2>
+          <div class="stats-section">
+            {% if building.stats %}
+              {% for key, value in building.stats.items %}
+                <p><strong>{{ key|capfirst }}:</strong> <span class="stat-value">{{ value }}</span></p>
+              {% endfor %}
+            {% else %}
+              {# Якщо stats відсутні, але є окремі властивості #}
+              {% if building.properties %}
+                {% for key, value in building.properties.items %}
+                  <p><strong>{{ key|capfirst }}:</strong> <span class="stat-value">{{ value }}</span></p>
+                {% endfor %}
               {% endif %}
-              {% if building.stats.size %}
-                <p><strong>Розмір:</strong> <span>{{ building.stats.size }}</span></p>
+            {% endif %}
+
+            {% if building.range %}
+              <p><strong>Радіус дії:</strong> <span class="stat-value">{{ building.range }} метрів</span></p>
+            {% endif %}
+
+            {% if building.requirements %}
+              {% if building.requirements.to_craft %}
+                <p><strong>Ресурси для створення:</strong> <span class="stat-value">{{ building.requirements.to_craft|join:", " }}</span></p>
               {% endif %}
-              {% if building.stats.requirements %}
-                <p><strong>Вимоги для крафту:</strong> <span>{{ building.stats.requirements }}</span></p>
+              {% if building.requirements.to_use %}
+                <p><strong>Вимоги для використання:</strong>
+                  <span class="stat-value">
+                    стіни ({{ building.requirements.to_use.walls }}),
+                    дах ({{ building.requirements.to_use.roof }})
+                  </span>
+                </p>
+              {% endif %}
+            {% endif %}
+          </div>
+
+          {% if building.upgrades %}
+            <div class="stats-section">
+              <h4>Покращення</h4>
+              <ul class="upgrades-list">
+                {% for upgrade in building.upgrades %}
+                  <li>
+                    {% if upgrade.name %}
+                      <strong>{{ upgrade.name }}</strong> — <span class="upgrade-level">Рівень +{{ upgrade.level|default:"1" }}</span>
+                      {% if upgrade.materials %}
+                        <div class="upgrade-materials">
+                          <small>Матеріали:</small>
+                          <ul>
+                            {% for material in upgrade.materials %}
+                              <li>{{ material }}</li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      {% endif %}
+                    {% else %}
+                      {# Якщо upgrades — це просто список рядків (назви покращень) #}
+                      <strong>{{ upgrade }}</strong> — <span class="upgrade-level">Рівень +1</span>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+              {% if building.max_upgrade_level %}
+                <p class="stat-value" style="margin-top: 8px;">Максимальний рівень: {{ building.max_upgrade_level }}</p>
               {% endif %}
             </div>
-          </div>
-        {% endif %}
+          {% endif %}
+        </div>
 
         <div class="tech-info">
           <h4>Технічна інформація</h4>
-          <p><strong>Токен:</strong> <span class="tech-value">{{ building.token }}</span></p>
-          <p><strong>Asset ID:</strong> <span class="tech-value">{{ building.assetId }}</span></p>
+          <p><strong>Токен:</strong> <span class="tech-value">{{ building.token|default:"—" }}</span></p>
+          {% if building.assetId %}
+            <p><strong>Asset ID:</strong> <span class="tech-value">{{ building.assetId }}</span></p>
+          {% endif %}
+          {% if building.id %}
+            <p><strong>ID:</strong> <span class="tech-value">{{ building.id }}</span></p>
+          {% endif %}
         </div>
       </div>
+
+      {# Динамічний блок створюваних предметів #}
+      {% if building.crafted_items %}
+        <div class="crafted-items-section">
+          <h2>Предмети, які можна створити</h2>
+
+          {% regroup building.crafted_items by category as category_list %}
+          {% for category in category_list %}
+            <div class="crafted-category">
+              <h3>{{ category.grouper|default:"Інше" }}</h3>
+              <div class="crafted-items-grid">
+                {% for item in category.list %}
+                  {# Посилання на детальну сторінку предмета (item_detail) #}
+                  {% if item.token %}
+                    <a href="{% url 'main_app:item_detail' item.token %}" class="crafted-item-card">
+                  {% else %}
+                    {# Якщо токена немає, формуємо посилання за назвою (slug) #}
+                    <a href="/item/{{ item.name|slugify }}/" class="crafted-item-card">
+                  {% endif %}
+                    <div class="crafted-item-name">{{ item.name }}</div>
+                    <div class="crafted-item-details">
+                      {% if item.craft %}
+                        <span>🏭 {{ item.craft }}</span>
+                      {% endif %}
+                      {% if item.damage %}
+                        <span>⚔️ {{ item.damage }}</span>
+                      {% endif %}
+                      {% if item.armor %}
+                        <span>🛡️ {{ item.armor }} броні</span>
+                      {% endif %}
+                    </div>
+                    {% if item.token %}
+                      <div class="crafted-item-details" style="font-size:0.7rem; color:#94a3b8;">{{ item.token }}</div>
+                    {% endif %}
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
   {% else %}
     <div class="error-message">

@@ -1,16 +1,62 @@
 [
   {
     "name": "Верстак",
-    "englishName": "Workbench",
-    "token": "$item_workbench",
-    "assetId": "Workbench",
-    "type": "Станція",
-    "description": "Основний робочий стіл для створення інструментів, зброї та будівельних елементів. Потрібен для більшості крафту.",
-    "image_url": "https://static.wikia.nocookie.net/valheim/images/5/5c/Workbench.png",
+    "token": "$piece_workbench",
+    "type": "Ремесло",
+    "description": "Робоче місце...",
+    "properties": {
+      "durability": 200,
+      "size": "3x2"
+    },
+    "range": 10,
+    "requirements": {
+      "to_craft": ["10 деревини"],
+      "to_use": {
+        "walls": "принаймні 70%",
+        "roof": "дах згори"
+      }
+    },
+    "upgrades": ["Пеньок для рубання", "Дубильний станок"],
+    "crafted_items": [
+      {
+        "category": "Знаряддя",
+        "name": "Молот",
+        "token": "$item_hammer",
+        "damage": "20 (Дроб.)"
+      },
+      {
+        "category": "Знаряддя",
+        "name": "Рогове кайло",
+        "token": "$item_pickaxe_antler"
+      }
+    ]
+  },
+  {
+    "name": "Дерев'яна стіна",
+    "englishName": "Wood Wall",
+    "token": "$item_wood_wall",
+    "assetId": "WoodWall",
+    "type": "Стіна",
+    "description": "Базова дерев'яна стіна. Забезпечує захист від ворогів і погоди.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/8/87/Wood_wall.png",
     "stats": {
-      "health": 500,
+      "health": 300,
       "size": "2x2",
-      "requirements": "Дерево x10"
+      "requirements": "Дерево x2"
+    }
+  },
+  {
+    "name": "Дерев'яний дах",
+    "englishName": "Wood Roof",
+    "token": "$item_wood_roof",
+    "assetId": "WoodRoof",
+    "type": "Дах",
+    "description": "Стандартний дах, захищає від дощу і снігу.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/0/04/Thatch_roof.png",
+    "stats": {
+      "health": 200,
+      "size": "2x2",
+      "requirements": "Дерево x4"
     }
   },
   {

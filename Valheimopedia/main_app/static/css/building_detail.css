@@ -1,0 +1,270 @@
+/* Стилі для детальної сторінки будівництва – темний фон з розмиттям */
+.building-detail-container {
+    background: rgba(30, 41, 59, 0.85); /* темний напівпрозорий фон */
+    backdrop-filter: blur(8px);          /* розмиття заднього плану, як на фото */
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.building-header {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.building-image-wrapper {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+}
+
+.building-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.building-info {
+    flex: 2;
+    padding-left: 2.5rem;
+}
+
+.building-info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.building-type-badge {
+    display: inline-block;
+    background: var(--gradient);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.building-english-name {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.building-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--accent-color);
+}
+
+.building-stats-section {
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.building-stats-section h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.building-stats {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.building-stats p {
+    margin: 0.75rem 0;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.building-stats strong {
+    min-width: 130px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.building-tech-info {
+    padding: 2rem 2.5rem;
+}
+
+.building-tech-info h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--accent-color);
+    display: inline-block;
+}
+
+.building-tech-info p {
+    margin: 0.5rem 0;
+    color: var(--text-light);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+}
+
+.tech-value {
+    font-family: monospace;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #ffd966;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .building-header {
+        flex-direction: column;
+    }
+
+    .building-info {
+        padding-left: 0;
+        padding-top: 1.5rem;
+    }
+
+    .building-stats-section,
+    .building-tech-info {
+        padding: 1.5rem;
+    }
+
+    .building-info h1 {
+        font-size: 2rem;
+    }
+
+    .building-stats p {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .building-stats strong {
+        min-width: auto;
+    }
+}
+
+/* Стилі для списку покращень */
+.upgrades-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.upgrades-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--theme-border-primary);
+    color: var(--theme-text-secondary);
+}
+
+.upgrades-list li:last-child {
+    border-bottom: none;
+}
+
+.upgrade-level {
+    color: var(--theme-text-link);
+    font-weight: 500;
+}
+
+.upgrade-materials {
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 0.9em;
+}
+
+.upgrade-materials ul {
+    margin: 3px 0 0 20px;
+}
+
+/* Стилі для списку покращень */
+.crafted-items-section {
+    margin-top: 32px;
+    border-top: 1px solid var(--border-color, #e2e8f0);
+    padding-top: 24px;
+}
+.crafted-items-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary, #1e293b);
+}
+.crafted-category {
+    margin-bottom: 24px;
+}
+.crafted-category h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--accent-color, #f59e0b);
+    display: inline-block;
+}
+.crafted-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+.crafted-item-card {
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 12px;
+    padding: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.crafted-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.crafted-item-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #ffffff;
+}
+.crafted-item-details {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #64748b);
+}
+.crafted-item-details span {
+    display: inline-block;
+    margin-right: 8px;
+}
+.no-items {
+    color: var(--text-secondary, #64748b);
+    font-style: italic;

@@ -1,39 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Отримуємо елементи
     const mainContainer = document.getElementById('items-grid');
     const filterContainer = document.getElementById('category-filters');
     const itemsDataElement = document.getElementById('building-data');
     const searchInput = document.getElementById('search-input');
     const sortSelect = document.getElementById('sort-select');
 
+    // Перевіряємо наявність
     if (!mainContainer || !filterContainer || !itemsDataElement) {
-        console.error('Потрібні елементи DOM не знайдено');
+        console.error('Не знайдено необхідні елементи');
         return;
     }
 
+    // Завантажуємо дані
     let buildingItems;
     try {
         buildingItems = JSON.parse(itemsDataElement.textContent);
-        if (!Array.isArray(buildingItems)) {
-            throw new Error('Дані мають бути масивом');
-        }
-        console.log('Завантажені дані:', buildingItems);
+        if (!Array.isArray(buildingItems)) throw new Error('Дані не масив');
+        console.log('Завантажено предметів:', buildingItems.length);
     } catch (e) {
-        console.error('Помилка парсингу building-data:', e);
         mainContainer.innerHTML = '<p class="empty-message">Помилка завантаження даних</p>';
         return;
     }
 
-    // Збір унікальних типів для фільтрів
+    // Збираємо унікальні типи для фільтрів (крім "Всі")
     const typesSet = new Set();
     buildingItems.forEach(item => {
         if (item.type) typesSet.add(item.type);
     });
     const uniqueTypes = Array.from(typesSet).sort();
 
-    // Додаємо кнопки фільтрів
+    // Додаємо кнопки типів у контейнер фільтрів
     uniqueTypes.forEach(type => {
         const btn = document.createElement('button');
-        btn.type = 'button';
         btn.textContent = type;
         btn.dataset.category = type;
         filterContainer.appendChild(btn);
@@ -44,61 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let searchTerm = '';
     let sortOrder = 'name-asc';
 
-    // Функції фільтрації, сортування, рендеру (аналогічно all_items.js)
-    function filterItems() {
-        return buildingItems.filter(item => {
-            if (currentCategory !== 'Всі' && item.type !== currentCategory) return false;
-            const name = (item.name || '').toLowerCase();
-            const engName = (item.englishName || '').toLowerCase();
-            const search = searchTerm.toLowerCase();
-            return name.includes(search) || engName.includes(search);
-        });
-    }
-
-    function sortItems(items) {
-        const sorted = [...items];
-        if (sortOrder === 'name-asc') {
-            sorted.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'uk'));
-        } else if (sortOrder === 'name-desc') {
-            sorted.sort((a, b) => (b.name || '').localeCompare(a.name || '', 'uk'));
-        }
-        return sorted;
-    }
-
-    function renderItems(items) {
-        mainContainer.innerHTML = '';
-        mainContainer.className = 'items-grid';
-        if (!items.length) {
-            mainContainer.innerHTML = '<p class="empty-message">Нічого не знайдено 😢</p>';
-            return;
-        }
-
-        items.forEach(item => {
-            const card = document.createElement('a');
-            const id = item.token || item.assetId;
-            if (!id) return;
-            card.href = `/item/${id}/`;
-            card.className = 'item-card item-card-link';
-            const name = item.name || 'Без назви';
-            const englishName = item.englishName || '';
-            const type = item.type || '—';
-            const imageUrl = item.image_url || '';
-            let html = `<div class="item-image-container">`;
-            if (imageUrl) {
-                html += `<img src="${imageUrl}" alt="${name}" class="item-image" loading="lazy">`;
-            } else {
-                html += `<div class="item-image-placeholder">🏗️</div>`;
-            }
-            html += `</div><div class="item-info"><h3>${escapeHtml(name)}</h3>`;
-            if (englishName && englishName.trim() !== name) {
-                html += `<p><strong>Англ.:</strong> ${escapeHtml(englishName.trim())}</p>`;
-            }
-            html += `<div class="item-type-badge">${escapeHtml(type)}</div></div>`;
-            card.innerHTML = html;
-            mainContainer.appendChild(card);
-        });
-    }
-
+    // Екранування HTML
     function escapeHtml(str) {
         if (!str) return '';
         return str
@@ -109,42 +54,78 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace(/'/g, '&#39;');
     }
 
-    function refreshDisplay() {
-        const filtered = filterItems();
-        const sorted = sortItems(filtered);
-        renderItems(sorted);
+    // Фільтрація та сортування
+    function filterAndSort() {
+        let filtered = buildingItems.filter(item => {
+            if (currentCategory !== 'Всі' && item.type !== currentCategory) return false;
+            const name = (item.name || '').toLowerCase();
+            const engName = (item.englishName || '').toLowerCase();
+            const search = searchTerm.toLowerCase();
+            return name.includes(search) || engName.includes(search);
+        });
+        if (sortOrder === 'name-asc') {
+            filtered.sort((a, b) => (a.name || '').localeCompare(b.name || '', 'uk'));
+        } else {
+            filtered.sort((a, b) => (b.name || '').localeCompare(a.name || '', 'uk'));
+        }
+        return filtered;
     }
 
-    // Обробники подій
+    // Рендеринг
+    function render(items) {
+        mainContainer.innerHTML = '';
+        mainContainer.className = 'items-grid';
+        if (!items.length) {
+            mainContainer.innerHTML = '<p class="empty-message">Нічого не знайдено 😢</p>';
+            return;
+        }
+        items.forEach(item => {
+            const card = document.createElement('a');
+            card.href = `/building/${item.token}/`;
+            card.className = 'item-card item-card-link';
+            card.innerHTML = `
+                <div class="item-image-container">
+                    ${item.image_url ? `<img src="${item.image_url}" alt="${item.name}" class="item-image" loading="lazy">` : '<div class="item-image-placeholder">🏗️</div>'}
+                </div>
+                <div class="item-info">
+                    <h3>${escapeHtml(item.name)}</h3>
+                    ${item.englishName && item.englishName !== item.name ? `<p><strong>Англ.:</strong> ${escapeHtml(item.englishName)}</p>` : ''}
+                    <div class="item-type-badge">${escapeHtml(item.type)}</div>
+                </div>
+            `;
+            mainContainer.appendChild(card);
+        });
+    }
+
+    function refresh() {
+        render(filterAndSort());
+    }
+
+    // --- Обробники подій ---
     const allFilterButtons = filterContainer.querySelectorAll('button');
     allFilterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             allFilterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentCategory = btn.dataset.category;
-            refreshDisplay();
+            refresh();
         });
     });
 
     if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
+        searchInput.addEventListener('input', e => {
             searchTerm = e.target.value;
-            refreshDisplay();
+            refresh();
         });
     }
 
     if (sortSelect) {
-        sortSelect.addEventListener('change', (e) => {
+        sortSelect.addEventListener('change', e => {
             sortOrder = e.target.value;
-            refreshDisplay();
+            refresh();
         });
     }
 
-    // Ініціалізація
-    const firstFilter = document.querySelector('.category-filters button');
-    if (firstFilter) {
-        firstFilter.classList.add('active');
-        currentCategory = firstFilter.dataset.category;
-    }
-    refreshDisplay();
+    // Початковий рендеринг
+    refresh();
 });

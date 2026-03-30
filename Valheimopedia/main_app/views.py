@@ -75,6 +75,7 @@ def building_detail_view(request, building_token):
 def building_view(request):
     all_data = load_all_items_data()
     building_items = all_data.get('Будівництво', [])
+    print("Кількість будівельних предметів:", len(building_items))  # для перевірки
     return render(request, 'main_app/building.html', {'building_items': building_items})
 
 def biome_detail_view(request, biome_slug):
