@@ -129,3 +129,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // Початковий рендеринг
     refresh();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const mainContainer = document.getElementById('items-grid');
+    const itemsDataElement = document.getElementById('building-data');
+
+    if (!mainContainer || !itemsDataElement) {
+        console.error('Елементи не знайдено');
+        return;
+    }
+
+    let buildingItems;
+    try {
+        buildingItems = JSON.parse(itemsDataElement.textContent);
+        if (!Array.isArray(buildingItems)) throw new Error('Дані не масив');
+        console.log('Завантажено предметів:', buildingItems.length);
+    } catch (e) {
+        mainContainer.innerHTML = '<p class="empty-message">Помилка завантаження даних</p>';
+        return;
+    }
+
+    // Спрощене відображення без фільтрів
+    function render() {
+        mainContainer.innerHTML = '';
+        buildingItems.forEach(item => {
+            const card = document.createElement('a');
+            card.href = `/building/${item.token}/`;
+            card.className = 'item-card item-card-link';
+            card.innerHTML = `
+                <div class="item-image-container">
+                    ${item.image_url ? `<img src="${item.image_url}" alt="${item.name}" class="item-image">` : '<div class="item-image-placeholder">🏗️</div>'}
+                </div>
+                <div class="item-info">
+                    <h3>${item.name}</h3>
+                    <div class="item-type-badge">${item.type}</div>
+                </div>
+            `;
+            mainContainer.appendChild(card);
+        });
+    }
+
+    render();
+});
