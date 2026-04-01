@@ -67,10 +67,30 @@ def building_detail_view(request, building_token):
     else:
         error_message = None
 
+    # Збираємо зображення для предметів у crafted_items
+    item_images = {}
+    if building and building.get('crafted_items'):
+        for crafted in building['crafted_items']:
+            token = crafted.get('token')
+            if token and token not in item_images:
+                found_item = find_item_in_data(all_data, token)
+                if found_item and found_item.get('image_url'):
+                    item_images[token] = found_item['image_url']
+
     return render(request, 'main_app/building_detail.html', {
         'building': building,
-        'error': error_message
+        'error': error_message,
+        'item_images': item_images,          # <-- додано
     })
+
+from django import template
+
+register = template.Library()
+
+@register.filter
+def get_item(dictionary, key):
+    """Повертає значення словника за ключем або None, якщо ключ відсутній."""
+    return dictionary.get(key)
 
 def building_view(request):
     all_data = load_all_items_data()

@@ -217,14 +217,17 @@
     border-top: 1px solid var(--border-color, #e2e8f0);
     padding-top: 24px;
 }
+
 .crafted-items-section h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-primary, #1e293b);
 }
+
 .crafted-category {
     margin-bottom: 24px;
 }
+
 .crafted-category h3 {
     font-size: 1.25rem;
     margin-bottom: 12px;
@@ -232,11 +235,13 @@
     border-bottom: 2px solid var(--accent-color, #f59e0b);
     display: inline-block;
 }
+
 .crafted-items-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Збільшено ширину для зображення */
     gap: 16px;
 }
+
 .crafted-item-card {
     background: var(--card-bg, #ffffff);
     border: 1px solid var(--border-color, #e2e8f0);
@@ -245,26 +250,72 @@
     transition: transform 0.2s, box-shadow 0.2s;
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
+
 .crafted-item-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+/* Стилі для зображення предмета */
+.crafted-item-image {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.crafted-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.crafted-item-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+}
+
+.crafted-item-info {
+    flex: 1;
+}
+
 .crafted-item-name {
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 4px;
     color: #ffffff;
 }
+
 .crafted-item-details {
     font-size: 0.85rem;
     color: var(--text-secondary, #64748b);
 }
+
 .crafted-item-details span {
     display: inline-block;
     margin-right: 8px;
 }
+
+.crafted-item-token {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
 .no-items {
     color: var(--text-secondary, #64748b);
     font-style: italic;
+}

@@ -28,6 +28,206 @@
         "category": "Знаряддя",
         "name": "Рогове кайло",
         "token": "$item_pickaxe_antler"
+      },
+            {
+        "category": "Знаряддя",
+        "name": "Молот",
+        "token": "$item_hammer",
+        "damage": "20 (Дроб.)"
+      },
+      {
+        "category": "Знаряддя",
+        "name": "Рогове кайло",
+        "token": "$item_pickaxe_antler"
+      },
+      {
+        "category": "Знаряддя",
+        "name": "Мотика",
+        "token": "$item_cultivator"
+      },
+      {
+        "category": "Знаряддя",
+        "name": "Кам’яна сокира",
+        "token": "$item_axe_stone",
+        "damage": "20 (Зріз.)"
+      },
+      {
+        "category": "Знаряддя",
+        "name": "Глибинний гарпун"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Ряднинна туніка",
+        "token": "$item_chest_rags"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Ряднинні штани",
+        "token": "$item_legs_rags"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Накидка з оленячої шкури",
+        "token": "$item_cape_deerhide"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Шкіряний шолом",
+        "token": "$item_helmet_leather",
+        "armor": "2/4/6/8"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Шкіряні штани",
+        "token": "$item_legs_leather"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Шкіряна туніка",
+        "token": "$item_chest_leather"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Накидка зі шкури троля",
+        "token": "$item_cape_trollhide"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Каптур зі шкури троля",
+        "token": "$item_helmet_trollleather",
+        "armor": "6/8/10/12"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Штани зі шкури троля",
+        "token": "$item_legs_trollleather"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Туніка зі шкури троля",
+        "token": "$item_chest_trollleather"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Накидка з вовчої шкури",
+        "token": "$item_cape_wolf"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Накидка зі шкури бикоящура",
+        "token": "$item_cape_lox"
+      },
+      {
+        "category": "Обладунки",
+        "name": "Лляна накидка",
+        "token": "$item_cape_linen"
+      },
+      {
+        "category": "Зброя",
+        "name": "Палиця",
+        "token": "$item_club",
+        "damage": "15 (Дроб.)"
+      },
+      {
+        "category": "Зброя",
+        "name": "Крем’яний ніж",
+        "token": "$item_knife_flint",
+        "damage": "12 (Зріз.)"
+      },
+      {
+        "category": "Зброя",
+        "name": "Крем’яний спис"
+      },
+      {
+        "category": "Зброя",
+        "name": "Грубий лук",
+        "token": "$item_bow",
+        "damage": "15 (Колота)"
+      },
+      {
+        "category": "Зброя",
+        "name": "Якісний лук",
+        "token": "$item_bow_finewood",
+        "damage": "22 (Колота)"
+      },
+      {
+        "category": "Зброя",
+        "name": "Глибинне лезо"
+      },
+      {
+        "category": "Зброя",
+        "name": "Оленебій",
+        "token": "$item_sledge_stagbreaker",
+        "damage": "20 (Дроб.) + Шкода по площі"
+      },
+      {
+        "category": "Щити",
+        "name": "Дерев’яний щит"
+      },
+      {
+        "category": "Щити",
+        "name": "Дерев’яний баштовий щит"
+      },
+      {
+        "category": "Стріли",
+        "name": "Дерев’яна стріла"
+      },
+      {
+        "category": "Стріли",
+        "name": "Крем’яна стріла"
+      },
+      {
+        "category": "Стріли",
+        "name": "Вогняна стріла"
+      },
+      {
+        "category": "Стріли",
+        "name": "Отруєна стріла",
+        "token": "$item_arrow_poison",
+        "damage": "26 (Отрута)"
+      },
+      {
+        "category": "Стріли",
+        "name": "Обсидіанова стріла",
+        "token": "$item_arrow_obsidian",
+        "damage": "27 (Колота)"
+      },
+      {
+        "category": "Стріли",
+        "name": "Морозна стріла",
+        "token": "$item_arrow_frost",
+        "damage": "26 (Мороз)"
+      },
+      {
+        "category": "Стріли",
+        "name": "Голкова стріла",
+        "token": "$item_arrow_needle",
+        "damage": "62 (Колота)"
+      },
+      {
+        "category": "Інше",
+        "name": "Кухоль"
+      },
+      {
+        "category": "Інше",
+        "name": "Багниста бомба"
+      },
+      {
+        "category": "Інше",
+        "name": "Смолоскип"
+      },
+      {
+        "category": "Завантажуваний вміст",
+        "name": "Накидка Одіна",
+        "token": "$item_cape_odin"
+      },
+      {
+        "category": "Завантажуваний вміст",
+        "name": "Каптур Одіна"
+      },
+      {
+        "category": "Завантажуваний вміст",
+        "name": "Медовий ріг Одіна"
       }
     ]
   },
