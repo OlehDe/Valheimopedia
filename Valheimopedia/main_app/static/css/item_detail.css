@@ -127,7 +127,7 @@
 /* Права колонка (Інформація) - тепер всередині detail-main-content */
 .detail-info {
     flex: 2; /* Інформація займатиме 2 частки */
-    padding: 2.5rem 3rem;
+    padding: 1rem 3rem;
     /* Прибираємо border-top звідси, оскільки detail-main-content має спільну нижню межу */
     border-top: none;
     margin-top: 0;

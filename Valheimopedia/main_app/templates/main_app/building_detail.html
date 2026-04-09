@@ -139,7 +139,8 @@
 
       {# Динамічний блок створюваних предметів #}
       {% if building.crafted_items %}
-        <div class="crafted-items-section">
+        <div class="detail-info">
+            <div class="stats-crafting">
           <h2>Предмети, які можна створити</h2>
 
           {% regroup building.crafted_items by category as category_list %}
@@ -190,6 +191,7 @@
               </div>
             </div>
           {% endfor %}
+        </div>
         </div>
       {% endif %}
     </div>

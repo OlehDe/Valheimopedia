@@ -1,7 +1,7 @@
 /* Стилі для детальної сторінки будівництва – темний фон з розмиттям */
 .building-detail-container {
-    background: rgba(30, 41, 59, 0.85); /* темний напівпрозорий фон */
-    backdrop-filter: blur(8px);          /* розмиття заднього плану, як на фото */
+    background: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(8px);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -149,36 +149,6 @@
     color: #ffd966;
 }
 
-/* Адаптивність */
-@media (max-width: 768px) {
-    .building-header {
-        flex-direction: column;
-    }
-
-    .building-info {
-        padding-left: 0;
-        padding-top: 1.5rem;
-    }
-
-    .building-stats-section,
-    .building-tech-info {
-        padding: 1.5rem;
-    }
-
-    .building-info h1 {
-        font-size: 2rem;
-    }
-
-    .building-stats p {
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-
-    .building-stats strong {
-        min-width: auto;
-    }
-}
-
 /* Стилі для списку покращень */
 .upgrades-list {
     list-style: none;
@@ -213,15 +183,14 @@
 
 /* Стилі для списку покращень */
 .crafted-items-section {
-    margin-top: 32px;
-    border-top: 1px solid var(--border-color, #e2e8f0);
-    padding-top: 24px;
+    padding: 2.5rem 3rem;
+    border-radius: var(--radius-sm);
 }
 
 .crafted-items-section h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--text-primary, #1e293b);
+    color: var(#ffffff);
 }
 
 .crafted-category {
@@ -236,15 +205,19 @@
     display: inline-block;
 }
 
+/* ОСНОВНЕ ВИПРАВЛЕННЯ - додано padding для сітки */
 .crafted-items-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Збільшено ширину для зображення */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
+    padding: 20px 0px 20px 0px;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: var(--radius-sm);
 }
 
 .crafted-item-card {
-    background: var(--card-bg, #ffffff);
-    border: 1px solid var(--border-color, #e2e8f0);
+    background: var(--card-bg, #1e293b);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 12px;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -257,15 +230,15 @@
 
 .crafted-item-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: var(--card-hover, #334155);
 }
 
-/* Стилі для зображення предмета */
 .crafted-item-image {
     flex-shrink: 0;
     width: 48px;
     height: 48px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -301,7 +274,7 @@
 
 .crafted-item-details {
     font-size: 0.85rem;
-    color: var(--text-secondary, #64748b);
+    color: var(--text-secondary, #94a3b8);
 }
 
 .crafted-item-details span {
@@ -311,11 +284,58 @@
 
 .crafted-item-token {
     font-size: 0.7rem;
-    color: #94a3b8;
+    color: #64748b;
     margin-top: 4px;
 }
 
 .no-items {
     color: var(--text-secondary, #64748b);
     font-style: italic;
+}
+
+/* Додаткові стилі для сторінки building.html */
+#items-grid.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: var(--radius);
+    margin-top: 20px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .building-header {
+        flex-direction: column;
+    }
+
+    .building-info {
+        padding-left: 0;
+        padding-top: 1.5rem;
+    }
+
+    .building-stats-section,
+    .building-tech-info {
+        padding: 1.5rem;
+    }
+
+    .building-info h1 {
+        font-size: 2rem;
+    }
+
+    .building-stats p {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .building-stats strong {
+        min-width: auto;
+    }
+
+    .crafted-items-grid,
+    #items-grid.items-grid {
+        padding: 12px;
+        gap: 12px;
+    }
 }
