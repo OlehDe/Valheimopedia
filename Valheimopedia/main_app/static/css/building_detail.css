@@ -293,17 +293,6 @@
     font-style: italic;
 }
 
-/* Додаткові стилі для сторінки building.html */
-#items-grid.items-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    background: rgba(30, 41, 59, 0.4);
-    border-radius: var(--radius);
-    margin-top: 20px;
-}
-
 /* Адаптивність */
 @media (max-width: 768px) {
     .building-header {

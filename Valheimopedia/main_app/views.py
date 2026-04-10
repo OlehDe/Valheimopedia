@@ -289,23 +289,21 @@ def set_detail_view(request, set_slug):
 # -----------------------------------------------------------------
 def home(request):
     """
-    Головна сторінка з інформацією про гру Valheim
+    Головна сторінка з інформацією про гру Valheim та біомами
     """
-    # Завантаження даних про гру з JSON файлу
+    # 1. Завантаження основної інформації про гру
     valheim_info_path = settings.BASE_DIR / 'data' / 'valheim_info.json'
-
     try:
         with open(valheim_info_path, 'r', encoding='utf-8') as f:
             valheim_info = json.load(f)
     except FileNotFoundError:
-        # Якщо файл не знайдено, створюємо базову структуру
         valheim_info = {
             "title": "Про гру Valheim",
             "sections": [
                 {
                     "title": "Ласкаво просимо до Valheimopedia!",
                     "type": "paragraph",
-                    "content": "Тут ви знайдете всю необхідну інформацію про гру Valheim: предмети, рецепти, босів, біоми та багато іншого."
+                    "content": "Тут ви знайдете всю необхідну інформацію про гру Valheim."
                 }
             ]
         }
@@ -321,15 +319,39 @@ def home(request):
             ]
         }
 
-    # Отримання останніх новин (якщо у вас є модель News)
-    # news_list = News.objects.all().order_by('-created_at')[:5]
-    news_list = []  # Поки що пустий список
+    # 2. Завантаження біомів з biomes.json
+    biomes_path = settings.BASE_DIR / 'data' / 'biomes.json'
+    biomes = []
+    try:
+        with open(biomes_path, 'r', encoding='utf-8') as f:
+            biomes = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        biomes = []
+
+    # 3. Додаємо біоми до секції типу "grid" (або створюємо нову секцію)
+    grid_section_found = False
+    for section in valheim_info.get('sections', []):
+        if section.get('type') == 'grid':
+            # Замінюємо items біомами (з усіма полями: name, slug, image_url, description)
+            section['items'] = biomes
+            grid_section_found = True
+            break
+
+    # Якщо секції grid немає – створюємо її вручну
+    if not grid_section_found and biomes:
+        valheim_info.setdefault('sections', []).append({
+            'title': 'Біоми світу Valheim',
+            'type': 'grid',
+            'items': biomes
+        })
+
+    # 4. Останні новини (якщо є модель)
+    news_list = []  # поки що пустий
 
     return render(request, 'main_app/home.html', {
         'valheim_info': valheim_info,
         'news_list': news_list
     })
-
 
 def register_view(request):
     if request.method == 'POST':

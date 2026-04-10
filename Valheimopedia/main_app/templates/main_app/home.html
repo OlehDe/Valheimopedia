@@ -68,7 +68,13 @@
               {% for item in section.items %}
                 <a href="{% url 'main_app:biome_detail' item.slug %}" class="biome-card-link">
                   <div class="biome-card">
-                    <h4>{{ item.title }}</h4>
+                    {# ТУТ ВИКОРИСТОВУЄМО item.name #}
+                    {% if item.image_url %}
+                      <img src="{{ item.image_url }}" alt="{{ item.name }}" class="biome-image" loading="lazy">
+                    {% else %}
+                      <div class="biome-image-placeholder">Немає фото</div>
+                    {% endif %}
+                    <h4>{{ item.name }}</h4>
                     <p>{{ item.description }}</p>
                   </div>
                 </a>
@@ -107,6 +113,7 @@
                 </a>
               {% endfor %}
             </div>
+
           {% elif section.type == "table" %}
             <table class="info-table">
               <thead>
