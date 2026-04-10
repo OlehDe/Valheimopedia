@@ -1,36 +1,172 @@
 [
-  {
-    "name": "Верстак",
-    "token": "$piece_workbench",
-    "type": "Ремесло",
-    "description": "Робоче місце...",
-    "properties": {
-      "durability": 200,
-      "size": "3x2"
-    },
-    "range": 10,
-    "requirements": {
-      "to_craft": ["10 деревини"],
-      "to_use": {
-        "walls": "принаймні 70%",
-        "roof": "дах згори"
-      }
-    },
-    "upgrades": ["Пеньок для рубання", "Дубильний станок"],
-    "crafted_items": [
-      {
-        "category": "Знаряддя",
-        "name": "Молот",
-        "token": "$item_hammer",
-        "damage": "20 (Дроб.)"
+    {
+      "name": "Верстак",
+      "token": "$piece_workbench",
+      "type": "Ремесло",
+      "description": "Робоче місце для створення предметів та будівництва. Потребує даху та стін для роботи.",
+      "properties": {
+        "durability": 200,
+        "size": "3x2"
       },
-      {
-        "category": "Знаряддя",
-        "name": "Рогове кайло",
-        "token": "$item_pickaxe_antler"
+      "range": 10,
+      "requirements": {
+        "to_craft": ["10 деревини"],
+        "to_use": {
+          "walls": "принаймні 70%",
+          "roof": "дах згори"
+        }
+      },
+      "upgrades": ["Пеньок для рубання", "Дубильний станок", "Тесло", "Поличка для знаряддя"],
+      "max_upgrade_level": 5,
+      "crafted_items": [
+        {
+          "category": "Знаряддя",
+          "items": [
+            { "name": "Молот", "token": "$item_hammer" },
+            { "name": "Рогове кайло", "token": "$item_pickaxe_antler" },
+            { "name": "Мотика", "token": "$item_мотика" },
+            { "name": "Кам’яна сокира", "token": "$item_кам’яна_сокира" },
+            { "name": "Глибинний гарпун", "token": "$item_глибинний_гарпун" }
+          ]
+        },
+        {
+          "category": "Обладунки",
+          "items": [
+            { "name": "Ряднинна туніка", "token": "$item_ряднинна_туніка" },
+            { "name": "Ряднинні штани", "token": "$item_ряднинні_штани" },
+            { "name": "Накидка з оленячої шкури", "token": "$item_накидка_з_оленячої_шкури" },
+            { "name": "Шкіряний шолом", "token": "$item_шкіряний_шолом" },
+            { "name": "Шкіряні штани", "token": "$item_шкіряні_штани" },
+            { "name": "Шкіряна туніка", "token": "$item_шкіряна_туніка" },
+            { "name": "Накидка зі шкури троля", "token": "$item_накидка_зі_шкури_троля" },
+            { "name": "Каптур зі шкури троля", "token": "$item_каптур_зі_шкури_троля" },
+            { "name": "Штани зі шкури троля", "token": "$item_штани_зі_шкури_троля" },
+            { "name": "Туніка зі шкури троля", "token": "$item_туніка_зі_шкури_троля" },
+            { "name": "Накидка з вовчої шкури", "token": "$item_накидка_з_вовчої_шкури" },
+            { "name": "Накидка зі шкури бикоящура", "token": "$item_накидка_зі_шкури_бикоящура" },
+            { "name": "Лляна накидка", "token": "$item_лляна_накидка" }
+          ]
+        },
+        {
+          "category": "Зброя",
+          "items": [
+            { "name": "Палиця", "token": "$item_палиця" },
+            { "name": "Крем’яний ніж", "token": "$item_крем’яний_ніж" },
+            { "name": "Крем’яний спис", "token": "$item_крем’яний_спис" },
+            { "name": "Грубий лук", "token": "$item_грубий_лук" },
+            { "name": "Якісний лук", "token": "$item_якісний_лук" },
+            { "name": "Глибинне лезо", "token": "$item_глибинне_лезо" },
+            { "name": "Оленебій", "token": "$item_оленебій" }
+          ]
+        },
+        {
+          "category": "Щити",
+          "items": [
+            { "name": "Дерев’яний щит", "token": "$item_дерев’яний_щит" },
+            { "name": "Дерев’яний баштовий щит", "token": "$item_дерев’яний_баштовий_щит" }
+          ]
+        },
+        {
+          "category": "Стріли",
+          "items": [
+            { "name": "Дерев’яна стріла", "token": "$item_дерев’яна_стріла" },
+            { "name": "Крем’яна стріла", "token": "$item_крем’яна_стріла" },
+            { "name": "Вогняна стріла", "token": "$item_вогняна_стріла" },
+            { "name": "Отруєна стріла", "token": "$item_отруєна_стріла" },
+            { "name": "Обсидіанова стріла", "token": "$item_обсидіанова_стріла" },
+            { "name": "Морозна стріла", "token": "$item_морозна_стріла" },
+            { "name": "Голкова стріла", "token": "$item_голкова_стріла" }
+          ]
+        },
+        {
+          "category": "Інше",
+          "items": [
+            { "name": "Кухоль", "token": "$item_кухоль" },
+            { "name": "Багниста бомба", "token": "$item_багниста_бомба" },
+            { "name": "Смолоскип", "token": "$item_смолоскип" }
+          ]
+        },
+        {
+          "category": "Завантажуваний вміст",
+          "items": [
+            { "name": "Накидка Одіна", "token": "$item_накидка_одіна" },
+            { "name": "Каптур Одіна", "token": "$item_каптур_одіна" },
+            { "name": "Медовий ріг Одіна", "token": "$item_медовий_ріг_одіна" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Дерев'яна стіна",
+      "englishName": "Wood Wall",
+      "token": "$item_wood_wall",
+      "assetId": "WoodWall",
+      "type": "Стіна",
+      "description": "Базова дерев'яна стіна. Забезпечує захист від ворогів і погоди.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/8/87/Wood_wall.png",
+      "stats": {
+        "health": 300,
+        "size": "2x2",
+        "requirements": "Дерево x2"
       }
-    ]
-  },
+    },
+    {
+      "name": "Дерев'яний дах",
+      "englishName": "Wood Roof",
+      "token": "$item_wood_roof",
+      "assetId": "WoodRoof",
+      "type": "Дах",
+      "description": "Стандартний дах, захищає від дощу і снігу.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/0/04/Thatch_roof.png",
+      "stats": {
+        "health": 200,
+        "size": "2x2",
+        "requirements": "Дерево x4"
+      }
+    },
+    {
+      "name": "Ліжко",
+      "englishName": "Bed",
+      "token": "$item_bed",
+      "assetId": "Bed",
+      "type": "Меблі",
+      "description": "Місце відродження. Спати можна лише вночі.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/6/6c/Bed.png",
+      "stats": {
+        "health": 100,
+        "size": "2x3",
+        "requirements": "Дерево x8, Вовняна тканина x4"
+      }
+    },
+    {
+      "name": "Кузня",
+      "englishName": "Forge",
+      "token": "$item_forge",
+      "assetId": "Forge",
+      "type": "Станція",
+      "description": "Потрібна для створення металевої зброї, броні та інструментів.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/1/1f/Forge.png",
+      "stats": {
+        "health": 1000,
+        "size": "2x2",
+        "requirements": "Дерево x4, Камінь x4, Вугілля x4, Мідь x6"
+      }
+    },
+    {
+      "name": "Дубова балка",
+      "englishName": "Core Wood Beam",
+      "token": "$item_core_wood_beam",
+      "assetId": "CoreWoodBeam",
+      "type": "Конструкція",
+      "description": "Міцна балка з дуба. Використовується для високих споруд.",
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/3/3c/Core_wood_beam.png",
+      "stats": {
+        "health": 500,
+        "size": "2x4",
+        "requirements": "Дуб x2"
+      }
+    },
+
   {
     "name": "Дерев'яна стіна",
     "englishName": "Wood Wall",
