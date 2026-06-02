@@ -68,7 +68,6 @@
               {% for item in section.items %}
                 <a href="{% url 'main_app:biome_detail' item.slug %}" class="biome-card-link">
                   <div class="biome-card">
-                    {# ТУТ ВИКОРИСТОВУЄМО item.name #}
                     {% if item.image_url %}
                       <img src="{{ item.image_url }}" alt="{{ item.name }}" class="biome-image" loading="lazy">
                     {% else %}
@@ -84,7 +83,8 @@
           {% elif section.type == "boss_cards" %}
             <div class="boss-grid">
               {% for boss in section.bosses %}
-                <a href="{% url 'main_app:item_detail' boss.token %}" class="boss-card-link">
+                {# ВИПРАВЛЕНО: назва маршруту з bosses_detail на boss_detail #}
+                <a href="{% url 'main_app:boss_detail' boss.token %}" class="boss-card-link">
                   <div class="boss-card">
                     <div class="boss-icon">
                       {% if boss.image_url %}
@@ -139,30 +139,6 @@
     </div>
   </section>
 
-  <section id="latest-news">
-    <h2>Останні новини</h2>
-    <div id="newsContainer">
-      {% for item in news_list %}
-        <div class="news">
-          <h3>{{ item.title }}</h3>
-          <div class="news-meta">
-            <span>Опубліковано: {{ item.created_at|date:"d.m.Y H:i" }}</span>
-            <span>|</span>
-            <span>Автор: <a href="/user_news/{{ item.author.username }}" class="author-btn">{{ item.author.username }}</a></span>
-          </div>
-          <p>{{ item.content|truncatewords:50 }}</p>
-          <a href="/news_detail/{{ item.id }}" class="read-more">Читати далі</a>
-        </div>
-      {% empty %}
-        <div class="news">
-          <p>Новин поки немає. Будьте першим, хто поділиться новиною!</p>
-          {% if user.is_authenticated %}
-            <a href="/add_news/" class="btn">Додати новину</a>
-          {% endif %}
-        </div>
-      {% endfor %}
-    </div>
-  </section>
 </main>
 
 </body>

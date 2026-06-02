@@ -6,13 +6,68 @@
     "assetId": "TrophyEikthyr",
     "type": "Бос",
     "description": "Перший бос Valheim. Велетенський олень, який використовує блискавки.",
-    "image_url": "https://static.wikia.nocookie.net/valheim/images/b/b3/%D0%AD%D0%B9%D0%BA%D1%82%D1%8E%D1%80.png",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/d/d2/%D0%95%D0%B9%D0%BA%D1%82%D1%8E%D1%80.png/revision/latest/scale-to-width-down/268?cb=20240502111009&path-prefix=uk",
     "stats": {
       "health": 500,
-      "damage": "20-30",
-      "weakness": "Стріли з вогнем"
-    }
+      "damage": "20 (проколююча), 15-20 (блискавка)",
+      "weakness": "немає"
+    },
+    "loot": [
+      { "name": "Твердий ріг", "quantity": 3, "token": "$item_hard_antler" },
+      { "name": "Голова Ейктюра", "quantity": 1, "token": "$item_trophy_eikthyr", "chance": "100%" }
+    ],
+    "power": {
+      "name": "Сила Ейктюра",
+      "description": "Зменшує витрату витривалості на біг і стрибки на 60%. Діє 5 хвилин, перезарядка 20 хвилин."
+    },
+    "events": [
+      "Вимикає подію «Ейктюр скликає створінь лісу»",
+      "Вмикає подію «Ліс гнівається» (набіги сіролюдів) до перемоги над Прадавнім"
+    ],
+    "spawn_requirements": {
+      "location": "Покинутий вівтар Ейктюра в біомі Левади",
+      "offering": "2 голови оленя"
+    },
+    "strategy": {
+      "melee": "Атака рогами (20 проколюючої, 1000 різальної, 1000 кайлової) – уникайте близькості.",
+      "lightning": "Дистанційна атака блискавкою (15 шкоди) – ховайтеся за перешкодами.",
+      "stomp": "Атака по площі (20 шкоди блискавкою) – відстрибуйте при піднятті копит."
+    },
+    "notes": [
+      "Голова Ейктюра, повішена на стіну, іноді промовляє фрази.",
+      "Образ боса заснований на олені Ейктюрнірі з германо-скандинавської міфології."
+    ]
   },
+  {
+    "name": "Прадавній",
+    "englishName": "The Elder",
+    "token": "$item_boss_elder",
+    "assetId": "TrophyElder",
+    "type": "Бос",
+    "description": "Другий бос. Велетенське дерево, що атакує корінням і стрілами.",
+    "image_url": "https://static.wikia.nocookie.net/valheim/images/6/6e/The_Elder.png",
+    "stats": {
+      "health": 2000,
+      "damage": "50-70",
+      "weakness": "Вогонь"
+    },
+    "loot": [
+      { "name": "Серце давнини", "quantity": 1, "token": "$item_elder_drop" },
+      { "name": "Голова Прадавнього", "quantity": 1, "token": "$item_trophy_elder", "chance": "100%" }
+    ],
+    "power": {
+      "name": "Сила Прадавнього",
+      "description": "Прискорює рубання дерев."
+    },
+    "events": [],
+    "spawn_requirements": {
+      "location": "Вівтар у Чорноліссі",
+      "offering": "3 стародавніх насінини"
+    },
+    "strategy": {},
+    "notes": []
+  },
+
   {
     "name": "Прадавній",
     "englishName": "The Elder",

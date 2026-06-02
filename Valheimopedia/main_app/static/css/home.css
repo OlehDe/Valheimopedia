@@ -88,13 +88,6 @@
     box-shadow: var(--shadow);
 }
 
-.valheim-info .info-section:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-color); /* Яскраво-синя рамка при ховері */
-    box-shadow: var(--shadow-hover);
-    background: var(--card-hover);
-}
-
 /* Звичайний текст */
 .valheim-info p {
     font-size: 1.25em;

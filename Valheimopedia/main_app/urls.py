@@ -19,4 +19,5 @@ urlpatterns = [
     path('biome/<slug:biome_slug>/', views.biome_detail_view, name='biome_detail'),
     path('building/', views.building_view, name='building'),
     path('building/<str:building_token>/', views.building_detail_view, name='building_detail'),
+    path('boss/<str:boss_token>/', views.boss_detail_view, name='boss_detail'),
 ]

@@ -15,6 +15,27 @@ from django.conf import settings
 # -----------------------------------------------------------------
 
 
+def boss_detail_view(request, boss_token):
+    """
+    Детальна сторінка боса.
+    Очікує токен боса (наприклад, '$item_boss_eikthyr').
+    """
+    all_data = load_all_items_data()
+    bosses_list = all_data.get('Боси', [])
+    boss = None
+    for b in bosses_list:
+        if b.get('token') == boss_token:
+            boss = b
+            break
+    if not boss:
+        error_message = f"Боса з токеном '{boss_token}' не знайдено."
+    else:
+        error_message = None
+    return render(request, 'main_app/bosses_detail.html', {
+        'boss': boss,
+        'error': error_message
+    })
+
 def load_all_items_data():
     """
     Завантажує всі JSON-файли з папки data/ і повертає словник,
