@@ -80,7 +80,7 @@
     "slug": "ashlands",
     "name": "🌋 Попелисті землі",
     "englishName": "Ashlands",
-    "description": "Попелясті землі, де неможливо дихати через надмірну температуру. Неймовірно небезпечні моби та спека.",
+    "description": "Попелясті землі, де неможливо дихати через надмірну температуру. Неймовірно небезпечні моби.",
     "image_url": "https://static.wikia.nocookie.net/valheim/images/1/1f/%D0%9F%D0%BE%D0%BF%D0%B5%D0%BB%D0%B8%D1%81%D1%82%D1%96_%D0%B7%D0%B5%D0%BC%D0%BB%D1%96.png/revision/latest/scale-to-width-down/300?cb=20240531081333&path-prefix=uk",
     "mobs": ["Скелет", "Вогняний голем", "Дракон"],
     "resources": ["Попіл", "Вогняний камінь"],

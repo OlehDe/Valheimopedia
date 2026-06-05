@@ -72,9 +72,6 @@ def load_all_items_data():
 # -----------------------------------------------------------------
 
 def building_detail_view(request, building_token):
-    """
-    Детальна сторінка будівельного елемента.
-    """
     all_data = load_all_items_data()
     building_items = all_data.get('Будівництво', [])
     building = None
@@ -88,7 +85,6 @@ def building_detail_view(request, building_token):
     else:
         error_message = None
 
-    # Збираємо зображення для предметів у crafted_items
     item_images = {}
     if building and building.get('crafted_items'):
         for crafted in building['crafted_items']:
@@ -101,7 +97,7 @@ def building_detail_view(request, building_token):
     return render(request, 'main_app/building_detail.html', {
         'building': building,
         'error': error_message,
-        'item_images': item_images,          # <-- додано
+        'item_images': item_images,
     })
 
 from django import template

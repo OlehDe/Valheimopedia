@@ -278,7 +278,7 @@
       "englishName": "Barley",
       "type": "Матеріал",
       "description": "Зв'язка ячменю.",
-      "image_url": ""
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/8/84/%D0%AF%D1%87%D0%BC%D1%96%D0%BD%D1%8C.png/revision/latest?cb=20240108191827&path-prefix=uk"
     },
     {
       "name": "Ячмінне Борошно",
@@ -286,7 +286,7 @@
       "englishName": "Barley Flour",
       "type": "Матеріал",
       "description": "Чудово підходить для випічки хліба.",
-      "image_url": ""
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/e/e7/Barley_flour.png/revision/latest?cb=20210215131340"
     },
     {
       "name": "Насіння Бука",
@@ -366,7 +366,7 @@
       "englishName": "Fir Cone",
       "type": "Матеріал",
       "description": "Посадіть її, щоб виростити ялину.",
-      "image_url": ""
+      "image_url": "https://static.wikia.nocookie.net/valheim/images/9/90/%D0%AF%D0%BB%D0%B8%D1%86%D0%B5%D0%B2%D0%B0_%D1%88%D0%B8%D1%88%D0%BA%D0%B0.png/revision/latest?cb=20240108191352&path-prefix=uk"
     },
     {
       "name": "Льон",

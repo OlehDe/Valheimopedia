@@ -26,6 +26,7 @@
 <nav>
   <a href="/">Головна</a>
   <a href="{% url 'main_app:all_items' %}">Усі предмети</a>
+  <a href="{% url 'main_app:building' %}">Будівництво</a>
 </nav>
 
 <main>
@@ -169,7 +170,6 @@
         <div class="tech-info">
           <h4>Технічна інформація</h4>
           <p><strong>Токен:</strong> <span class="tech-value">{{ item.token }}</span></p>
-          <p><strong>Asset ID:</strong> <span class="tech-value">{{ item.assetId }}</span></p>
         </div>
       </div>
     </div>
